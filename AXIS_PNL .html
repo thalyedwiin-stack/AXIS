@@ -142,72 +142,120 @@ tbody tr:hover .pn{color:#2563eb;}
 .roi-v{font-weight:700;color:#16a34a;}
 
 /* ── CRM ── */
-.crm-wrap{flex:1;display:grid;grid-template-columns:340px 1fr;overflow:hidden;height:calc(100vh - 56px);min-height:0;}
+.crm-wrap{flex:1;display:grid;grid-template-columns:360px 1fr;overflow:hidden;height:calc(100vh - 56px);min-height:0;}
+/* Left roster panel */
 .crm-list{background:#fff;border-right:1px solid #e2e8f0;display:flex;flex-direction:column;overflow:hidden;}
-.crm-list-top{padding:20px 20px 14px;border-bottom:1px solid #f1f5f9;}
-.crm-list-heading{font-size:20px;font-weight:700;color:#0f172a;margin-bottom:3px;}
-.crm-list-sub{font-size:11px;color:#64748b;margin-bottom:4px;}
-.crm-view-tabs{display:flex;gap:0;background:#f1f5f9;border-radius:9px;padding:3px;}
-.crm-view-tab{font-size:12px;font-weight:500;padding:6px 14px;border-radius:7px;cursor:pointer;border:none;background:transparent;color:#64748b;font-family:'Inter',sans-serif;transition:all .12s;flex:1;text-align:center;}
-.crm-view-tab.active{background:#fff;color:#0f172a;font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.08);}
-.crm-list-title{font-size:12px;font-weight:600;color:#64748b;padding:12px 20px 8px;}
+.crm-list-top{padding:16px 18px 14px;border-bottom:1px solid #f1f5f9;}
+.crm-list-heading{font-size:17px;font-weight:800;color:#0f172a;margin-bottom:2px;letter-spacing:-.3px;}
+.crm-list-sub{font-size:11px;color:#94a3b8;margin-bottom:0;}
+/* Mini KPI strip */
+.crm-mini-kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #f1f5f9;flex-shrink:0;}
+.crm-mini-kpi{padding:10px 0;text-align:center;border-right:1px solid #f1f5f9;}
+.crm-mini-kpi:last-child{border-right:none;}
+.crm-mini-val{font-size:14px;font-weight:800;letter-spacing:-.4px;line-height:1.2;}
+.crm-mini-val.blue{color:#2563eb;}.crm-mini-val.green{color:#16a34a;}.crm-mini-val.red{color:#ef4444;}.crm-mini-val.amber{color:#d97706;}
+.crm-mini-lbl{font-size:9px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+/* Roster title */
+.crm-list-title{font-size:10px;font-weight:700;color:#94a3b8;padding:10px 18px 6px;text-transform:uppercase;letter-spacing:.7px;flex-shrink:0;}
 .crm-artist-items{flex:1;overflow-y:auto;}
-.crm-item{padding:13px 20px;border-bottom:1px solid #f1f5f9;cursor:pointer;transition:background .1s;border-left:3px solid transparent;}
-.crm-item:hover{background:#f8fafc;}
+/* Artist card */
+.crm-item{padding:11px 16px 10px;border-bottom:1px solid #f8fafc;cursor:pointer;transition:all .15s;border-left:3px solid transparent;display:flex;flex-direction:column;gap:7px;}
+.crm-item:hover{background:#f8fafc;border-left-color:#c7d2fe;}
 .crm-item.active{background:#eff6ff;border-left-color:#2563eb;}
-.crm-item-row{display:flex;align-items:center;gap:10px;margin-bottom:5px;}
-.crm-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;}
+.crm-item-main{display:flex;align-items:center;gap:11px;}
+.crm-av{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:-.5px;}
 .crm-item-info{flex:1;min-width:0;}
 .crm-item-name{font-size:13px;font-weight:700;color:#0f172a;}
-.crm-item-proj{font-size:11px;color:#64748b;margin-top:1px;}
-.crm-badge{font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;}
-.crm-badge.actif{background:#dcfce7;color:#166534;}
-.crm-item-rev{font-size:13px;font-weight:700;color:#2563eb;margin-left:50px;}
-.crm-item-phone{font-size:10px;color:#94a3b8;margin-top:2px;margin-left:50px;}
-.crm-detail{overflow-y:auto;background:#f8fafc;}
-.crm-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:#fff;}
-.crm-empty-icon{width:72px;height:72px;border-radius:50%;background:#eff6ff;display:flex;align-items:center;justify-content:center;}
-.crm-empty-title{font-size:18px;font-weight:600;color:#475569;}
-.crm-empty-sub{font-size:12px;color:#94a3b8;text-align:center;max-width:260px;line-height:1.6;}
-.crm-hero{background:linear-gradient(135deg,#2563eb,#4f46e5);padding:24px 28px;display:flex;align-items:center;gap:16px;}
-.crm-hero-av{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;flex-shrink:0;}
-.crm-hero-name{font-size:26px;font-weight:800;color:#fff;}
-.crm-hero-sub{font-size:12px;color:rgba(255,255,255,.75);margin-top:4px;display:flex;align-items:center;gap:6px;}
-.hero-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;}
-.crm-hero-btn{margin-left:auto;background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.35);border-radius:9px;padding:8px 20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;}
-.crm-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:16px 20px;background:#fff;border-bottom:1px solid #e2e8f0;}
-.crm-kpi{background:#f8fafc;border:1px solid #e2e8f0;border-radius:11px;padding:14px 16px;transition:box-shadow .15s;}
-.crm-kpi:hover{box-shadow:0 4px 12px rgba(0,0,0,.06);}
-.crm-kpi-icon{font-size:20px;margin-bottom:8px;}
-.crm-kpi-val{font-size:20px;font-weight:800;line-height:1;letter-spacing:-.3px;margin-bottom:3px;}
-.crm-kpi-label{font-size:10px;color:#64748b;font-weight:500;text-transform:uppercase;letter-spacing:.4px;}
-.crm-section{background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:18px 20px;margin:14px 16px;}
-.crm-section-title{font-size:12px;font-weight:700;color:#0f172a;margin-bottom:14px;display:flex;align-items:center;gap:7px;text-transform:uppercase;letter-spacing:.4px;}
-.crm-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;}
-.crm-contact-lbl{font-size:10px;color:#94a3b8;margin-bottom:4px;font-weight:500;}
+.crm-item-proj{font-size:11px;color:#94a3b8;margin-top:1px;}
+.crm-item-right{text-align:right;flex-shrink:0;}
+.crm-item-rev{font-size:14px;font-weight:800;color:#2563eb;letter-spacing:-.4px;}
+.crm-badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:20px;display:inline-flex;align-items:center;gap:3px;margin-top:3px;}
+.crm-badge.actif{background:#dcfce7;color:#16a34a;}
+.crm-badge.expire{background:#fee2e2;color:#dc2626;}
+.crm-badge.warning{background:#fef3c7;color:#d97706;}
+.crm-badge.nouveau{background:#f0fdf4;color:#166534;}
+.crm-badge.inactif{background:#f1f5f9;color:#64748b;}
+.crm-item-bar{height:2px;border-radius:2px;background:#f1f5f9;overflow:hidden;}
+.crm-item-bar-fill{height:2px;border-radius:2px;background:linear-gradient(90deg,#3b82f6,#6366f1);transition:width .3s;}
+/* Right detail panel */
+.crm-detail{overflow-y:auto;background:#f1f5f9;}
+/* Empty state */
+.crm-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f1f5f9;}
+.crm-empty-card{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:40px 52px;display:flex;flex-direction:column;align-items:center;gap:12px;box-shadow:0 4px 24px rgba(0,0,0,.05);}
+.crm-empty-icon{width:76px;height:76px;border-radius:20px;background:linear-gradient(135deg,#eff6ff,#e0e7ff);display:flex;align-items:center;justify-content:center;margin-bottom:4px;}
+.crm-empty-title{font-size:19px;font-weight:700;color:#0f172a;}
+.crm-empty-sub{font-size:12px;color:#94a3b8;text-align:center;max-width:270px;line-height:1.65;}
+.crm-empty-stats{display:flex;gap:0;margin-top:10px;padding-top:20px;border-top:1px solid #f1f5f9;width:100%;}
+.crm-empty-stat{text-align:center;flex:1;padding:0 12px;border-right:1px solid #f1f5f9;}
+.crm-empty-stat:last-child{border-right:none;}
+.crm-empty-stat-val{font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.5px;}
+.crm-empty-stat-lbl{font-size:9px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:3px;}
+/* Artist profile hero */
+.crm-hero{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 55%,#4f46e5 100%);padding:22px 24px 26px;display:flex;align-items:flex-start;gap:16px;position:relative;overflow:hidden;flex-shrink:0;}
+.crm-hero::before{content:'';position:absolute;top:-50px;right:-30px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.05);}
+.crm-hero::after{content:'';position:absolute;bottom:-70px;right:80px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04);}
+.crm-hero-av{width:68px;height:68px;border-radius:16px;background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:-.5px;position:relative;z-index:1;}
+.crm-hero-body{flex:1;position:relative;z-index:1;}
+.crm-hero-name{font-size:23px;font-weight:800;color:#fff;letter-spacing:-.5px;margin-bottom:4px;}
+.crm-hero-sub{font-size:12px;color:rgba(255,255,255,.68);display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 2px rgba(74,222,128,.3);}
+.hero-dot.red{background:#f87171;box-shadow:0 0 0 2px rgba(248,113,113,.3);}
+.hero-dot.amber{background:#fbbf24;box-shadow:0 0 0 2px rgba(251,191,36,.3);}
+.crm-hero-chips{display:flex;gap:7px;flex-wrap:wrap;}
+.crm-hero-chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:4px 11px;font-size:11px;font-weight:600;color:rgba(255,255,255,.88);}
+.crm-hero-actions{position:relative;z-index:1;display:flex;flex-direction:column;gap:6px;align-items:flex-end;}
+.crm-hero-btn{background:rgba(255,255,255,.13);color:#fff;border:1.5px solid rgba(255,255,255,.28);border-radius:9px;padding:7px 14px;font-size:11px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:background .15s;}
+.crm-hero-btn:hover{background:rgba(255,255,255,.24);}
+.crm-hero-btn.primary-btn{background:#fff;color:#2563eb;border-color:#fff;}
+.crm-hero-btn.primary-btn:hover{background:#eff6ff;}
+/* Artist KPI bar */
+.crm-kpis{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-bottom:1px solid #e2e8f0;flex-shrink:0;}
+.crm-kpi{padding:14px 16px;border-right:1px solid #f1f5f9;}
+.crm-kpi:last-child{border-right:none;}
+.crm-kpi-icon{font-size:16px;margin-bottom:5px;}
+.crm-kpi-val{font-size:18px;font-weight:800;line-height:1;letter-spacing:-.3px;margin-bottom:3px;}
+.crm-kpi-label{font-size:9px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:.5px;}
+.crm-kpi-trend{font-size:10px;font-weight:700;margin-top:4px;}
+.crm-kpi-trend.up{color:#16a34a;}.crm-kpi-trend.down{color:#ef4444;}
+/* Info sections */
+.crm-section{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;margin:12px 16px 0;}
+.crm-section:last-child{margin-bottom:14px;}
+.crm-section-title{font-size:10px;font-weight:700;color:#94a3b8;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;text-transform:uppercase;letter-spacing:.7px;}
+.crm-section-link{font-size:11px;font-weight:600;color:#2563eb;text-transform:none;letter-spacing:0;cursor:pointer;}
+.crm-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 32px;}
+.crm-contact-lbl{font-size:9px;color:#94a3b8;margin-bottom:3px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
 .crm-contact-val{font-size:13px;font-weight:600;color:#0f172a;}
-.crm-proj-item{border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;margin-bottom:10px;background:#fff;}
-.crm-proj-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+/* Contract status card */
+.crm-contract-card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;}
+.crm-contract-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.crm-contract-info{flex:1;}
+.crm-contract-label{font-size:10px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px;}
+.crm-contract-val{font-size:13px;font-weight:700;color:#0f172a;}
+.crm-contract-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;flex-shrink:0;}
+/* Project items */
+.crm-proj-item{border:1px solid #e2e8f0;border-radius:11px;padding:13px 15px;margin-bottom:8px;background:#fff;cursor:pointer;transition:box-shadow .15s;}
+.crm-proj-item:hover{box-shadow:0 4px 14px rgba(0,0,0,.07);}
+.crm-proj-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
 .crm-proj-name{font-size:13px;font-weight:700;color:#0f172a;}
-.crm-proj-budget{font-size:14px;font-weight:800;color:#2563eb;}
-.crm-proj-meta{display:flex;align-items:center;gap:7px;font-size:11px;color:#64748b;margin-bottom:10px;}
+.crm-proj-budget{font-size:15px;font-weight:800;color:#2563eb;letter-spacing:-.3px;}
+.crm-proj-meta{display:flex;align-items:center;gap:6px;font-size:11px;color:#94a3b8;margin-bottom:9px;}
 .crm-proj-status{font-size:10px;font-weight:600;background:#eff6ff;color:#2563eb;padding:2px 8px;border-radius:20px;}
-.crm-prog-lbl{display:flex;justify-content:space-between;font-size:11px;color:#64748b;margin-bottom:5px;}
-.crm-prog-lbl span:last-child{font-weight:700;color:#0f172a;}
-.crm-prog-bg{height:5px;border-radius:3px;background:#e2e8f0;overflow:hidden;}
-.crm-prog-fill{height:5px;border-radius:3px;background:linear-gradient(90deg,#2563eb,#4f46e5);}
-.crm-act-list{display:flex;flex-direction:column;position:relative;}
-.crm-act-list::before{content:'';position:absolute;left:20px;top:40px;bottom:12px;width:2px;background:#e2e8f0;}
-.crm-act-item{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #f1f5f9;}
+.crm-prog-lbl{display:flex;justify-content:space-between;font-size:10px;color:#94a3b8;margin-bottom:5px;font-weight:600;}
+.crm-prog-lbl span:last-child{color:#0f172a;}
+.crm-prog-bg{height:5px;border-radius:3px;background:#f1f5f9;overflow:hidden;}
+.crm-prog-fill{height:5px;border-radius:3px;background:linear-gradient(90deg,#3b82f6,#6366f1);}
+/* Activity timeline */
+.crm-act-list{display:flex;flex-direction:column;}
+.crm-act-item{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #f8fafc;}
 .crm-act-item:last-child{border-bottom:none;}
-.crm-act-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;position:relative;z-index:1;}
+.crm-act-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
 .crm-act-body{flex:1;}
-.crm-act-title{font-size:12px;font-weight:700;color:#0f172a;margin-bottom:3px;}
-.crm-act-desc{font-size:11px;color:#475569;margin-bottom:5px;line-height:1.5;}
-.crm-act-divider{height:1px;background:#f1f5f9;margin-bottom:5px;}
-.crm-act-meta{font-size:10px;color:#94a3b8;display:flex;align-items:center;gap:5px;}
-.crm-act-meta strong{color:#475569;font-weight:600;}
+.crm-act-title{font-size:12px;font-weight:700;color:#0f172a;margin-bottom:2px;}
+.crm-act-desc{font-size:11px;color:#64748b;margin-bottom:4px;line-height:1.5;}
+.crm-act-meta{font-size:10px;color:#94a3b8;display:flex;align-items:center;gap:4px;}
+.crm-act-meta strong{color:#64748b;font-weight:600;}
 .crm-act-sep{width:3px;height:3px;border-radius:50%;background:#cbd5e1;}
+.crm-act-divider{height:1px;background:#f1f5f9;margin-bottom:4px;}
 
 /* OPP panel */
 .opp-wrap{display:none;flex:1;flex-direction:column;overflow-y:auto;padding:20px;background:#f8fafc;}
@@ -369,9 +417,9 @@ tbody tr:hover .pn{color:#2563eb;}
 /* ── CRM Enhanced ── */
 .crm-add-btn{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;border:none;border-radius:9px;padding:8px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:opacity .15s;flex-shrink:0;}
 .crm-add-btn:hover{opacity:.88;}
-.crm-search-wrap{position:relative;flex:1;max-width:220px;margin:0 12px;}
+.crm-search-wrap{position:relative;flex:1;}
 .crm-search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;width:13px;height:13px;pointer-events:none;}
-.crm-search-input{width:100%;border:1px solid #e2e8f0;border-radius:9px;background:#f8fafc;padding:8px 12px 8px 32px;font-size:12px;color:#0f172a;outline:none;font-family:'Inter',sans-serif;transition:border-color .15s;}
+.crm-search-input{width:100%;border:1px solid #e2e8f0;border-radius:9px;background:#f8fafc;padding:7px 12px 7px 32px;font-size:12px;color:#0f172a;outline:none;font-family:'Inter',sans-serif;transition:border-color .15s;}
 .crm-search-input:focus{border-color:#2563eb;background:#fff;}
 .crm-badge.expire{background:#fee2e2;color:#991b1b;}
 .crm-badge.warning{background:#fef3c7;color:#92400e;}
@@ -944,41 +992,241 @@ tbody tr:hover .pn{color:#2563eb;}
   <!-- CRM PAGE -->
   <div id="pg-crm" class="page" style="display:none;">
     <div class="crm-wrap">
+
+      <!-- ── LEFT ROSTER PANEL ── -->
       <div class="crm-list">
         <div class="crm-list-top">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
             <div>
               <div class="crm-list-heading">Relations Clients</div>
               <div class="crm-list-sub">12 artistes · 8 opportunités actives</div>
             </div>
-            <div class="crm-search-wrap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-              <input type="text" class="crm-search-input" id="crmSearch" placeholder="Rechercher un artiste..." oninput="filterArtists(this.value)">
-            </div>
             <button class="crm-add-btn" onclick="openNewContactModal()">+ Nouveau</button>
           </div>
+          <div class="crm-search-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" class="crm-search-input" id="crmSearch" placeholder="Rechercher un artiste ou un contrat..." oninput="filterArtists(this.value)">
+          </div>
         </div>
-        <div class="crm-list-title" id="artistListTitle">Artistes (12)</div>
+
+        <!-- Mini KPI strip -->
+        <div class="crm-mini-kpis">
+          <div class="crm-mini-kpi"><div class="crm-mini-val blue">8,2M€</div><div class="crm-mini-lbl">Revenus</div></div>
+          <div class="crm-mini-kpi"><div class="crm-mini-val">12</div><div class="crm-mini-lbl">Artistes</div></div>
+          <div class="crm-mini-kpi"><div class="crm-mini-val green">7</div><div class="crm-mini-lbl">Actifs</div></div>
+          <div class="crm-mini-kpi"><div class="crm-mini-val red">3</div><div class="crm-mini-lbl">Expirés</div></div>
+        </div>
+
+        <div class="crm-list-title" id="artistListTitle">Artistes — 12</div>
         <div class="crm-artist-items" id="artistList">
-          <div class="crm-item" data-name="PNL" onclick="selectArtist(this,'PNL')"><div class="crm-item-row"><div class="crm-av" style="background:#2563eb">PN</div><div class="crm-item-info"><div class="crm-item-name">PNL</div><div class="crm-item-proj">3 projets · 2,1 M€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">2.1 M€</div><div class="crm-item-phone">📞 +33 6 12 34 56 78</div></div>
-          <div class="crm-item" data-name="Booba" onclick="selectArtist(this,'Booba')"><div class="crm-item-row"><div class="crm-av" style="background:#0891b2">Bo</div><div class="crm-item-info"><div class="crm-item-name">Booba</div><div class="crm-item-proj">2 projets · 1,8 M€</div></div><span class="crm-badge expire">Contrat expiré</span></div><div class="crm-item-rev">1.8 M€</div><div class="crm-item-phone">📞 +33 6 23 45 67 89</div></div>
-          <div class="crm-item" data-name="Damso" onclick="selectArtist(this,'Damso')"><div class="crm-item-row"><div class="crm-av" style="background:#7c3aed">Da</div><div class="crm-item-info"><div class="crm-item-name">Damso</div><div class="crm-item-proj">2 projets · 1,5 M€</div></div><span class="crm-badge warning">Expire juin 26</span></div><div class="crm-item-rev">1.5 M€</div><div class="crm-item-phone">📞 +33 6 34 56 78 90</div></div>
-          <div class="crm-item" data-name="Niska" onclick="selectArtist(this,'Niska')"><div class="crm-item-row"><div class="crm-av" style="background:#d97706">Ni</div><div class="crm-item-info"><div class="crm-item-name">Niska</div><div class="crm-item-proj">3 projets · 1,2 M€</div></div><span class="crm-badge expire">Contrat expiré</span></div><div class="crm-item-rev">1.2 M€</div><div class="crm-item-phone">📞 +33 6 45 67 89 01</div></div>
-          <div class="crm-item" data-name="SCH" onclick="selectArtist(this,'SCH')"><div class="crm-item-row"><div class="crm-av" style="background:#059669">SC</div><div class="crm-item-info"><div class="crm-item-name">SCH</div><div class="crm-item-proj">2 projets · 950k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">950k€</div><div class="crm-item-phone">📞 +33 6 56 78 90 12</div></div>
-          <div class="crm-item" data-name="Nekfeu" onclick="selectArtist(this,'Nekfeu')"><div class="crm-item-row"><div class="crm-av" style="background:#be185d">Ne</div><div class="crm-item-info"><div class="crm-item-name">Nekfeu</div><div class="crm-item-proj">1 projet · 820k€</div></div><span class="crm-badge expire">Contrat expiré</span></div><div class="crm-item-rev">820k€</div><div class="crm-item-phone">📞 +33 6 78 90 12 34</div></div>
-          <div class="crm-item" data-name="Hamza" onclick="selectArtist(this,'Hamza')"><div class="crm-item-row"><div class="crm-av" style="background:#6366f1">Ha</div><div class="crm-item-info"><div class="crm-item-name">Hamza</div><div class="crm-item-proj">2 projets · 780k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">780k€</div><div class="crm-item-phone">📞 +32 478 12 34 56</div></div>
-          <div class="crm-item" data-name="Gazo" onclick="selectArtist(this,'Gazo')"><div class="crm-item-row"><div class="crm-av" style="background:#f43f5e">Gz</div><div class="crm-item-info"><div class="crm-item-name">Gazo</div><div class="crm-item-proj">1 projet · 680k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">680k€</div><div class="crm-item-phone">📞 +33 6 67 89 01 23</div></div>
-          <div class="crm-item" data-name="Jul" onclick="selectArtist(this,'Jul')"><div class="crm-item-row"><div class="crm-av" style="background:#0284c7">Ju</div><div class="crm-item-info"><div class="crm-item-name">Jul</div><div class="crm-item-proj">1 projet · 620k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">620k€</div><div class="crm-item-phone">📞 +33 6 89 01 23 45</div></div>
-          <div class="crm-item" data-name="Tiakola" onclick="selectArtist(this,'Tiakola')"><div class="crm-item-row"><div class="crm-av" style="background:#0d9488">Tk</div><div class="crm-item-info"><div class="crm-item-name">Tiakola</div><div class="crm-item-proj">1 projet · 550k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">550k€</div><div class="crm-item-phone">📞 +33 6 90 12 34 56</div></div>
-          <div class="crm-item" data-name="Ninha" onclick="selectArtist(this,'Ninha')"><div class="crm-item-row"><div class="crm-av" style="background:#db2777">Nh</div><div class="crm-item-info"><div class="crm-item-name">Ninha</div><div class="crm-item-proj">1 projet · 420k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">420k€</div><div class="crm-item-phone">📞 +33 6 01 23 45 67</div></div>
-          <div class="crm-item" data-name="La Fouine" onclick="selectArtist(this,'La Fouine')"><div class="crm-item-row"><div class="crm-av" style="background:#b45309">LF</div><div class="crm-item-info"><div class="crm-item-name">La Fouine</div><div class="crm-item-proj">1 projet · 380k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">380k€</div><div class="crm-item-phone">📞 +33 6 12 34 56 80</div></div>
+
+          <div class="crm-item" data-name="PNL" onclick="selectArtist(this,'PNL')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#1d4ed8,#3b82f6)">PN</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">PNL</div>
+                <div class="crm-item-proj">Rap · 3 projets</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">2,1 M€</div>
+                <span class="crm-badge actif">● Actif</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:100%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="Booba" onclick="selectArtist(this,'Booba')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#0369a1,#0891b2)">Bo</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">Booba</div>
+                <div class="crm-item-proj">Rap · 2 projets</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">1,8 M€</div>
+                <span class="crm-badge expire">● Expiré</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:86%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="Damso" onclick="selectArtist(this,'Damso')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#5b21b6,#7c3aed)">Da</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">Damso</div>
+                <div class="crm-item-proj">R&B · 2 projets</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">1,5 M€</div>
+                <span class="crm-badge warning">● Juin 26</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:71%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="Niska" onclick="selectArtist(this,'Niska')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#b45309,#d97706)">Ni</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">Niska</div>
+                <div class="crm-item-proj">Rap · 3 projets</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">1,2 M€</div>
+                <span class="crm-badge expire">● Expiré</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:57%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="SCH" onclick="selectArtist(this,'SCH')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#047857,#059669)">SC</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">SCH</div>
+                <div class="crm-item-proj">Rap · 2 projets</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">950k€</div>
+                <span class="crm-badge actif">● Actif</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:45%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="Nekfeu" onclick="selectArtist(this,'Nekfeu')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#9d174d,#be185d)">Ne</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">Nekfeu</div>
+                <div class="crm-item-proj">Hip-Hop · 1 projet</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">820k€</div>
+                <span class="crm-badge expire">● Expiré</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:39%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="Hamza" onclick="selectArtist(this,'Hamza')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#4338ca,#6366f1)">Ha</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">Hamza</div>
+                <div class="crm-item-proj">R&B · 2 projets</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">780k€</div>
+                <span class="crm-badge actif">● Actif</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:37%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="Gazo" onclick="selectArtist(this,'Gazo')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#be123c,#f43f5e)">Gz</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">Gazo</div>
+                <div class="crm-item-proj">Drill · 1 projet</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">680k€</div>
+                <span class="crm-badge actif">● Actif</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:32%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="Jul" onclick="selectArtist(this,'Jul')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#0369a1,#0284c7)">Ju</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">Jul</div>
+                <div class="crm-item-proj">Rap · 1 projet</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">620k€</div>
+                <span class="crm-badge actif">● Actif</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:30%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="Tiakola" onclick="selectArtist(this,'Tiakola')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#0f766e,#0d9488)">Tk</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">Tiakola</div>
+                <div class="crm-item-proj">Afro-Pop · 1 projet</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">550k€</div>
+                <span class="crm-badge actif">● Actif</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:26%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="Ninha" onclick="selectArtist(this,'Ninha')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#a21caf,#db2777)">Nh</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">Ninha</div>
+                <div class="crm-item-proj">R&B · 1 projet</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">420k€</div>
+                <span class="crm-badge actif">● Actif</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:20%"></div></div>
+          </div>
+
+          <div class="crm-item" data-name="La Fouine" onclick="selectArtist(this,'La Fouine')">
+            <div class="crm-item-main">
+              <div class="crm-av" style="background:linear-gradient(135deg,#92400e,#b45309)">LF</div>
+              <div class="crm-item-info">
+                <div class="crm-item-name">La Fouine</div>
+                <div class="crm-item-proj">Rap · 1 projet</div>
+              </div>
+              <div class="crm-item-right">
+                <div class="crm-item-rev">380k€</div>
+                <span class="crm-badge actif">● Actif</span>
+              </div>
+            </div>
+            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:18%"></div></div>
+          </div>
+
         </div>
       </div>
+
+      <!-- ── RIGHT DETAIL PANEL ── -->
       <div id="crmDetail" class="crm-detail">
         <div class="crm-empty">
-          <div class="crm-empty-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-          <div class="crm-empty-title">Sélectionnez un artiste</div>
-          <div class="crm-empty-sub">Cliquez sur un artiste dans la liste pour voir ses détails, projets et historique</div>
+          <div class="crm-empty-card">
+            <div class="crm-empty-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="crm-empty-title">Sélectionnez un artiste</div>
+            <div class="crm-empty-sub">Cliquez sur un artiste dans le roster pour accéder à son profil complet, ses projets et son historique d'activités.</div>
+            <div class="crm-empty-stats">
+              <div class="crm-empty-stat">
+                <div class="crm-empty-stat-val">8,2 M€</div>
+                <div class="crm-empty-stat-lbl">Revenus totaux</div>
+              </div>
+              <div class="crm-empty-stat">
+                <div class="crm-empty-stat-val">12</div>
+                <div class="crm-empty-stat-lbl">Artistes</div>
+              </div>
+              <div class="crm-empty-stat">
+                <div class="crm-empty-stat-val">4,6 M€</div>
+                <div class="crm-empty-stat-lbl">Pipeline</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <!-- ACTIVITIES PANEL -->
@@ -1849,7 +2097,7 @@ function filterArtists(query) {
     if (show) visible++;
   });
   const title = document.getElementById('artistListTitle');
-  if (title) title.textContent = q ? `Artistes (${visible} résultat${visible>1?'s':''})` : 'Artistes (12)';
+  if (title) title.textContent = q ? `Artistes — ${visible} résultat${visible>1?'s':''}` : 'Artistes — 12';
 }
 
 // ── Opportunity filter ──
