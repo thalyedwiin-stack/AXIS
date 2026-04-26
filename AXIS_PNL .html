@@ -55,13 +55,13 @@ body{font-family:'Inter',sans-serif;background:#f4f6fa;color:#0f172a;min-height:
 .sr-header{padding:8px 14px 4px;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;}
 .tb-btn{display:flex;align-items:center;gap:5px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;padding:6px 12px;font-size:12px;font-weight:500;color:#475569;cursor:pointer;font-family:'Inter',sans-serif;}
 .bell-wrap{position:relative;}
-.bell-btn{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;outline:none;transition:all .15s;box-shadow:0 4px 14px rgba(99,102,241,.35);}
-.bell-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(99,102,241,.48);}
+.bell-btn{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#1d4ed8,#3b82f6);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;outline:none;transition:all .15s;box-shadow:0 4px 14px rgba(37,99,235,.35);}
+.bell-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,99,235,.48);}
 .bell-badge{position:absolute;top:-4px;right:-4px;width:18px;height:18px;border-radius:50%;background:#ef4444;color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2.5px solid #fff;animation:badge-pulse 2.5s infinite;}
 @keyframes badge-pulse{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.45);}60%{box-shadow:0 0 0 5px rgba(239,68,68,0);}}
 .notif-panel{display:none;position:absolute;top:calc(100% + 10px);right:0;width:348px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.14);z-index:200;overflow:hidden;}
 .notif-panel.open{display:block;}
-.notif-hd{background:linear-gradient(135deg,#4f46e5,#7c3aed);padding:14px 18px 12px;display:flex;align-items:center;justify-content:space-between;}
+.notif-hd{background:linear-gradient(135deg,#1d4ed8,#3b82f6);padding:14px 18px 12px;display:flex;align-items:center;justify-content:space-between;}
 .notif-hd-left{display:flex;align-items:center;gap:9px;}
 .notif-hd-icon{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:14px;}
 .notif-title{font-size:13px;font-weight:700;color:#fff;letter-spacing:.3px;}
@@ -81,10 +81,10 @@ body{font-family:'Inter',sans-serif;background:#f4f6fa;color:#0f172a;min-height:
 .notif-msg{font-size:12px;color:#334155;line-height:1.5;font-weight:500;}
 .notif-time{font-size:10px;color:#94a3b8;margin-top:3px;}
 .notif-footer-ok{padding:10px 16px;background:#f8fafc;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f1f5f9;}
-.notif-ok{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border:none;border-radius:8px;padding:7px 18px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:opacity .15s;}
+.notif-ok{background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:#fff;border:none;border-radius:8px;padding:7px 18px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:opacity .15s;}
 .notif-ok:hover{opacity:.88;}
 .notif-mark-all{font-size:11px;color:#94a3b8;cursor:pointer;font-weight:500;}
-.notif-mark-all:hover{color:#4f46e5;}
+.notif-mark-all:hover{color:#2563eb;}
 .notif-msg strong{color:#fff;}
 .notif-footer-ok{padding:10px 16px 12px;display:flex;justify-content:flex-end;}
 .notif-ok{background:#2563eb;color:#fff;border:none;border-radius:7px;padding:6px 22px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;}
@@ -1265,20 +1265,6 @@ tbody tr:hover .pn{color:#2563eb;}
             </div>
             <div class="crm-empty-title">Sélectionnez un artiste</div>
             <div class="crm-empty-sub">Cliquez sur un artiste dans le roster pour accéder à son profil complet, ses projets et son historique d'activités.</div>
-            <div class="crm-empty-stats">
-              <div class="crm-empty-stat">
-                <div class="crm-empty-stat-val">8,2 M€</div>
-                <div class="crm-empty-stat-lbl">Revenus totaux</div>
-              </div>
-              <div class="crm-empty-stat">
-                <div class="crm-empty-stat-val">12</div>
-                <div class="crm-empty-stat-lbl">Artistes</div>
-              </div>
-              <div class="crm-empty-stat">
-                <div class="crm-empty-stat-val">4,6 M€</div>
-                <div class="crm-empty-stat-lbl">Pipeline</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
