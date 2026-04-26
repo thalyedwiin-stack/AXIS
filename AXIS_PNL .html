@@ -368,6 +368,75 @@ tbody tr:hover .pn{color:#2563eb;}
 .opp-tl-date{font-size:10px;color:#94a3b8;margin-bottom:4px;}
 .opp-tl-desc{font-size:11px;color:#475569;line-height:1.55;background:#f8fafc;border:1px solid #f1f5f9;border-radius:7px;padding:8px 11px;}
 
+/* ── PROJETS PAGE ── */
+.proj-page{flex:1;overflow-y:auto;background:#f1f5f9;display:flex;flex-direction:column;}
+.proj-header{background:#fff;border-bottom:1px solid #e2e8f0;padding:20px 28px 0;flex-shrink:0;}
+.proj-header-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px;}
+.proj-header-title{font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.5px;margin-bottom:3px;}
+.proj-header-sub{font-size:12px;color:#94a3b8;font-weight:500;}
+.proj-header-actions{display:flex;gap:8px;align-items:center;}
+.proj-btn{border:1.5px solid #e2e8f0;border-radius:9px;background:#fff;padding:7px 14px;font-size:12px;font-weight:600;color:#475569;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
+.proj-btn:hover{border-color:#2563eb;color:#2563eb;}
+.proj-btn.primary{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;border:none;box-shadow:0 4px 12px rgba(37,99,235,.25);}
+.proj-btn.primary:hover{opacity:.9;}
+.proj-kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);}
+.proj-kpi{padding:14px 20px 16px;border-top:1px solid #f1f5f9;border-right:1px solid #f1f5f9;position:relative;}
+.proj-kpi:last-child{border-right:none;}
+.proj-kpi-accent{position:absolute;bottom:0;left:20px;right:20px;height:2.5px;border-radius:2px;}
+.proj-kpi-label{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;}
+.proj-kpi-val{font-size:26px;font-weight:800;color:#0f172a;letter-spacing:-.8px;line-height:1;margin-bottom:4px;}
+.proj-kpi-foot{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#94a3b8;}
+.proj-kpi-trend{font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;}
+.proj-kpi-trend.green{background:#f0fdf4;color:#16a34a;}
+.proj-kpi-trend.blue{background:#eff6ff;color:#2563eb;}
+.proj-kpi-trend.purple{background:#f5f3ff;color:#7c3aed;}
+/* Body */
+.proj-body{padding:20px 28px;flex:1;display:flex;flex-direction:column;gap:16px;}
+.proj-row{display:grid;grid-template-columns:1fr;gap:16px;}
+.proj-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;}
+.proj-card-title{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;}
+.proj-card-badge{font-size:10px;font-weight:600;color:#64748b;background:#f8fafc;border:1px solid #e2e8f0;padding:3px 10px;border-radius:20px;}
+/* Mini perf stats */
+.proj-perf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
+.proj-perf-stat{background:#f8fafc;border:1px solid #f1f5f9;border-radius:10px;padding:10px 12px;}
+.proj-perf-stat-lbl{font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px;}
+.proj-perf-stat-val{font-size:17px;font-weight:800;line-height:1;margin-bottom:2px;}
+.proj-perf-stat-sub{font-size:10px;color:#94a3b8;}
+/* Category bars */
+.proj-cat-row{display:flex;align-items:center;padding:9px 0;border-bottom:1px solid #f8fafc;gap:10px;}
+.proj-cat-row:last-child{border-bottom:none;}
+.proj-cat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.proj-cat-info{flex:1;min-width:0;}
+.proj-cat-name{font-size:12px;font-weight:700;color:#0f172a;}
+.proj-cat-sub{font-size:10px;color:#94a3b8;margin-top:1px;}
+.proj-cat-bar-bg{height:4px;background:#f1f5f9;border-radius:2px;margin-top:6px;overflow:hidden;}
+.proj-cat-bar-fill{height:4px;border-radius:2px;}
+.proj-cat-nums{display:flex;gap:12px;flex-shrink:0;text-align:right;}
+.proj-cat-num{font-size:11px;font-weight:700;}
+.proj-cat-num-lbl{font-size:9px;color:#94a3b8;margin-bottom:1px;}
+/* Kanban */
+.proj-kanban{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.proj-col-hd{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid;}
+.proj-col-name{font-size:12px;font-weight:700;color:#0f172a;}
+.proj-col-count{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:auto;}
+/* Kanban task card */
+.proj-task{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:13px 14px;margin-bottom:8px;cursor:pointer;transition:all .15s;border-left:3px solid;}
+.proj-task:hover{box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-1px);}
+.proj-task:last-child{margin-bottom:0;}
+.proj-task-name{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:3px;line-height:1.3;}
+.proj-task-artist{font-size:11px;color:#94a3b8;margin-bottom:9px;}
+.proj-task-tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:10px;}
+.proj-tag{font-size:9px;font-weight:600;padding:2px 7px;border-radius:20px;}
+.proj-tag.neutral{background:#f1f5f9;color:#64748b;}
+.proj-tag.high{background:#fee2e2;color:#dc2626;}
+.proj-tag.medium{background:#fef3c7;color:#b45309;}
+.proj-task-footer{display:flex;align-items:center;justify-content:space-between;}
+.proj-task-av{width:22px;height:22px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;color:#fff;flex-shrink:0;}
+.proj-task-assignee{display:flex;align-items:center;gap:6px;font-size:10px;color:#64748b;}
+.proj-task-budget{font-size:12px;font-weight:800;color:#0f172a;}
+.proj-task-bar-bg{height:3px;background:#f1f5f9;border-radius:2px;margin-top:9px;overflow:hidden;}
+.proj-task-bar-fill{height:3px;border-radius:2px;}
+
 /* PROJ DETAIL PAGE */
 .pd-hero{background:linear-gradient(135deg,#87ceeb 0%,#b0e0f0 60%,#c8eaf5 100%);padding:26px 32px;position:relative;flex-shrink:0;}
 .pd-back{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.35);border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:#0f172a;}
@@ -1312,160 +1381,301 @@ tbody tr:hover .pn{color:#2563eb;}
 
   <!-- PROJETS PAGE -->
   <div id="pg-projets" class="page" style="display:none;">
-    <div style="padding:24px 28px;flex:1;overflow-y:auto;background:#f8fafc;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
-        <div style="font-size:20px;color:#64748b;font-weight:400;">Tous les projets artistes en cours</div>
-        <select style="border:1px solid #e2e8f0;border-radius:8px;background:#fff;padding:6px 12px;font-size:12px;color:#1e293b;outline:none;font-family:'Inter',sans-serif;"><option>Tous les stages</option></select>
-      </div>
+   <div class="proj-page">
 
-      <!-- 4 KPI Cards with SVG sparklines -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;">
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.6px;">Revenus Catalogue</span>
-            <span style="background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;">↗ +33.3%</span>
-          </div>
-          <div style="font-size:42px;font-weight:700;color:#0f172a;letter-spacing:-1.5px;line-height:1;">3,2 M€</div>
-          <svg viewBox="0 0 300 65" preserveAspectRatio="none" style="width:100%;height:65px;display:block;margin:4px 0;">
-            <defs><linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/></linearGradient></defs>
-            <path d="M0,55 C50,48 100,40 150,32 C200,24 250,14 300,6 L300,65 L0,65 Z" fill="url(#sg1)"/>
-            <path d="M0,55 C50,48 100,40 150,32 C200,24 250,14 300,6" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;padding-top:7px;border-top:1px solid #f1f5f9;">
-            <span>Moyenne mensuelle: <strong>550k€</strong></span><span style="color:#16a34a;font-weight:600;">+160k€ vs Jan</span>
-          </div>
+    <!-- Header -->
+    <div class="proj-header">
+      <div class="proj-header-top">
+        <div>
+          <div class="proj-header-title">Projets artistes</div>
+          <div class="proj-header-sub">13 projets actifs &middot; S1 2026 &middot; AXIS Conseil</div>
         </div>
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.6px;">Artistes Actifs</span>
-            <span style="background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;">↗ +40%</span>
-          </div>
-          <div style="font-size:42px;font-weight:700;color:#0f172a;letter-spacing:-1.5px;line-height:1;">14</div>
-          <svg viewBox="0 0 300 65" preserveAspectRatio="none" style="width:100%;height:65px;display:block;margin:4px 0;">
-            <defs><linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/><stop offset="100%" stop-color="#10b981" stop-opacity="0.02"/></linearGradient></defs>
-            <path d="M0,58 C60,54 110,48 160,40 C210,32 255,20 300,8 L300,65 L0,65 Z" fill="url(#sg2)"/>
-            <path d="M0,58 C60,54 110,48 160,40 C210,32 255,20 300,8" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;padding-top:7px;border-top:1px solid #f1f5f9;">
-            <span>Nouveaux signés: <strong>4 artistes</strong></span><span style="color:#16a34a;font-weight:600;">+4 depuis Jan</span>
-          </div>
-        </div>
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.6px;">Investissements Projets</span>
-            <span style="background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;">S1 2026</span>
-          </div>
-          <div style="font-size:42px;font-weight:700;color:#0f172a;letter-spacing:-1.5px;line-height:1;">850k €</div>
-          <svg viewBox="0 0 300 65" preserveAspectRatio="none" style="width:100%;height:65px;display:block;margin:4px 0;">
-            <defs><linearGradient id="sg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/></linearGradient></defs>
-            <path d="M0,40 C50,32 90,18 130,20 C165,22 185,36 210,38 C240,40 270,35 300,33 L300,65 L0,65 Z" fill="url(#sg3)"/>
-            <path d="M0,40 C50,32 90,18 130,20 C165,22 185,36 210,38 C240,40 270,35 300,33" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;padding-top:7px;border-top:1px solid #f1f5f9;">
-            <span>Moyenne mensuelle: <strong>142k€</strong></span><span style="color:#2563eb;font-weight:600;">13 projets actifs</span>
-          </div>
-        </div>
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <span style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.6px;">ROI Catalogue</span>
-            <span style="background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;">↗ +13.9%</span>
-          </div>
-          <div style="font-size:42px;font-weight:700;color:#0f172a;letter-spacing:-1.5px;line-height:1;">1.31x</div>
-          <svg viewBox="0 0 300 65" preserveAspectRatio="none" style="width:100%;height:65px;display:block;margin:4px 0;">
-            <defs><linearGradient id="sg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.22"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.02"/></linearGradient></defs>
-            <path d="M0,60 C60,55 110,48 160,40 C210,32 260,20 300,10 L300,65 L0,65 Z" fill="url(#sg4)"/>
-            <path d="M0,60 C60,55 110,48 160,40 C210,32 260,20 300,10" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;padding-top:7px;border-top:1px solid #f1f5f9;">
-            <span>Jan 2026: <strong>1.15x</strong></span><span style="color:#7c3aed;font-weight:600;">+16 pts en 6 mois</span>
-          </div>
+        <div class="proj-header-actions">
+          <select class="proj-btn" style="cursor:pointer;outline:none;"><option>Tous les types</option><option>Album</option><option>Single</option><option>Tournée</option><option>Catalogue</option><option>Streaming</option></select>
+          <button class="proj-btn primary">+ Nouveau projet</button>
         </div>
       </div>
+      <!-- KPI strip -->
+      <div class="proj-kpi-strip">
+        <div class="proj-kpi">
+          <div class="proj-kpi-label">Revenus catalogue</div>
+          <div class="proj-kpi-val">3,2 M€</div>
+          <div class="proj-kpi-foot"><span>Moy. 550k€/mois</span><span class="proj-kpi-trend green">↗ +33,3%</span></div>
+          <div class="proj-kpi-accent" style="background:linear-gradient(90deg,#3b82f6,#6366f1);"></div>
+        </div>
+        <div class="proj-kpi">
+          <div class="proj-kpi-label">Artistes actifs</div>
+          <div class="proj-kpi-val">14</div>
+          <div class="proj-kpi-foot"><span>4 nouveaux signés</span><span class="proj-kpi-trend green">↗ +40%</span></div>
+          <div class="proj-kpi-accent" style="background:linear-gradient(90deg,#10b981,#059669);"></div>
+        </div>
+        <div class="proj-kpi">
+          <div class="proj-kpi-label">Investissements</div>
+          <div class="proj-kpi-val">850k€</div>
+          <div class="proj-kpi-foot"><span>Moy. 142k€/mois</span><span class="proj-kpi-trend blue">13 actifs</span></div>
+          <div class="proj-kpi-accent" style="background:linear-gradient(90deg,#f59e0b,#ef4444);"></div>
+        </div>
+        <div class="proj-kpi">
+          <div class="proj-kpi-label">ROI catalogue</div>
+          <div class="proj-kpi-val">1.31x</div>
+          <div class="proj-kpi-foot"><span>Jan 2026 : 1.15x</span><span class="proj-kpi-trend purple">↗ +13,9%</span></div>
+          <div class="proj-kpi-accent" style="background:linear-gradient(90deg,#8b5cf6,#ec4899);"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-body">
 
       <!-- Charts row -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;">
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 20px;">
-          <div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:14px;">Évolution des revenus catalogue</div>
-          <svg viewBox="0 0 480 210" style="width:100%;height:210px;">
-            <defs><linearGradient id="catGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.22"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/></linearGradient></defs>
-            <line x1="42" y1="10" x2="42" y2="175" stroke="#e2e8f0" stroke-width="1"/>
-            <line x1="42" y1="175" x2="470" y2="175" stroke="#e2e8f0" stroke-width="1"/>
-            <line x1="42" y1="140" x2="470" y2="140" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <line x1="42" y1="105" x2="470" y2="105" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <line x1="42" y1="70" x2="470" y2="70" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <line x1="42" y1="35" x2="470" y2="35" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <text x="36" y="178" font-size="9" fill="#94a3b8" text-anchor="end">0k€</text>
-            <text x="36" y="143" font-size="9" fill="#94a3b8" text-anchor="end">200k€</text>
-            <text x="36" y="108" font-size="9" fill="#94a3b8" text-anchor="end">400k€</text>
-            <text x="36" y="73" font-size="9" fill="#94a3b8" text-anchor="end">600k€</text>
-            <text x="36" y="38" font-size="9" fill="#94a3b8" text-anchor="end">800k€</text>
-            <text x="85" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Jan</text>
-            <text x="163" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Fév</text>
-            <text x="241" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Mar</text>
-            <text x="319" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Avr</text>
-            <text x="385" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Mai</text>
-            <text x="455" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Jun</text>
-            <path d="M85,96 C118,88 148,82 178,74 C208,66 234,58 262,50 C290,42 318,36 346,30 C374,24 416,18 455,14 L455,175 L85,175 Z" fill="url(#catGrad)"/>
-            <path d="M85,96 C118,88 148,82 178,74 C208,66 234,58 262,50 C290,42 318,36 346,30 C374,24 416,18 455,14" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="85" cy="96" r="3.5" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="178" cy="74" r="3.5" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="262" cy="50" r="3.5" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="346" cy="30" r="3.5" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="455" cy="14" r="3.5" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <path d="M85,106 C120,98 150,90 185,82 C215,75 245,65 278,57 C308,50 360,40 455,30" fill="none" stroke="#10b981" stroke-width="1.8" stroke-dasharray="6,4" stroke-linecap="round"/>
+      <div class="proj-row">
+
+        <!-- Revenue chart -->
+        <div class="proj-card">
+          <div class="proj-card-title">Évolution des revenus catalogue <span class="proj-card-badge">Jan–Jun 2026</span></div>
+          <svg viewBox="0 0 480 190" style="width:100%;height:190px;">
+            <defs>
+              <linearGradient id="catGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/></linearGradient>
+            </defs>
+            <line x1="42" y1="10" x2="42" y2="162" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="42" y1="162" x2="470" y2="162" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="42" y1="130" x2="470" y2="130" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="42" y1="97" x2="470" y2="97" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="42" y1="64" x2="470" y2="64" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="42" y1="31" x2="470" y2="31" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="36" y="165" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">0k€</text>
+            <text x="36" y="133" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">200k€</text>
+            <text x="36" y="100" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">400k€</text>
+            <text x="36" y="67" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">600k€</text>
+            <text x="36" y="34" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">800k€</text>
+            <text x="85" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jan</text>
+            <text x="163" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Fév</text>
+            <text x="241" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mar</text>
+            <text x="319" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Avr</text>
+            <text x="385" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mai</text>
+            <text x="455" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jun</text>
+            <path d="M85,96 C118,88 148,80 178,72 C208,64 234,54 262,46 C290,38 318,32 346,26 C374,20 416,14 455,10 L455,162 L85,162 Z" fill="url(#catGrad)"/>
+            <path d="M85,96 C118,88 148,80 178,72 C208,64 234,54 262,46 C290,38 318,32 346,26 C374,20 416,14 455,10" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="85" cy="96" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="178" cy="72" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="262" cy="46" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="346" cy="26" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="455" cy="10" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <path d="M85,106 C120,98 150,90 185,82 C215,74 245,64 278,56 C308,49 360,38 455,28" fill="none" stroke="#10b981" stroke-width="1.8" stroke-dasharray="6,4" stroke-linecap="round"/>
           </svg>
-          <div style="display:flex;gap:16px;justify-content:center;margin-top:10px;">
-            <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#64748b;"><div style="width:18px;height:2px;background:#3b82f6;"></div>Revenus réels</div>
-            <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#64748b;"><div style="width:18px;height:2px;background:#10b981;border-top:2px dashed #10b981;"></div>Budget prévu</div>
+          <div style="display:flex;gap:20px;justify-content:center;margin-top:8px;">
+            <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b;"><div style="width:20px;height:2.5px;background:#3b82f6;border-radius:2px;"></div>Revenus réels</div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b;"><div style="width:20px;height:0;border-top:2.5px dashed #10b981;"></div>Budget prévu</div>
           </div>
         </div>
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 20px;">
-          <div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:14px;">Performance des projets artistes</div>
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px;">
-            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:9px 11px;"><div style="font-size:10px;color:#64748b;margin-bottom:3px;">ROI Moyen</div><div style="font-size:18px;font-weight:800;color:#16a34a;">1.85x</div><div style="font-size:10px;color:#64748b;">+15%</div></div>
-            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:9px 11px;"><div style="font-size:10px;color:#64748b;margin-bottom:3px;">Taux réussite</div><div style="font-size:18px;font-weight:800;color:#2563eb;">92%</div><div style="font-size:10px;color:#64748b;">+8%</div></div>
-            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:9px 11px;"><div style="font-size:10px;color:#64748b;margin-bottom:3px;">Budget utilisé</div><div style="font-size:18px;font-weight:800;color:#f59e0b;">68%</div><div style="font-size:10px;color:#64748b;">1,4M€</div></div>
-            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:9px 11px;"><div style="font-size:10px;color:#64748b;margin-bottom:3px;">Projets actifs</div><div style="font-size:18px;font-weight:800;color:#7c3aed;">13</div><div style="font-size:10px;color:#64748b;">5 en prod</div></div>
+
+        <!-- Performance panel -->
+        <div class="proj-card">
+          <div class="proj-card-title">Performance par catégorie <span class="proj-card-badge">S1 2026</span></div>
+          <div class="proj-perf-grid">
+            <div class="proj-perf-stat"><div class="proj-perf-stat-lbl">ROI moyen</div><div class="proj-perf-stat-val" style="color:#16a34a;">1.85x</div><div class="proj-perf-stat-sub">↗ +15%</div></div>
+            <div class="proj-perf-stat"><div class="proj-perf-stat-lbl">Taux réussite</div><div class="proj-perf-stat-val" style="color:#2563eb;">92%</div><div class="proj-perf-stat-sub">↗ +8%</div></div>
+            <div class="proj-perf-stat"><div class="proj-perf-stat-lbl">Budget utilisé</div><div class="proj-perf-stat-val" style="color:#d97706;">68%</div><div class="proj-perf-stat-sub">1,4M€</div></div>
+            <div class="proj-perf-stat"><div class="proj-perf-stat-lbl">Projets actifs</div><div class="proj-perf-stat-val" style="color:#7c3aed;">13</div><div class="proj-perf-stat-sub">5 en prod</div></div>
           </div>
-          <div style="padding:8px 0;border-bottom:1px solid #f1f5f9;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;"></div><div><div style="font-size:12px;font-weight:600;color:#0f172a;">Album</div><div style="font-size:10px;color:#64748b;">2 projets • 424k€</div></div></div><div style="display:flex;gap:14px;"><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">ROI</div><div style="font-size:12px;font-weight:700;color:#16a34a;">2.12x</div></div><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">Avanc.</div><div style="font-size:12px;font-weight:700;color:#2563eb;">28%</div></div></div></div><div style="height:4px;background:#f1f5f9;border-radius:2px;"><div style="width:28%;height:4px;background:#8b5cf6;border-radius:2px;"></div></div></div>
-          <div style="padding:8px 0;border-bottom:1px solid #f1f5f9;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#3b82f6;"></div><div><div style="font-size:12px;font-weight:600;color:#0f172a;">Single</div><div style="font-size:10px;color:#64748b;">3 projets • 468k€</div></div></div><div style="display:flex;gap:14px;"><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">ROI</div><div style="font-size:12px;font-weight:700;color:#16a34a;">1.65x</div></div><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">Avanc.</div><div style="font-size:12px;font-weight:700;color:#2563eb;">44%</div></div></div></div><div style="height:4px;background:#f1f5f9;border-radius:2px;"><div style="width:44%;height:4px;background:#3b82f6;border-radius:2px;"></div></div></div>
-          <div style="padding:8px 0;border-bottom:1px solid #f1f5f9;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;"></div><div><div style="font-size:12px;font-weight:600;color:#0f172a;">Tournée</div><div style="font-size:10px;color:#64748b;">3 projets • 1,7M€</div></div></div><div style="display:flex;gap:14px;"><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">ROI</div><div style="font-size:12px;font-weight:700;color:#16a34a;">2.05x</div></div><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">Avanc.</div><div style="font-size:12px;font-weight:700;color:#2563eb;">62%</div></div></div></div><div style="height:4px;background:#f1f5f9;border-radius:2px;"><div style="width:62%;height:4px;background:#f59e0b;border-radius:2px;"></div></div></div>
-          <div style="padding:8px 0;border-bottom:1px solid #f1f5f9;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#ec4899;"></div><div><div style="font-size:12px;font-weight:600;color:#0f172a;">Catalogue</div><div style="font-size:10px;color:#64748b;">2 projets • 1,9M€</div></div></div><div style="display:flex;gap:14px;"><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">ROI</div><div style="font-size:12px;font-weight:700;color:#16a34a;">2.58x</div></div><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">Avanc.</div><div style="font-size:12px;font-weight:700;color:#2563eb;">74%</div></div></div></div><div style="height:4px;background:#f1f5f9;border-radius:2px;"><div style="width:74%;height:4px;background:#ec4899;border-radius:2px;"></div></div></div>
-          <div style="padding:8px 0;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#10b981;"></div><div><div style="font-size:12px;font-weight:600;color:#0f172a;">Streaming</div><div style="font-size:10px;color:#64748b;">2 projets • 1,2M€</div></div></div><div style="display:flex;gap:14px;"><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">ROI</div><div style="font-size:12px;font-weight:700;color:#16a34a;">1.18x</div></div><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">Avanc.</div><div style="font-size:12px;font-weight:700;color:#2563eb;">36%</div></div></div></div><div style="height:4px;background:#f1f5f9;border-radius:2px;"><div style="width:36%;height:4px;background:#10b981;border-radius:2px;"></div></div></div>
+          <div class="proj-cat-row">
+            <div class="proj-cat-dot" style="background:#8b5cf6;"></div>
+            <div class="proj-cat-info"><div class="proj-cat-name">Album</div><div class="proj-cat-sub">2 projets · 424k€</div><div class="proj-cat-bar-bg"><div class="proj-cat-bar-fill" style="width:28%;background:#8b5cf6;"></div></div></div>
+            <div class="proj-cat-nums"><div><div class="proj-cat-num-lbl">ROI</div><div class="proj-cat-num" style="color:#16a34a;">2.12x</div></div><div><div class="proj-cat-num-lbl">Avanc.</div><div class="proj-cat-num" style="color:#2563eb;">28%</div></div></div>
+          </div>
+          <div class="proj-cat-row">
+            <div class="proj-cat-dot" style="background:#3b82f6;"></div>
+            <div class="proj-cat-info"><div class="proj-cat-name">Single</div><div class="proj-cat-sub">3 projets · 468k€</div><div class="proj-cat-bar-bg"><div class="proj-cat-bar-fill" style="width:44%;background:#3b82f6;"></div></div></div>
+            <div class="proj-cat-nums"><div><div class="proj-cat-num-lbl">ROI</div><div class="proj-cat-num" style="color:#16a34a;">1.65x</div></div><div><div class="proj-cat-num-lbl">Avanc.</div><div class="proj-cat-num" style="color:#2563eb;">44%</div></div></div>
+          </div>
+          <div class="proj-cat-row">
+            <div class="proj-cat-dot" style="background:#f59e0b;"></div>
+            <div class="proj-cat-info"><div class="proj-cat-name">Tournée</div><div class="proj-cat-sub">3 projets · 1,7M€</div><div class="proj-cat-bar-bg"><div class="proj-cat-bar-fill" style="width:62%;background:#f59e0b;"></div></div></div>
+            <div class="proj-cat-nums"><div><div class="proj-cat-num-lbl">ROI</div><div class="proj-cat-num" style="color:#16a34a;">2.05x</div></div><div><div class="proj-cat-num-lbl">Avanc.</div><div class="proj-cat-num" style="color:#2563eb;">62%</div></div></div>
+          </div>
+          <div class="proj-cat-row">
+            <div class="proj-cat-dot" style="background:#ec4899;"></div>
+            <div class="proj-cat-info"><div class="proj-cat-name">Catalogue</div><div class="proj-cat-sub">2 projets · 1,9M€</div><div class="proj-cat-bar-bg"><div class="proj-cat-bar-fill" style="width:74%;background:#ec4899;"></div></div></div>
+            <div class="proj-cat-nums"><div><div class="proj-cat-num-lbl">ROI</div><div class="proj-cat-num" style="color:#16a34a;">2.58x</div></div><div><div class="proj-cat-num-lbl">Avanc.</div><div class="proj-cat-num" style="color:#2563eb;">74%</div></div></div>
+          </div>
+          <div class="proj-cat-row">
+            <div class="proj-cat-dot" style="background:#10b981;"></div>
+            <div class="proj-cat-info"><div class="proj-cat-name">Streaming</div><div class="proj-cat-sub">2 projets · 1,2M€</div><div class="proj-cat-bar-bg"><div class="proj-cat-bar-fill" style="width:36%;background:#10b981;"></div></div></div>
+            <div class="proj-cat-nums"><div><div class="proj-cat-num-lbl">ROI</div><div class="proj-cat-num" style="color:#16a34a;">1.18x</div></div><div><div class="proj-cat-num-lbl">Avanc.</div><div class="proj-cat-num" style="color:#2563eb;">36%</div></div></div>
+          </div>
         </div>
       </div>
 
       <!-- Kanban -->
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
+      <div class="proj-kanban">
+
+        <!-- Album -->
         <div>
-          <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0;"><div style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;"></div><span style="font-size:12px;font-weight:700;color:#334155;">Album</span><span style="font-size:11px;color:#94a3b8;">(2)</span></div>
-          <div onclick="openProjDetail('Nouveau Album','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;transition:box-shadow .15s;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Nouveau Album</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">PNL</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Production</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Studio</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">LA</div>Lyza Aider</div><span style="font-size:12px;font-weight:700;color:#1e293b;">235k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:28%;height:3px;background:#8b5cf6;border-radius:2px;"></div></div></div>
-          <div onclick="openProjDetail('Album Deluxe','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Album Deluxe</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Gazo</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Production</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fef3c7;color:#92400e;">Moyenne</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">WB</div>Wiylan Bellache</div><span style="font-size:12px;font-weight:700;color:#1e293b;">189k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:15%;height:3px;background:#8b5cf6;border-radius:2px;"></div></div></div>
+          <div class="proj-col-hd" style="border-color:#8b5cf6;">
+            <div class="proj-cat-dot" style="background:#8b5cf6;"></div>
+            <span class="proj-col-name">Album</span>
+            <span class="proj-col-count" style="background:#f5f3ff;color:#7c3aed;">2</span>
+          </div>
+          <div class="proj-task" style="border-left-color:#8b5cf6;" onclick="openProjDetail('Nouveau Album','projets')">
+            <div class="proj-task-name">Nouveau Album</div>
+            <div class="proj-task-artist">PNL</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">Production</span><span class="proj-tag neutral">Studio</span><span class="proj-tag high">Haute</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#3b82f6;">LA</div>Lyza Aider</div>
+              <span class="proj-task-budget">235k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:28%;background:#8b5cf6;"></div></div>
+          </div>
+          <div class="proj-task" style="border-left-color:#8b5cf6;" onclick="openProjDetail('Album Deluxe','projets')">
+            <div class="proj-task-name">Album Deluxe</div>
+            <div class="proj-task-artist">Gazo</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">Production</span><span class="proj-tag medium">Moyenne</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#10b981;">WB</div>Wiylan B.</div>
+              <span class="proj-task-budget">189k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:15%;background:#8b5cf6;"></div></div>
+          </div>
         </div>
+
+        <!-- Single -->
         <div>
-          <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0;"><div style="width:8px;height:8px;border-radius:50%;background:#3b82f6;"></div><span style="font-size:12px;font-weight:700;color:#334155;">Single</span><span style="font-size:11px;color:#94a3b8;">(3)</span></div>
-          <div onclick="openProjDetail('Single Promo','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Single Promo</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Niska</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Marketing</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Clip</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">ET</div>Edwin Thaly</div><span style="font-size:12px;font-weight:700;color:#1e293b;">87k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:44%;height:3px;background:#3b82f6;border-radius:2px;"></div></div></div>
-          <div onclick="openProjDetail('Feat International','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Feat International</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Hamza</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Collab</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">KM</div>Kenza Matmar</div><span style="font-size:12px;font-weight:700;color:#1e293b;">186k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:55%;height:3px;background:#3b82f6;border-radius:2px;"></div></div></div>
-          <div onclick="openProjDetail('Clip Premium','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Clip Premium</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Ninha</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Clip</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fef3c7;color:#92400e;">Moyenne</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">LA</div>Lyza Aider</div><span style="font-size:12px;font-weight:700;color:#1e293b;">195k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:30%;height:3px;background:#3b82f6;border-radius:2px;"></div></div></div>
+          <div class="proj-col-hd" style="border-color:#3b82f6;">
+            <div class="proj-cat-dot" style="background:#3b82f6;"></div>
+            <span class="proj-col-name">Single</span>
+            <span class="proj-col-count" style="background:#eff6ff;color:#2563eb;">3</span>
+          </div>
+          <div class="proj-task" style="border-left-color:#3b82f6;" onclick="openProjDetail('Single Promo','projets')">
+            <div class="proj-task-name">Single Promo</div>
+            <div class="proj-task-artist">Niska</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">Marketing</span><span class="proj-tag neutral">Clip</span><span class="proj-tag high">Haute</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#f59e0b;">ET</div>Edwin T.</div>
+              <span class="proj-task-budget">87k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:44%;background:#3b82f6;"></div></div>
+          </div>
+          <div class="proj-task" style="border-left-color:#3b82f6;" onclick="openProjDetail('Feat International','projets')">
+            <div class="proj-task-name">Feat International</div>
+            <div class="proj-task-artist">Hamza</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">Collab</span><span class="proj-tag high">Haute</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#ec4899;">KM</div>Kenza M.</div>
+              <span class="proj-task-budget">186k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:55%;background:#3b82f6;"></div></div>
+          </div>
+          <div class="proj-task" style="border-left-color:#3b82f6;" onclick="openProjDetail('Clip Premium','projets')">
+            <div class="proj-task-name">Clip Premium</div>
+            <div class="proj-task-artist">Ninha</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">Clip</span><span class="proj-tag medium">Moyenne</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#3b82f6;">LA</div>Lyza A.</div>
+              <span class="proj-task-budget">195k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:30%;background:#3b82f6;"></div></div>
+          </div>
         </div>
+
+        <!-- Tournée -->
         <div>
-          <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0;"><div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;"></div><span style="font-size:12px;font-weight:700;color:#334155;">Tournée</span><span style="font-size:11px;color:#94a3b8;">(3)</span></div>
-          <div onclick="openProjDetail('Tournée Européenne','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Tournée Européenne</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Nekfeu</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Live</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Tour</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">WB</div>Wiylan Bellache</div><span style="font-size:12px;font-weight:700;color:#1e293b;">460k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:62%;height:3px;background:#f59e0b;border-radius:2px;"></div></div></div>
-          <div onclick="openProjDetail('Concerts Zénith','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Concerts Zénith</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Tiakola</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Live</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">WB</div>Wiylan Bellache</div><span style="font-size:12px;font-weight:700;color:#1e293b;">420k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:48%;height:3px;background:#f59e0b;border-radius:2px;"></div></div></div>
-          <div onclick="openProjDetail('Festival Été','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Festival Été</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Damso</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Festival</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">KM</div>Kenza Matmar</div><span style="font-size:12px;font-weight:700;color:#1e293b;">780k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:62%;height:3px;background:#f59e0b;border-radius:2px;"></div></div></div>
+          <div class="proj-col-hd" style="border-color:#f59e0b;">
+            <div class="proj-cat-dot" style="background:#f59e0b;"></div>
+            <span class="proj-col-name">Tournée</span>
+            <span class="proj-col-count" style="background:#fffbeb;color:#b45309;">3</span>
+          </div>
+          <div class="proj-task" style="border-left-color:#f59e0b;" onclick="openProjDetail('Tournée Européenne','projets')">
+            <div class="proj-task-name">Tournée Européenne</div>
+            <div class="proj-task-artist">Nekfeu</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">Live</span><span class="proj-tag neutral">Tour</span><span class="proj-tag high">Haute</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#10b981;">WB</div>Wiylan B.</div>
+              <span class="proj-task-budget">460k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:62%;background:#f59e0b;"></div></div>
+          </div>
+          <div class="proj-task" style="border-left-color:#f59e0b;" onclick="openProjDetail('Concerts Zénith','projets')">
+            <div class="proj-task-name">Concerts Zénith</div>
+            <div class="proj-task-artist">Tiakola</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">Live</span><span class="proj-tag high">Haute</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#10b981;">WB</div>Wiylan B.</div>
+              <span class="proj-task-budget">420k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:48%;background:#f59e0b;"></div></div>
+          </div>
+          <div class="proj-task" style="border-left-color:#f59e0b;" onclick="openProjDetail('Festival Été','projets')">
+            <div class="proj-task-name">Festival Été</div>
+            <div class="proj-task-artist">Damso</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">Festival</span><span class="proj-tag high">Haute</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#ec4899;">KM</div>Kenza M.</div>
+              <span class="proj-task-budget">780k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:62%;background:#f59e0b;"></div></div>
+          </div>
         </div>
+
+        <!-- Catalogue -->
         <div>
-          <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0;"><div style="width:8px;height:8px;border-radius:50%;background:#ec4899;"></div><span style="font-size:12px;font-weight:700;color:#334155;">Catalogue</span><span style="font-size:11px;color:#94a3b8;">(2)</span></div>
-          <div onclick="openProjDetail('Droits Catalogue','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Droits Catalogue</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Booba</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Droits</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">ET</div>Edwin Thaly</div><span style="font-size:12px;font-weight:700;color:#1e293b;">1.6M€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:74%;height:3px;background:#ec4899;border-radius:2px;"></div></div></div>
-          <div onclick="openProjDetail('Réédition Catalogue','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Réédition Catalogue</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">La Fouine</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fef3c7;color:#92400e;">Moyenne</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">KM</div>Kenza Matmar</div><span style="font-size:12px;font-weight:700;color:#1e293b;">340k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:50%;height:3px;background:#ec4899;border-radius:2px;"></div></div></div>
+          <div class="proj-col-hd" style="border-color:#ec4899;">
+            <div class="proj-cat-dot" style="background:#ec4899;"></div>
+            <span class="proj-col-name">Catalogue</span>
+            <span class="proj-col-count" style="background:#fdf2f8;color:#be185d;">2</span>
+          </div>
+          <div class="proj-task" style="border-left-color:#ec4899;" onclick="openProjDetail('Droits Catalogue','projets')">
+            <div class="proj-task-name">Droits Catalogue</div>
+            <div class="proj-task-artist">Booba</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">Droits</span><span class="proj-tag high">Haute</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#f59e0b;">ET</div>Edwin T.</div>
+              <span class="proj-task-budget">1,6M€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:74%;background:#ec4899;"></div></div>
+          </div>
+          <div class="proj-task" style="border-left-color:#ec4899;" onclick="openProjDetail('Réédition Catalogue','projets')">
+            <div class="proj-task-name">Réédition Catalogue</div>
+            <div class="proj-task-artist">La Fouine</div>
+            <div class="proj-task-tags"><span class="proj-tag medium">Moyenne</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#ec4899;">KM</div>Kenza M.</div>
+              <span class="proj-task-budget">340k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:50%;background:#ec4899;"></div></div>
+          </div>
         </div>
+
+        <!-- Streaming -->
         <div>
-          <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0;"><div style="width:8px;height:8px;border-radius:50%;background:#10b981;"></div><span style="font-size:12px;font-weight:700;color:#334155;">Streaming</span><span style="font-size:11px;color:#94a3b8;">(2)</span></div>
-          <div onclick="openProjDetail('Royalties Q1','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Royalties Q1</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">SCH</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Streaming</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">KM</div>Kenza Matmar</div><span style="font-size:12px;font-weight:700;color:#1e293b;">670k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:36%;height:3px;background:#10b981;border-radius:2px;"></div></div></div>
-          <div onclick="openProjDetail('Royalties YouTube','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Royalties YouTube</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Jul</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">YouTube</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">ET</div>Edwin Thaly</div><span style="font-size:12px;font-weight:700;color:#1e293b;">520k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:42%;height:3px;background:#10b981;border-radius:2px;"></div></div></div>
+          <div class="proj-col-hd" style="border-color:#10b981;">
+            <div class="proj-cat-dot" style="background:#10b981;"></div>
+            <span class="proj-col-name">Streaming</span>
+            <span class="proj-col-count" style="background:#f0fdf4;color:#16a34a;">2</span>
+          </div>
+          <div class="proj-task" style="border-left-color:#10b981;" onclick="openProjDetail('Royalties Q1','projets')">
+            <div class="proj-task-name">Royalties Q1</div>
+            <div class="proj-task-artist">SCH</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">Streaming</span><span class="proj-tag high">Haute</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#ec4899;">KM</div>Kenza M.</div>
+              <span class="proj-task-budget">670k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:36%;background:#10b981;"></div></div>
+          </div>
+          <div class="proj-task" style="border-left-color:#10b981;" onclick="openProjDetail('Royalties YouTube','projets')">
+            <div class="proj-task-name">Royalties YouTube</div>
+            <div class="proj-task-artist">Jul</div>
+            <div class="proj-task-tags"><span class="proj-tag neutral">YouTube</span><span class="proj-tag high">Haute</span></div>
+            <div class="proj-task-footer">
+              <div class="proj-task-assignee"><div class="proj-task-av" style="background:#f59e0b;">ET</div>Edwin T.</div>
+              <span class="proj-task-budget">520k€</span>
+            </div>
+            <div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:42%;background:#10b981;"></div></div>
+          </div>
         </div>
+
       </div>
     </div>
+   </div>
   </div>
 
   <!-- PROJET DETAIL PAGE -->
