@@ -35,6 +35,10 @@ body{font-family:'Inter',sans-serif;background:#f4f6fa;color:#0f172a;min-height:
 .tb-left h1{font-size:18px;font-weight:700;color:#0f172a;}
 .tb-left p{font-size:11px;color:#64748b;margin-top:1px;}
 .tb-right{display:flex;align-items:center;gap:8px;}
+.tb-center{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;}
+.tb-center .crm-view-tabs{background:#f1f5f9;border-radius:9px;padding:3px;display:flex;gap:0;}
+.tb-center .crm-view-tab{font-size:12.5px;font-weight:500;padding:7px 20px;border-radius:7px;cursor:pointer;border:none;background:transparent;color:#64748b;font-family:'Inter',sans-serif;transition:all .12s;}
+.tb-center .crm-view-tab.active{background:#fff;color:#0f172a;font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.08);}
 .tb-search{position:relative;}
 .tb-search input{width:220px;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;padding:7px 12px 7px 32px;font-size:12px;color:#0f172a;outline:none;font-family:'Inter',sans-serif;transition:border-color .15s,width .2s;}
 .tb-search input:focus{border-color:#3b82f6;width:280px;background:#fff;}
@@ -142,7 +146,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .crm-list{background:#fff;border-right:1px solid #e2e8f0;display:flex;flex-direction:column;overflow:hidden;}
 .crm-list-top{padding:20px 20px 14px;border-bottom:1px solid #f1f5f9;}
 .crm-list-heading{font-size:20px;font-weight:700;color:#0f172a;margin-bottom:3px;}
-.crm-list-sub{font-size:11px;color:#64748b;margin-bottom:14px;}
+.crm-list-sub{font-size:11px;color:#64748b;margin-bottom:4px;}
 .crm-view-tabs{display:flex;gap:0;background:#f1f5f9;border-radius:9px;padding:3px;}
 .crm-view-tab{font-size:12px;font-weight:500;padding:6px 14px;border-radius:7px;cursor:pointer;border:none;background:transparent;color:#64748b;font-family:'Inter',sans-serif;transition:all .12s;flex:1;text-align:center;}
 .crm-view-tab.active{background:#fff;color:#0f172a;font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.08);}
@@ -365,7 +369,7 @@ tbody tr:hover .pn{color:#2563eb;}
 /* ── CRM Enhanced ── */
 .crm-add-btn{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;border:none;border-radius:9px;padding:8px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:opacity .15s;flex-shrink:0;}
 .crm-add-btn:hover{opacity:.88;}
-.crm-search-wrap{position:relative;margin-bottom:2px;}
+.crm-search-wrap{position:relative;flex:1;max-width:220px;margin:0 12px;}
 .crm-search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;width:13px;height:13px;pointer-events:none;}
 .crm-search-input{width:100%;border:1px solid #e2e8f0;border-radius:9px;background:#f8fafc;padding:8px 12px 8px 32px;font-size:12px;color:#0f172a;outline:none;font-family:'Inter',sans-serif;transition:border-color .15s;}
 .crm-search-input:focus{border-color:#2563eb;background:#fff;}
@@ -554,10 +558,10 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-kpi-trend.up{color:#16a34a;}
 .db-kpi-trend.neu{color:#64748b;}
 .db-grid2{display:grid;grid-template-columns:1fr 340px;gap:14px;margin-bottom:14px;}
-.db-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;}
+.db-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
 .db-card-hd{padding:13px 18px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;}
 .db-card-title{font-size:13px;font-weight:700;color:#0f172a;display:flex;align-items:center;gap:7px;}
-.db-card-body{padding:12px 18px 8px;}
+.db-card-body{padding:12px 18px 12px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
 .db-rev-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;}
 .db-rev-stat{text-align:center;padding:8px;background:#f8fafc;border-radius:9px;}
 .db-rev-stat-val{font-size:14px;font-weight:800;margin-bottom:1px;}
@@ -576,7 +580,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-expiry-badge{padding:3px 9px;border-radius:10px;font-size:10px;font-weight:700;}
 .db-expiry-badge.red{background:#fee2e2;color:#991b1b;}
 .db-expiry-badge.orange{background:#fef3c7;color:#92400e;}
-.db-three{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px;align-items:start;}
+.db-three{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px;align-items:stretch;}
 .pie-legend{display:flex;flex-direction:column;gap:6px;margin-top:12px;}
 .pie-leg-row{display:flex;align-items:center;justify-content:space-between;font-size:11px;}
 .pie-leg-left{display:flex;align-items:center;gap:7px;color:#475569;font-weight:600;}
@@ -746,6 +750,13 @@ tbody tr:hover .pn{color:#2563eb;}
     <div class="tb-left">
       <h1 id="pageTitle">Dashboard</h1>
       <p>Gestion et analyse des investissements musicaux</p>
+    </div>
+    <div class="tb-center" id="tbCrmTabs" style="display:none;">
+      <div class="crm-view-tabs">
+        <button class="crm-view-tab active" onclick="switchCrmTab('artistes',this)">Artistes</button>
+        <button class="crm-view-tab" onclick="switchCrmTab('activites',this)">Activités</button>
+        <button class="crm-view-tab" onclick="switchCrmTab('opportunites',this)">Opportunités</button>
+      </div>
     </div>
     <div class="tb-right">
       <div class="tb-search" style="position:relative;">
@@ -940,16 +951,11 @@ tbody tr:hover .pn{color:#2563eb;}
               <div class="crm-list-heading">Relations Clients</div>
               <div class="crm-list-sub">12 artistes · 8 opportunités actives</div>
             </div>
+            <div class="crm-search-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" class="crm-search-input" id="crmSearch" placeholder="Rechercher un artiste..." oninput="filterArtists(this.value)">
+            </div>
             <button class="crm-add-btn" onclick="openNewContactModal()">+ Nouveau</button>
-          </div>
-          <div class="crm-search-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" class="crm-search-input" id="crmSearch" placeholder="Rechercher un artiste..." oninput="filterArtists(this.value)">
-          </div>
-          <div class="crm-view-tabs" style="margin-top:10px;">
-            <button class="crm-view-tab active" onclick="switchCrmTab('artistes',this)">Artistes</button>
-            <button class="crm-view-tab" onclick="switchCrmTab('activites',this)">Activités</button>
-            <button class="crm-view-tab" onclick="switchCrmTab('opportunites',this)">Opportunités</button>
           </div>
         </div>
         <div class="crm-list-title" id="artistListTitle">Artistes (12)</div>
@@ -1510,6 +1516,8 @@ function closeArtistDetail() {
   if (navItems[1]) navItems[1].classList.add('active');
   var t = document.getElementById('pageTitle');
   if (t) t.textContent = 'CRM';
+  var tbCrmTabs = document.getElementById('tbCrmTabs');
+  if (tbCrmTabs) tbCrmTabs.style.display = 'flex';
 }
 
 // ── Power BI Page ──
@@ -1646,6 +1654,8 @@ function closePbiView() {
   if (navItems[0]) navItems[0].classList.add('active');
   var t = document.getElementById('pageTitle');
   if (t) t.textContent = 'Dashboard';
+  var tbCrmTabs = document.getElementById('tbCrmTabs');
+  if (tbCrmTabs) tbCrmTabs.style.display = 'none';
 }
 
 // ── Global Search ──
@@ -2408,6 +2418,10 @@ function showPage(id, btn) {
   var t = document.getElementById('pageTitle');
   if (t) t.textContent = titles[id] || id;
   
+  // Show/hide CRM tabs in topbar
+  var tbCrmTabs = document.getElementById('tbCrmTabs');
+  if (tbCrmTabs) tbCrmTabs.style.display = (id === 'crm') ? 'flex' : 'none';
+
   // CRM: reset panels
   if (id === 'crm') {
     var d = document.getElementById('crmDetail');
