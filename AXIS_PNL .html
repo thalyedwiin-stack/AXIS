@@ -817,7 +817,7 @@ tbody tr:hover .pn{color:#2563eb;}
   <header class="topbar">
     <div class="tb-left">
       <h1 id="pageTitle">Dashboard</h1>
-      <p>Gestion et analyse des investissements musicaux</p>
+      <p id="pageSub">Gestion et analyse des investissements musicaux</p>
     </div>
     <div class="tb-center" id="tbCrmTabs" style="display:none;">
       <div class="crm-view-tabs">
@@ -2700,10 +2700,18 @@ function showPage(id, btn) {
     pg.style.minHeight = '0';
   }
   
-  // Update topbar title
+  // Update topbar title + subtitle
   var titles = { dashboard: 'Dashboard', crm: 'CRM', projets: 'Projets artistes', other: 'En développement' };
+  var subs = {
+    dashboard: 'Gestion et analyse des investissements musicaux',
+    crm: 'Portefeuille artistes · Contrats & opportunités',
+    projets: 'Suivi des projets en cours · AXIS Conseil',
+    other: 'Module en cours de développement'
+  };
   var t = document.getElementById('pageTitle');
   if (t) t.textContent = titles[id] || id;
+  var s = document.getElementById('pageSub');
+  if (s) s.textContent = subs[id] || '';
   
   // Show/hide CRM tabs in topbar
   var tbCrmTabs = document.getElementById('tbCrmTabs');
