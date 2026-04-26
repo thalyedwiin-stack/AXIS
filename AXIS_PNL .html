@@ -12,7 +12,10 @@ body{font-family:'Inter',sans-serif;background:#f4f6fa;color:#0f172a;min-height:
 .layout{display:flex;min-height:100vh;}
 
 /* SIDEBAR */
-.sidebar{width:220px;flex-shrink:0;background:#151c2c;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;}
+.sidebar{width:220px;flex-shrink:0;background:#151c2c;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow:hidden;}
+.sb-nav{overflow-y:auto;}
+.sb-nav::-webkit-scrollbar{display:none;}
+.sb-nav{scrollbar-width:none;}
 .sb-logo{padding:18px 16px 14px;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:10px;}
 .sb-logo-icon{width:36px;height:36px;background:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .sb-logo-name{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;}
@@ -792,14 +795,6 @@ tbody tr:hover .pn{color:#2563eb;}
     <button class="sb-item" onclick="showPage('other',this)">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
       Streaming
-    </button>
-    <button class="sb-item" onclick="showPage('other',this)">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-      Reporting
-    </button>
-    <button class="sb-item" onclick="showPage('other',this)">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
-      Roadmap
     </button>
   </nav>
   <div class="sb-footer">
@@ -1977,8 +1972,6 @@ function doSearch(q) {
     { label: 'Projets artistes', sub: 'Suivi des projets', id: 'projets', idx: 2 },
     { label: 'Investissements', sub: 'En développement', id: 'other', idx: 3 },
     { label: 'Streaming', sub: 'En développement', id: 'other', idx: 4 },
-    { label: 'Reporting', sub: 'En développement', id: 'other', idx: 5 },
-    { label: 'Roadmap', sub: 'En développement', id: 'other', idx: 6 }
   ];
   var pgMatches = pages.filter(function(p){ return p.label.toLowerCase().indexOf(ql) !== -1; });
   if (pgMatches.length) {
