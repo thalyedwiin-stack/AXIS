@@ -493,8 +493,9 @@ tbody tr:hover .pn{color:#2563eb;}
 .pro-kpi-foot{display:flex;align-items:flex-end;justify-content:space-between;}
 .pro-kpi-trend{font-size:11px;font-weight:700;}
 .pro-kpi-trend.up{color:#10b981;}.pro-kpi-trend.dn{color:#ef4444;}.pro-kpi-trend.neu{color:#94a3b8;}
-.pro-main-grid{display:grid;grid-template-columns:1fr 300px;gap:12px;margin-bottom:14px;align-items:start;}
-.pro-chart-card{background:#fff;border-radius:14px;padding:18px 22px 14px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 0 0 1px rgba(15,23,42,.04);}
+.pro-main-grid{display:grid;grid-template-columns:1fr 300px;gap:12px;margin-bottom:14px;align-items:stretch;}
+.pro-chart-card{background:#fff;border-radius:14px;padding:18px 22px 14px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 0 0 1px rgba(15,23,42,.04);display:flex;flex-direction:column;}
+.pro-chart-canvas-wrap{flex:1;position:relative;min-height:140px;}
 .pro-chart-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;}
 .pro-chart-ttl{font-size:13px;font-weight:700;color:#0f172a;}
 .pro-chart-sub{font-size:11px;color:#94a3b8;margin-top:2px;}
@@ -838,7 +839,7 @@ tbody tr:hover .pn{color:#2563eb;}
               <div class="pro-legend-item"><div class="pro-legend-line" style="background:#f97316;"></div>Royalties</div>
             </div>
           </div>
-          <div style="position:relative;height:200px;"><canvas id="dbMainChart"></canvas></div>
+          <div class="pro-chart-canvas-wrap"><canvas id="dbMainChart"></canvas></div>
           <div class="pro-chart-stats">
             <div class="pro-chart-stat"><div class="pro-chart-stat-val" style="color:#2563eb;">8,2 M&euro;</div><div class="pro-chart-stat-lbl">Revenus totaux</div></div>
             <div class="pro-chart-stat"><div class="pro-chart-stat-val" style="color:#f97316;">5,2 M&euro;</div><div class="pro-chart-stat-lbl">Royalties vers&eacute;es</div></div>
