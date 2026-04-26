@@ -35,9 +35,18 @@ body{font-family:'Inter',sans-serif;background:#f4f6fa;color:#0f172a;min-height:
 .tb-left p{font-size:11px;color:#64748b;margin-top:1px;}
 .tb-right{display:flex;align-items:center;gap:8px;}
 .tb-search{position:relative;}
-.tb-search input{width:200px;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;padding:7px 12px 7px 32px;font-size:12px;color:#0f172a;outline:none;font-family:'Inter',sans-serif;}
+.tb-search input{width:220px;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;padding:7px 12px 7px 32px;font-size:12px;color:#0f172a;outline:none;font-family:'Inter',sans-serif;transition:border-color .15s,width .2s;}
+.tb-search input:focus{border-color:#3b82f6;width:280px;background:#fff;}
 .tb-search input::placeholder{color:#94a3b8;}
 .tb-search svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;width:12px;height:12px;}
+.sr-item{display:flex;align-items:center;gap:10px;padding:10px 14px;cursor:pointer;border-bottom:1px solid #f1f5f9;transition:background .1s;}
+.sr-item:last-child{border-bottom:none;}
+.sr-item:hover{background:#f8fafc;}
+.sr-icon{width:28px;height:28px;border-radius:8px;background:#eff6ff;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
+.sr-icon.page{background:#f0fdf4;}
+.sr-label{font-size:13px;font-weight:600;color:#0f172a;}
+.sr-sub{font-size:11px;color:#94a3b8;margin-top:1px;}
+.sr-header{padding:8px 14px 4px;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;}
 .tb-btn{display:flex;align-items:center;gap:5px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;padding:6px 12px;font-size:12px;font-weight:500;color:#475569;cursor:pointer;font-family:'Inter',sans-serif;}
 .bell-wrap{position:relative;}
 .bell-btn{width:32px;height:32px;border-radius:50%;background:#f8fafc;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#475569;outline:none;}
@@ -679,14 +688,11 @@ tbody tr:hover .pn{color:#2563eb;}
       <p>Gestion et analyse des investissements musicaux</p>
     </div>
     <div class="tb-right">
-      <div class="tb-search">
+      <div class="tb-search" style="position:relative;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" placeholder="Rechercher...">
+        <input type="text" id="globalSearch" placeholder="Rechercher..." oninput="doSearch(this.value)" autocomplete="off" onkeydown="if(event.key==='Escape')closeSearch()">
+        <div id="searchResults" style="display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:9999;overflow:hidden;min-width:280px;"></div>
       </div>
-      <button class="tb-btn">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
-        Filtrer
-      </button>
       <div class="bell-wrap">
         <button class="bell-btn" onclick="toggleNotif()">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
@@ -710,9 +716,6 @@ tbody tr:hover .pn{color:#2563eb;}
       <div>
         <div class="db-header-title">Dashboard AXIS Conseil</div>
         <div class="db-header-sub">Vue d'ensemble &mdash; Janvier à Juin 2026 &middot; PNL Industrie</div>
-      </div>
-      <div style="display:flex;align-items:center;gap:10px;">
-        <select class="db-period"><option>Tous les artistes</option><option>PNL</option><option>Booba</option><option>Damso</option><option>Niska</option></select>
       </div>
     </div>
 
@@ -1574,6 +1577,87 @@ function closePbiView() {
   var t = document.getElementById('pageTitle');
   if (t) t.textContent = 'Dashboard';
 }
+
+// ── Global Search ──
+var _searchTimeout = null;
+function doSearch(q) {
+  clearTimeout(_searchTimeout);
+  var panel = document.getElementById('searchResults');
+  q = q.trim();
+  if (!q) { panel.style.display = 'none'; return; }
+  var ql = q.toLowerCase();
+  var html = '';
+
+  // Artists
+  var artistMatches = Object.keys(artists).filter(function(n){ return n.toLowerCase().indexOf(ql) !== -1; });
+  if (artistMatches.length) {
+    html += '<div class="sr-header">Artistes</div>';
+    artistMatches.forEach(function(name) {
+      var a = artists[name];
+      var av = name.substring(0,2).toUpperCase();
+      var sub = (a.genre || 'Artiste') + (a.manager ? ' &middot; ' + a.manager : '');
+      html += '<div class="sr-item" onclick="searchGoArtist(\'' + name.replace(/'/g,"\\'") + '\')">'
+        + '<div class="sr-icon" style="background:#eff6ff;color:#2563eb;font-size:10px;font-weight:800;">' + av + '</div>'
+        + '<div><div class="sr-label">' + name + '</div><div class="sr-sub">' + sub + '</div></div>'
+        + '</div>';
+    });
+  }
+
+  // Pages
+  var pages = [
+    { label: 'Dashboard', sub: 'Vue d\'ensemble', id: 'dashboard', idx: 0 },
+    { label: 'CRM', sub: 'Gestion des contacts', id: 'crm', idx: 1 },
+    { label: 'Projets artistes', sub: 'Suivi des projets', id: 'projets', idx: 2 },
+    { label: 'Investissements', sub: 'En développement', id: 'other', idx: 3 },
+    { label: 'Streaming', sub: 'En développement', id: 'other', idx: 4 },
+    { label: 'Reporting', sub: 'En développement', id: 'other', idx: 5 },
+    { label: 'Roadmap', sub: 'En développement', id: 'other', idx: 6 }
+  ];
+  var pgMatches = pages.filter(function(p){ return p.label.toLowerCase().indexOf(ql) !== -1; });
+  if (pgMatches.length) {
+    html += '<div class="sr-header">Pages</div>';
+    pgMatches.forEach(function(p) {
+      html += '<div class="sr-item" onclick="searchGoPage(\'' + p.id + '\',' + p.idx + ')">'
+        + '<div class="sr-icon page" style="font-size:13px;">&#128196;</div>'
+        + '<div><div class="sr-label">' + p.label + '</div><div class="sr-sub">' + p.sub + '</div></div>'
+        + '</div>';
+    });
+  }
+
+  if (!html) {
+    html = '<div style="padding:14px 16px;color:#94a3b8;font-size:13px;">Aucun résultat pour &laquo;&nbsp;' + q + '&nbsp;&raquo;</div>';
+  }
+  panel.innerHTML = html;
+  panel.style.display = 'block';
+}
+
+function closeSearch() {
+  var panel = document.getElementById('searchResults');
+  if (panel) panel.style.display = 'none';
+  var inp = document.getElementById('globalSearch');
+  if (inp) inp.value = '';
+}
+
+function searchGoArtist(name) {
+  closeSearch();
+  var navItems = document.querySelectorAll('.sb-item');
+  if (navItems[1]) navItems[1].click();
+  setTimeout(function() { openArtistDetail(name); }, 120);
+}
+
+function searchGoPage(id, idx) {
+  closeSearch();
+  var navItems = document.querySelectorAll('.sb-item');
+  if (navItems[idx]) navItems[idx].click();
+}
+
+document.addEventListener('click', function(e) {
+  var wrap = document.querySelector('.tb-search');
+  if (wrap && !wrap.contains(e.target)) {
+    var panel = document.getElementById('searchResults');
+    if (panel) panel.style.display = 'none';
+  }
+});
 
 // ── Navigation ──
 // showPage defined below
