@@ -9,33 +9,50 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Inter',sans-serif;background:#f4f6fa;color:#0f172a;min-height:100vh;font-size:14px;}
-.layout{display:flex;min-height:100vh;}
+.layout{display:flex;flex-direction:column;min-height:100vh;}
 
-/* SIDEBAR */
-.sidebar{width:220px;flex-shrink:0;background:#151c2c;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow:hidden;}
-.sb-nav{overflow-y:auto;}
-.sb-nav::-webkit-scrollbar{display:none;}
-.sb-nav{scrollbar-width:none;}
-.sb-logo{padding:18px 16px 14px;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:10px;}
-.sb-logo-icon{width:36px;height:36px;background:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.sb-logo-name{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;}
-.sb-logo-sub{font-size:10px;color:#64748b;margin-top:1px;}
-.sb-nav{padding:10px 8px;flex:1;}
-.sb-item{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:8px;font-size:13px;font-weight:500;color:#94a3b8;cursor:pointer;transition:all .15s;margin-bottom:2px;border:none;background:none;width:100%;text-align:left;font-family:'Inter',sans-serif;}
-.sb-item:hover{background:rgba(255,255,255,0.05);color:#fff;}
-.sb-item.active{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(59,130,246,0.3);}
-.sb-item svg{width:15px;height:15px;flex-shrink:0;}
-.sb-footer{padding:12px 14px;border-top:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:10px;}
-.sb-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;}
-.sb-uname{font-size:13px;font-weight:600;color:#fff;}
-.sb-urole{font-size:10px;color:#64748b;}
+/* NAVBAR */
+.navbar{background:#151c2c;height:54px;display:flex;align-items:center;padding:0 20px;gap:0;flex-shrink:0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.06);}
+.nav-logo{display:flex;align-items:center;gap:10px;padding-right:28px;border-right:1px solid rgba(255,255,255,.08);flex-shrink:0;}
+.nav-logo-icon{width:32px;height:32px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-logo-name{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;}
+.nav-logo-sub{font-size:10px;color:#64748b;margin-top:1px;}
+.nav-items{display:flex;align-items:center;justify-content:center;gap:2px;flex:1;padding:0 20px;}
+.sb-item{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:8px;font-size:12.5px;font-weight:500;color:#94a3b8;cursor:pointer;transition:all .15s;border:none;background:none;font-family:'Inter',sans-serif;white-space:nowrap;}
+.sb-item:hover{background:rgba(255,255,255,.06);color:#fff;}
+.sb-item.active{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;font-weight:600;box-shadow:0 3px 10px rgba(59,130,246,.3);}
+.sb-item svg{width:14px;height:14px;flex-shrink:0;}
+.nav-user{display:flex;align-items:center;gap:10px;padding-left:20px;border-left:1px solid rgba(255,255,255,.08);flex-shrink:0;position:relative;}
+.nav-user-btn{display:flex;align-items:center;gap:10px;cursor:pointer;background:none;border:none;padding:4px 6px;border-radius:8px;transition:background .15s;font-family:'Inter',sans-serif;}
+.nav-user-btn:hover{background:rgba(255,255,255,.06);}
+.nav-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;}
+.nav-uname{font-size:12.5px;font-weight:600;color:#fff;}
+.nav-urole{font-size:10px;color:#64748b;}
+.nav-chevron{width:14px;height:14px;color:#64748b;transition:transform .2s;flex-shrink:0;}
+.nav-user.open .nav-chevron{transform:rotate(180deg);}
+.nav-dropdown{position:absolute;top:calc(100% + 8px);right:0;width:230px;background:#1e2a3a;border:1px solid rgba(255,255,255,.1);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.4);z-index:200;opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .18s,transform .18s;}
+.nav-user.open .nav-dropdown{opacity:1;transform:translateY(0);pointer-events:auto;}
+.nav-dd-head{padding:14px 16px 12px;border-bottom:1px solid rgba(255,255,255,.07);}
+.nav-dd-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;margin-bottom:10px;}
+.nav-dd-name{font-size:13px;font-weight:700;color:#fff;}
+.nav-dd-email{font-size:11px;color:#64748b;margin-top:2px;}
+.nav-dd-role{display:inline-flex;align-items:center;margin-top:6px;background:rgba(99,102,241,.18);border:1px solid rgba(99,102,241,.3);border-radius:20px;padding:2px 9px;font-size:10px;font-weight:600;color:#a5b4fc;}
+.nav-dd-items{padding:6px;}
+.nav-dd-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;cursor:pointer;font-size:12.5px;color:#cbd5e1;transition:background .12s,color .12s;border:none;background:none;width:100%;font-family:'Inter',sans-serif;text-align:left;}
+.nav-dd-item:hover{background:rgba(255,255,255,.07);color:#fff;}
+.nav-dd-item svg{width:14px;height:14px;flex-shrink:0;color:#64748b;}
+.nav-dd-item:hover svg{color:#a5b4fc;}
+.nav-dd-sep{height:1px;background:rgba(255,255,255,.07);margin:4px 6px;}
+.nav-dd-item.danger{color:#f87171;}
+.nav-dd-item.danger svg{color:#f87171;}
+.nav-dd-item.danger:hover{background:rgba(239,68,68,.12);color:#fca5a5;}
 
 /* MAIN */
 .main{flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden;}
 
 /* TOPBAR */
-.topbar{background:#fff;border-bottom:1px solid #e2e8f0;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;flex-shrink:0;}
-.tb-left h1{font-size:18px;font-weight:700;color:#0f172a;}
+.topbar{background:#fff;border-bottom:1px solid #e2e8f0;padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:54px;z-index:50;flex-shrink:0;}
+.tb-left h1{font-size:17px;font-weight:700;color:#0f172a;}
 .tb-left p{font-size:11px;color:#64748b;margin-top:1px;}
 .tb-right{display:flex;align-items:center;gap:8px;}
 .tb-center{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;}
@@ -439,6 +456,108 @@ tbody tr:hover .pn{color:#2563eb;}
 .proj-task-bar-bg{height:3px;background:#f1f5f9;border-radius:2px;margin-top:9px;overflow:hidden;}
 .proj-task-bar-fill{height:3px;border-radius:2px;}
 
+/* ── Page Investissements ── */
+.inv-page{flex:1;overflow-y:auto;background:#f0f4f8;display:flex;flex-direction:column;}
+.inv-page-hd{padding:22px 28px 16px;background:#f0f4f8;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.inv-page-title{font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.4px;}
+.inv-cat-select{border:1.5px solid #e2e8f0;border-radius:9px;padding:8px 14px;font-size:12px;font-weight:600;font-family:'Inter',sans-serif;color:#374151;background:#fff;cursor:pointer;outline:none;}
+.inv-body{padding:0 28px 28px;display:flex;flex-direction:column;gap:16px;}
+/* KPI strip */
+.inv-kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.inv-kpi-card{background:#fff;border-radius:14px;padding:18px 20px;border:1px solid #e8edf2;position:relative;overflow:hidden;}
+.inv-kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;}
+.inv-kpi-card.blue::before{background:linear-gradient(90deg,#2563eb,#60a5fa);}
+.inv-kpi-card.green::before{background:linear-gradient(90deg,#10b981,#34d399);}
+.inv-kpi-card.amber::before{background:linear-gradient(90deg,#f59e0b,#fbbf24);}
+.inv-kpi-card.purple::before{background:linear-gradient(90deg,#8b5cf6,#a78bfa);}
+.inv-kpi-card.teal::before{background:linear-gradient(90deg,#0891b2,#22d3ee);}
+.inv-kpi-label{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;}
+.inv-kpi-val{font-size:26px;font-weight:800;color:#0f172a;letter-spacing:-.6px;margin-bottom:4px;}
+.inv-kpi-val.teal{color:#0891b2;}
+.inv-kpi-val.green{color:#10b981;}
+.inv-kpi-sub{font-size:11px;color:#94a3b8;}
+.inv-kpi-trend{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;}
+.inv-kpi-trend.up{color:#10b981;background:#f0fdf4;}
+.inv-kpi-trend.neu{color:#64748b;background:#f8fafc;}
+/* Split row */
+.inv-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.inv-card{background:#fff;border-radius:14px;padding:20px 22px;border:1px solid #e8edf2;}
+.inv-card-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;}
+.inv-card-badge{font-size:10px;font-weight:600;color:#64748b;background:#f8fafc;border:1px solid #e2e8f0;padding:3px 10px;border-radius:20px;}
+/* Category bars */
+.inv-cat-row{margin-bottom:16px;}
+.inv-cat-row:last-child{margin-bottom:0;}
+.inv-cat-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+.inv-cat-left{display:flex;align-items:center;gap:8px;}
+.inv-cat-num{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.inv-cat-name{font-size:13px;font-weight:600;color:#0f172a;}
+.inv-cat-projects{font-size:11px;color:#94a3b8;margin-top:1px;}
+.inv-cat-right{text-align:right;}
+.inv-cat-amount{font-size:13px;font-weight:700;color:#2563eb;}
+.inv-cat-max{font-size:10px;color:#94a3b8;}
+.inv-cat-bar-bg{height:8px;background:#f1f5f9;border-radius:99px;overflow:hidden;margin-top:6px;}
+.inv-cat-bar-fill{height:8px;border-radius:99px;transition:width .6s ease;}
+.inv-cat-pct{font-size:10px;font-weight:700;color:#64748b;text-align:right;margin-top:3px;}
+/* KPI summary strip */
+.inv-summary-strip{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;border-radius:14px;padding:18px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.inv-summary-item{text-align:center;border-right:1px solid #bfdbfe;padding:0 16px;}
+.inv-summary-item:last-child{border-right:none;}
+.inv-summary-label{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.inv-summary-val{font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.4px;}
+.inv-summary-val.teal{color:#0891b2;}
+.inv-summary-val.green{color:#10b981;}
+/* Table */
+.inv-table-card{background:#fff;border-radius:14px;border:1px solid #e8edf2;overflow:hidden;}
+.inv-table-hd{padding:16px 22px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;}
+.inv-table-title{font-size:14px;font-weight:700;color:#0f172a;}
+.inv-table-count{font-size:11px;color:#94a3b8;font-weight:500;}
+.inv-table{width:100%;border-collapse:collapse;}
+.inv-table th{padding:10px 16px;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;text-align:left;background:#fafafa;border-bottom:1px solid #f1f5f9;}
+.inv-table td{padding:12px 16px;font-size:13px;border-bottom:1px solid #f8fafc;vertical-align:middle;}
+.inv-table tr:last-child td{border-bottom:none;}
+.inv-table tr:hover td{background:#fafbff;}
+.inv-t-proj{font-weight:700;color:#0f172a;}
+.inv-t-artist{color:#475569;}
+.inv-t-cat{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;}
+.inv-t-cat.album{background:#f5f3ff;color:#7c3aed;}
+.inv-t-cat.single{background:#eff6ff;color:#2563eb;}
+.inv-t-cat.tournee{background:#fffbeb;color:#b45309;}
+.inv-t-cat.catalogue{background:#fdf2f8;color:#9d174d;}
+.inv-t-cat.streaming{background:#f0fdf4;color:#15803d;}
+.inv-t-investi{font-weight:600;color:#0f172a;}
+.inv-t-rev{font-weight:700;color:#2563eb;}
+.inv-t-roi{display:inline-block;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;font-size:12px;font-weight:800;padding:4px 11px;border-radius:20px;}
+.inv-t-risk{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;}
+.inv-t-risk.faible{background:#f0fdf4;color:#15803d;}
+.inv-t-risk.moyen{background:#fffbeb;color:#b45309;}
+.inv-t-risk.eleve{background:#fef2f2;color:#dc2626;}
+.inv-t-statut{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:#f8fafc;color:#475569;border:1px solid #e2e8f0;}
+/* Bottom 3-col */
+.inv-bottom-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.inv-top3-item{background:linear-gradient(135deg,#3b82f6,#60a5fa);border-radius:12px;padding:14px 16px;margin-bottom:10px;position:relative;overflow:hidden;}
+.inv-top3-item:last-child{margin-bottom:0;}
+.inv-top3-rank{position:absolute;top:10px;right:12px;width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,.2);font-size:11px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;}
+.inv-top3-name{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
+.inv-top3-artist{font-size:11px;color:rgba(255,255,255,.7);margin-bottom:10px;}
+.inv-top3-foot{display:flex;align-items:center;justify-content:space-between;}
+.inv-top3-budget{font-size:12px;color:rgba(255,255,255,.8);}
+.inv-top3-roi{background:rgba(255,255,255,.2);border-radius:8px;padding:3px 9px;font-size:12px;font-weight:800;color:#fff;}
+.inv-risk-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f8fafc;}
+.inv-risk-row:last-child{border-bottom:none;}
+.inv-risk-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.inv-risk-label{font-size:13px;font-weight:600;color:#0f172a;flex:1;}
+.inv-risk-count{font-size:12px;color:#64748b;}
+.inv-risk-bar-bg{flex:2;height:7px;background:#f1f5f9;border-radius:99px;overflow:hidden;}
+.inv-risk-bar-fill{height:7px;border-radius:99px;}
+.inv-alert-item{border-radius:10px;padding:11px 14px;margin-bottom:9px;display:flex;align-items:flex-start;gap:10px;}
+.inv-alert-item:last-child{margin-bottom:0;}
+.inv-alert-item.green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.inv-alert-item.blue{background:#eff6ff;border:1px solid #bfdbfe;}
+.inv-alert-item.amber{background:#fffbeb;border:1px solid #fde68a;}
+.inv-alert-icon{font-size:14px;flex-shrink:0;margin-top:1px;}
+.inv-alert-title{font-size:12px;font-weight:700;color:#0f172a;margin-bottom:2px;}
+.inv-alert-sub{font-size:11px;color:#64748b;}
+
 /* ── Nouveau Projet Drawer ── */
 .np-ov{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);z-index:5000;display:none;justify-content:flex-end;}
 .np-ov.open{display:flex;}
@@ -500,8 +619,25 @@ tbody tr:hover .pn{color:#2563eb;}
 
 /* PROJ DETAIL PAGE */
 .pd-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:26px 32px;position:relative;flex-shrink:0;}
-.pd-back{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:#fff;}
+.pd-hero-actions{position:absolute;top:14px;right:14px;display:flex;gap:8px;align-items:center;}
+.pd-back{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:#fff;transition:background .15s;}
 .pd-back:hover{background:rgba(255,255,255,.25);}
+.pd-del-btn{background:rgba(239,68,68,.18);border:1px solid rgba(239,68,68,.35);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:#fca5a5;display:flex;align-items:center;gap:5px;transition:all .15s;}
+.pd-del-btn:hover{background:rgba(239,68,68,.32);border-color:rgba(239,68,68,.6);color:#fff;}
+/* Confirmation dialog */
+.pd-confirm-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(5px);z-index:9500;display:none;align-items:center;justify-content:center;}
+.pd-confirm-ov.open{display:flex;}
+.pd-confirm-box{background:#fff;border-radius:18px;padding:32px 28px 24px;max-width:380px;width:90%;box-shadow:0 28px 70px rgba(0,0,0,.22);text-align:center;animation:confirmPop .18s cubic-bezier(.34,1.56,.64,1);}
+@keyframes confirmPop{from{opacity:0;transform:scale(.92);}to{opacity:1;transform:scale(1);}}
+.pd-confirm-icon{width:56px;height:56px;border-radius:50%;background:#fef2f2;border:2px solid #fecaca;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+.pd-confirm-title{font-size:17px;font-weight:800;color:#0f172a;margin-bottom:8px;letter-spacing:-.2px;}
+.pd-confirm-msg{font-size:13px;color:#64748b;margin-bottom:6px;line-height:1.55;}
+.pd-confirm-proj{font-size:13px;font-weight:700;color:#1d4ed8;background:#eff6ff;border-radius:6px;padding:5px 12px;display:inline-block;margin-bottom:22px;}
+.pd-confirm-btns{display:flex;gap:10px;}
+.pd-confirm-cancel{flex:1;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;color:#64748b;background:#fff;font-family:'Inter',sans-serif;transition:all .15s;}
+.pd-confirm-cancel:hover{background:#f8fafc;border-color:#cbd5e1;}
+.pd-confirm-ok{flex:1;background:linear-gradient(135deg,#dc2626,#ef4444);border:none;border-radius:10px;padding:12px;font-size:13px;font-weight:700;cursor:pointer;color:#fff;font-family:'Inter',sans-serif;box-shadow:0 4px 14px rgba(220,38,38,.3);transition:all .15s;}
+.pd-confirm-ok:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(220,38,38,.4);}
 .pd-type-badge{font-size:10px;font-weight:700;background:rgba(255,255,255,.15);color:#fff;padding:3px 11px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;margin-right:7px;border:1px solid rgba(255,255,255,.2);}
 .pd-prio-badge{font-size:10px;font-weight:700;background:#ef4444;color:#fff;padding:3px 11px;border-radius:20px;display:inline-block;}
 .pd-prio-badge.moy{background:#f59e0b;}
@@ -884,11 +1020,11 @@ tbody tr:hover .pn{color:#2563eb;}
 <body>
 <div class="layout">
 
-<!-- SIDEBAR -->
-<aside class="sidebar">
-  <div class="sb-logo">
-    <div class="sb-logo-icon">
-      <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
         <path d="M28 72 L44 28 L50 38 L38 72 Z" fill="#1a3a6b"/>
         <path d="M33 55 L47 55 L45 62 L31 62 Z" fill="#1a3a6b"/>
         <path d="M44 28 L56 28 L68 72 L58 72 Z" fill="#1a3a6b"/>
@@ -901,11 +1037,12 @@ tbody tr:hover .pn{color:#2563eb;}
       </svg>
     </div>
     <div>
-      <div class="sb-logo-name">AXIS Conseil</div>
-      <div class="sb-logo-sub">PNL Industrie</div>
+      <div class="nav-logo-name">AXIS Conseil</div>
+      <div class="nav-logo-sub">PNL Industrie</div>
     </div>
   </div>
-  <nav class="sb-nav">
+
+  <div class="nav-items">
     <button class="sb-item active" onclick="showPage('dashboard',this)">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
       Dashboard
@@ -918,7 +1055,7 @@ tbody tr:hover .pn{color:#2563eb;}
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
       Projets artistes
     </button>
-    <button class="sb-item" onclick="showPage('other',this)">
+    <button class="sb-item" onclick="showPage('invest',this)">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       Investissements
     </button>
@@ -926,15 +1063,42 @@ tbody tr:hover .pn{color:#2563eb;}
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
       Streaming
     </button>
-  </nav>
-  <div class="sb-footer">
-    <div class="sb-av">RW</div>
-    <div>
-      <div class="sb-uname">Rayan Wehbi</div>
-      <div class="sb-urole">Directeur Général</div>
+  </div>
+
+  <div class="nav-user" id="navUserWrap">
+    <button class="nav-user-btn" onclick="toggleNavDropdown(event)">
+      <div class="nav-av">RW</div>
+      <div>
+        <div class="nav-uname">Rayan Wehbi</div>
+        <div class="nav-urole">Directeur Général</div>
+      </div>
+      <svg class="nav-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </button>
+    <div class="nav-dropdown" id="navDropdown">
+      <div class="nav-dd-head">
+        <div class="nav-dd-av">RW</div>
+        <div class="nav-dd-name">Rayan Wehbi</div>
+        <div class="nav-dd-email">rayan@pnl.com</div>
+        <div class="nav-dd-role">Directeur Général</div>
+      </div>
+      <div class="nav-dd-items">
+        <button class="nav-dd-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          Mon profil
+        </button>
+        <button class="nav-dd-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Paramètres
+        </button>
+        <div class="nav-dd-sep"></div>
+        <button class="nav-dd-item danger">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+          Se déconnecter
+        </button>
+      </div>
     </div>
   </div>
-</aside>
+</nav>
 
 <!-- MAIN -->
 <div class="main">
@@ -1759,9 +1923,31 @@ tbody tr:hover .pn{color:#2563eb;}
   </div>
 
   <!-- PROJET DETAIL PAGE -->
+  <!-- CONFIRMATION SUPPRESSION PROJET -->
+  <div class="pd-confirm-ov" id="pdConfirmOv">
+    <div class="pd-confirm-box">
+      <div class="pd-confirm-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+      </div>
+      <div class="pd-confirm-title">Supprimer ce projet ?</div>
+      <div class="pd-confirm-msg">Cette action est irréversible. Le projet sera définitivement supprimé de la liste.</div>
+      <div class="pd-confirm-proj" id="pdConfirmName"></div>
+      <div class="pd-confirm-btns">
+        <button class="pd-confirm-cancel" onclick="closeProjConfirm()">Annuler</button>
+        <button class="pd-confirm-ok" onclick="confirmDeleteProj()">Supprimer</button>
+      </div>
+    </div>
+  </div>
+
   <div id="pg-projet-detail" style="display:none;flex-direction:column;flex:1;overflow-y:auto;">
     <div class="pd-hero">
-      <button class="pd-back" onclick="closeProjDetail()">← Retour</button>
+      <div class="pd-hero-actions">
+        <button class="pd-del-btn" onclick="askDeleteProj()">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+          Supprimer
+        </button>
+        <button class="pd-back" onclick="closeProjDetail()">← Projets</button>
+      </div>
       <div id="pdBadges"></div>
       <div class="pd-title" id="pdTitle"></div>
       <div class="pd-artist" id="pdArtist"></div>
@@ -1775,6 +1961,278 @@ tbody tr:hover .pn{color:#2563eb;}
 
   <!-- POWER BI PAGE -->
   <div id="pg-powerbi" style="display:none;"></div>
+
+  <!-- INVESTISSEMENTS PAGE -->
+  <div id="pg-invest" class="page" style="display:none;flex-direction:column;flex:1;min-height:0;">
+    <div class="inv-page">
+
+      <!-- Page header -->
+      <div class="inv-page-hd">
+        <div class="inv-page-title">Pilotage des investissements 2026</div>
+        <select class="inv-cat-select">
+          <option>Toutes les catégories</option>
+          <option>Album</option><option>Single</option><option>Tournée</option>
+          <option>Catalogue</option><option>Streaming</option>
+        </select>
+      </div>
+
+      <div class="inv-body">
+
+        <!-- KPI strip -->
+        <div class="inv-kpi-strip">
+          <div class="inv-kpi-card blue">
+            <div class="inv-kpi-label">Budget total 2026 <span>🎒</span></div>
+            <div class="inv-kpi-val">2,8 M€</div>
+            <div class="inv-kpi-sub">Enveloppe annuelle</div>
+          </div>
+          <div class="inv-kpi-card green">
+            <div class="inv-kpi-label">Investi à date <span>💎</span></div>
+            <div class="inv-kpi-val teal">850k €</div>
+            <div class="inv-kpi-sub">30% du budget</div>
+          </div>
+          <div class="inv-kpi-card amber">
+            <div class="inv-kpi-label">Reste disponible <span>💰</span></div>
+            <div class="inv-kpi-val">1,95 M€</div>
+            <div class="inv-kpi-sub">70% disponible</div>
+          </div>
+          <div class="inv-kpi-card purple">
+            <div class="inv-kpi-label">ROI moyen <span>📈</span></div>
+            <div class="inv-kpi-val green">185%</div>
+            <div class="inv-kpi-sub">+15 pts vs 2025</div>
+          </div>
+          <div class="inv-kpi-card teal">
+            <div class="inv-kpi-label">Projets financés <span>🎯</span></div>
+            <div class="inv-kpi-val">13</div>
+            <div class="inv-kpi-sub">5 en production</div>
+          </div>
+        </div>
+
+        <!-- Split: répartition + ROI chart -->
+        <div class="inv-split">
+
+          <!-- Répartition des investissements -->
+          <div class="inv-card">
+            <div class="inv-card-title">Répartition des investissements <span class="inv-card-badge">2026</span></div>
+            <div class="inv-cat-row">
+              <div class="inv-cat-head">
+                <div class="inv-cat-left"><div class="inv-cat-num">2</div><div><div class="inv-cat-name">Production albums</div><div class="inv-cat-projects">2 projets actifs</div></div></div>
+                <div class="inv-cat-right"><div class="inv-cat-amount">424k€</div><div class="inv-cat-max">sur 800k€</div></div>
+              </div>
+              <div class="inv-cat-bar-bg"><div class="inv-cat-bar-fill" style="width:53%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
+              <div class="inv-cat-pct">53%</div>
+            </div>
+            <div class="inv-cat-row">
+              <div class="inv-cat-head">
+                <div class="inv-cat-left"><div class="inv-cat-num">3</div><div><div class="inv-cat-name">Tournées & Lives</div><div class="inv-cat-projects">3 projets actifs</div></div></div>
+                <div class="inv-cat-right"><div class="inv-cat-amount">1,66M€</div><div class="inv-cat-max">sur 1,8M€</div></div>
+              </div>
+              <div class="inv-cat-bar-bg"><div class="inv-cat-bar-fill" style="width:92%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
+              <div class="inv-cat-pct">92%</div>
+            </div>
+            <div class="inv-cat-row">
+              <div class="inv-cat-head">
+                <div class="inv-cat-left"><div class="inv-cat-num">7</div><div><div class="inv-cat-name">Marketing & Promotion</div><div class="inv-cat-projects">7 projets actifs</div></div></div>
+                <div class="inv-cat-right"><div class="inv-cat-amount">280k€</div><div class="inv-cat-max">sur 450k€</div></div>
+              </div>
+              <div class="inv-cat-bar-bg"><div class="inv-cat-bar-fill" style="width:62%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
+              <div class="inv-cat-pct">62%</div>
+            </div>
+            <div class="inv-cat-row">
+              <div class="inv-cat-head">
+                <div class="inv-cat-left"><div class="inv-cat-num">1</div><div><div class="inv-cat-name">Catalogue & Droits</div><div class="inv-cat-projects">1 projet actif</div></div></div>
+                <div class="inv-cat-right"><div class="inv-cat-amount">1,6M€</div><div class="inv-cat-max">sur 2M€</div></div>
+              </div>
+              <div class="inv-cat-bar-bg"><div class="inv-cat-bar-fill" style="width:80%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
+              <div class="inv-cat-pct">80%</div>
+            </div>
+          </div>
+
+          <!-- Évolution du ROI -->
+          <div class="inv-card">
+            <div class="inv-card-title">Évolution du ROI 2026 <span class="inv-card-badge">Jan–Jul</span></div>
+            <svg viewBox="0 0 560 180" style="width:100%;display:block;">
+              <defs>
+                <linearGradient id="roiGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"/>
+                  <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/>
+                </linearGradient>
+              </defs>
+              <!-- Grid lines -->
+              <line x1="48" y1="20" x2="540" y2="20" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="48" y1="65" x2="540" y2="65" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="48" y1="110" x2="540" y2="110" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="48" y1="155" x2="540" y2="155" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="48" y1="20" x2="48" y2="155" stroke="#f1f5f9" stroke-width="1"/>
+              <!-- Y labels -->
+              <text x="42" y="24" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">200%</text>
+              <text x="42" y="69" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">175%</text>
+              <text x="42" y="114" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">150%</text>
+              <!-- X labels -->
+              <text x="80"  y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jan</text>
+              <text x="155" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Fév</text>
+              <text x="230" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mar</text>
+              <text x="305" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Avr</text>
+              <text x="380" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mai</text>
+              <text x="455" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jun</text>
+              <text x="530" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jul</text>
+              <!-- Area fill -->
+              <path d="M80,138 L155,126 L230,114 L305,100 L380,82 L455,58 L530,22 L530,155 L80,155 Z" fill="url(#roiGrad)"/>
+              <!-- Dashed line -->
+              <path d="M80,138 L155,126 L230,114 L305,100 L380,82 L455,58 L530,22" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,4" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Dots -->
+              <circle cx="80"  cy="138" r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
+              <circle cx="155" cy="126" r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
+              <circle cx="230" cy="114" r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
+              <circle cx="305" cy="100" r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
+              <circle cx="380" cy="82"  r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
+              <circle cx="455" cy="58"  r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
+              <circle cx="530" cy="22"  r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
+            </svg>
+            <!-- Bottom KPI row -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;">
+              <div style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);border-radius:10px;padding:10px;text-align:center;">
+                <div style="font-size:18px;font-weight:800;color:#fff;">185%</div>
+                <div style="font-size:9px;color:rgba(255,255,255,.7);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;">ROI actuel</div>
+              </div>
+              <div style="background:linear-gradient(135deg,#0891b2,#22d3ee);border-radius:10px;padding:10px;text-align:center;">
+                <div style="font-size:18px;font-weight:800;color:#fff;">+15pts</div>
+                <div style="font-size:9px;color:rgba(255,255,255,.7);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;">vs 2025</div>
+              </div>
+              <div style="background:linear-gradient(135deg,#059669,#10b981);border-radius:10px;padding:10px;text-align:center;">
+                <div style="font-size:18px;font-weight:800;color:#fff;">210%</div>
+                <div style="font-size:9px;color:rgba(255,255,255,.7);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;">Objectif Jul</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI summary strip -->
+        <div class="inv-summary-strip">
+          <div class="inv-summary-item">
+            <div class="inv-summary-label">Total investi</div>
+            <div class="inv-summary-val">5,6 M€</div>
+          </div>
+          <div class="inv-summary-item">
+            <div class="inv-summary-label">Revenus attendus</div>
+            <div class="inv-summary-val teal">13,8 M€</div>
+          </div>
+          <div class="inv-summary-item">
+            <div class="inv-summary-label">ROI moyen pondéré</div>
+            <div class="inv-summary-val green">185%</div>
+          </div>
+          <div class="inv-summary-item">
+            <div class="inv-summary-label">Marge brute estimée</div>
+            <div class="inv-summary-val">8,2 M€</div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="inv-table-card">
+          <div class="inv-table-hd">
+            <div class="inv-table-title">Performance des investissements par projet</div>
+            <div class="inv-table-count">9 projets · S1 2026</div>
+          </div>
+          <table class="inv-table">
+            <thead>
+              <tr>
+                <th>Projet</th><th>Artiste</th><th>Catégorie</th>
+                <th>Investi</th><th>Revenus attendus</th>
+                <th>ROI estimé</th><th>Risque</th><th>Statut</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="inv-t-proj">Droits Catalogue</td><td class="inv-t-artist">Booba</td><td><span class="inv-t-cat catalogue">Catalogue</span></td><td class="inv-t-investi">1.6M€</td><td class="inv-t-rev">4.1M€</td><td><span class="inv-t-roi">2.58x</span></td><td><span class="inv-t-risk faible">Faible</span></td><td><span class="inv-t-statut">Actif</span></td></tr>
+              <tr><td class="inv-t-proj">Festival Été</td><td class="inv-t-artist">Damso</td><td><span class="inv-t-cat tournee">Tournée</span></td><td class="inv-t-investi">780k€</td><td class="inv-t-rev">2.5M€</td><td><span class="inv-t-roi">2.24x</span></td><td><span class="inv-t-risk moyen">Moyen</span></td><td><span class="inv-t-statut">En cours</span></td></tr>
+              <tr><td class="inv-t-proj">Nouveau Album</td><td class="inv-t-artist">PNL</td><td><span class="inv-t-cat album">Album</span></td><td class="inv-t-investi">235k€</td><td class="inv-t-rev">733k€</td><td><span class="inv-t-roi">2.12x</span></td><td><span class="inv-t-risk faible">Faible</span></td><td><span class="inv-t-statut">Production</span></td></tr>
+              <tr><td class="inv-t-proj">Tournée Européenne</td><td class="inv-t-artist">Nekfeu</td><td><span class="inv-t-cat tournee">Tournée</span></td><td class="inv-t-investi">460k€</td><td class="inv-t-rev">1.4M€</td><td><span class="inv-t-roi">2.05x</span></td><td><span class="inv-t-risk moyen">Moyen</span></td><td><span class="inv-t-statut">Logistique</span></td></tr>
+              <tr><td class="inv-t-proj">Concerts Zénith</td><td class="inv-t-artist">Tiakola</td><td><span class="inv-t-cat tournee">Tournée</span></td><td class="inv-t-investi">420k€</td><td class="inv-t-rev">1.2M€</td><td><span class="inv-t-roi">1.94x</span></td><td><span class="inv-t-risk moyen">Moyen</span></td><td><span class="inv-t-statut">Planifié</span></td></tr>
+              <tr><td class="inv-t-proj">Feat International</td><td class="inv-t-artist">Hamza</td><td><span class="inv-t-cat single">Single</span></td><td class="inv-t-investi">186k€</td><td class="inv-t-rev">538k€</td><td><span class="inv-t-roi">1.89x</span></td><td><span class="inv-t-risk eleve">Élevé</span></td><td><span class="inv-t-statut">Production</span></td></tr>
+              <tr><td class="inv-t-proj">Clip Premium</td><td class="inv-t-artist">Ninho</td><td><span class="inv-t-cat single">Single</span></td><td class="inv-t-investi">195k€</td><td class="inv-t-rev">528k€</td><td><span class="inv-t-roi">1.71x</span></td><td><span class="inv-t-risk moyen">Moyen</span></td><td><span class="inv-t-statut">Pré-prod</span></td></tr>
+              <tr><td class="inv-t-proj">Single Promo</td><td class="inv-t-artist">Niska</td><td><span class="inv-t-cat single">Single</span></td><td class="inv-t-investi">87k€</td><td class="inv-t-rev">231k€</td><td><span class="inv-t-roi">1.65x</span></td><td><span class="inv-t-risk faible">Faible</span></td><td><span class="inv-t-statut">Clip</span></td></tr>
+              <tr><td class="inv-t-proj">Album Deluxe</td><td class="inv-t-artist">Gazo</td><td><span class="inv-t-cat album">Album</span></td><td class="inv-t-investi">189k€</td><td class="inv-t-rev">469k€</td><td><span class="inv-t-roi">1.48x</span></td><td><span class="inv-t-risk moyen">Moyen</span></td><td><span class="inv-t-statut">Studio</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Bottom 3-col -->
+        <div class="inv-bottom-3">
+
+          <!-- Top 3 -->
+          <div class="inv-card">
+            <div class="inv-card-title">🏆 Top 3 Investissements</div>
+            <div class="inv-top3-item" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">
+              <div class="inv-top3-rank">1</div>
+              <div class="inv-top3-name">Droits Catalogue Booba</div>
+              <div class="inv-top3-artist">Booba · Catalogue</div>
+              <div class="inv-top3-foot">
+                <span class="inv-top3-budget">1.6M€</span>
+                <span class="inv-top3-roi">2.58x</span>
+              </div>
+            </div>
+            <div class="inv-top3-item" style="background:linear-gradient(135deg,#3b82f6,#93c5fd);">
+              <div class="inv-top3-rank">2</div>
+              <div class="inv-top3-name">Festival Été Damso</div>
+              <div class="inv-top3-artist">Damso · Tournée</div>
+              <div class="inv-top3-foot">
+                <span class="inv-top3-budget">780k€</span>
+                <span class="inv-top3-roi">2.24x</span>
+              </div>
+            </div>
+            <div class="inv-top3-item" style="background:linear-gradient(135deg,#60a5fa,#bfdbfe);">
+              <div class="inv-top3-rank">3</div>
+              <div class="inv-top3-name">Nouveau Album PNL</div>
+              <div class="inv-top3-artist">PNL · Album</div>
+              <div class="inv-top3-foot">
+                <span class="inv-top3-budget">235k€</span>
+                <span class="inv-top3-roi">2.12x</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analyse des risques -->
+          <div class="inv-card">
+            <div class="inv-card-title">Analyse des risques</div>
+            <div class="inv-risk-row">
+              <div class="inv-risk-dot" style="background:#10b981;"></div>
+              <div class="inv-risk-label">Faible</div>
+              <div class="inv-risk-bar-bg"><div class="inv-risk-bar-fill" style="width:46%;background:#10b981;"></div></div>
+              <div class="inv-risk-count">6 projets</div>
+            </div>
+            <div class="inv-risk-row">
+              <div class="inv-risk-dot" style="background:#f59e0b;"></div>
+              <div class="inv-risk-label">Moyen</div>
+              <div class="inv-risk-bar-bg"><div class="inv-risk-bar-fill" style="width:46%;background:#f59e0b;"></div></div>
+              <div class="inv-risk-count">6 projets</div>
+            </div>
+            <div class="inv-risk-row">
+              <div class="inv-risk-dot" style="background:#ef4444;"></div>
+              <div class="inv-risk-label">Élevé</div>
+              <div class="inv-risk-bar-bg"><div class="inv-risk-bar-fill" style="width:8%;background:#ef4444;"></div></div>
+              <div class="inv-risk-count">1 projet</div>
+            </div>
+          </div>
+
+          <!-- Alertes & Recommandations -->
+          <div class="inv-card">
+            <div class="inv-card-title">Alertes &amp; Recommandations</div>
+            <div class="inv-alert-item green">
+              <div class="inv-alert-icon">✓</div>
+              <div><div class="inv-alert-title">Performance excellente</div><div class="inv-alert-sub">ROI global au-dessus des objectifs</div></div>
+            </div>
+            <div class="inv-alert-item blue">
+              <div class="inv-alert-icon">ℹ</div>
+              <div><div class="inv-alert-title">Budget disponible</div><div class="inv-alert-sub">1,95M€ disponible pour Q3-Q4</div></div>
+            </div>
+            <div class="inv-alert-item amber">
+              <div class="inv-alert-icon">⚠</div>
+              <div><div class="inv-alert-title">Diversification</div><div class="inv-alert-sub">Concentration sur catalogue (35%)</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- OTHER PAGE -->
   <div id="pg-other" class="page" style="display:none;">
@@ -2011,6 +2469,18 @@ tbody tr:hover .pn{color:#2563eb;}
           <div class="np-label">Date de début <span>*</span></div>
           <input id="npDate" class="np-input" type="date"/>
         </div>
+      </div>
+
+      <div class="np-field">
+        <div class="np-label">Chef de projet</div>
+        <select id="npChef" class="np-select">
+          <option value="">— Sélectionner un responsable —</option>
+          <option value="Rayan Wehbi"   data-initials="RW" data-color="#6366f1">Rayan Wehbi</option>
+          <option value="Lyza Aider"   data-initials="LA" data-color="#3b82f6">Lyza Aider</option>
+          <option value="Edwin T."     data-initials="ET" data-color="#f59e0b">Edwin T.</option>
+          <option value="Wiylan B."    data-initials="WB" data-color="#10b981">Wiylan B.</option>
+          <option value="Kenza M."     data-initials="KM" data-color="#ec4899">Kenza M.</option>
+        </select>
       </div>
 
       <div class="np-field">
@@ -3085,6 +3555,16 @@ var _prevBtn = null;
 
 
 // ── Navigation ──
+function toggleNavDropdown(e) {
+  e.stopPropagation();
+  var wrap = document.getElementById('navUserWrap');
+  wrap.classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var wrap = document.getElementById('navUserWrap');
+  if (wrap && !wrap.contains(e.target)) wrap.classList.remove('open');
+});
+
 function showPage(id, btn) {
   // Update active nav button
   document.querySelectorAll('.sb-item').forEach(function(b) { b.classList.remove('active'); });
@@ -3104,11 +3584,12 @@ function showPage(id, btn) {
   }
   
   // Update topbar title + subtitle
-  var titles = { dashboard: 'Dashboard', crm: 'CRM', projets: 'Projets artistes', other: 'En développement' };
+  var titles = { dashboard: 'Dashboard', crm: 'CRM', projets: 'Projets artistes', invest: 'Investissements', other: 'En développement' };
   var subs = {
     dashboard: 'Gestion et analyse des investissements musicaux',
     crm: 'Portefeuille artistes · Contrats & opportunités',
     projets: 'Suivi des projets en cours · AXIS Conseil',
+    invest: 'Pilotage des investissements · S1 2026 · AXIS Conseil',
     other: 'Module en cours de développement'
   };
   var t = document.getElementById('pageTitle');
@@ -3196,6 +3677,56 @@ function openProjDetail(name, from) {
   pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1';
   var t=document.getElementById('pageTitle');
   if(t) t.textContent=name;
+}
+
+function askDeleteProj() {
+  var name = document.getElementById('pdTitle').textContent;
+  document.getElementById('pdConfirmName').textContent = name;
+  var ov = document.getElementById('pdConfirmOv');
+  ov.style.display = 'flex';
+  requestAnimationFrame(function() { ov.classList.add('open'); });
+}
+
+function closeProjConfirm() {
+  var ov = document.getElementById('pdConfirmOv');
+  ov.classList.remove('open');
+  setTimeout(function() { ov.style.display = 'none'; }, 180);
+}
+
+function confirmDeleteProj() {
+  var name = document.getElementById('pdTitle').textContent;
+
+  // Remove from projModalData
+  if (projModalData[name]) delete projModalData[name];
+
+  // Remove card from Kanban
+  var cards = document.querySelectorAll('.proj-task');
+  cards.forEach(function(card) {
+    var cardName = card.querySelector('.proj-task-name');
+    if (cardName && cardName.textContent === name) {
+      // Decrement column count badge
+      var col = card.closest('.proj-kanban > div');
+      if (col) {
+        var badge = col.querySelector('.proj-col-count');
+        if (badge) badge.textContent = Math.max(0, +badge.textContent - 1);
+      }
+      card.remove();
+    }
+  });
+
+  closeProjConfirm();
+
+  // Return to Projets page
+  setTimeout(function() {
+    closeProjDetail();
+    // Toast confirmation
+    var toast = document.getElementById('crmToast');
+    if (toast) {
+      toast.textContent = '🗑 Projet "' + name + '" supprimé';
+      toast.classList.add('show');
+      setTimeout(function() { toast.classList.remove('show'); }, 3000);
+    }
+  }, 200);
 }
 
 function closeProjDetail() {
@@ -3355,9 +3886,58 @@ function submitNpDrawer() {
     ? (budgetNum / 1000000).toFixed(1).replace('.0','') + 'M€'
     : (budgetNum / 1000).toFixed(0) + 'k€';
 
+  // Format date DD/MM/YYYY
+  var dateObj = new Date(date);
+  var dateStr = dateObj.toLocaleDateString('fr-FR', {day:'2-digit', month:'2-digit', year:'numeric'});
+
+  // Chef de projet
+  var chefSel  = document.getElementById('npChef');
+  var chefName = chefSel.value || 'AXIS Conseil';
+  var chefOpt  = chefSel.options[chefSel.selectedIndex];
+  var chefInit = chefOpt && chefOpt.getAttribute('data-initials') ? chefOpt.getAttribute('data-initials') : 'AX';
+  var chefCol  = chefOpt && chefOpt.getAttribute('data-color')    ? chefOpt.getAttribute('data-color')    : '#1d4ed8';
+
+  // Description / résumé
+  var statut = document.getElementById('npStatut').value;
+  var desc   = document.getElementById('npDesc').value.trim();
+  var typeDescriptions = {
+    Album: 'Production d\'un album studio.', Single: 'Enregistrement et promotion d\'un single.',
+    Tournée: 'Organisation et logistique d\'une tournée de concerts.',
+    Catalogue: 'Valorisation et gestion des droits catalogue.',
+    Streaming: 'Optimisation de la distribution streaming.',
+    Autre: 'Projet en cours de définition.'
+  };
+
   // Type → color map
   var typeColors = {Album:'#8b5cf6', Single:'#3b82f6', Tournée:'#f59e0b', Catalogue:'#ec4899', Streaming:'#10b981', Autre:'#64748b'};
   var col = typeColors[type] || '#64748b';
+
+  // Initials for artist avatar
+  var initials = artist.split(' ').map(function(w){return w[0];}).join('').substring(0,2).toUpperCase();
+
+  // Register in projModalData so detail page works
+  projModalData[name] = {
+    type: type,
+    prio: (statut === 'En production') ? 'Haute' : 'Moyenne',
+    artist: artist,
+    budget: budgetStr,
+    avancement: 0,
+    date: dateStr,
+    roi: 'N/A',
+    resume: desc || 'Nouveau projet ' + type + ' pour ' + artist + '. ' + typeDescriptions[type],
+    details: 'Projet créé le ' + new Date().toLocaleDateString('fr-FR') + '. Statut initial : ' + statut + '.',
+    jalons: [
+      {name:'Lancement du projet', cat:'Initialisation', date: dateStr, status:'current', prog:5, note:'En cours'},
+      {name:'Développement',       cat: type,             date: dateStr, status:'pending', prog:0, note:'À venir'},
+      {name:'Livraison finale',    cat:'Finalisation',    date: dateStr, status:'pending', prog:0, note:'À venir'}
+    ],
+    resp: {name: chefName, role:'RESPONSABLE STRUCTURATION', initials: chefInit, color: chefCol},
+    tags: [type, statut],
+    prio_tag: (statut === 'En production') ? 'Haute' : 'Moyenne',
+    type_tag: type,
+    planDate: dateStr,
+    planType: type
+  };
 
   // Inject new card into kanban column matching type
   var cols = document.querySelectorAll('.proj-kanban > div');
@@ -3369,11 +3949,15 @@ function submitNpDrawer() {
     var card = document.createElement('div');
     card.className = 'proj-task';
     card.style.borderLeftColor = col;
+    card.style.cursor = 'pointer';
+    (function(projectName) {
+      card.onclick = function() { openProjDetail(projectName, 'projets'); };
+    })(name);
     card.innerHTML =
       '<div class="proj-task-name">' + name + '</div>' +
       '<div class="proj-task-artist">' + artist + '</div>' +
       '<div class="proj-task-tags"><span class="proj-tag neutral">' + type + '</span><span class="proj-tag neutral">Nouveau</span></div>' +
-      '<div class="proj-task-footer"><div class="proj-task-assignee"><div class="proj-task-av" style="background:' + col + ';">' + artist.substring(0,2).toUpperCase() + '</div>' + artist + '</div><span class="proj-task-budget">' + budgetStr + '</span></div>' +
+      '<div class="proj-task-footer"><div class="proj-task-assignee"><div class="proj-task-av" style="background:' + col + ';">' + initials + '</div>' + artist + '</div><span class="proj-task-budget">' + budgetStr + '</span></div>' +
       '<div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:0%;background:' + col + ';"></div></div>';
     targetCol.appendChild(card);
     // Update column count badge
@@ -3400,6 +3984,7 @@ function submitNpDrawer() {
   document.getElementById('npNewLabel').value = '';
   document.getElementById('npNewContact').value = '';
   document.getElementById('npNewArtistBlock').style.display = 'none';
+  document.getElementById('npChef').value = '';
   document.querySelectorAll('#npTypeGrid .np-type-btn').forEach(function(b) { b.classList.remove('selected'); });
   document.querySelectorAll('#npStatutRow .np-statut-btn').forEach(function(b) { b.classList.remove('selected'); });
   document.querySelector('#npStatutRow .np-statut-btn').classList.add('selected');
