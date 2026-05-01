@@ -403,8 +403,10 @@ tbody tr:hover .pn{color:#2563eb;}
 .proj-perf-stat-val{font-size:17px;font-weight:800;line-height:1;margin-bottom:2px;}
 .proj-perf-stat-sub{font-size:10px;color:#94a3b8;}
 /* Category bars */
+.proj-cats-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;}
 .proj-cat-row{display:flex;align-items:center;padding:9px 0;border-bottom:1px solid #f8fafc;gap:10px;}
 .proj-cat-row:last-child{border-bottom:none;}
+.proj-cats-grid .proj-cat-row:nth-last-child(-n+2){border-bottom:none;}
 .proj-cat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .proj-cat-info{flex:1;min-width:0;}
 .proj-cat-name{font-size:12px;font-weight:700;color:#0f172a;}
@@ -438,19 +440,19 @@ tbody tr:hover .pn{color:#2563eb;}
 .proj-task-bar-fill{height:3px;border-radius:2px;}
 
 /* PROJ DETAIL PAGE */
-.pd-hero{background:linear-gradient(135deg,#87ceeb 0%,#b0e0f0 60%,#c8eaf5 100%);padding:26px 32px;position:relative;flex-shrink:0;}
-.pd-back{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.35);border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:#0f172a;}
-.pd-back:hover{background:rgba(255,255,255,.55);}
-.pd-type-badge{font-size:10px;font-weight:700;background:rgba(255,255,255,.5);color:#1d4ed8;padding:3px 11px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;margin-right:7px;}
+.pd-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:26px 32px;position:relative;flex-shrink:0;}
+.pd-back{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:#fff;}
+.pd-back:hover{background:rgba(255,255,255,.25);}
+.pd-type-badge{font-size:10px;font-weight:700;background:rgba(255,255,255,.15);color:#fff;padding:3px 11px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;margin-right:7px;border:1px solid rgba(255,255,255,.2);}
 .pd-prio-badge{font-size:10px;font-weight:700;background:#ef4444;color:#fff;padding:3px 11px;border-radius:20px;display:inline-block;}
 .pd-prio-badge.moy{background:#f59e0b;}
-.pd-title{font-size:30px;font-weight:800;color:#0f172a;margin:10px 0 4px;letter-spacing:-.5px;}
-.pd-artist{font-size:14px;color:#334155;margin-bottom:18px;}
+.pd-title{font-size:30px;font-weight:800;color:#fff;margin:10px 0 4px;letter-spacing:-.5px;}
+.pd-artist{font-size:14px;color:rgba(255,255,255,.65);margin-bottom:18px;}
 .pd-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-.pd-stat{background:rgba(255,255,255,.35);border-radius:10px;padding:12px 14px;}
-.pd-stat-label{font-size:10px;color:#334155;font-weight:600;margin-bottom:4px;}
-.pd-stat-val{font-size:20px;font-weight:800;color:#0f172a;}
-.pd-body{padding:20px 28px;background:#f0f6ff;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:14px;}
+.pd-stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:12px 14px;backdrop-filter:blur(4px);}
+.pd-stat-label{font-size:10px;color:rgba(255,255,255,.55);font-weight:600;margin-bottom:4px;}
+.pd-stat-val{font-size:20px;font-weight:800;color:#fff;}
+.pd-body{padding:20px 28px;background:#f1f5f9;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:14px;}
 .pd-prog-wrap{background:#fff;border-radius:13px;padding:18px 20px;}
 .pd-prog-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
 .pd-prog-title{font-size:14px;font-weight:700;color:#0f172a;}
@@ -1432,7 +1434,7 @@ tbody tr:hover .pn{color:#2563eb;}
         <!-- Revenue chart -->
         <div class="proj-card">
           <div class="proj-card-title">Évolution des revenus catalogue <span class="proj-card-badge">Jan–Jun 2026</span></div>
-          <svg viewBox="0 0 480 190" style="width:100%;height:190px;">
+          <svg viewBox="0 0 480 190" style="width:100%;height:280px;">
             <defs>
               <linearGradient id="catGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/></linearGradient>
             </defs>
@@ -1477,6 +1479,7 @@ tbody tr:hover .pn{color:#2563eb;}
             <div class="proj-perf-stat"><div class="proj-perf-stat-lbl">Budget utilisé</div><div class="proj-perf-stat-val" style="color:#d97706;">68%</div><div class="proj-perf-stat-sub">1,4M€</div></div>
             <div class="proj-perf-stat"><div class="proj-perf-stat-lbl">Projets actifs</div><div class="proj-perf-stat-val" style="color:#7c3aed;">13</div><div class="proj-perf-stat-sub">5 en prod</div></div>
           </div>
+          <div class="proj-cats-grid">
           <div class="proj-cat-row">
             <div class="proj-cat-dot" style="background:#8b5cf6;"></div>
             <div class="proj-cat-info"><div class="proj-cat-name">Album</div><div class="proj-cat-sub">2 projets · 424k€</div><div class="proj-cat-bar-bg"><div class="proj-cat-bar-fill" style="width:28%;background:#8b5cf6;"></div></div></div>
@@ -1497,10 +1500,11 @@ tbody tr:hover .pn{color:#2563eb;}
             <div class="proj-cat-info"><div class="proj-cat-name">Catalogue</div><div class="proj-cat-sub">2 projets · 1,9M€</div><div class="proj-cat-bar-bg"><div class="proj-cat-bar-fill" style="width:74%;background:#ec4899;"></div></div></div>
             <div class="proj-cat-nums"><div><div class="proj-cat-num-lbl">ROI</div><div class="proj-cat-num" style="color:#16a34a;">2.58x</div></div><div><div class="proj-cat-num-lbl">Avanc.</div><div class="proj-cat-num" style="color:#2563eb;">74%</div></div></div>
           </div>
-          <div class="proj-cat-row">
+          <div class="proj-cat-row" style="grid-column:1/-1;">
             <div class="proj-cat-dot" style="background:#10b981;"></div>
             <div class="proj-cat-info"><div class="proj-cat-name">Streaming</div><div class="proj-cat-sub">2 projets · 1,2M€</div><div class="proj-cat-bar-bg"><div class="proj-cat-bar-fill" style="width:36%;background:#10b981;"></div></div></div>
             <div class="proj-cat-nums"><div><div class="proj-cat-num-lbl">ROI</div><div class="proj-cat-num" style="color:#16a34a;">1.18x</div></div><div><div class="proj-cat-num-lbl">Avanc.</div><div class="proj-cat-num" style="color:#2563eb;">36%</div></div></div>
+          </div>
           </div>
         </div>
       </div>
