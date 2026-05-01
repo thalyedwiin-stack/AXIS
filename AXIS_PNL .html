@@ -439,6 +439,65 @@ tbody tr:hover .pn{color:#2563eb;}
 .proj-task-bar-bg{height:3px;background:#f1f5f9;border-radius:2px;margin-top:9px;overflow:hidden;}
 .proj-task-bar-fill{height:3px;border-radius:2px;}
 
+/* ── Nouveau Projet Drawer ── */
+.np-ov{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);z-index:5000;display:none;justify-content:flex-end;}
+.np-ov.open{display:flex;}
+.np-drawer{width:480px;max-width:100vw;background:#fff;height:100%;display:flex;flex-direction:column;box-shadow:-8px 0 40px rgba(0,0,0,.18);transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1);}
+.np-ov.open .np-drawer{transform:translateX(0);}
+.np-hd{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:22px 24px;flex-shrink:0;}
+.np-hd-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
+.np-hd-title{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.3px;}
+.np-hd-sub{font-size:12px;color:rgba(255,255,255,.55);}
+.np-close{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:8px;color:#fff;cursor:pointer;width:30px;height:30px;display:flex;align-items:center;justify-content:center;transition:background .15s;}
+.np-close:hover{background:rgba(255,255,255,.28);}
+.np-body{flex:1;overflow-y:auto;padding:24px;}
+.np-section{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.7px;margin:20px 0 12px;padding-bottom:6px;border-bottom:1px solid #f1f5f9;}
+.np-section:first-child{margin-top:0;}
+.np-field{margin-bottom:16px;}
+.np-label{font-size:12px;font-weight:600;color:#374151;margin-bottom:6px;display:flex;align-items:center;gap:4px;}
+.np-label span{color:#ef4444;font-size:10px;}
+.np-input,.np-select,.np-textarea{width:100%;border:1.5px solid #e2e8f0;border-radius:9px;padding:10px 13px;font-size:13px;font-family:'Inter',sans-serif;color:#0f172a;background:#fff;outline:none;transition:border-color .15s,box-shadow .15s;box-sizing:border-box;}
+.np-input:focus,.np-select:focus,.np-textarea:focus{border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,.12);}
+.np-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;cursor:pointer;}
+.np-textarea{resize:vertical;min-height:76px;}
+.np-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.np-type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+.np-type-btn{border:1.5px solid #e2e8f0;border-radius:9px;padding:10px 8px;text-align:center;cursor:pointer;font-size:11px;font-weight:600;color:#64748b;background:#fff;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.np-type-btn .np-type-icon{font-size:18px;}
+.np-type-btn:hover{border-color:#3b82f6;color:#2563eb;background:#eff6ff;}
+.np-type-btn.selected{border-color:#1d4ed8;background:#eff6ff;color:#1d4ed8;box-shadow:0 0 0 3px rgba(59,130,246,.12);}
+.np-budget-wrap{position:relative;}
+.np-budget-wrap .np-input{padding-left:36px;}
+.np-budget-euro{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;color:#94a3b8;}
+.np-statut-row{display:flex;gap:8px;flex-wrap:wrap;}
+.np-statut-btn{border:1.5px solid #e2e8f0;border-radius:20px;padding:6px 14px;font-size:11px;font-weight:600;cursor:pointer;color:#64748b;background:#fff;transition:all .15s;white-space:nowrap;}
+.np-statut-btn:hover{border-color:#3b82f6;color:#2563eb;}
+.np-statut-btn.selected{background:#2563eb;border-color:#2563eb;color:#fff;}
+.np-footer{padding:16px 24px;border-top:1px solid #f1f5f9;display:flex;gap:10px;flex-shrink:0;background:#fff;}
+.np-cancel{flex:1;border:1.5px solid #e2e8f0;border-radius:9px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;color:#64748b;background:#fff;font-family:'Inter',sans-serif;transition:all .15s;}
+.np-cancel:hover{background:#f8fafc;border-color:#cbd5e1;}
+.np-submit{flex:2;background:linear-gradient(135deg,#1d4ed8,#3b82f6);border:none;border-radius:9px;padding:11px;font-size:13px;font-weight:700;cursor:pointer;color:#fff;font-family:'Inter',sans-serif;box-shadow:0 4px 14px rgba(37,99,235,.3);transition:all .15s;}
+.np-submit:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,99,235,.4);}
+.np-success-bar{height:3px;background:linear-gradient(90deg,#10b981,#34d399);border-radius:0;position:absolute;top:0;left:0;right:0;transform:scaleX(0);transform-origin:left;transition:transform .6s ease;display:none;}
+
+.np-new-artist-block{background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:11px;padding:14px 16px;margin-bottom:4px;animation:npSlideDown .2s ease;}
+@keyframes npSlideDown{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
+.np-new-artist-hd{font-size:11px;font-weight:700;color:#1d4ed8;display:flex;align-items:center;gap:6px;margin-bottom:12px;text-transform:uppercase;letter-spacing:.4px;}
+.np-new-artist-block .np-field{margin-bottom:10px;}
+.np-new-artist-block .np-field:last-child{margin-bottom:0;}
+.np-new-artist-block .np-input{background:#fff;}
+
+/* ── Chart Tooltip ── */
+.chart-tooltip{position:absolute;background:#1e293b;border:1px solid #334155;border-radius:12px;padding:11px 15px;z-index:200;pointer-events:none;min-width:170px;box-shadow:0 10px 30px rgba(0,0,0,.22);transition:opacity .1s;}
+.ct-month{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;padding-bottom:7px;border-bottom:1px solid #334155;}
+.ct-row{display:flex;align-items:center;gap:7px;margin-top:5px;}
+.ct-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.ct-dot.dashed{background:transparent;border:2px dashed #10b981;border-radius:50%;}
+.ct-label{font-size:11px;color:#64748b;flex:1;}
+.ct-val{font-size:13px;font-weight:700;color:#f1f5f9;}
+.ct-arrow{position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);width:10px;height:6px;overflow:hidden;}
+.ct-arrow::before{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%) rotate(45deg);width:10px;height:10px;background:#1e293b;border:1px solid #334155;}
+
 /* PROJ DETAIL PAGE */
 .pd-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:26px 32px;position:relative;flex-shrink:0;}
 .pd-back{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:#fff;}
@@ -1394,7 +1453,7 @@ tbody tr:hover .pn{color:#2563eb;}
         </div>
         <div class="proj-header-actions">
           <select class="proj-btn" style="cursor:pointer;outline:none;"><option>Tous les types</option><option>Album</option><option>Single</option><option>Tournée</option><option>Catalogue</option><option>Streaming</option></select>
-          <button class="proj-btn primary">+ Nouveau projet</button>
+          <button class="proj-btn primary" onclick="openNpDrawer()">+ Nouveau projet</button>
         </div>
       </div>
       <!-- KPI strip -->
@@ -1432,39 +1491,56 @@ tbody tr:hover .pn{color:#2563eb;}
       <div class="proj-row">
 
         <!-- Revenue chart -->
-        <div class="proj-card">
+        <div class="proj-card" style="padding:14px 16px;">
           <div class="proj-card-title">Évolution des revenus catalogue <span class="proj-card-badge">Jan–Jun 2026</span></div>
-          <svg viewBox="0 0 480 190" style="width:100%;height:280px;">
+          <div style="position:relative;" id="catChartWrap">
+          <div id="catTooltip" class="chart-tooltip" style="display:none;">
+            <div class="ct-month"></div>
+            <div class="ct-row"><span class="ct-dot" style="background:#3b82f6;"></span><span class="ct-label">Revenus réels</span><span class="ct-val ct-rev"></span></div>
+            <div class="ct-row"><span class="ct-dot dashed"></span><span class="ct-label">Budget prévu</span><span class="ct-val ct-bud"></span></div>
+            <div class="ct-arrow"></div>
+          </div>
+          <svg id="catSvg" viewBox="0 0 1200 190" style="width:100%;display:block;">
             <defs>
               <linearGradient id="catGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/></linearGradient>
             </defs>
-            <line x1="42" y1="10" x2="42" y2="162" stroke="#f1f5f9" stroke-width="1"/>
-            <line x1="42" y1="162" x2="470" y2="162" stroke="#f1f5f9" stroke-width="1"/>
-            <line x1="42" y1="130" x2="470" y2="130" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <line x1="42" y1="97" x2="470" y2="97" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <line x1="42" y1="64" x2="470" y2="64" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <line x1="42" y1="31" x2="470" y2="31" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <text x="36" y="165" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">0k€</text>
-            <text x="36" y="133" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">200k€</text>
-            <text x="36" y="100" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">400k€</text>
-            <text x="36" y="67" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">600k€</text>
-            <text x="36" y="34" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">800k€</text>
-            <text x="85" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jan</text>
-            <text x="163" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Fév</text>
-            <text x="241" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mar</text>
-            <text x="319" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Avr</text>
-            <text x="385" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mai</text>
-            <text x="455" y="178" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jun</text>
-            <path d="M85,96 C118,88 148,80 178,72 C208,64 234,54 262,46 C290,38 318,32 346,26 C374,20 416,14 455,10 L455,162 L85,162 Z" fill="url(#catGrad)"/>
-            <path d="M85,96 C118,88 148,80 178,72 C208,64 234,54 262,46 C290,38 318,32 346,26 C374,20 416,14 455,10" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="85" cy="96" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="178" cy="72" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="262" cy="46" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="346" cy="26" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="455" cy="10" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <path d="M85,106 C120,98 150,90 185,82 C215,74 245,64 278,56 C308,49 360,38 455,28" fill="none" stroke="#10b981" stroke-width="1.8" stroke-dasharray="6,4" stroke-linecap="round"/>
+            <line x1="105" y1="10" x2="105" y2="162" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="105" y1="162" x2="1175" y2="162" stroke="#f1f5f9" stroke-width="1"/>
+            <line x1="105" y1="130" x2="1175" y2="130" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="105" y1="97" x2="1175" y2="97" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="105" y1="64" x2="1175" y2="64" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="105" y1="31" x2="1175" y2="31" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="90" y="165" font-size="10" fill="#94a3b8" text-anchor="end" font-family="Inter">0k€</text>
+            <text x="90" y="133" font-size="10" fill="#94a3b8" text-anchor="end" font-family="Inter">200k€</text>
+            <text x="90" y="100" font-size="10" fill="#94a3b8" text-anchor="end" font-family="Inter">400k€</text>
+            <text x="90" y="67" font-size="10" fill="#94a3b8" text-anchor="end" font-family="Inter">600k€</text>
+            <text x="90" y="34" font-size="10" fill="#94a3b8" text-anchor="end" font-family="Inter">800k€</text>
+            <text x="212" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jan</text>
+            <text x="407" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Fév</text>
+            <text x="602" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mar</text>
+            <text x="797" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Avr</text>
+            <text x="962" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mai</text>
+            <text x="1137" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jun</text>
+            <path d="M212,96 C295,88 370,80 445,72 C520,64 585,54 655,46 C725,38 795,32 865,26 C935,20 1040,14 1137,10 L1137,162 L212,162 Z" fill="url(#catGrad)"/>
+            <path d="M212,96 C295,88 370,80 445,72 C520,64 585,54 655,46 C725,38 795,32 865,26 C935,20 1040,14 1137,10" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="212" cy="96" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="445" cy="72" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="655" cy="46" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="865" cy="26" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="1137" cy="10" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <path d="M212,106 C300,98 375,90 462,82 C537,74 612,64 695,56 C770,49 900,38 1137,28" fill="none" stroke="#10b981" stroke-width="1.8" stroke-dasharray="6,4" stroke-linecap="round"/>
+            <!-- Hover vertical line -->
+            <line id="catHoverLine" x1="212" y1="8" x2="212" y2="162" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4,3" opacity="0" pointer-events="none"/>
+            <!-- Hover zones per month -->
+            <rect class="cat-zone" data-idx="0" x="105" y="0" width="205" height="165" fill="transparent" style="cursor:crosshair;"/>
+            <rect class="cat-zone" data-idx="1" x="310" y="0" width="195" height="165" fill="transparent" style="cursor:crosshair;"/>
+            <rect class="cat-zone" data-idx="2" x="505" y="0" width="195" height="165" fill="transparent" style="cursor:crosshair;"/>
+            <rect class="cat-zone" data-idx="3" x="700" y="0" width="180" height="165" fill="transparent" style="cursor:crosshair;"/>
+            <rect class="cat-zone" data-idx="4" x="880" y="0" width="170" height="165" fill="transparent" style="cursor:crosshair;"/>
+            <rect class="cat-zone" data-idx="5" x="1050" y="0" width="125" height="165" fill="transparent" style="cursor:crosshair;"/>
           </svg>
-          <div style="display:flex;gap:20px;justify-content:center;margin-top:8px;">
+          </div>
+          <div style="display:flex;gap:20px;justify-content:center;margin-top:6px;">
             <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b;"><div style="width:20px;height:2.5px;background:#3b82f6;border-radius:2px;"></div>Revenus réels</div>
             <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b;"><div style="width:20px;height:0;border-top:2.5px dashed #10b981;"></div>Budget prévu</div>
           </div>
@@ -1841,6 +1917,126 @@ tbody tr:hover .pn{color:#2563eb;}
 </div>
 <!-- Toast -->
 <div class="crm-toast" id="crmToast">✅ Artiste ajouté au portefeuille AXIS</div>
+
+<!-- NOUVEAU PROJET DRAWER -->
+<div class="np-ov" id="npOv" onclick="if(event.target===this)closeNpDrawer()">
+  <div class="np-drawer">
+    <div class="np-hd">
+      <div class="np-hd-top">
+        <div class="np-hd-title">+ Nouveau projet</div>
+        <button class="np-close" onclick="closeNpDrawer()">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="np-hd-sub">Renseigner les informations du projet · AXIS Conseil</div>
+    </div>
+
+    <div class="np-body">
+
+      <div class="np-section">Informations générales</div>
+
+      <div class="np-field">
+        <div class="np-label">Nom du projet <span>*</span></div>
+        <input id="npName" class="np-input" type="text" placeholder="Ex : Nouvel Album Studio…" autocomplete="off"/>
+      </div>
+
+      <div class="np-field">
+        <div class="np-label">Artiste <span>*</span></div>
+        <select id="npArtist" class="np-select" onchange="toggleNouvelArtiste(this.value)">
+          <option value="">— Sélectionner un artiste —</option>
+          <option value="__new__">✦ Nouvel artiste…</option>
+          <option disabled style="color:#cbd5e1;">──────────────</option>
+          <option>PNL</option>
+          <option>Niska</option>
+          <option>Nekfeu</option>
+          <option>Booba</option>
+          <option>SCH</option>
+          <option>Gazo</option>
+          <option>Hamza</option>
+          <option>Ninho</option>
+          <option>La Fouine</option>
+          <option>Jul</option>
+          <option>Ninha</option>
+          <option>Wejdene</option>
+        </select>
+      </div>
+
+      <!-- Champs nouvel artiste (masqués par défaut) -->
+      <div id="npNewArtistBlock" class="np-new-artist-block" style="display:none;">
+        <div class="np-new-artist-hd">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          Informations du nouvel artiste
+        </div>
+        <div class="np-field">
+          <div class="np-label">Nom de l'artiste <span>*</span></div>
+          <input id="npNewName" class="np-input" type="text" placeholder="Ex : Tiakola…" autocomplete="off"/>
+        </div>
+        <div class="np-row2">
+          <div class="np-field">
+            <div class="np-label">Label / Maison</div>
+            <input id="npNewLabel" class="np-input" type="text" placeholder="Ex : 92i, Warner…"/>
+          </div>
+          <div class="np-field">
+            <div class="np-label">Contact</div>
+            <input id="npNewContact" class="np-input" type="text" placeholder="Email ou téléphone"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="np-section">Type de projet</div>
+
+      <div class="np-field">
+        <div class="np-type-grid" id="npTypeGrid">
+          <div class="np-type-btn" data-type="Album" onclick="selectNpType(this)"><span class="np-type-icon">💿</span>Album</div>
+          <div class="np-type-btn" data-type="Single" onclick="selectNpType(this)"><span class="np-type-icon">🎵</span>Single</div>
+          <div class="np-type-btn" data-type="Tournée" onclick="selectNpType(this)"><span class="np-type-icon">🎤</span>Tournée</div>
+          <div class="np-type-btn" data-type="Catalogue" onclick="selectNpType(this)"><span class="np-type-icon">📂</span>Catalogue</div>
+          <div class="np-type-btn" data-type="Streaming" onclick="selectNpType(this)"><span class="np-type-icon">🎧</span>Streaming</div>
+          <div class="np-type-btn" data-type="Autre" onclick="selectNpType(this)"><span class="np-type-icon">✨</span>Autre</div>
+        </div>
+        <input id="npType" type="hidden" value=""/>
+      </div>
+
+      <div class="np-section">Budget & Planification</div>
+
+      <div class="np-row2">
+        <div class="np-field">
+          <div class="np-label">Budget <span>*</span></div>
+          <div class="np-budget-wrap">
+            <span class="np-budget-euro">€</span>
+            <input id="npBudget" class="np-input" type="number" placeholder="150 000" min="0"/>
+          </div>
+        </div>
+        <div class="np-field">
+          <div class="np-label">Date de début <span>*</span></div>
+          <input id="npDate" class="np-input" type="date"/>
+        </div>
+      </div>
+
+      <div class="np-field">
+        <div class="np-label">Statut initial</div>
+        <div class="np-statut-row" id="npStatutRow">
+          <div class="np-statut-btn selected" data-statut="En développement" onclick="selectNpStatut(this)">En développement</div>
+          <div class="np-statut-btn" data-statut="En production" onclick="selectNpStatut(this)">En production</div>
+          <div class="np-statut-btn" data-statut="En négociation" onclick="selectNpStatut(this)">En négociation</div>
+          <div class="np-statut-btn" data-statut="En pause" onclick="selectNpStatut(this)">En pause</div>
+        </div>
+        <input id="npStatut" type="hidden" value="En développement"/>
+      </div>
+
+      <div class="np-field">
+        <div class="np-label">Description (optionnel)</div>
+        <textarea id="npDesc" class="np-textarea np-input" placeholder="Contexte, objectifs, notes importantes…"></textarea>
+      </div>
+
+    </div>
+
+    <div class="np-footer">
+      <button class="np-cancel" onclick="closeNpDrawer()">Annuler</button>
+      <button class="np-submit" onclick="submitNpDrawer()">Créer le projet →</button>
+    </div>
+  </div>
+</div>
 
 <!-- MODAL DASHBOARD -->
 <div class="modal-ov" id="modalOv" onclick="if(event.target===this)closeModal()">
@@ -3079,6 +3275,202 @@ function addDeleteButtons() {
   });
 }
 
+// ── Nouveau Projet Drawer ──
+function openNpDrawer() {
+  var ov = document.getElementById('npOv');
+  ov.style.display = 'flex';
+  requestAnimationFrame(function() { ov.classList.add('open'); });
+  document.body.style.overflow = 'hidden';
+  // Set today as default date
+  var d = document.getElementById('npDate');
+  if (d && !d.value) d.value = new Date().toISOString().split('T')[0];
+}
+
+function closeNpDrawer() {
+  var ov = document.getElementById('npOv');
+  ov.classList.remove('open');
+  setTimeout(function() { ov.style.display = 'none'; }, 280);
+  document.body.style.overflow = '';
+}
+
+function selectNpType(btn) {
+  document.querySelectorAll('#npTypeGrid .np-type-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  document.getElementById('npType').value = btn.getAttribute('data-type');
+}
+
+function toggleNouvelArtiste(val) {
+  var block = document.getElementById('npNewArtistBlock');
+  if (!block) return;
+  if (val === '__new__') {
+    block.style.display = 'block';
+    document.getElementById('npNewName').focus();
+  } else {
+    block.style.display = 'none';
+    document.getElementById('npNewName').value = '';
+    document.getElementById('npNewLabel').value = '';
+    document.getElementById('npNewContact').value = '';
+  }
+}
+
+function selectNpStatut(btn) {
+  document.querySelectorAll('#npStatutRow .np-statut-btn').forEach(function(b) { b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  document.getElementById('npStatut').value = btn.getAttribute('data-statut');
+}
+
+function submitNpDrawer() {
+  var name         = document.getElementById('npName').value.trim();
+  var artistVal    = document.getElementById('npArtist').value;
+  var isNew        = artistVal === '__new__';
+  var newArtName   = isNew ? document.getElementById('npNewName').value.trim() : '';
+  var artist       = isNew ? newArtName : artistVal;
+  var type         = document.getElementById('npType').value;
+  var budget       = document.getElementById('npBudget').value;
+  var date         = document.getElementById('npDate').value;
+
+  // Validation
+  var errors = [];
+  if (!name)           errors.push('npName');
+  if (!artistVal)      errors.push('npArtist');
+  if (isNew && !newArtName) errors.push('npNewName');
+  if (!type)           errors.push('npTypeGrid');
+  if (!budget)         errors.push('npBudget');
+  if (!date)           errors.push('npDate');
+
+  // Highlight errors
+  ['npName','npArtist','npNewName','npBudget','npDate'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.style.borderColor = errors.includes(id) ? '#ef4444' : '';
+  });
+  var tg = document.getElementById('npTypeGrid');
+  if (tg) tg.style.outline = errors.includes('npTypeGrid') ? '2px solid #ef4444' : '';
+  if (tg) tg.style.borderRadius = errors.includes('npTypeGrid') ? '9px' : '';
+
+  if (errors.length) return;
+
+  // Format budget display
+  var budgetNum = parseInt(budget, 10);
+  var budgetStr = budgetNum >= 1000000
+    ? (budgetNum / 1000000).toFixed(1).replace('.0','') + 'M€'
+    : (budgetNum / 1000).toFixed(0) + 'k€';
+
+  // Type → color map
+  var typeColors = {Album:'#8b5cf6', Single:'#3b82f6', Tournée:'#f59e0b', Catalogue:'#ec4899', Streaming:'#10b981', Autre:'#64748b'};
+  var col = typeColors[type] || '#64748b';
+
+  // Inject new card into kanban column matching type
+  var cols = document.querySelectorAll('.proj-kanban > div');
+  var typeOrder = ['Album','Single','Tournée','Catalogue','Streaming'];
+  var colIdx = typeOrder.indexOf(type);
+  if (colIdx === -1) colIdx = 0;
+  var targetCol = cols[colIdx];
+  if (targetCol) {
+    var card = document.createElement('div');
+    card.className = 'proj-task';
+    card.style.borderLeftColor = col;
+    card.innerHTML =
+      '<div class="proj-task-name">' + name + '</div>' +
+      '<div class="proj-task-artist">' + artist + '</div>' +
+      '<div class="proj-task-tags"><span class="proj-tag neutral">' + type + '</span><span class="proj-tag neutral">Nouveau</span></div>' +
+      '<div class="proj-task-footer"><div class="proj-task-assignee"><div class="proj-task-av" style="background:' + col + ';">' + artist.substring(0,2).toUpperCase() + '</div>' + artist + '</div><span class="proj-task-budget">' + budgetStr + '</span></div>' +
+      '<div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:0%;background:' + col + ';"></div></div>';
+    targetCol.appendChild(card);
+    // Update column count badge
+    var countBadge = targetCol.querySelector('.proj-col-count');
+    if (countBadge) countBadge.textContent = +countBadge.textContent + 1;
+  }
+
+  // If new artist: add to select list for future use
+  if (isNew && newArtName) {
+    var sel = document.getElementById('npArtist');
+    var opt = document.createElement('option');
+    opt.value = newArtName;
+    opt.textContent = newArtName;
+    sel.appendChild(opt);
+  }
+
+  // Reset form
+  document.getElementById('npName').value = '';
+  document.getElementById('npArtist').value = '';
+  document.getElementById('npType').value = '';
+  document.getElementById('npBudget').value = '';
+  document.getElementById('npDesc').value = '';
+  document.getElementById('npNewName').value = '';
+  document.getElementById('npNewLabel').value = '';
+  document.getElementById('npNewContact').value = '';
+  document.getElementById('npNewArtistBlock').style.display = 'none';
+  document.querySelectorAll('#npTypeGrid .np-type-btn').forEach(function(b) { b.classList.remove('selected'); });
+  document.querySelectorAll('#npStatutRow .np-statut-btn').forEach(function(b) { b.classList.remove('selected'); });
+  document.querySelector('#npStatutRow .np-statut-btn').classList.add('selected');
+  document.getElementById('npStatut').value = 'En développement';
+
+  closeNpDrawer();
+
+  // Toast confirmation
+  var toast = document.getElementById('crmToast');
+  if (toast) {
+    toast.textContent = '✅ Projet "' + name + '" créé avec succès';
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 3000);
+  }
+}
+
+// ── SVG Chart Tooltip (Projets artistes) ──
+(function() {
+  var catData = [
+    {month:'Janvier 2026',  x:212,  rev:'410 k€', budget:'370 k€'},
+    {month:'Février 2026',  x:407,  rev:'555 k€', budget:'460 k€'},
+    {month:'Mars 2026',     x:602,  rev:'660 k€', budget:'560 k€'},
+    {month:'Avril 2026',    x:797,  rev:'752 k€', budget:'650 k€'},
+    {month:'Mai 2026',      x:962,  rev:'832 k€', budget:'745 k€'},
+    {month:'Juin 2026',     x:1137, rev:'900 k€', budget:'800 k€'}
+  ];
+
+  function initCatTooltip() {
+    var zones = document.querySelectorAll('.cat-zone');
+    if (!zones.length) return;
+    zones.forEach(function(zone) {
+      zone.addEventListener('mouseenter', function() {
+        var idx = +this.getAttribute('data-idx');
+        var d = catData[idx];
+        var line = document.getElementById('catHoverLine');
+        if (line) { line.setAttribute('x1', d.x); line.setAttribute('x2', d.x); line.setAttribute('opacity', '1'); }
+        var tt = document.getElementById('catTooltip');
+        if (!tt) return;
+        tt.querySelector('.ct-month').textContent = d.month;
+        tt.querySelector('.ct-rev').textContent = d.rev;
+        tt.querySelector('.ct-bud').textContent = d.budget;
+        tt.style.display = 'block';
+        // Position tooltip above the hover zone
+        var svg = document.getElementById('catSvg');
+        var wrap = document.getElementById('catChartWrap');
+        if (!svg || !wrap) return;
+        var scaleX = svg.getBoundingClientRect().width / 1200;
+        var pixelX = d.x * scaleX;
+        var ttW = tt.offsetWidth || 170;
+        var left = pixelX - ttW / 2;
+        if (left < 4) left = 4;
+        if (left + ttW > wrap.offsetWidth - 4) left = wrap.offsetWidth - ttW - 4;
+        tt.style.left = left + 'px';
+        tt.style.top = '4px';
+      });
+      zone.addEventListener('mouseleave', function() {
+        var line = document.getElementById('catHoverLine');
+        if (line) line.setAttribute('opacity', '0');
+        var tt = document.getElementById('catTooltip');
+        if (tt) tt.style.display = 'none';
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCatTooltip);
+  } else {
+    initCatTooltip();
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
   addDeleteButtons();
 
@@ -3124,9 +3516,31 @@ document.addEventListener('DOMContentLoaded', function() {
         plugins: {
           legend: { display: false },
           tooltip: {
-            backgroundColor: '#1e293b', titleColor: '#94a3b8', bodyColor: '#f1f5f9',
-            borderColor: '#334155', borderWidth: 1, padding: 10,
-            callbacks: { label: function(c) { return '  ' + c.dataset.label + ' : ' + (c.parsed.y / 1000).toFixed(2) + ' M€'; } }
+            backgroundColor: '#1e293b',
+            titleColor: '#94a3b8',
+            bodyColor: '#f1f5f9',
+            borderColor: '#334155',
+            borderWidth: 1,
+            padding: { top: 10, bottom: 10, left: 14, right: 14 },
+            cornerRadius: 10,
+            boxPadding: 5,
+            callbacks: {
+              title: function(items) { return items[0].label + ' 2026'; },
+              label: function(c) {
+                var val = (c.parsed.y / 1000).toFixed(2) + ' M€';
+                if (c.dataset.type === 'bar') return '  Revenus totaux  :  ' + val;
+                return '  Royalties versées  :  ' + val;
+              },
+              afterBody: function(items) {
+                var rev = items.find(function(i){ return i.dataset.type==='bar'; });
+                var roy = items.find(function(i){ return i.dataset.type!=='bar'; });
+                if (rev && roy) {
+                  var ratio = ((roy.parsed.y / rev.parsed.y) * 100).toFixed(0);
+                  return ['', '  Taux royalties : ' + ratio + '%'];
+                }
+                return [];
+              }
+            }
           }
         },
         scales: {
