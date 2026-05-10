@@ -462,107 +462,127 @@ tbody tr:hover .pn{color:#2563eb;}
 .proj-task-bar-bg{height:3px;background:#f1f5f9;border-radius:2px;margin-top:9px;overflow:hidden;}
 .proj-task-bar-fill{height:3px;border-radius:2px;}
 
-/* ── Page Investissements ── */
-.inv-page{flex:1;overflow-y:auto;background:#f0f4f8;display:flex;flex-direction:column;}
-.inv-page-hd{padding:22px 28px 16px;background:#f0f4f8;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-.inv-page-title{font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.4px;}
-.inv-cat-select{border:1.5px solid #e2e8f0;border-radius:9px;padding:8px 14px;font-size:12px;font-weight:600;font-family:'Inter',sans-serif;color:#374151;background:#fff;cursor:pointer;outline:none;}
-.inv-body{padding:0 28px 28px;display:flex;flex-direction:column;gap:16px;}
-/* KPI strip */
-.inv-kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
-.inv-kpi-card{background:#fff;border-radius:14px;padding:18px 20px;border:1px solid #e8edf2;position:relative;overflow:hidden;}
-.inv-kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;}
-.inv-kpi-card.blue::before{background:linear-gradient(90deg,#2563eb,#60a5fa);}
-.inv-kpi-card.green::before{background:linear-gradient(90deg,#10b981,#34d399);}
-.inv-kpi-card.amber::before{background:linear-gradient(90deg,#f59e0b,#fbbf24);}
-.inv-kpi-card.purple::before{background:linear-gradient(90deg,#8b5cf6,#a78bfa);}
-.inv-kpi-card.teal::before{background:linear-gradient(90deg,#0891b2,#22d3ee);}
-.inv-kpi-label{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;}
-.inv-kpi-val{font-size:26px;font-weight:800;color:#0f172a;letter-spacing:-.6px;margin-bottom:4px;}
-.inv-kpi-val.teal{color:#0891b2;}
-.inv-kpi-val.green{color:#10b981;}
-.inv-kpi-sub{font-size:11px;color:#94a3b8;}
-.inv-kpi-trend{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;}
-.inv-kpi-trend.up{color:#10b981;background:#f0fdf4;}
-.inv-kpi-trend.neu{color:#64748b;background:#f8fafc;}
-/* Split row */
-.inv-split{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.inv-card{background:#fff;border-radius:14px;padding:20px 22px;border:1px solid #e8edf2;}
-.inv-card-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;}
-.inv-card-badge{font-size:10px;font-weight:600;color:#64748b;background:#f8fafc;border:1px solid #e2e8f0;padding:3px 10px;border-radius:20px;}
+/* ── Page Investissements v2 ── */
+.inv2-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:28px 32px 30px;flex-shrink:0;}
+.inv2-hero-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:26px;}
+.inv2-hero-title{font-size:21px;font-weight:800;color:#fff;letter-spacing:-.4px;margin-bottom:4px;}
+.inv2-hero-sub{font-size:12px;color:rgba(255,255,255,.45);}
+.inv2-hero-period{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;}
+.inv2-kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:22px;}
+.inv2-kpi{padding:0 24px;border-right:1px solid rgba(255,255,255,.1);}
+.inv2-kpi:first-child{padding-left:0;}
+.inv2-kpi:last-child{border-right:none;}
+.inv2-kpi-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.4);margin-bottom:8px;}
+.inv2-kpi-val{font-size:28px;font-weight:800;color:#fff;letter-spacing:-.6px;line-height:1;margin-bottom:6px;}
+.inv2-kpi-val.em{color:#34d399;}
+.inv2-kpi-trend{font-size:11px;font-weight:500;color:rgba(255,255,255,.45);}
+.inv2-kpi-trend.up{color:#34d399;}
+.inv2-budget-labels{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.45);margin-bottom:7px;font-weight:500;}
+.inv2-budget-labels b{color:rgba(255,255,255,.75);}
+.inv2-budget-track{height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;}
+.inv2-budget-fill{height:6px;background:linear-gradient(90deg,#60a5fa,#34d399);border-radius:99px;}
+/* Body */
+.inv2-body{flex:1;overflow-y:auto;padding:22px 28px 32px;display:flex;flex-direction:column;gap:18px;background:#f1f5f9;}
+/* Cards */
+.inv2-card{background:#fff;border-radius:16px;border:1px solid #e8edf2;box-shadow:0 1px 4px rgba(0,0,0,.05);overflow:hidden;}
+.inv2-card-hd{padding:16px 22px;border-bottom:1px solid #f1f5f9;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.inv2-card-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:3px;}
+.inv2-card-sub{font-size:11px;color:#94a3b8;}
+.inv2-card-body{padding:18px 22px;}
+.inv2-badge{display:inline-flex;align-items:center;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;background:#f1f5f9;color:#64748b;white-space:nowrap;flex-shrink:0;}
+.inv2-badge.blue{background:#eff6ff;color:#2563eb;}
+.inv2-badge.green{background:#f0fdf4;color:#15803d;}
+.inv2-badge.amber{background:#fffbeb;color:#b45309;}
+.inv2-badge.red{background:#fef2f2;color:#dc2626;}
+/* 2-col row */
+.inv2-row2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
 /* Category bars */
-.inv-cat-row{margin-bottom:16px;}
-.inv-cat-row:last-child{margin-bottom:0;}
-.inv-cat-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
-.inv-cat-left{display:flex;align-items:center;gap:8px;}
-.inv-cat-num{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.inv-cat-name{font-size:13px;font-weight:600;color:#0f172a;}
-.inv-cat-projects{font-size:11px;color:#94a3b8;margin-top:1px;}
-.inv-cat-right{text-align:right;}
-.inv-cat-amount{font-size:13px;font-weight:700;color:#2563eb;}
-.inv-cat-max{font-size:10px;color:#94a3b8;}
-.inv-cat-bar-bg{height:8px;background:#f1f5f9;border-radius:99px;overflow:hidden;margin-top:6px;}
-.inv-cat-bar-fill{height:8px;border-radius:99px;transition:width .6s ease;}
-.inv-cat-pct{font-size:10px;font-weight:700;color:#64748b;text-align:right;margin-top:3px;}
-/* KPI summary strip */
-.inv-summary-strip{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;border-radius:14px;padding:18px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
-.inv-summary-item{text-align:center;border-right:1px solid #bfdbfe;padding:0 16px;}
-.inv-summary-item:last-child{border-right:none;}
-.inv-summary-label{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
-.inv-summary-val{font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.4px;}
-.inv-summary-val.teal{color:#0891b2;}
-.inv-summary-val.green{color:#10b981;}
+.inv2-cat{margin-bottom:16px;}
+.inv2-cat:last-child{margin-bottom:0;}
+.inv2-cat-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.inv2-cat-info{display:flex;align-items:center;gap:10px;}
+.inv2-cat-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
+.inv2-cat-name{font-size:13px;font-weight:600;color:#0f172a;}
+.inv2-cat-meta{font-size:10px;color:#94a3b8;margin-top:1px;}
+.inv2-cat-nums{display:flex;align-items:center;gap:10px;}
+.inv2-cat-amt{font-size:13px;font-weight:700;color:#0f172a;}
+.inv2-cat-pct{font-size:11px;font-weight:700;color:#64748b;min-width:32px;text-align:right;}
+.inv2-bar-track{height:8px;background:#f1f5f9;border-radius:99px;overflow:hidden;}
+.inv2-bar-fill{height:8px;border-radius:99px;transition:width .7s ease;}
+/* Summary strip */
+.inv2-summary{background:#fff;border:1px solid #e8edf2;border-radius:16px;display:grid;grid-template-columns:repeat(4,1fr);box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.inv2-sum-item{padding:18px 24px;border-right:1px solid #f1f5f9;}
+.inv2-sum-item:last-child{border-right:none;}
+.inv2-sum-lbl{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#94a3b8;margin-bottom:8px;}
+.inv2-sum-val{font-size:24px;font-weight:800;color:#0f172a;letter-spacing:-.5px;margin-bottom:4px;}
+.inv2-sum-trend{font-size:11px;font-weight:500;color:#94a3b8;}
+.inv2-sum-trend.up{color:#16a34a;}
 /* Table */
-.inv-table-card{background:#fff;border-radius:14px;border:1px solid #e8edf2;overflow:hidden;}
-.inv-table-hd{padding:16px 22px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;}
-.inv-table-title{font-size:14px;font-weight:700;color:#0f172a;}
-.inv-table-count{font-size:11px;color:#94a3b8;font-weight:500;}
-.inv-table{width:100%;border-collapse:collapse;}
-.inv-table th{padding:10px 16px;font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;text-align:left;background:#fafafa;border-bottom:1px solid #f1f5f9;}
-.inv-table td{padding:12px 16px;font-size:13px;border-bottom:1px solid #f8fafc;vertical-align:middle;}
-.inv-table tr:last-child td{border-bottom:none;}
-.inv-table tr:hover td{background:#fafbff;}
-.inv-t-proj{font-weight:700;color:#0f172a;}
-.inv-t-artist{color:#475569;}
-.inv-t-cat{display:inline-block;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;}
-.inv-t-cat.album{background:#f5f3ff;color:#7c3aed;}
-.inv-t-cat.single{background:#eff6ff;color:#2563eb;}
-.inv-t-cat.tournee{background:#fffbeb;color:#b45309;}
-.inv-t-cat.catalogue{background:#fdf2f8;color:#9d174d;}
-.inv-t-cat.streaming{background:#f0fdf4;color:#15803d;}
-.inv-t-investi{font-weight:600;color:#0f172a;}
-.inv-t-rev{font-weight:700;color:#2563eb;}
-.inv-t-roi{display:inline-block;background:linear-gradient(135deg,#2563eb,#3b82f6);color:#fff;font-size:12px;font-weight:800;padding:4px 11px;border-radius:20px;}
-.inv-t-risk{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;}
-.inv-t-risk.faible{background:#f0fdf4;color:#15803d;}
-.inv-t-risk.moyen{background:#fffbeb;color:#b45309;}
-.inv-t-risk.eleve{background:#fef2f2;color:#dc2626;}
-.inv-t-statut{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:#f8fafc;color:#475569;border:1px solid #e2e8f0;}
-/* Bottom 3-col */
-.inv-bottom-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
-.inv-top3-item{background:linear-gradient(135deg,#3b82f6,#60a5fa);border-radius:12px;padding:14px 16px;margin-bottom:10px;position:relative;overflow:hidden;}
-.inv-top3-item:last-child{margin-bottom:0;}
-.inv-top3-rank{position:absolute;top:10px;right:12px;width:26px;height:26px;border-radius:8px;background:rgba(255,255,255,.2);font-size:11px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;}
-.inv-top3-name{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
-.inv-top3-artist{font-size:11px;color:rgba(255,255,255,.7);margin-bottom:10px;}
-.inv-top3-foot{display:flex;align-items:center;justify-content:space-between;}
-.inv-top3-budget{font-size:12px;color:rgba(255,255,255,.8);}
-.inv-top3-roi{background:rgba(255,255,255,.2);border-radius:8px;padding:3px 9px;font-size:12px;font-weight:800;color:#fff;}
-.inv-risk-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f8fafc;}
-.inv-risk-row:last-child{border-bottom:none;}
-.inv-risk-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
-.inv-risk-label{font-size:13px;font-weight:600;color:#0f172a;flex:1;}
-.inv-risk-count{font-size:12px;color:#64748b;}
-.inv-risk-bar-bg{flex:2;height:7px;background:#f1f5f9;border-radius:99px;overflow:hidden;}
-.inv-risk-bar-fill{height:7px;border-radius:99px;}
-.inv-alert-item{border-radius:10px;padding:11px 14px;margin-bottom:9px;display:flex;align-items:flex-start;gap:10px;}
-.inv-alert-item:last-child{margin-bottom:0;}
-.inv-alert-item.green{background:#f0fdf4;border:1px solid #bbf7d0;}
-.inv-alert-item.blue{background:#eff6ff;border:1px solid #bfdbfe;}
-.inv-alert-item.amber{background:#fffbeb;border:1px solid #fde68a;}
-.inv-alert-icon{font-size:14px;flex-shrink:0;margin-top:1px;}
-.inv-alert-title{font-size:12px;font-weight:700;color:#0f172a;margin-bottom:2px;}
-.inv-alert-sub{font-size:11px;color:#64748b;}
+.inv2-table{width:100%;border-collapse:collapse;}
+.inv2-table th{padding:10px 18px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;background:#fafafa;border-bottom:1px solid #f1f5f9;text-align:left;white-space:nowrap;}
+.inv2-table td{padding:13px 18px;font-size:13px;border-bottom:1px solid #f8fafc;vertical-align:middle;}
+.inv2-table tr:last-child td{border-bottom:none;}
+.inv2-table tr:hover td{background:#fafbff;}
+.inv2-t-rank{font-size:11px;font-weight:700;color:#cbd5e1;text-align:center;width:28px;}
+.inv2-t-proj{font-weight:700;color:#0f172a;max-width:160px;}
+.inv2-t-artist{color:#64748b;font-size:12px;}
+.inv2-t-cat{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:10px;font-weight:700;white-space:nowrap;}
+.inv2-t-cat.album{background:#f5f3ff;color:#7c3aed;}
+.inv2-t-cat.single{background:#eff6ff;color:#2563eb;}
+.inv2-t-cat.tournee{background:#fffbeb;color:#b45309;}
+.inv2-t-cat.catalogue{background:#fdf2f8;color:#9d174d;}
+.inv2-t-num{font-weight:600;color:#0f172a;}
+.inv2-t-rev{font-weight:700;color:#2563eb;}
+.inv2-roi-cell{display:flex;align-items:center;gap:8px;}
+.inv2-roi-bar{flex:1;height:6px;background:#f1f5f9;border-radius:99px;overflow:hidden;max-width:64px;}
+.inv2-roi-fill{height:6px;border-radius:99px;background:linear-gradient(90deg,#3b82f6,#34d399);}
+.inv2-roi-val{font-size:12px;font-weight:800;color:#2563eb;min-width:40px;}
+.inv2-t-risk{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;}
+.inv2-t-risk::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;}
+.inv2-t-risk.faible{background:#f0fdf4;color:#15803d;}
+.inv2-t-risk.moyen{background:#fffbeb;color:#b45309;}
+.inv2-t-risk.eleve{background:#fef2f2;color:#dc2626;}
+.inv2-t-statut{display:inline-flex;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;border:1px solid #e2e8f0;background:#f8fafc;color:#475569;white-space:nowrap;}
+.inv2-t-statut.ok{background:#f0fdf4;color:#15803d;border-color:#bbf7d0;}
+.inv2-t-statut.prod{background:#eff6ff;color:#2563eb;border-color:#bfdbfe;}
+/* Bottom 3 */
+.inv2-bottom3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;}
+/* Top performers */
+.inv2-perf-item{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid #f8fafc;}
+.inv2-perf-item:last-child{border-bottom:none;}
+.inv2-perf-rank{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;}
+.inv2-perf-info{flex:1;min-width:0;}
+.inv2-perf-name{font-size:13px;font-weight:700;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.inv2-perf-meta{font-size:11px;color:#94a3b8;margin-top:1px;}
+.inv2-perf-roi{font-size:16px;font-weight:800;letter-spacing:-.3px;flex-shrink:0;}
+/* Risk */
+.inv2-risk-row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid #f8fafc;}
+.inv2-risk-row:last-child{border-bottom:none;}
+.inv2-risk-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
+.inv2-risk-lbl{font-size:12.5px;font-weight:600;color:#0f172a;min-width:55px;}
+.inv2-risk-track{flex:1;height:8px;background:#f1f5f9;border-radius:99px;overflow:hidden;}
+.inv2-risk-fill{height:8px;border-radius:99px;}
+.inv2-risk-info{text-align:right;min-width:64px;}
+.inv2-risk-count{font-size:12px;font-weight:700;color:#0f172a;}
+.inv2-risk-sub{font-size:10px;color:#94a3b8;}
+/* Alerts */
+.inv2-alert{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border-radius:10px;margin-bottom:8px;}
+.inv2-alert:last-child{margin-bottom:0;}
+.inv2-alert.green{background:#f0fdf4;border:1px solid #bbf7d0;}
+.inv2-alert.blue{background:#eff6ff;border:1px solid #bfdbfe;}
+.inv2-alert.amber{background:#fffbeb;border:1px solid #fde68a;}
+.inv2-alert.red{background:#fef2f2;border:1px solid #fecaca;}
+.inv2-alert-ico{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;margin-top:1px;}
+.inv2-alert.green .inv2-alert-ico{background:#dcfce7;}
+.inv2-alert.blue .inv2-alert-ico{background:#dbeafe;}
+.inv2-alert.amber .inv2-alert-ico{background:#fef3c7;}
+.inv2-alert.red .inv2-alert-ico{background:#fee2e2;}
+.inv2-alert-title{font-size:12.5px;font-weight:700;margin-bottom:2px;}
+.inv2-alert.green .inv2-alert-title{color:#15803d;}
+.inv2-alert.blue .inv2-alert-title{color:#1d4ed8;}
+.inv2-alert.amber .inv2-alert-title{color:#b45309;}
+.inv2-alert.red .inv2-alert-title{color:#dc2626;}
+.inv2-alert-sub{font-size:11px;color:#64748b;line-height:1.4;}
 
 /* ── Nouveau Projet Drawer ── */
 .np-ov{position:fixed;inset:0;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);z-index:5000;display:none;justify-content:flex-end;}
@@ -1970,273 +1990,433 @@ tbody tr:hover .pn{color:#2563eb;}
 
   <!-- INVESTISSEMENTS PAGE -->
   <div id="pg-invest" class="page" style="display:none;flex-direction:column;flex:1;min-height:0;">
-    <div class="inv-page">
 
-      <!-- Page header -->
-      <div class="inv-page-hd">
-        <div class="inv-page-title">Pilotage des investissements 2026</div>
-        <select class="inv-cat-select">
-          <option>Toutes les catégories</option>
-          <option>Album</option><option>Single</option><option>Tournée</option>
-          <option>Catalogue</option><option>Streaming</option>
-        </select>
-      </div>
-
-      <div class="inv-body">
-
-        <!-- KPI strip -->
-        <div class="inv-kpi-strip">
-          <div class="inv-kpi-card blue">
-            <div class="inv-kpi-label">Budget total 2026 <span>🎒</span></div>
-            <div class="inv-kpi-val">2,8 M€</div>
-            <div class="inv-kpi-sub">Enveloppe annuelle</div>
-          </div>
-          <div class="inv-kpi-card green">
-            <div class="inv-kpi-label">Investi à date <span>💎</span></div>
-            <div class="inv-kpi-val teal">850k €</div>
-            <div class="inv-kpi-sub">30% du budget</div>
-          </div>
-          <div class="inv-kpi-card amber">
-            <div class="inv-kpi-label">Reste disponible <span>💰</span></div>
-            <div class="inv-kpi-val">1,95 M€</div>
-            <div class="inv-kpi-sub">70% disponible</div>
-          </div>
-          <div class="inv-kpi-card purple">
-            <div class="inv-kpi-label">ROI moyen <span>📈</span></div>
-            <div class="inv-kpi-val green">185%</div>
-            <div class="inv-kpi-sub">+15 pts vs 2025</div>
-          </div>
-          <div class="inv-kpi-card teal">
-            <div class="inv-kpi-label">Projets financés <span>🎯</span></div>
-            <div class="inv-kpi-val">13</div>
-            <div class="inv-kpi-sub">5 en production</div>
-          </div>
+    <!-- Hero -->
+    <div class="inv2-hero">
+      <div class="inv2-hero-top">
+        <div>
+          <div class="inv2-hero-title">Pilotage des Investissements 2026</div>
+          <div class="inv2-hero-sub">AXIS Conseil · Rapport de performance S1 2026</div>
         </div>
-
-        <!-- Split: répartition + ROI chart -->
-        <div class="inv-split">
-
-          <!-- Répartition des investissements -->
-          <div class="inv-card">
-            <div class="inv-card-title">Répartition des investissements <span class="inv-card-badge">2026</span></div>
-            <div class="inv-cat-row">
-              <div class="inv-cat-head">
-                <div class="inv-cat-left"><div class="inv-cat-num">2</div><div><div class="inv-cat-name">Production albums</div><div class="inv-cat-projects">2 projets actifs</div></div></div>
-                <div class="inv-cat-right"><div class="inv-cat-amount">424k€</div><div class="inv-cat-max">sur 800k€</div></div>
-              </div>
-              <div class="inv-cat-bar-bg"><div class="inv-cat-bar-fill" style="width:53%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
-              <div class="inv-cat-pct">53%</div>
-            </div>
-            <div class="inv-cat-row">
-              <div class="inv-cat-head">
-                <div class="inv-cat-left"><div class="inv-cat-num">3</div><div><div class="inv-cat-name">Tournées & Lives</div><div class="inv-cat-projects">3 projets actifs</div></div></div>
-                <div class="inv-cat-right"><div class="inv-cat-amount">1,66M€</div><div class="inv-cat-max">sur 1,8M€</div></div>
-              </div>
-              <div class="inv-cat-bar-bg"><div class="inv-cat-bar-fill" style="width:92%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
-              <div class="inv-cat-pct">92%</div>
-            </div>
-            <div class="inv-cat-row">
-              <div class="inv-cat-head">
-                <div class="inv-cat-left"><div class="inv-cat-num">7</div><div><div class="inv-cat-name">Marketing & Promotion</div><div class="inv-cat-projects">7 projets actifs</div></div></div>
-                <div class="inv-cat-right"><div class="inv-cat-amount">280k€</div><div class="inv-cat-max">sur 450k€</div></div>
-              </div>
-              <div class="inv-cat-bar-bg"><div class="inv-cat-bar-fill" style="width:62%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
-              <div class="inv-cat-pct">62%</div>
-            </div>
-            <div class="inv-cat-row">
-              <div class="inv-cat-head">
-                <div class="inv-cat-left"><div class="inv-cat-num">1</div><div><div class="inv-cat-name">Catalogue & Droits</div><div class="inv-cat-projects">1 projet actif</div></div></div>
-                <div class="inv-cat-right"><div class="inv-cat-amount">1,6M€</div><div class="inv-cat-max">sur 2M€</div></div>
-              </div>
-              <div class="inv-cat-bar-bg"><div class="inv-cat-bar-fill" style="width:80%;background:linear-gradient(90deg,#3b82f6,#60a5fa);"></div></div>
-              <div class="inv-cat-pct">80%</div>
-            </div>
-          </div>
-
-          <!-- Évolution du ROI -->
-          <div class="inv-card">
-            <div class="inv-card-title">Évolution du ROI 2026 <span class="inv-card-badge">Jan–Jul</span></div>
-            <svg viewBox="0 0 560 180" style="width:100%;display:block;">
-              <defs>
-                <linearGradient id="roiGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"/>
-                  <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/>
-                </linearGradient>
-              </defs>
-              <!-- Grid lines -->
-              <line x1="48" y1="20" x2="540" y2="20" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-              <line x1="48" y1="65" x2="540" y2="65" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-              <line x1="48" y1="110" x2="540" y2="110" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-              <line x1="48" y1="155" x2="540" y2="155" stroke="#f1f5f9" stroke-width="1"/>
-              <line x1="48" y1="20" x2="48" y2="155" stroke="#f1f5f9" stroke-width="1"/>
-              <!-- Y labels -->
-              <text x="42" y="24" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">200%</text>
-              <text x="42" y="69" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">175%</text>
-              <text x="42" y="114" font-size="9" fill="#94a3b8" text-anchor="end" font-family="Inter">150%</text>
-              <!-- X labels -->
-              <text x="80"  y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jan</text>
-              <text x="155" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Fév</text>
-              <text x="230" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mar</text>
-              <text x="305" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Avr</text>
-              <text x="380" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mai</text>
-              <text x="455" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jun</text>
-              <text x="530" y="170" font-size="9" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jul</text>
-              <!-- Area fill -->
-              <path d="M80,138 L155,126 L230,114 L305,100 L380,82 L455,58 L530,22 L530,155 L80,155 Z" fill="url(#roiGrad)"/>
-              <!-- Dashed line -->
-              <path d="M80,138 L155,126 L230,114 L305,100 L380,82 L455,58 L530,22" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,4" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Dots -->
-              <circle cx="80"  cy="138" r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-              <circle cx="155" cy="126" r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-              <circle cx="230" cy="114" r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-              <circle cx="305" cy="100" r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-              <circle cx="380" cy="82"  r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-              <circle cx="455" cy="58"  r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-              <circle cx="530" cy="22"  r="4.5" fill="#3b82f6" stroke="#fff" stroke-width="2"/>
-            </svg>
-            <!-- Bottom KPI row -->
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;">
-              <div style="background:linear-gradient(135deg,#1d4ed8,#3b82f6);border-radius:10px;padding:10px;text-align:center;">
-                <div style="font-size:18px;font-weight:800;color:#fff;">185%</div>
-                <div style="font-size:9px;color:rgba(255,255,255,.7);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;">ROI actuel</div>
-              </div>
-              <div style="background:linear-gradient(135deg,#0891b2,#22d3ee);border-radius:10px;padding:10px;text-align:center;">
-                <div style="font-size:18px;font-weight:800;color:#fff;">+15pts</div>
-                <div style="font-size:9px;color:rgba(255,255,255,.7);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;">vs 2025</div>
-              </div>
-              <div style="background:linear-gradient(135deg,#059669,#10b981);border-radius:10px;padding:10px;text-align:center;">
-                <div style="font-size:18px;font-weight:800;color:#fff;">210%</div>
-                <div style="font-size:9px;color:rgba(255,255,255,.7);font-weight:700;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;">Objectif Jul</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- KPI summary strip -->
-        <div class="inv-summary-strip">
-          <div class="inv-summary-item">
-            <div class="inv-summary-label">Total investi</div>
-            <div class="inv-summary-val">5,6 M€</div>
-          </div>
-          <div class="inv-summary-item">
-            <div class="inv-summary-label">Revenus attendus</div>
-            <div class="inv-summary-val teal">13,8 M€</div>
-          </div>
-          <div class="inv-summary-item">
-            <div class="inv-summary-label">ROI moyen pondéré</div>
-            <div class="inv-summary-val green">185%</div>
-          </div>
-          <div class="inv-summary-item">
-            <div class="inv-summary-label">Marge brute estimée</div>
-            <div class="inv-summary-val">8,2 M€</div>
-          </div>
-        </div>
-
-        <!-- Table -->
-        <div class="inv-table-card">
-          <div class="inv-table-hd">
-            <div class="inv-table-title">Performance des investissements par projet</div>
-            <div class="inv-table-count">9 projets · S1 2026</div>
-          </div>
-          <table class="inv-table">
-            <thead>
-              <tr>
-                <th>Projet</th><th>Artiste</th><th>Catégorie</th>
-                <th>Investi</th><th>Revenus attendus</th>
-                <th>ROI estimé</th><th>Risque</th><th>Statut</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td class="inv-t-proj">Droits Catalogue</td><td class="inv-t-artist">Booba</td><td><span class="inv-t-cat catalogue">Catalogue</span></td><td class="inv-t-investi">1.6M€</td><td class="inv-t-rev">4.1M€</td><td><span class="inv-t-roi">2.58x</span></td><td><span class="inv-t-risk faible">Faible</span></td><td><span class="inv-t-statut">Actif</span></td></tr>
-              <tr><td class="inv-t-proj">Festival Été</td><td class="inv-t-artist">Damso</td><td><span class="inv-t-cat tournee">Tournée</span></td><td class="inv-t-investi">780k€</td><td class="inv-t-rev">2.5M€</td><td><span class="inv-t-roi">2.24x</span></td><td><span class="inv-t-risk moyen">Moyen</span></td><td><span class="inv-t-statut">En cours</span></td></tr>
-              <tr><td class="inv-t-proj">Nouveau Album</td><td class="inv-t-artist">PNL</td><td><span class="inv-t-cat album">Album</span></td><td class="inv-t-investi">235k€</td><td class="inv-t-rev">733k€</td><td><span class="inv-t-roi">2.12x</span></td><td><span class="inv-t-risk faible">Faible</span></td><td><span class="inv-t-statut">Production</span></td></tr>
-              <tr><td class="inv-t-proj">Tournée Européenne</td><td class="inv-t-artist">Nekfeu</td><td><span class="inv-t-cat tournee">Tournée</span></td><td class="inv-t-investi">460k€</td><td class="inv-t-rev">1.4M€</td><td><span class="inv-t-roi">2.05x</span></td><td><span class="inv-t-risk moyen">Moyen</span></td><td><span class="inv-t-statut">Logistique</span></td></tr>
-              <tr><td class="inv-t-proj">Concerts Zénith</td><td class="inv-t-artist">Tiakola</td><td><span class="inv-t-cat tournee">Tournée</span></td><td class="inv-t-investi">420k€</td><td class="inv-t-rev">1.2M€</td><td><span class="inv-t-roi">1.94x</span></td><td><span class="inv-t-risk moyen">Moyen</span></td><td><span class="inv-t-statut">Planifié</span></td></tr>
-              <tr><td class="inv-t-proj">Feat International</td><td class="inv-t-artist">Hamza</td><td><span class="inv-t-cat single">Single</span></td><td class="inv-t-investi">186k€</td><td class="inv-t-rev">538k€</td><td><span class="inv-t-roi">1.89x</span></td><td><span class="inv-t-risk eleve">Élevé</span></td><td><span class="inv-t-statut">Production</span></td></tr>
-              <tr><td class="inv-t-proj">Clip Premium</td><td class="inv-t-artist">Ninho</td><td><span class="inv-t-cat single">Single</span></td><td class="inv-t-investi">195k€</td><td class="inv-t-rev">528k€</td><td><span class="inv-t-roi">1.71x</span></td><td><span class="inv-t-risk moyen">Moyen</span></td><td><span class="inv-t-statut">Pré-prod</span></td></tr>
-              <tr><td class="inv-t-proj">Single Promo</td><td class="inv-t-artist">Niska</td><td><span class="inv-t-cat single">Single</span></td><td class="inv-t-investi">87k€</td><td class="inv-t-rev">231k€</td><td><span class="inv-t-roi">1.65x</span></td><td><span class="inv-t-risk faible">Faible</span></td><td><span class="inv-t-statut">Clip</span></td></tr>
-              <tr><td class="inv-t-proj">Album Deluxe</td><td class="inv-t-artist">Gazo</td><td><span class="inv-t-cat album">Album</span></td><td class="inv-t-investi">189k€</td><td class="inv-t-rev">469k€</td><td><span class="inv-t-roi">1.48x</span></td><td><span class="inv-t-risk moyen">Moyen</span></td><td><span class="inv-t-statut">Studio</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Bottom 3-col -->
-        <div class="inv-bottom-3">
-
-          <!-- Top 3 -->
-          <div class="inv-card">
-            <div class="inv-card-title">🏆 Top 3 Investissements</div>
-            <div class="inv-top3-item" style="background:linear-gradient(135deg,#2563eb,#60a5fa);">
-              <div class="inv-top3-rank">1</div>
-              <div class="inv-top3-name">Droits Catalogue Booba</div>
-              <div class="inv-top3-artist">Booba · Catalogue</div>
-              <div class="inv-top3-foot">
-                <span class="inv-top3-budget">1.6M€</span>
-                <span class="inv-top3-roi">2.58x</span>
-              </div>
-            </div>
-            <div class="inv-top3-item" style="background:linear-gradient(135deg,#3b82f6,#93c5fd);">
-              <div class="inv-top3-rank">2</div>
-              <div class="inv-top3-name">Festival Été Damso</div>
-              <div class="inv-top3-artist">Damso · Tournée</div>
-              <div class="inv-top3-foot">
-                <span class="inv-top3-budget">780k€</span>
-                <span class="inv-top3-roi">2.24x</span>
-              </div>
-            </div>
-            <div class="inv-top3-item" style="background:linear-gradient(135deg,#60a5fa,#bfdbfe);">
-              <div class="inv-top3-rank">3</div>
-              <div class="inv-top3-name">Nouveau Album PNL</div>
-              <div class="inv-top3-artist">PNL · Album</div>
-              <div class="inv-top3-foot">
-                <span class="inv-top3-budget">235k€</span>
-                <span class="inv-top3-roi">2.12x</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Analyse des risques -->
-          <div class="inv-card">
-            <div class="inv-card-title">Analyse des risques</div>
-            <div class="inv-risk-row">
-              <div class="inv-risk-dot" style="background:#10b981;"></div>
-              <div class="inv-risk-label">Faible</div>
-              <div class="inv-risk-bar-bg"><div class="inv-risk-bar-fill" style="width:46%;background:#10b981;"></div></div>
-              <div class="inv-risk-count">6 projets</div>
-            </div>
-            <div class="inv-risk-row">
-              <div class="inv-risk-dot" style="background:#f59e0b;"></div>
-              <div class="inv-risk-label">Moyen</div>
-              <div class="inv-risk-bar-bg"><div class="inv-risk-bar-fill" style="width:46%;background:#f59e0b;"></div></div>
-              <div class="inv-risk-count">6 projets</div>
-            </div>
-            <div class="inv-risk-row">
-              <div class="inv-risk-dot" style="background:#ef4444;"></div>
-              <div class="inv-risk-label">Élevé</div>
-              <div class="inv-risk-bar-bg"><div class="inv-risk-bar-fill" style="width:8%;background:#ef4444;"></div></div>
-              <div class="inv-risk-count">1 projet</div>
-            </div>
-          </div>
-
-          <!-- Alertes & Recommandations -->
-          <div class="inv-card">
-            <div class="inv-card-title">Alertes &amp; Recommandations</div>
-            <div class="inv-alert-item green">
-              <div class="inv-alert-icon">✓</div>
-              <div><div class="inv-alert-title">Performance excellente</div><div class="inv-alert-sub">ROI global au-dessus des objectifs</div></div>
-            </div>
-            <div class="inv-alert-item blue">
-              <div class="inv-alert-icon">ℹ</div>
-              <div><div class="inv-alert-title">Budget disponible</div><div class="inv-alert-sub">1,95M€ disponible pour Q3-Q4</div></div>
-            </div>
-            <div class="inv-alert-item amber">
-              <div class="inv-alert-icon">⚠</div>
-              <div><div class="inv-alert-title">Diversification</div><div class="inv-alert-sub">Concentration sur catalogue (35%)</div></div>
-            </div>
-          </div>
-
+        <div class="inv2-hero-period">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Janvier – Juillet 2026
         </div>
       </div>
+      <div class="inv2-kpis">
+        <div class="inv2-kpi">
+          <div class="inv2-kpi-lbl">Budget total 2026</div>
+          <div class="inv2-kpi-val">2,8 M€</div>
+          <div class="inv2-kpi-trend">Enveloppe annuelle</div>
+        </div>
+        <div class="inv2-kpi">
+          <div class="inv2-kpi-lbl">Investi à date</div>
+          <div class="inv2-kpi-val em">850 k€</div>
+          <div class="inv2-kpi-trend up">↑ 30% du budget</div>
+        </div>
+        <div class="inv2-kpi">
+          <div class="inv2-kpi-lbl">Reste disponible</div>
+          <div class="inv2-kpi-val">1,95 M€</div>
+          <div class="inv2-kpi-trend">70% disponible</div>
+        </div>
+        <div class="inv2-kpi">
+          <div class="inv2-kpi-lbl">ROI moyen</div>
+          <div class="inv2-kpi-val em">185%</div>
+          <div class="inv2-kpi-trend up">↑ +15 pts vs 2025</div>
+        </div>
+        <div class="inv2-kpi">
+          <div class="inv2-kpi-lbl">Projets financés</div>
+          <div class="inv2-kpi-val">13</div>
+          <div class="inv2-kpi-trend">5 en production</div>
+        </div>
+      </div>
+      <div class="inv2-budget-labels">
+        <span><b>0 €</b></span>
+        <span>Consommation budget · <b>850 k€ sur 2,8 M€</b></span>
+        <span><b>2,8 M€</b></span>
+      </div>
+      <div class="inv2-budget-track"><div class="inv2-budget-fill" style="width:30%;"></div></div>
+    </div>
+
+    <div class="inv2-body">
+
+      <!-- 2-col: répartition + ROI chart -->
+      <div class="inv2-row2">
+
+        <!-- Répartition budgétaire -->
+        <div class="inv2-card">
+          <div class="inv2-card-hd">
+            <div>
+              <div class="inv2-card-title">Répartition budgétaire</div>
+              <div class="inv2-card-sub">Consommation par catégorie · S1 2026</div>
+            </div>
+            <span class="inv2-badge blue">2026</span>
+          </div>
+          <div class="inv2-card-body">
+            <div class="inv2-cat">
+              <div class="inv2-cat-hd">
+                <div class="inv2-cat-info">
+                  <div class="inv2-cat-dot" style="background:#7c3aed;"></div>
+                  <div>
+                    <div class="inv2-cat-name">Production albums</div>
+                    <div class="inv2-cat-meta">2 projets actifs</div>
+                  </div>
+                </div>
+                <div class="inv2-cat-nums">
+                  <div class="inv2-cat-amt">424 k€</div>
+                  <div class="inv2-cat-pct">53%</div>
+                </div>
+              </div>
+              <div class="inv2-bar-track"><div class="inv2-bar-fill" style="width:53%;background:linear-gradient(90deg,#7c3aed,#a78bfa);"></div></div>
+            </div>
+            <div class="inv2-cat">
+              <div class="inv2-cat-hd">
+                <div class="inv2-cat-info">
+                  <div class="inv2-cat-dot" style="background:#b45309;"></div>
+                  <div>
+                    <div class="inv2-cat-name">Tournées &amp; Lives</div>
+                    <div class="inv2-cat-meta">3 projets actifs</div>
+                  </div>
+                </div>
+                <div class="inv2-cat-nums">
+                  <div class="inv2-cat-amt">1,66 M€</div>
+                  <div class="inv2-cat-pct">92%</div>
+                </div>
+              </div>
+              <div class="inv2-bar-track"><div class="inv2-bar-fill" style="width:92%;background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div></div>
+            </div>
+            <div class="inv2-cat">
+              <div class="inv2-cat-hd">
+                <div class="inv2-cat-info">
+                  <div class="inv2-cat-dot" style="background:#0891b2;"></div>
+                  <div>
+                    <div class="inv2-cat-name">Marketing &amp; Promotion</div>
+                    <div class="inv2-cat-meta">7 projets actifs</div>
+                  </div>
+                </div>
+                <div class="inv2-cat-nums">
+                  <div class="inv2-cat-amt">280 k€</div>
+                  <div class="inv2-cat-pct">62%</div>
+                </div>
+              </div>
+              <div class="inv2-bar-track"><div class="inv2-bar-fill" style="width:62%;background:linear-gradient(90deg,#0891b2,#22d3ee);"></div></div>
+            </div>
+            <div class="inv2-cat">
+              <div class="inv2-cat-hd">
+                <div class="inv2-cat-info">
+                  <div class="inv2-cat-dot" style="background:#9d174d;"></div>
+                  <div>
+                    <div class="inv2-cat-name">Catalogue &amp; Droits</div>
+                    <div class="inv2-cat-meta">1 projet actif</div>
+                  </div>
+                </div>
+                <div class="inv2-cat-nums">
+                  <div class="inv2-cat-amt">1,6 M€</div>
+                  <div class="inv2-cat-pct">80%</div>
+                </div>
+              </div>
+              <div class="inv2-bar-track"><div class="inv2-bar-fill" style="width:80%;background:linear-gradient(90deg,#9d174d,#ec4899);"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROI chart -->
+        <div class="inv2-card">
+          <div class="inv2-card-hd">
+            <div>
+              <div class="inv2-card-title">Évolution du ROI</div>
+              <div class="inv2-card-sub">Progression mensuelle Jan – Jul 2026</div>
+            </div>
+            <span class="inv2-badge green">+15 pts vs 2025</span>
+          </div>
+          <div class="inv2-card-body">
+            <div style="position:relative;height:180px;">
+              <canvas id="investRoiChart"></canvas>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;">
+              <div style="background:#eff6ff;border-radius:12px;padding:12px;text-align:center;">
+                <div style="font-size:20px;font-weight:800;color:#2563eb;letter-spacing:-.5px;">185%</div>
+                <div style="font-size:9px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:4px;">ROI actuel</div>
+              </div>
+              <div style="background:#f0fdf4;border-radius:12px;padding:12px;text-align:center;">
+                <div style="font-size:20px;font-weight:800;color:#15803d;letter-spacing:-.5px;">+15 pts</div>
+                <div style="font-size:9px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:4px;">vs 2025</div>
+              </div>
+              <div style="background:#fdf4ff;border-radius:12px;padding:12px;text-align:center;">
+                <div style="font-size:20px;font-weight:800;color:#7c3aed;letter-spacing:-.5px;">210%</div>
+                <div style="font-size:9px;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:4px;">Objectif Jul</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Summary strip -->
+      <div class="inv2-summary">
+        <div class="inv2-sum-item">
+          <div class="inv2-sum-lbl">Total investi</div>
+          <div class="inv2-sum-val">5,6 M€</div>
+          <div class="inv2-sum-trend">Portefeuille global</div>
+        </div>
+        <div class="inv2-sum-item">
+          <div class="inv2-sum-lbl">Revenus attendus</div>
+          <div class="inv2-sum-val">13,8 M€</div>
+          <div class="inv2-sum-trend up">↑ Projection S2 2026</div>
+        </div>
+        <div class="inv2-sum-item">
+          <div class="inv2-sum-lbl">ROI moyen pondéré</div>
+          <div class="inv2-sum-val">185%</div>
+          <div class="inv2-sum-trend up">↑ Au-dessus objectif</div>
+        </div>
+        <div class="inv2-sum-item">
+          <div class="inv2-sum-lbl">Marge brute estimée</div>
+          <div class="inv2-sum-val">8,2 M€</div>
+          <div class="inv2-sum-trend">Nets après charges</div>
+        </div>
+      </div>
+
+      <!-- Table card -->
+      <div class="inv2-card">
+        <div class="inv2-card-hd">
+          <div>
+            <div class="inv2-card-title">Performance des investissements par projet</div>
+            <div class="inv2-card-sub">Classement par ROI estimé · S1 2026</div>
+          </div>
+          <span class="inv2-badge">9 projets</span>
+        </div>
+        <table class="inv2-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Projet</th>
+              <th>Artiste</th>
+              <th>Catégorie</th>
+              <th>Investi</th>
+              <th>Revenus attendus</th>
+              <th>ROI estimé</th>
+              <th>Risque</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="inv2-t-rank">1</td>
+              <td class="inv2-t-proj">Droits Catalogue</td>
+              <td class="inv2-t-artist">Booba</td>
+              <td><span class="inv2-t-cat catalogue">Catalogue</span></td>
+              <td class="inv2-t-num">1,6 M€</td>
+              <td class="inv2-t-rev">4,1 M€</td>
+              <td><div class="inv2-roi-cell"><div class="inv2-roi-bar"><div class="inv2-roi-fill" style="width:100%;"></div></div><span class="inv2-roi-val">2.58x</span></div></td>
+              <td><span class="inv2-t-risk faible">Faible</span></td>
+              <td><span class="inv2-t-statut ok">Actif</span></td>
+            </tr>
+            <tr>
+              <td class="inv2-t-rank">2</td>
+              <td class="inv2-t-proj">Festival Été</td>
+              <td class="inv2-t-artist">Damso</td>
+              <td><span class="inv2-t-cat tournee">Tournée</span></td>
+              <td class="inv2-t-num">780 k€</td>
+              <td class="inv2-t-rev">2,5 M€</td>
+              <td><div class="inv2-roi-cell"><div class="inv2-roi-bar"><div class="inv2-roi-fill" style="width:87%;"></div></div><span class="inv2-roi-val">2.24x</span></div></td>
+              <td><span class="inv2-t-risk moyen">Moyen</span></td>
+              <td><span class="inv2-t-statut prod">En cours</span></td>
+            </tr>
+            <tr>
+              <td class="inv2-t-rank">3</td>
+              <td class="inv2-t-proj">Nouveau Album</td>
+              <td class="inv2-t-artist">PNL</td>
+              <td><span class="inv2-t-cat album">Album</span></td>
+              <td class="inv2-t-num">235 k€</td>
+              <td class="inv2-t-rev">733 k€</td>
+              <td><div class="inv2-roi-cell"><div class="inv2-roi-bar"><div class="inv2-roi-fill" style="width:82%;"></div></div><span class="inv2-roi-val">2.12x</span></div></td>
+              <td><span class="inv2-t-risk faible">Faible</span></td>
+              <td><span class="inv2-t-statut prod">Production</span></td>
+            </tr>
+            <tr>
+              <td class="inv2-t-rank">4</td>
+              <td class="inv2-t-proj">Tournée Européenne</td>
+              <td class="inv2-t-artist">Nekfeu</td>
+              <td><span class="inv2-t-cat tournee">Tournée</span></td>
+              <td class="inv2-t-num">460 k€</td>
+              <td class="inv2-t-rev">1,4 M€</td>
+              <td><div class="inv2-roi-cell"><div class="inv2-roi-bar"><div class="inv2-roi-fill" style="width:79%;"></div></div><span class="inv2-roi-val">2.05x</span></div></td>
+              <td><span class="inv2-t-risk moyen">Moyen</span></td>
+              <td><span class="inv2-t-statut">Logistique</span></td>
+            </tr>
+            <tr>
+              <td class="inv2-t-rank">5</td>
+              <td class="inv2-t-proj">Concerts Zénith</td>
+              <td class="inv2-t-artist">Tiakola</td>
+              <td><span class="inv2-t-cat tournee">Tournée</span></td>
+              <td class="inv2-t-num">420 k€</td>
+              <td class="inv2-t-rev">1,2 M€</td>
+              <td><div class="inv2-roi-cell"><div class="inv2-roi-bar"><div class="inv2-roi-fill" style="width:75%;"></div></div><span class="inv2-roi-val">1.94x</span></div></td>
+              <td><span class="inv2-t-risk moyen">Moyen</span></td>
+              <td><span class="inv2-t-statut">Planifié</span></td>
+            </tr>
+            <tr>
+              <td class="inv2-t-rank">6</td>
+              <td class="inv2-t-proj">Feat International</td>
+              <td class="inv2-t-artist">Hamza</td>
+              <td><span class="inv2-t-cat single">Single</span></td>
+              <td class="inv2-t-num">186 k€</td>
+              <td class="inv2-t-rev">538 k€</td>
+              <td><div class="inv2-roi-cell"><div class="inv2-roi-bar"><div class="inv2-roi-fill" style="width:73%;"></div></div><span class="inv2-roi-val">1.89x</span></div></td>
+              <td><span class="inv2-t-risk eleve">Élevé</span></td>
+              <td><span class="inv2-t-statut prod">Production</span></td>
+            </tr>
+            <tr>
+              <td class="inv2-t-rank">7</td>
+              <td class="inv2-t-proj">Clip Premium</td>
+              <td class="inv2-t-artist">Ninho</td>
+              <td><span class="inv2-t-cat single">Single</span></td>
+              <td class="inv2-t-num">195 k€</td>
+              <td class="inv2-t-rev">528 k€</td>
+              <td><div class="inv2-roi-cell"><div class="inv2-roi-bar"><div class="inv2-roi-fill" style="width:66%;"></div></div><span class="inv2-roi-val">1.71x</span></div></td>
+              <td><span class="inv2-t-risk moyen">Moyen</span></td>
+              <td><span class="inv2-t-statut">Pré-prod</span></td>
+            </tr>
+            <tr>
+              <td class="inv2-t-rank">8</td>
+              <td class="inv2-t-proj">Single Promo</td>
+              <td class="inv2-t-artist">Niska</td>
+              <td><span class="inv2-t-cat single">Single</span></td>
+              <td class="inv2-t-num">87 k€</td>
+              <td class="inv2-t-rev">231 k€</td>
+              <td><div class="inv2-roi-cell"><div class="inv2-roi-bar"><div class="inv2-roi-fill" style="width:64%;"></div></div><span class="inv2-roi-val">1.65x</span></div></td>
+              <td><span class="inv2-t-risk faible">Faible</span></td>
+              <td><span class="inv2-t-statut">Clip</span></td>
+            </tr>
+            <tr>
+              <td class="inv2-t-rank">9</td>
+              <td class="inv2-t-proj">Album Deluxe</td>
+              <td class="inv2-t-artist">Gazo</td>
+              <td><span class="inv2-t-cat album">Album</span></td>
+              <td class="inv2-t-num">189 k€</td>
+              <td class="inv2-t-rev">469 k€</td>
+              <td><div class="inv2-roi-cell"><div class="inv2-roi-bar"><div class="inv2-roi-fill" style="width:57%;"></div></div><span class="inv2-roi-val">1.48x</span></div></td>
+              <td><span class="inv2-t-risk moyen">Moyen</span></td>
+              <td><span class="inv2-t-statut">Studio</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Bottom 3-col -->
+      <div class="inv2-bottom3">
+
+        <!-- Top performers -->
+        <div class="inv2-card">
+          <div class="inv2-card-hd">
+            <div>
+              <div class="inv2-card-title">Top Performers</div>
+              <div class="inv2-card-sub">Meilleurs ROI du portefeuille</div>
+            </div>
+            <span class="inv2-badge green">S1 2026</span>
+          </div>
+          <div class="inv2-card-body">
+            <div class="inv2-perf-item">
+              <div class="inv2-perf-rank" style="background:#fef9c3;color:#854d0e;">1</div>
+              <div class="inv2-perf-info">
+                <div class="inv2-perf-name">Droits Catalogue Booba</div>
+                <div class="inv2-perf-meta">Catalogue · 1,6 M€ investi</div>
+              </div>
+              <div class="inv2-perf-roi" style="color:#2563eb;">2.58x</div>
+            </div>
+            <div class="inv2-perf-item">
+              <div class="inv2-perf-rank" style="background:#f1f5f9;color:#475569;">2</div>
+              <div class="inv2-perf-info">
+                <div class="inv2-perf-name">Festival Été Damso</div>
+                <div class="inv2-perf-meta">Tournée · 780 k€ investi</div>
+              </div>
+              <div class="inv2-perf-roi" style="color:#2563eb;">2.24x</div>
+            </div>
+            <div class="inv2-perf-item">
+              <div class="inv2-perf-rank" style="background:#f1f5f9;color:#475569;">3</div>
+              <div class="inv2-perf-info">
+                <div class="inv2-perf-name">Nouveau Album PNL</div>
+                <div class="inv2-perf-meta">Album · 235 k€ investi</div>
+              </div>
+              <div class="inv2-perf-roi" style="color:#2563eb;">2.12x</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Risk analysis -->
+        <div class="inv2-card">
+          <div class="inv2-card-hd">
+            <div>
+              <div class="inv2-card-title">Analyse des risques</div>
+              <div class="inv2-card-sub">Distribution par niveau · 13 projets</div>
+            </div>
+          </div>
+          <div class="inv2-card-body">
+            <div class="inv2-risk-row">
+              <div class="inv2-risk-dot" style="background:#16a34a;"></div>
+              <div class="inv2-risk-lbl">Faible</div>
+              <div class="inv2-risk-track"><div class="inv2-risk-fill" style="width:46%;background:#16a34a;"></div></div>
+              <div class="inv2-risk-info">
+                <div class="inv2-risk-count">6 projets</div>
+                <div class="inv2-risk-sub">46%</div>
+              </div>
+            </div>
+            <div class="inv2-risk-row">
+              <div class="inv2-risk-dot" style="background:#f59e0b;"></div>
+              <div class="inv2-risk-lbl">Moyen</div>
+              <div class="inv2-risk-track"><div class="inv2-risk-fill" style="width:46%;background:#f59e0b;"></div></div>
+              <div class="inv2-risk-info">
+                <div class="inv2-risk-count">6 projets</div>
+                <div class="inv2-risk-sub">46%</div>
+              </div>
+            </div>
+            <div class="inv2-risk-row">
+              <div class="inv2-risk-dot" style="background:#dc2626;"></div>
+              <div class="inv2-risk-lbl">Élevé</div>
+              <div class="inv2-risk-track"><div class="inv2-risk-fill" style="width:8%;background:#dc2626;"></div></div>
+              <div class="inv2-risk-info">
+                <div class="inv2-risk-count">1 projet</div>
+                <div class="inv2-risk-sub">8%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerts -->
+        <div class="inv2-card">
+          <div class="inv2-card-hd">
+            <div>
+              <div class="inv2-card-title">Alertes &amp; Recommandations</div>
+              <div class="inv2-card-sub">Actions prioritaires</div>
+            </div>
+          </div>
+          <div class="inv2-card-body">
+            <div class="inv2-alert green">
+              <div class="inv2-alert-ico">✓</div>
+              <div>
+                <div class="inv2-alert-title">Performance excellente</div>
+                <div class="inv2-alert-sub">ROI global au-dessus des objectifs fixés en début d'exercice</div>
+              </div>
+            </div>
+            <div class="inv2-alert blue">
+              <div class="inv2-alert-ico">ℹ</div>
+              <div>
+                <div class="inv2-alert-title">Budget disponible</div>
+                <div class="inv2-alert-sub">1,95 M€ disponibles pour déploiement Q3-Q4 2026</div>
+              </div>
+            </div>
+            <div class="inv2-alert amber">
+              <div class="inv2-alert-ico">⚠</div>
+              <div>
+                <div class="inv2-alert-title">Diversification à renforcer</div>
+                <div class="inv2-alert-sub">Concentration catalogue à 35% — rééquilibrage recommandé</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </div>
 
@@ -3615,6 +3795,63 @@ function _setTopbarPage(id) {
   }
 }
 
+var _investChartInited = false;
+function _initInvestChart() {
+  if (_investChartInited) return;
+  _investChartInited = true;
+  var ctx = document.getElementById('investRoiChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Jan','Fév','Mar','Avr','Mai','Jun','Jul'],
+      datasets: [{
+        label: 'ROI (%)',
+        data: [142, 151, 160, 168, 176, 182, 185],
+        borderColor: '#3b82f6',
+        backgroundColor: 'rgba(59,130,246,0.08)',
+        borderWidth: 2.5,
+        pointBackgroundColor: '#3b82f6',
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2,
+        pointRadius: 5,
+        fill: true,
+        tension: 0.4
+      },{
+        label: 'Objectif (%)',
+        data: [145, 155, 165, 175, 185, 200, 210],
+        borderColor: '#34d399',
+        backgroundColor: 'transparent',
+        borderWidth: 1.5,
+        borderDash: [5, 4],
+        pointRadius: 0,
+        fill: false,
+        tension: 0.4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) { return ctx.dataset.label + ': ' + ctx.parsed.y + '%'; }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 10, family: 'Inter' }, color: '#94a3b8' } },
+        y: {
+          min: 120, max: 220,
+          ticks: { stepSize: 20, font: { size: 10, family: 'Inter' }, color: '#94a3b8', callback: function(v){ return v+'%'; } },
+          grid: { color: '#f1f5f9' }
+        }
+      }
+    }
+  });
+}
+
 function showPage(id, btn) {
   document.querySelectorAll('.sb-item').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
@@ -3622,6 +3859,7 @@ function showPage(id, btn) {
   var pg = document.getElementById('pg-' + id);
   if (pg) { pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1'; pg.style.minHeight='0'; }
   _setTopbarPage(id);
+  if (id === 'invest') _initInvestChart();
 }
 
 
