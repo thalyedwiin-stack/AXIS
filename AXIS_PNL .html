@@ -2667,27 +2667,18 @@ function openArtistDetail(name) {
     '</div>';
 
   // Show page
-  ['pg-dashboard','pg-crm','pg-projets','pg-other','pg-projet-detail'].forEach(function(pid){
-    var el = document.getElementById(pid); if (el) el.style.display = 'none';
-  });
+  _hideAllPages();
   pg.style.cssText = 'display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;background:#f1f5f9;';
-  var t = document.getElementById('pageTitle');
-  if (t) t.textContent = name;
 }
 
 function closeArtistDetail() {
-  hideTopbarBreadcrumb();
-  var pg = document.getElementById('pg-artist-detail');
-  if (pg) pg.style.cssText = 'display:none;';
+  _hideAllPages();
   var crm = document.getElementById('pg-crm');
-  if (crm) crm.style.cssText = 'display:flex;flex-direction:column;flex:1;min-height:0;';
+  if (crm) { crm.style.display='flex'; crm.style.flexDirection='column'; crm.style.flex='1'; crm.style.minHeight='0'; }
   document.querySelectorAll('.sb-item').forEach(function(b){ b.classList.remove('active'); });
   var navItems = document.querySelectorAll('.sb-item');
   if (navItems[1]) navItems[1].classList.add('active');
-  var t = document.getElementById('pageTitle');
-  if (t) t.textContent = 'CRM';
-  var tbCrmTabs = document.getElementById('tbCrmTabs');
-  if (tbCrmTabs) tbCrmTabs.style.display = 'flex';
+  _setTopbarPage('crm');
 }
 
 // ── Power BI Page ──
@@ -3577,8 +3568,10 @@ function showTopbarBreadcrumb(section, sectionLabel, currentLabel, backFn) {
   document.getElementById('tbBcCurrent').textContent = currentLabel;
 }
 function hideTopbarBreadcrumb() {
-  document.getElementById('tbLeft').style.display = '';
-  document.getElementById('tbBreadcrumb').style.display = 'none';
+  var tbLeft = document.getElementById('tbLeft');
+  if (tbLeft) tbLeft.style.display = '';
+  var bc = document.getElementById('tbBreadcrumb');
+  if (bc) bc.style.display = 'none';
 }
 
 function toggleNavDropdown(e) {
@@ -3591,49 +3584,44 @@ document.addEventListener('click', function(e) {
   if (wrap && !wrap.contains(e.target)) wrap.classList.remove('open');
 });
 
-function showPage(id, btn) {
-  // Update active nav button
-  document.querySelectorAll('.sb-item').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
-  
-  // Hide all pages by removing inline style and adding hidden class
-  var pages = document.querySelectorAll('.page');
-  pages.forEach(function(p) { p.style.display = 'none'; });
-  
-  // Show the selected page
-  var pg = document.getElementById('pg-' + id);
-  if (pg) {
-    pg.style.display = 'flex';
-    pg.style.flexDirection = 'column';
-    pg.style.flex = '1';
-    pg.style.minHeight = '0';
-  }
-  
-  // Update topbar title + subtitle
-  var titles = { dashboard: 'Dashboard', crm: 'CRM', projets: 'Projets artistes', invest: 'Investissements', other: 'En développement' };
-  var subs = {
-    dashboard: 'Gestion et analyse des investissements musicaux',
-    crm: 'Portefeuille artistes · Contrats & opportunités',
-    projets: 'Suivi des projets en cours · AXIS Conseil',
-    invest: 'Pilotage des investissements · S1 2026 · AXIS Conseil',
-    other: 'Module en cours de développement'
-  };
+var _pageTitles = { dashboard:'Dashboard', crm:'CRM', projets:'Projets artistes', invest:'Investissements', other:'En développement' };
+var _pageSubs = {
+  dashboard:'Gestion et analyse des investissements musicaux',
+  crm:'Portefeuille artistes · Contrats & opportunités',
+  projets:'Suivi des projets en cours · AXIS Conseil',
+  invest:'Pilotage des investissements · S1 2026 · AXIS Conseil',
+  other:'Module en cours de développement'
+};
+
+function _hideAllPages() {
+  ['pg-dashboard','pg-crm','pg-projets','pg-invest','pg-other',
+   'pg-artist-detail','pg-projet-detail'].forEach(function(pid) {
+    var el = document.getElementById(pid);
+    if (el) el.style.display = 'none';
+  });
+}
+
+function _setTopbarPage(id) {
+  hideTopbarBreadcrumb();
   var t = document.getElementById('pageTitle');
-  if (t) t.textContent = titles[id] || id;
+  if (t) t.textContent = _pageTitles[id] || id;
   var s = document.getElementById('pageSub');
-  if (s) s.textContent = subs[id] || '';
-  
-  // Show/hide CRM tabs in topbar
+  if (s) s.textContent = _pageSubs[id] || '';
   var tbCrmTabs = document.getElementById('tbCrmTabs');
   if (tbCrmTabs) tbCrmTabs.style.display = (id === 'crm') ? 'flex' : 'none';
-
-  // CRM: reset panels
   if (id === 'crm') {
-    var d = document.getElementById('crmDetail');
-    if (d) d.style.display = '';
-    var o = document.getElementById('oppPanel');
-    if (o) o.style.display = 'none';
+    var firstTab = document.querySelector('.crm-view-tab');
+    if (firstTab) switchCrmTab('artistes', firstTab);
   }
+}
+
+function showPage(id, btn) {
+  document.querySelectorAll('.sb-item').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  _hideAllPages();
+  var pg = document.getElementById('pg-' + id);
+  if (pg) { pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1'; pg.style.minHeight='0'; }
+  _setTopbarPage(id);
 }
 
 
@@ -3696,13 +3684,9 @@ function openProjDetail(name, from) {
       '</div>'+
     '</div>';
 
-  ['pg-dashboard','pg-crm','pg-projets','pg-other','pg-artist-detail'].forEach(function(pid){
-    var el=document.getElementById(pid); if(el) el.style.display='none';
-  });
+  _hideAllPages();
   var pg=document.getElementById('pg-projet-detail');
-  pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1';
-  var t=document.getElementById('pageTitle');
-  if(t) t.textContent=name;
+  if(pg){ pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1'; pg.style.minHeight='0'; }
 }
 
 function askDeleteProj() {
@@ -3756,19 +3740,16 @@ function confirmDeleteProj() {
 }
 
 function closeProjDetail() {
-  hideTopbarBreadcrumb();
-  document.getElementById('pg-projet-detail').style.display='none';
-  var titles = {dashboard:'Dashboard', projets:'Projets artistes'};
+  _hideAllPages();
+  var navMap = {dashboard:0, crm:1, projets:2, invest:3, other:4};
   var pageId = 'pg-' + _fromPage;
   var pg = document.getElementById(pageId);
   if (pg) { pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1'; pg.style.minHeight='0'; }
   document.querySelectorAll('.sb-item').forEach(function(b) { b.classList.remove('active'); });
-  var navMap = {dashboard:0, projets:2};
   var navItems = document.querySelectorAll('.sb-item');
   var idx = navMap[_fromPage];
   if (idx !== undefined && navItems[idx]) navItems[idx].classList.add('active');
-  var t = document.getElementById('pageTitle');
-  if (t) t.textContent = titles[_fromPage] || 'Projets artistes';
+  _setTopbarPage(_fromPage);
 }
 
 // ── CRM Delete artist ──
@@ -4084,6 +4065,18 @@ function submitNpDrawer() {
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
+  // ── Init: ensure clean state ──
+  ['pg-crm','pg-projets','pg-invest','pg-other',
+   'pg-artist-detail','pg-projet-detail'].forEach(function(pid) {
+    var el = document.getElementById(pid);
+    if (el) el.style.display = 'none';
+  });
+  var dash = document.getElementById('pg-dashboard');
+  if (dash) { dash.style.display='flex'; dash.style.flexDirection='column'; dash.style.flex='1'; dash.style.minHeight='0'; }
+  var tabs = document.getElementById('tbCrmTabs');
+  if (tabs) tabs.style.display = 'none';
+  hideTopbarBreadcrumb();
+
   addDeleteButtons();
 
   // ── Combo bar+line chart ──
