@@ -52,6 +52,12 @@ body{font-family:'Inter',sans-serif;background:#f4f6fa;color:#0f172a;min-height:
 
 /* TOPBAR */
 .topbar{background:#fff;border-bottom:1px solid #e2e8f0;padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:54px;z-index:50;flex-shrink:0;}
+.tb-bc-back{display:inline-flex;align-items:center;gap:6px;background:#f0f0ff;border:1px solid #c7d2fe;border-radius:8px;padding:6px 13px;font-size:12.5px;font-weight:600;color:#4f46e5;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
+.tb-bc-back:hover{background:#e0e7ff;border-color:#a5b4fc;color:#3730a3;}
+.tb-bc-back svg{width:13px;height:13px;}
+.tb-bc-sep{color:#cbd5e1;font-size:14px;}
+.tb-bc-crumb{font-size:13px;color:#64748b;font-weight:500;}
+.tb-bc-crumb.tb-bc-current{color:#0f172a;font-weight:700;}
 .tb-left h1{font-size:17px;font-weight:700;color:#0f172a;}
 .tb-left p{font-size:11px;color:#64748b;margin-top:1px;}
 .tb-right{display:flex;align-items:center;gap:8px;}
@@ -618,17 +624,9 @@ tbody tr:hover .pn{color:#2563eb;}
 .ct-arrow::before{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%) rotate(45deg);width:10px;height:10px;background:#1e293b;border:1px solid #334155;}
 
 /* PROJ DETAIL PAGE */
-.pd-breadcrumb{background:#fff;border-bottom:1px solid #e2e8f0;padding:0 28px;height:40px;display:flex;align-items:center;gap:8px;position:sticky;top:106px;z-index:40;flex-shrink:0;}
-.pd-bc-back{display:inline-flex;align-items:center;gap:6px;background:none;border:none;font-size:12px;font-weight:600;color:#6366f1;cursor:pointer;font-family:'Inter',sans-serif;padding:4px 8px 4px 2px;border-radius:6px;transition:background .12s,color .12s;}
-.pd-bc-back:hover{background:#f0f0ff;color:#4338ca;}
-.pd-bc-back svg{width:14px;height:14px;}
-.pd-bc-sep{color:#cbd5e1;font-size:13px;line-height:1;}
-.pd-bc-crumb{font-size:12px;color:#64748b;font-weight:500;}
-.pd-bc-crumb.current{color:#0f172a;font-weight:600;}
 .pd-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:26px 32px;position:relative;flex-shrink:0;}
 .pd-hero-actions{position:absolute;top:14px;right:14px;display:flex;gap:8px;align-items:center;}
 .pd-back{display:none;}
-.pd-back:hover{background:rgba(255,255,255,.25);}
 .pd-del-btn{background:rgba(239,68,68,.18);border:1px solid rgba(239,68,68,.35);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:#fca5a5;display:flex;align-items:center;gap:5px;transition:all .15s;}
 .pd-del-btn:hover{background:rgba(239,68,68,.32);border-color:rgba(239,68,68,.6);color:#fff;}
 /* Confirmation dialog */
@@ -965,16 +963,8 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-pgpct{font-size:11px;font-weight:700;color:#475569;min-width:28px;text-align:right;}
 /* ── Artist Detail Page ── */
 #pg-artist-detail{display:none;flex-direction:column;flex:1;overflow-y:auto;background:#f1f5f9;}
-.ad-breadcrumb{background:#fff;border-bottom:1px solid #e2e8f0;padding:0 28px;height:40px;display:flex;align-items:center;gap:8px;position:sticky;top:106px;z-index:40;flex-shrink:0;}
-.ad-bc-back{display:inline-flex;align-items:center;gap:6px;background:none;border:none;font-size:12px;font-weight:600;color:#6366f1;cursor:pointer;font-family:'Inter',sans-serif;padding:4px 8px 4px 2px;border-radius:6px;transition:background .12s,color .12s;}
-.ad-bc-back:hover{background:#f0f0ff;color:#4338ca;}
-.ad-bc-back svg{width:14px;height:14px;}
-.ad-bc-sep{color:#cbd5e1;font-size:13px;line-height:1;}
-.ad-bc-crumb{font-size:12px;color:#64748b;font-weight:500;}
-.ad-bc-crumb.current{color:#0f172a;font-weight:600;}
 .ad-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 60%,#2d1b5a 100%);padding:26px 36px 34px;position:relative;color:#fff;}
 .ad-back-btn{display:none;}
-.ad-back-btn:hover{background:rgba(255,255,255,.28);}
 .ad-hero-inner{display:flex;align-items:center;gap:18px;}
 .ad-av-lg{width:68px;height:68px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;flex-shrink:0;border:3px solid rgba(255,255,255,.25);}
 .ad-hero-name{font-size:26px;font-weight:800;letter-spacing:-.5px;margin-bottom:3px;}
@@ -1118,9 +1108,19 @@ tbody tr:hover .pn{color:#2563eb;}
 <div class="main">
   <!-- TOPBAR -->
   <header class="topbar">
-    <div class="tb-left">
+    <div class="tb-left" id="tbLeft">
       <h1 id="pageTitle">Dashboard</h1>
       <p id="pageSub">Gestion et analyse des investissements musicaux</p>
+    </div>
+    <div id="tbBreadcrumb" style="display:none;align-items:center;gap:8px;">
+      <button id="tbBcBack" class="tb-bc-back" onclick="">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+        Retour
+      </button>
+      <span class="tb-bc-sep">›</span>
+      <span id="tbBcSection" class="tb-bc-crumb" style="cursor:pointer;"></span>
+      <span class="tb-bc-sep">›</span>
+      <span id="tbBcCurrent" class="tb-bc-crumb tb-bc-current"></span>
     </div>
     <div class="tb-center" id="tbCrmTabs" style="display:none;">
       <div class="crm-view-tabs">
@@ -1954,16 +1954,6 @@ tbody tr:hover .pn{color:#2563eb;}
   </div>
 
   <div id="pg-projet-detail" style="display:none;flex-direction:column;flex:1;overflow-y:auto;">
-    <div class="pd-breadcrumb">
-      <button class="pd-bc-back" onclick="closeProjDetail()">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
-        Retour
-      </button>
-      <span class="pd-bc-sep">›</span>
-      <span class="pd-bc-crumb" id="pdBcSection" style="cursor:pointer;" onclick="closeProjDetail()">Projets artistes</span>
-      <span class="pd-bc-sep">›</span>
-      <span class="pd-bc-crumb current" id="pdBcTitle"></span>
-    </div>
     <div class="pd-hero">
       <div class="pd-hero-actions">
         <button class="pd-del-btn" onclick="askDeleteProj()">
@@ -2649,17 +2639,8 @@ function openArtistDetail(name) {
 
   // Build and inject full page
   var pg = document.getElementById('pg-artist-detail');
+  showTopbarBreadcrumb('crm', 'CRM', name, closeArtistDetail);
   pg.innerHTML =
-    '<div class="ad-breadcrumb">' +
-      '<button class="ad-bc-back" onclick="closeArtistDetail()">' +
-        '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>' +
-        'Retour' +
-      '</button>' +
-      '<span class="ad-bc-sep">›</span>' +
-      '<span class="ad-bc-crumb" style="cursor:pointer;" onclick="closeArtistDetail()">CRM</span>' +
-      '<span class="ad-bc-sep">›</span>' +
-      '<span class="ad-bc-crumb current">'+name+'</span>' +
-    '</div>' +
     '<div class="ad-hero">' +
       '<button class="ad-back-btn" onclick="closeArtistDetail()">&#8592; CRM</button>' +
       '<div style="display:flex;align-items:center;gap:18px;">' +
@@ -2703,6 +2684,7 @@ function openArtistDetail(name) {
 }
 
 function closeArtistDetail() {
+  hideTopbarBreadcrumb();
   var pg = document.getElementById('pg-artist-detail');
   if (pg) pg.style.cssText = 'display:none;';
   var crm = document.getElementById('pg-crm');
@@ -3589,6 +3571,24 @@ var _prevBtn = null;
 
 
 // ── Navigation ──
+function showTopbarBreadcrumb(section, sectionLabel, currentLabel, backFn) {
+  document.getElementById('tbLeft').style.display = 'none';
+  var tabs = document.getElementById('tbCrmTabs');
+  if (tabs) tabs.style.display = 'none';
+  var bc = document.getElementById('tbBreadcrumb');
+  bc.style.display = 'flex';
+  var backBtn = document.getElementById('tbBcBack');
+  backBtn.onclick = backFn;
+  var secEl = document.getElementById('tbBcSection');
+  secEl.textContent = sectionLabel;
+  secEl.onclick = backFn;
+  document.getElementById('tbBcCurrent').textContent = currentLabel;
+}
+function hideTopbarBreadcrumb() {
+  document.getElementById('tbLeft').style.display = '';
+  document.getElementById('tbBreadcrumb').style.display = 'none';
+}
+
 function toggleNavDropdown(e) {
   e.stopPropagation();
   var wrap = document.getElementById('navUserWrap');
@@ -3666,12 +3666,9 @@ function openProjDetail(name, from) {
   var pct=Math.round((doneCount/d.jalons.length)*100);
   var prioBg=d.prio==='Haute'?'#ef4444':'#f59e0b';
 
-  // Breadcrumb
+  // Breadcrumb in topbar
   var sectionLabel = _fromPage === 'dashboard' ? 'Dashboard' : 'Projets artistes';
-  var bcSection = document.getElementById('pdBcSection');
-  var bcTitle = document.getElementById('pdBcTitle');
-  if(bcSection) bcSection.textContent = sectionLabel;
-  if(bcTitle) bcTitle.textContent = name;
+  showTopbarBreadcrumb(_fromPage, sectionLabel, name, closeProjDetail);
 
   document.getElementById('pdBadges').innerHTML='<span class="pd-type-badge">'+d.type+'</span><span class="pd-prio-badge '+(d.prio==='Haute'?'':'moy')+'">Priorité '+d.prio+'</span>';
   document.getElementById('pdTitle').textContent=name;
@@ -3767,6 +3764,7 @@ function confirmDeleteProj() {
 }
 
 function closeProjDetail() {
+  hideTopbarBreadcrumb();
   document.getElementById('pg-projet-detail').style.display='none';
   var titles = {dashboard:'Dashboard', projets:'Projets artistes'};
   var pageId = 'pg-' + _fromPage;
