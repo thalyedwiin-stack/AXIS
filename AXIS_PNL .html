@@ -13,10 +13,10 @@ body{font-family:'Inter',sans-serif;background:#f4f6fa;color:#0f172a;min-height:
 
 /* NAVBAR */
 .navbar{background:#151c2c;height:54px;display:flex;align-items:center;padding:0 20px;gap:0;flex-shrink:0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.06);}
-.nav-logo{display:flex;align-items:center;gap:10px;padding-right:28px;border-right:1px solid rgba(255,255,255,.08);flex-shrink:0;}
-.nav-logo-icon{width:32px;height:32px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.nav-logo-name{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;}
-.nav-logo-sub{font-size:10px;color:#64748b;margin-top:1px;}
+.nav-logo{display:flex;align-items:center;gap:12px;padding-right:28px;border-right:1px solid rgba(255,255,255,.08);flex-shrink:0;}
+.nav-logo-icon{width:42px;height:42px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-logo-name{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.2px;}
+.nav-logo-sub{font-size:11px;color:#64748b;margin-top:2px;}
 .nav-items{display:flex;align-items:center;justify-content:center;gap:2px;flex:1;padding:0 20px;}
 .sb-item{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:8px;font-size:12.5px;font-weight:500;color:#94a3b8;cursor:pointer;transition:all .15s;border:none;background:none;font-family:'Inter',sans-serif;white-space:nowrap;}
 .sb-item:hover{background:rgba(255,255,255,.06);color:#fff;}
@@ -968,7 +968,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-bbar-top{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;}
 .db-bbar-bg{height:6px;background:#f1f5f9;border-radius:99px;overflow:hidden;}
 .db-bbar-fill{height:100%;border-radius:99px;}
-.db-alert-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid #f8fafc;}
+.db-alert-item{display:flex;align-items:flex-start;gap:10px;padding:5px 0;border-bottom:1px solid #f1f5f9;}
 .db-alert-item:last-child{border-bottom:none;padding-bottom:0;}
 .db-alert-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:3px;}
 .db-alert-msg{font-size:12px;color:#0f172a;font-weight:500;margin-bottom:1px;}
@@ -1057,7 +1057,7 @@ tbody tr:hover .pn{color:#2563eb;}
 <nav class="navbar">
   <div class="nav-logo">
     <div class="nav-logo-icon">
-      <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
+      <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
         <path d="M28 72 L44 28 L50 38 L38 72 Z" fill="#1a3a6b"/>
         <path d="M33 55 L47 55 L45 62 L31 62 Z" fill="#1a3a6b"/>
         <path d="M44 28 L56 28 L68 72 L58 72 Z" fill="#1a3a6b"/>
@@ -1306,7 +1306,7 @@ tbody tr:hover .pn{color:#2563eb;}
             <span style="font-size:10px;color:#64748b;">13 projets actifs</span>
           </div>
           <div class="db-card-body">
-            <div style="position:relative;height:200px;"><canvas id="dbPieChart"></canvas></div>
+            <div style="position:relative;width:100%;aspect-ratio:1;max-height:260px;"><canvas id="dbPieChart"></canvas></div>
             <div class="pie-legend">
               <div class="pie-leg-row"><div class="pie-leg-left"><div class="pie-leg-dot" style="background:#ef4444;"></div>En production</div><div class="pie-leg-pct">35%</div></div>
               <div class="pie-leg-row"><div class="pie-leg-left"><div class="pie-leg-dot" style="background:#3b82f6;"></div>En d&eacute;veloppement</div><div class="pie-leg-pct">25%</div></div>
@@ -1404,7 +1404,7 @@ tbody tr:hover .pn{color:#2563eb;}
 
         <div class="db-card">
           <div class="db-card-hd"><div class="db-card-title">🔔 Alertes &amp; Notifications</div><span style="font-size:10px;font-weight:700;color:#fff;background:#ef4444;border-radius:20px;padding:2px 8px;">4</span></div>
-          <div class="db-card-body">
+          <div class="db-card-body" style="justify-content:flex-start;">
             <div class="db-alert-item"><div class="db-alert-dot" style="background:#ef4444"></div><div><div class="db-alert-msg">Contrats Booba, Niska, Nekfeu expirés</div><div class="db-alert-time">Urgent &middot; Action immédiate requise</div></div></div>
             <div class="db-alert-item"><div class="db-alert-dot" style="background:#f59e0b"></div><div><div class="db-alert-msg">Damso — Contrat expire juin 2026</div><div class="db-alert-time">Attention &middot; Renouveler avant juin</div></div></div>
             <div class="db-alert-item"><div class="db-alert-dot" style="background:#f59e0b"></div><div><div class="db-alert-msg">Budget Q2 à 65% — Ajustement recommandé</div><div class="db-alert-time">Il y a 2h &middot; Attention requise</div></div></div>
@@ -4542,6 +4542,7 @@ document.addEventListener('DOMContentLoaded', function() {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        layout: { padding: 0 },
         plugins: {
           legend: { display: false },
           tooltip: {
