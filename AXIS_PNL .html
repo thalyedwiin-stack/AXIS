@@ -106,14 +106,12 @@ body{font-family:'Inter',sans-serif;background:#f4f6fa;color:#0f172a;min-height:
 .notif-label.r{color:#ef4444;}.notif-label.o{color:#d97706;}.notif-label.b{color:#2563eb;}
 .notif-msg{font-size:12px;color:#334155;line-height:1.5;font-weight:500;}
 .notif-time{font-size:10px;color:#94a3b8;margin-top:3px;}
-.notif-footer-ok{padding:10px 16px;background:#f8fafc;display:flex;align-items:center;justify-content:space-between;border-top:1px solid #f1f5f9;}
-.notif-ok{background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:#fff;border:none;border-radius:8px;padding:7px 18px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:opacity .15s;}
+.notif-footer-ok{padding:10px 16px 12px;background:#f8fafc;display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #f1f5f9;}
+.notif-ok{background:linear-gradient(135deg,#1d4ed8,#3b82f6);color:#fff;border:none;border-radius:8px;padding:7px 18px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:opacity .15s;flex-shrink:0;}
 .notif-ok:hover{opacity:.88;}
-.notif-mark-all{font-size:11px;color:#94a3b8;cursor:pointer;font-weight:500;}
+.notif-mark-all{font-size:11px;color:#94a3b8;cursor:pointer;font-weight:500;white-space:nowrap;}
 .notif-mark-all:hover{color:#2563eb;}
 .notif-msg strong{color:#fff;}
-.notif-footer-ok{padding:10px 16px 12px;display:flex;justify-content:flex-end;}
-.notif-ok{background:#2563eb;color:#fff;border:none;border-radius:7px;padding:6px 22px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;}
 
 /* PAGES */
 
@@ -1308,7 +1306,7 @@ tbody tr:hover .pn{color:#2563eb;}
             <span style="font-size:10px;color:#64748b;">13 projets actifs</span>
           </div>
           <div class="db-card-body">
-            <div style="position:relative;height:160px;"><canvas id="dbPieChart"></canvas></div>
+            <div style="position:relative;height:210px;"><canvas id="dbPieChart"></canvas></div>
             <div class="pie-legend">
               <div class="pie-leg-row"><div class="pie-leg-left"><div class="pie-leg-dot" style="background:#ef4444;"></div>En production</div><div class="pie-leg-pct">35%</div></div>
               <div class="pie-leg-row"><div class="pie-leg-left"><div class="pie-leg-dot" style="background:#3b82f6;"></div>En d&eacute;veloppement</div><div class="pie-leg-pct">25%</div></div>
@@ -1320,12 +1318,62 @@ tbody tr:hover .pn{color:#2563eb;}
         </div>
         <div class="db-card">
           <div class="db-card-hd"><div class="db-card-title">🏆 Top Artistes Jan-Jun</div></div>
-          <div class="db-card-body">
-            <div class="db-artist-row"><div class="db-artist-rank">1</div><div class="db-artist-av" style="background:#2563eb">PN</div><div class="db-artist-name">PNL</div><div class="db-artist-rev">2,1 M€</div><div class="db-artist-grow">+22%</div></div>
-            <div class="db-artist-row"><div class="db-artist-rank">2</div><div class="db-artist-av" style="background:#0891b2">Bo</div><div class="db-artist-name">Booba</div><div class="db-artist-rev">1,8 M€</div><div class="db-artist-grow">+18%</div></div>
-            <div class="db-artist-row"><div class="db-artist-rank">3</div><div class="db-artist-av" style="background:#7c3aed">Da</div><div class="db-artist-name">Damso</div><div class="db-artist-rev">1,5 M€</div><div class="db-artist-grow">+35%</div></div>
-            <div class="db-artist-row"><div class="db-artist-rank">4</div><div class="db-artist-av" style="background:#d97706">Ni</div><div class="db-artist-name">Niska</div><div class="db-artist-rev">1,2 M€</div><div class="db-artist-grow">+28%</div></div>
-            <div class="db-artist-row"><div class="db-artist-rank">5</div><div class="db-artist-av" style="background:#059669">SC</div><div class="db-artist-name">SCH</div><div class="db-artist-rev">950k€</div><div class="db-artist-grow">+15%</div></div>
+          <div class="db-card-body" style="justify-content:space-evenly;">
+            <div class="db-artist-row" style="align-items:center;">
+              <div class="db-artist-rank">1</div>
+              <div class="db-artist-av" style="background:#2563eb">PN</div>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+                  <span style="font-size:12px;font-weight:600;color:#0f172a;">PNL</span>
+                  <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:11px;font-weight:700;color:#2563eb;">2,1 M€</span><span class="db-artist-grow">+22%</span></div>
+                </div>
+                <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:100%;background:linear-gradient(90deg,#2563eb,#60a5fa);"></div></div>
+              </div>
+            </div>
+            <div class="db-artist-row" style="align-items:center;">
+              <div class="db-artist-rank">2</div>
+              <div class="db-artist-av" style="background:#0891b2">Bo</div>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+                  <span style="font-size:12px;font-weight:600;color:#0f172a;">Booba</span>
+                  <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:11px;font-weight:700;color:#0891b2;">1,8 M€</span><span class="db-artist-grow">+18%</span></div>
+                </div>
+                <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:86%;background:linear-gradient(90deg,#0891b2,#67e8f9);"></div></div>
+              </div>
+            </div>
+            <div class="db-artist-row" style="align-items:center;">
+              <div class="db-artist-rank">3</div>
+              <div class="db-artist-av" style="background:#7c3aed">Da</div>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+                  <span style="font-size:12px;font-weight:600;color:#0f172a;">Damso</span>
+                  <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:11px;font-weight:700;color:#7c3aed;">1,5 M€</span><span class="db-artist-grow">+35%</span></div>
+                </div>
+                <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:71%;background:linear-gradient(90deg,#7c3aed,#c4b5fd);"></div></div>
+              </div>
+            </div>
+            <div class="db-artist-row" style="align-items:center;">
+              <div class="db-artist-rank">4</div>
+              <div class="db-artist-av" style="background:#d97706">Ni</div>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+                  <span style="font-size:12px;font-weight:600;color:#0f172a;">Niska</span>
+                  <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:11px;font-weight:700;color:#d97706;">1,2 M€</span><span class="db-artist-grow">+28%</span></div>
+                </div>
+                <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:57%;background:linear-gradient(90deg,#d97706,#fcd34d);"></div></div>
+              </div>
+            </div>
+            <div class="db-artist-row" style="align-items:center;border-bottom:none;">
+              <div class="db-artist-rank">5</div>
+              <div class="db-artist-av" style="background:#059669">SC</div>
+              <div style="flex:1;min-width:0;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+                  <span style="font-size:12px;font-weight:600;color:#0f172a;">SCH</span>
+                  <div style="display:flex;align-items:center;gap:5px;"><span style="font-size:11px;font-weight:700;color:#059669;">950k€</span><span class="db-artist-grow">+15%</span></div>
+                </div>
+                <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:45%;background:linear-gradient(90deg,#059669,#6ee7b7);"></div></div>
+              </div>
+            </div>
           </div>
         </div>
 
