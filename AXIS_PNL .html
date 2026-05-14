@@ -1161,7 +1161,7 @@ tbody tr:hover .pn{color:#2563eb;}
       </div>
     </div>
     <div class="tb-right">
-      <div class="tb-search" style="position:relative;">
+      <div class="tb-search" id="tbSearch" style="position:relative;">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input type="text" id="globalSearch" placeholder="Rechercher..." oninput="doSearch(this.value)" autocomplete="off" onkeydown="if(event.key==='Escape')closeSearch()">
         <div id="searchResults" style="display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:9999;overflow:hidden;min-width:280px;"></div>
@@ -3807,6 +3807,18 @@ function _setTopbarPage(id) {
   if (id === 'crm') {
     var firstTab = document.querySelector('.crm-view-tab');
     if (firstTab) switchCrmTab('artistes', firstTab);
+  }
+  // On the Projets page the blue-band search takes over — hide the topbar search
+  var tbSearch = document.getElementById('tbSearch');
+  if (tbSearch) tbSearch.style.display = (id === 'projets') ? 'none' : '';
+  // Leaving Projets: reset local search + type filter
+  if (id !== 'projets') {
+    var ps = document.getElementById('projSearch');
+    if (ps) ps.value = '';
+    var ptf = document.getElementById('projTypeFilter');
+    if (ptf) ptf.value = 'Tous les types';
+    _projTypeActive = 'Tous les types';
+    applyProjFilters();
   }
 }
 
