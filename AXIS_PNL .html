@@ -1698,56 +1698,12 @@ tbody tr:hover .pn{color:#2563eb;}
         <!-- Revenue chart -->
         <div class="proj-card" style="padding:14px 16px;display:flex;flex-direction:column;">
           <div class="proj-card-title">Évolution des revenus catalogue <span class="proj-card-badge">Jan–Jun 2026</span></div>
-          <div style="flex:1;min-height:0;position:relative;" id="catChartWrap">
-          <div id="catTooltip" class="chart-tooltip" style="display:none;">
-            <div class="ct-month"></div>
-            <div class="ct-row"><span class="ct-dot" style="background:#3b82f6;"></span><span class="ct-label">Revenus réels</span><span class="ct-val ct-rev"></span></div>
-            <div class="ct-row"><span class="ct-dot dashed"></span><span class="ct-label">Budget prévu</span><span class="ct-val ct-bud"></span></div>
-            <div class="ct-arrow"></div>
+          <div style="flex:1;min-height:0;position:relative;">
+            <canvas id="catLineChart"></canvas>
           </div>
-          <svg id="catSvg" viewBox="0 0 1200 190" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;">
-            <defs>
-              <linearGradient id="catGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/></linearGradient>
-            </defs>
-            <line x1="105" y1="10" x2="105" y2="162" stroke="#f1f5f9" stroke-width="1"/>
-            <line x1="105" y1="162" x2="1175" y2="162" stroke="#f1f5f9" stroke-width="1"/>
-            <line x1="105" y1="130" x2="1175" y2="130" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <line x1="105" y1="97" x2="1175" y2="97" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <line x1="105" y1="64" x2="1175" y2="64" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <line x1="105" y1="31" x2="1175" y2="31" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
-            <text x="90" y="165" font-size="10" fill="#94a3b8" text-anchor="end" font-family="Inter">0k€</text>
-            <text x="90" y="133" font-size="10" fill="#94a3b8" text-anchor="end" font-family="Inter">200k€</text>
-            <text x="90" y="100" font-size="10" fill="#94a3b8" text-anchor="end" font-family="Inter">400k€</text>
-            <text x="90" y="67" font-size="10" fill="#94a3b8" text-anchor="end" font-family="Inter">600k€</text>
-            <text x="90" y="34" font-size="10" fill="#94a3b8" text-anchor="end" font-family="Inter">800k€</text>
-            <text x="212" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jan</text>
-            <text x="407" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Fév</text>
-            <text x="602" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mar</text>
-            <text x="797" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Avr</text>
-            <text x="962" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Mai</text>
-            <text x="1137" y="178" font-size="10" fill="#94a3b8" text-anchor="middle" font-family="Inter">Jun</text>
-            <path d="M212,96 C295,88 370,80 445,72 C520,64 585,54 655,46 C725,38 795,32 865,26 C935,20 1040,14 1137,10 L1137,162 L212,162 Z" fill="url(#catGrad)"/>
-            <path d="M212,96 C295,88 370,80 445,72 C520,64 585,54 655,46 C725,38 795,32 865,26 C935,20 1040,14 1137,10" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="212" cy="96" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="445" cy="72" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="655" cy="46" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="865" cy="26" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <circle cx="1137" cy="10" r="4" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
-            <path d="M212,106 C300,98 375,90 462,82 C537,74 612,64 695,56 C770,49 900,38 1137,28" fill="none" stroke="#10b981" stroke-width="1.8" stroke-dasharray="6,4" stroke-linecap="round"/>
-            <!-- Hover vertical line -->
-            <line id="catHoverLine" x1="212" y1="8" x2="212" y2="162" stroke="#1d4ed8" stroke-width="1.5" stroke-dasharray="4,3" opacity="0" pointer-events="none"/>
-            <!-- Hover zones per month -->
-            <rect class="cat-zone" data-idx="0" x="105" y="0" width="205" height="165" fill="transparent" style="cursor:crosshair;"/>
-            <rect class="cat-zone" data-idx="1" x="310" y="0" width="195" height="165" fill="transparent" style="cursor:crosshair;"/>
-            <rect class="cat-zone" data-idx="2" x="505" y="0" width="195" height="165" fill="transparent" style="cursor:crosshair;"/>
-            <rect class="cat-zone" data-idx="3" x="700" y="0" width="180" height="165" fill="transparent" style="cursor:crosshair;"/>
-            <rect class="cat-zone" data-idx="4" x="880" y="0" width="170" height="165" fill="transparent" style="cursor:crosshair;"/>
-            <rect class="cat-zone" data-idx="5" x="1050" y="0" width="125" height="165" fill="transparent" style="cursor:crosshair;"/>
-          </svg>
-          </div>
-          <div style="display:flex;gap:20px;justify-content:center;margin-top:6px;">
-            <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b;"><div style="width:20px;height:2.5px;background:#3b82f6;border-radius:2px;"></div>Revenus réels</div>
-            <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b;"><div style="width:20px;height:0;border-top:2.5px dashed #10b981;"></div>Budget prévu</div>
+          <div style="display:flex;gap:20px;justify-content:center;margin-top:8px;flex-shrink:0;">
+            <div style="display:flex;align-items:center;gap:6px;font-size:10px;color:#94a3b8;"><div style="width:16px;height:2px;background:#3b82f6;border-radius:2px;"></div>Revenus réels</div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:10px;color:#94a3b8;"><div style="width:16px;height:0;border-top:2px dashed #10b981;"></div>Budget prévu</div>
           </div>
         </div>
 
@@ -2864,6 +2820,7 @@ function openArtistDetail(name) {
   // Show page
   _hideAllPages();
   pg.style.cssText = 'display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;background:#f1f5f9;';
+  _setHash('/artist/' + encodeURIComponent(name));
 }
 
 function closeArtistDetail() {
@@ -3136,6 +3093,7 @@ function switchCrmTab(tab, btn) {
   } else {
     if (detail) detail.style.display = '';
   }
+  _setHash('/crm/' + tab);
 }
 
 // ── Global Activities Data ──
@@ -3796,6 +3754,12 @@ function _hideAllPages() {
   });
 }
 
+function _setHash(path) {
+  if (typeof history !== 'undefined' && history.replaceState) {
+    history.replaceState(null, '', '#' + path);
+  }
+}
+
 function _setTopbarPage(id) {
   hideTopbarBreadcrumb();
   var t = document.getElementById('pageTitle');
@@ -3886,6 +3850,7 @@ function showPage(id, btn) {
   var pg = document.getElementById('pg-' + id);
   if (pg) { pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1'; pg.style.minHeight='0'; }
   _setTopbarPage(id);
+  if (id !== 'crm') _setHash('/' + id);
   if (id === 'invest') _initInvestChart();
 }
 
@@ -3907,6 +3872,7 @@ function openProjDetail(name, from) {
   var d=projModalData[name];
   if(!d)return;
   _fromPage = from || 'projets';
+  _setHash('/projet/' + encodeURIComponent(name) + '/' + _fromPage);
   var doneCount=d.jalons.filter(function(j){return j.status==='done';}).length;
   var pct=Math.round((doneCount/d.jalons.length)*100);
   var prioBg=d.prio==='Haute'?'#ef4444':'#f59e0b';
@@ -4015,6 +3981,7 @@ function closeProjDetail() {
   var idx = navMap[_fromPage];
   if (idx !== undefined && navItems[idx]) navItems[idx].classList.add('active');
   _setTopbarPage(_fromPage);
+  if (_fromPage !== 'crm') _setHash('/' + _fromPage);
 }
 
 // ── CRM Delete artist ──
@@ -4310,75 +4277,127 @@ function filterProjType(type) {
   applyProjFilters();
 }
 
-// ── SVG Chart Tooltip (Projets artistes) ──
-(function() {
-  var catData = [
-    {month:'Janvier 2026',  x:212,  rev:'410 k€', budget:'370 k€'},
-    {month:'Février 2026',  x:407,  rev:'555 k€', budget:'460 k€'},
-    {month:'Mars 2026',     x:602,  rev:'660 k€', budget:'560 k€'},
-    {month:'Avril 2026',    x:797,  rev:'752 k€', budget:'650 k€'},
-    {month:'Mai 2026',      x:962,  rev:'832 k€', budget:'745 k€'},
-    {month:'Juin 2026',     x:1137, rev:'900 k€', budget:'800 k€'}
-  ];
-
-  function initCatTooltip() {
-    var zones = document.querySelectorAll('.cat-zone');
-    if (!zones.length) return;
-    zones.forEach(function(zone) {
-      zone.addEventListener('mouseenter', function() {
-        var idx = +this.getAttribute('data-idx');
-        var d = catData[idx];
-        var line = document.getElementById('catHoverLine');
-        if (line) { line.setAttribute('x1', d.x); line.setAttribute('x2', d.x); line.setAttribute('opacity', '1'); }
-        var tt = document.getElementById('catTooltip');
-        if (!tt) return;
-        tt.querySelector('.ct-month').textContent = d.month;
-        tt.querySelector('.ct-rev').textContent = d.rev;
-        tt.querySelector('.ct-bud').textContent = d.budget;
-        tt.style.display = 'block';
-        // Position tooltip above the hover zone
-        var svg = document.getElementById('catSvg');
-        var wrap = document.getElementById('catChartWrap');
-        if (!svg || !wrap) return;
-        var scaleX = svg.getBoundingClientRect().width / 1200;
-        var pixelX = d.x * scaleX;
-        var ttW = tt.offsetWidth || 170;
-        var left = pixelX - ttW / 2;
-        if (left < 4) left = 4;
-        if (left + ttW > wrap.offsetWidth - 4) left = wrap.offsetWidth - ttW - 4;
-        tt.style.left = left + 'px';
-        tt.style.top = '4px';
-      });
-      zone.addEventListener('mouseleave', function() {
-        var line = document.getElementById('catHoverLine');
-        if (line) line.setAttribute('opacity', '0');
-        var tt = document.getElementById('catTooltip');
-        if (tt) tt.style.display = 'none';
-      });
+document.addEventListener('DOMContentLoaded', function() {
+  // ── Chart.js : Évolution des revenus catalogue (Projets artistes) ──
+  var catLineEl = document.getElementById('catLineChart');
+  if (catLineEl && typeof Chart !== 'undefined') {
+    new Chart(catLineEl, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jun'],
+        datasets: [
+          {
+            label: 'Revenus réels',
+            data: [410, 555, 660, 752, 832, 900],
+            borderColor: '#3b82f6',
+            backgroundColor: 'rgba(59,130,246,0.1)',
+            borderWidth: 2.5,
+            pointBackgroundColor: '#fff',
+            pointBorderColor: '#3b82f6',
+            pointBorderWidth: 2,
+            pointRadius: 4,
+            fill: true,
+            tension: 0.4
+          },
+          {
+            label: 'Budget prévu',
+            data: [370, 460, 560, 650, 745, 800],
+            borderColor: '#10b981',
+            backgroundColor: 'transparent',
+            borderWidth: 1.8,
+            borderDash: [6, 4],
+            pointRadius: 0,
+            fill: false,
+            tension: 0.4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1e293b',
+            titleColor: '#94a3b8',
+            bodyColor: '#f1f5f9',
+            borderColor: '#334155',
+            borderWidth: 1,
+            padding: 10,
+            callbacks: {
+              label: function(c) { return '  ' + c.dataset.label + ' : ' + c.parsed.y + ' k€'; }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { font: { size: 10, family: 'Inter' }, color: '#94a3b8' }
+          },
+          y: {
+            ticks: {
+              font: { size: 10, family: 'Inter' },
+              color: '#94a3b8',
+              callback: function(v) { return v + 'k€'; }
+            },
+            grid: { color: '#f1f5f9' }
+          }
+        }
+      }
     });
   }
+});
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCatTooltip);
-  } else {
-    initCatTooltip();
+function restoreFromHash() {
+  var raw = (window.location.hash || '').replace(/^#/, '');
+  if (!raw) return false;
+  var parts = raw.replace(/^\//, '').split('/');
+  var section = parts[0];
+  if (!section || section === 'dashboard') return false;
+
+  if (section === 'artist' && parts[1]) {
+    openArtistDetail(decodeURIComponent(parts[1]));
+    return true;
   }
-})();
+  if (section === 'projet' && parts[1]) {
+    openProjDetail(decodeURIComponent(parts[1]), parts[2] || 'projets');
+    return true;
+  }
+  var pageNavIdx = {crm:1, projets:2, invest:3, other:4};
+  if (section === 'crm' || pageNavIdx[section] !== undefined) {
+    var navItems = document.querySelectorAll('.sb-item');
+    document.querySelectorAll('.sb-item').forEach(function(b) { b.classList.remove('active'); });
+    var idx = (section === 'crm') ? 1 : pageNavIdx[section];
+    if (navItems[idx]) navItems[idx].classList.add('active');
+    var pg = document.getElementById('pg-' + section);
+    if (pg) { pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1'; pg.style.minHeight='0'; }
+    _setTopbarPage(section);
+    if (section === 'invest') _initInvestChart();
+    if (section === 'crm' && parts[1]) {
+      var tab = parts[1];
+      var crmTabs = document.querySelectorAll('.crm-view-tab');
+      var tabIdx = {artistes:0, activites:1, opportunites:2}[tab];
+      if (tabIdx !== undefined && crmTabs[tabIdx]) switchCrmTab(tab, crmTabs[tabIdx]);
+    }
+    return true;
+  }
+  return false;
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   // ── Init: ensure clean state ──
-  ['pg-crm','pg-projets','pg-invest','pg-other',
-   'pg-artist-detail','pg-projet-detail'].forEach(function(pid) {
-    var el = document.getElementById(pid);
-    if (el) el.style.display = 'none';
-  });
-  var dash = document.getElementById('pg-dashboard');
-  if (dash) { dash.style.display='flex'; dash.style.flexDirection='column'; dash.style.flex='1'; dash.style.minHeight='0'; }
+  _hideAllPages();
   var tabs = document.getElementById('tbCrmTabs');
   if (tabs) tabs.style.display = 'none';
   hideTopbarBreadcrumb();
 
   addDeleteButtons();
+
+  // Restore navigation from URL hash — preserves page after F5
+  if (!restoreFromHash()) {
+    var dash = document.getElementById('pg-dashboard');
+    if (dash) { dash.style.display='flex'; dash.style.flexDirection='column'; dash.style.flex='1'; dash.style.minHeight='0'; }
+  }
 
   // ── Combo bar+line chart ──
   var comboEl = document.getElementById('dbMainChart');
