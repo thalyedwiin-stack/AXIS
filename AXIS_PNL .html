@@ -392,8 +392,8 @@ tbody tr:hover .pn{color:#2563eb;}
 /* ── PROJETS PAGE ── */
 .proj-page{flex:1;overflow-y:auto;background:#f1f5f9;display:flex;flex-direction:column;}
 /* Dark gradient header */
-.proj-header{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);margin:0 28px;border-radius:16px 16px 0 0;padding:22px 24px 0;flex-shrink:0;}
-.proj-header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+.proj-header{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);margin:0 28px;border-radius:16px 16px 0 0;padding:22px 24px 24px;flex-shrink:0;}
+.proj-header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px;}
 .proj-header-title{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.4px;margin-bottom:3px;}
 .proj-header-sub{font-size:11.5px;color:rgba(255,255,255,.45);font-weight:500;}
 .proj-header-actions{display:flex;gap:8px;align-items:center;}
@@ -409,17 +409,19 @@ tbody tr:hover .pn{color:#2563eb;}
 .proj-search::placeholder{color:rgba(255,255,255,.35);}
 .proj-search:focus{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4);width:220px;}
 /* KPI strip on dark bg */
-.proj-kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);}
-.proj-kpi{padding:16px 22px 18px;border-right:1px solid rgba(255,255,255,.1);position:relative;}
+.proj-kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);margin-bottom:22px;}
+.proj-kpi{padding:0 24px;border-right:1px solid rgba(255,255,255,.1);}
+.proj-kpi:first-child{padding-left:0;}
 .proj-kpi:last-child{border-right:none;}
-.proj-kpi-accent{position:absolute;bottom:0;left:22px;right:22px;height:2.5px;border-radius:2px;}
-.proj-kpi-label{font-size:9px;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;}
-.proj-kpi-val{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.8px;line-height:1;margin-bottom:5px;}
-.proj-kpi-foot{display:flex;align-items:center;justify-content:space-between;font-size:10.5px;color:rgba(255,255,255,.4);}
-.proj-kpi-trend{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px;}
-.proj-kpi-trend.green{background:rgba(22,163,74,.2);color:#4ade80;}
-.proj-kpi-trend.blue{background:rgba(37,99,235,.25);color:#93c5fd;}
-.proj-kpi-trend.purple{background:rgba(124,58,237,.25);color:#c4b5fd;}
+.proj-kpi-label{font-size:9px;font-weight:700;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;}
+.proj-kpi-val{font-size:28px;font-weight:800;color:#fff;letter-spacing:-.6px;line-height:1;margin-bottom:6px;}
+.proj-kpi-val.em{color:#34d399;}
+.proj-kpi-foot{font-size:11px;font-weight:500;color:rgba(255,255,255,.45);display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.proj-kpi-trend{font-size:11px;font-weight:600;}
+.proj-kpi-trend.up{color:#34d399;}
+.proj-kpi-trend.neutral{color:rgba(255,255,255,.45);}
+.proj-kpi-trend.blue{color:#93c5fd;}
+.proj-kpi-trend.purple{color:#c4b5fd;}
 /* Body */
 .proj-body{padding:16px 28px 28px;flex:1;display:flex;flex-direction:column;gap:18px;}
 .proj-row{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;}
@@ -869,7 +871,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .pro-kpi-trend{font-size:11px;font-weight:700;}
 .pro-kpi-trend.up{color:#10b981;}.pro-kpi-trend.dn{color:#ef4444;}.pro-kpi-trend.neu{color:#94a3b8;}
 .pro-main-grid{display:grid;grid-template-columns:1fr 300px;gap:12px;margin-bottom:14px;align-items:stretch;}
-.pro-chart-card{background:#fff;border-radius:14px;padding:18px 22px 14px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 0 0 1px rgba(15,23,42,.04);display:flex;flex-direction:column;}
+.pro-chart-card{background:#fff;border-radius:14px;padding:18px 22px 14px;box-shadow:0 2px 8px rgba(0,0,0,.07),0 0 0 1px rgba(15,23,42,.05);display:flex;flex-direction:column;}
 .pro-chart-canvas-wrap{flex:1;position:relative;min-height:140px;}
 .pro-chart-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;}
 .pro-chart-ttl{font-size:13px;font-weight:700;color:#0f172a;}
@@ -911,7 +913,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-period{border:1px solid #e2e8f0;border-radius:9px;background:#f8fafc;padding:7px 12px;font-size:12px;color:#1e293b;outline:none;cursor:pointer;font-family:'Inter',sans-serif;}
 .db-pbi-btn{display:inline-flex;align-items:center;gap:7px;background:#0078d4;color:#fff;border:none;border-radius:9px;padding:9px 16px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;white-space:nowrap;transition:background .15s;}
 .db-pbi-btn:hover{background:#006cbf;}
-.db-body{padding:8px 28px 36px;overflow-y:auto;flex:1;}
+.db-body{padding:8px 28px 12px;overflow-y:auto;flex:1;}
 .db-kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:11px;margin-bottom:18px;}
 .db-kpi{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:15px 16px;position:relative;overflow:hidden;}
 .db-kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
@@ -929,10 +931,10 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-kpi-trend.up{color:#16a34a;}
 .db-kpi-trend.neu{color:#64748b;}
 .db-grid2{display:grid;grid-template-columns:1fr 340px;gap:14px;margin-bottom:14px;}
-.db-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
-.db-card-hd{padding:11px 18px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;}
+.db-card{background:#fff;border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,.06),0 0 0 1px rgba(15,23,42,.05);}
+.db-card-hd{padding:12px 18px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;}
 .db-card-title{font-size:13px;font-weight:700;color:#0f172a;display:flex;align-items:center;gap:7px;}
-.db-card-body{padding:12px 16px 14px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+.db-card-body{padding:10px 16px 12px;flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:6px;}
 .db-rev-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;}
 .db-rev-stat{text-align:center;padding:8px;background:#f8fafc;border-radius:9px;}
 .db-rev-stat-val{font-size:14px;font-weight:800;margin-bottom:1px;}
@@ -951,8 +953,15 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-expiry-badge{padding:3px 9px;border-radius:10px;font-size:10px;font-weight:700;}
 .db-expiry-badge.red{background:#fee2e2;color:#991b1b;}
 .db-expiry-badge.orange{background:#fef3c7;color:#92400e;}
-.db-three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;align-items:stretch;}
-.pie-legend{display:flex;flex-direction:column;gap:4px;margin-top:8px;}
+.db-three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:0;align-items:stretch;}
+.db-two{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px;}
+.db-agenda-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #f1f5f9;}
+.db-agenda-item:last-child{border-bottom:none;padding-bottom:0;}
+.db-agenda-date{min-width:40px;text-align:center;background:#f8fafc;border-radius:7px;padding:4px 6px;flex-shrink:0;}
+.db-agenda-day{font-size:15px;font-weight:800;color:#1e293b;line-height:1;}
+.db-agenda-mon{font-size:9px;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-top:1px;}
+.db-agenda-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px;white-space:nowrap;}
+.pie-legend{display:flex;flex-direction:column;gap:4px;margin-top:0;}
 .pie-leg-row{display:flex;align-items:center;justify-content:space-between;font-size:11px;}
 .pie-leg-left{display:flex;align-items:center;gap:7px;color:#475569;font-weight:600;}
 .pie-leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
@@ -964,7 +973,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-artist-name{flex:1;font-size:12px;font-weight:600;color:#0f172a;}
 .db-artist-rev{font-size:12px;font-weight:700;color:#2563eb;margin-right:4px;}
 .db-artist-grow{font-size:10px;font-weight:700;color:#16a34a;background:#f0fdf4;border-radius:6px;padding:2px 6px;}
-.db-bbar-wrap{margin-bottom:7px;}.db-bbar-wrap:last-child{margin-bottom:0;}
+.db-bbar-wrap{margin-bottom:0;}
 .db-bbar-top{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;}
 .db-bbar-bg{height:6px;background:#f1f5f9;border-radius:99px;overflow:hidden;}
 .db-bbar-fill{height:100%;border-radius:99px;}
@@ -1305,27 +1314,59 @@ tbody tr:hover .pn{color:#2563eb;}
             <div class="db-card-title">&#128202; Statut des projets</div>
             <span style="font-size:10px;color:#64748b;">13 projets actifs</span>
           </div>
-          <div class="db-card-body">
-            <div style="position:relative;width:100%;aspect-ratio:1;max-height:260px;"><canvas id="dbPieChart"></canvas></div>
-            <div class="pie-legend">
-              <div class="pie-leg-row"><div class="pie-leg-left"><div class="pie-leg-dot" style="background:#ef4444;"></div>En production</div><div class="pie-leg-pct">35%</div></div>
-              <div class="pie-leg-row"><div class="pie-leg-left"><div class="pie-leg-dot" style="background:#3b82f6;"></div>En d&eacute;veloppement</div><div class="pie-leg-pct">25%</div></div>
-              <div class="pie-leg-row"><div class="pie-leg-left"><div class="pie-leg-dot" style="background:#22c55e;"></div>Termin&eacute;s</div><div class="pie-leg-pct">20%</div></div>
-              <div class="pie-leg-row"><div class="pie-leg-left"><div class="pie-leg-dot" style="background:#f59e0b;"></div>En n&eacute;gociation</div><div class="pie-leg-pct">12%</div></div>
-              <div class="pie-leg-row"><div class="pie-leg-left"><div class="pie-leg-dot" style="background:#06b6d4;"></div>Suspendu</div><div class="pie-leg-pct">8%</div></div>
+          <div class="db-card-body" style="justify-content:space-between;gap:0;">
+            <div style="position:relative;height:190px;"><canvas id="dbPieChart"></canvas></div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <div class="db-bbar-wrap">
+                <div class="db-bbar-top"><span style="color:#475569;">En production</span><span style="font-weight:700;color:#475569;">35%</span></div>
+                <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:35%;background:#ef4444;"></div></div>
+              </div>
+              <div class="db-bbar-wrap">
+                <div class="db-bbar-top"><span style="color:#475569;">En développement</span><span style="font-weight:700;color:#475569;">25%</span></div>
+                <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:25%;background:#3b82f6;"></div></div>
+              </div>
+              <div class="db-bbar-wrap">
+                <div class="db-bbar-top"><span style="color:#475569;">Terminés</span><span style="font-weight:700;color:#475569;">20%</span></div>
+                <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:20%;background:#22c55e;"></div></div>
+              </div>
+              <div class="db-bbar-wrap">
+                <div class="db-bbar-top"><span style="color:#475569;">En négociation</span><span style="font-weight:700;color:#475569;">12%</span></div>
+                <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:12%;background:#f59e0b;"></div></div>
+              </div>
+              <div class="db-bbar-wrap">
+                <div class="db-bbar-top"><span style="color:#475569;">Suspendu</span><span style="font-weight:700;color:#475569;">8%</span></div>
+                <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:8%;background:#06b6d4;"></div></div>
+              </div>
             </div>
           </div>
         </div>
         <div class="db-card">
           <div class="db-card-hd"><div class="db-card-title">💳 Budget vs Dépenses</div><span style="font-size:11px;color:#64748b;">Jan-Jun 2026</span></div>
-          <div class="db-card-body">
-            <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:12px;"><span style="color:#64748b;">Budget 2026</span><span style="font-weight:700;">2,8 M€</span></div>
-            <div style="display:flex;justify-content:space-between;margin-bottom:8px;font-size:12px;"><span style="color:#64748b;">Dépensé</span><span style="font-weight:700;color:#2563eb;">1,4 M€</span></div>
-            <div class="db-bbar-wrap">
-              <div class="db-bbar-top"><span style="color:#475569;font-weight:600;">50% utilisé</span><span style="color:#64748b;">Reste: 1,4 M€</span></div>
-              <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:50%;background:linear-gradient(90deg,#3b82f6,#6366f1);"></div></div>
+          <div class="db-card-body" style="justify-content:space-between;gap:0;">
+            <div style="position:relative;height:190px;">
+              <canvas id="dbDonutChart"></canvas>
+              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;">
+                <div style="font-size:22px;font-weight:800;color:#1e293b;line-height:1;">50%</div>
+                <div style="font-size:10px;color:#64748b;margin-top:2px;">utilisé</div>
+              </div>
             </div>
-            <div style="font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin:8px 0 6px;">Répartition</div>
+            <div style="display:flex;justify-content:space-around;background:#f8fafc;border-radius:8px;padding:8px 4px;">
+              <div style="text-align:center;">
+                <div style="font-size:10px;color:#64748b;">Budget</div>
+                <div style="font-size:13px;font-weight:700;color:#1e293b;">2,8 M€</div>
+              </div>
+              <div style="width:1px;background:#e2e8f0;align-self:stretch;"></div>
+              <div style="text-align:center;">
+                <div style="font-size:10px;color:#64748b;">Dépensé</div>
+                <div style="font-size:13px;font-weight:700;color:#2563eb;">1,4 M€</div>
+              </div>
+              <div style="width:1px;background:#e2e8f0;align-self:stretch;"></div>
+              <div style="text-align:center;">
+                <div style="font-size:10px;color:#64748b;">Restant</div>
+                <div style="font-size:13px;font-weight:700;color:#22c55e;">1,4 M€</div>
+              </div>
+            </div>
+            <div style="font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;padding-top:4px;border-top:1px solid #f1f5f9;">Répartition</div>
             <div class="db-bbar-wrap">
               <div class="db-bbar-top"><span style="color:#475569;">Production</span><span style="font-weight:700;color:#475569;">750k€</span></div>
               <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:80%;background:#1d4ed8;"></div></div>
@@ -1342,12 +1383,35 @@ tbody tr:hover .pn{color:#2563eb;}
         </div>
 
         <div class="db-card">
-          <div class="db-card-hd"><div class="db-card-title">🔔 Alertes &amp; Notifications</div></div>
-          <div class="db-card-body" style="justify-content:flex-start;">
-            <div class="db-alert-item"><div class="db-alert-dot" style="background:#ef4444"></div><div><div class="db-alert-msg">Contrats Booba, Niska, Nekfeu expirés</div><div class="db-alert-time">Urgent &middot; Action immédiate requise</div></div></div>
-            <div class="db-alert-item"><div class="db-alert-dot" style="background:#f59e0b"></div><div><div class="db-alert-msg">Damso — Contrat expire juin 2026</div><div class="db-alert-time">Attention &middot; Renouveler avant juin</div></div></div>
-            <div class="db-alert-item"><div class="db-alert-dot" style="background:#f59e0b"></div><div><div class="db-alert-msg">Budget Q2 à 65% — Ajustement recommandé</div><div class="db-alert-time">Il y a 2h &middot; Attention requise</div></div></div>
-            <div class="db-alert-item"><div class="db-alert-dot" style="background:#3b82f6"></div><div><div class="db-alert-msg">Nouveau contrat Hamza validé</div><div class="db-alert-time">Hier &middot; Information</div></div></div>
+          <div class="db-card-hd">
+            <div class="db-card-title">🎵 Performance par plateforme</div>
+            <span style="font-size:11px;color:#64748b;">1,2 Md streams · Jan-Jun 2026</span>
+          </div>
+          <div class="db-card-body" style="justify-content:space-between;">
+            <div class="db-bbar-wrap">
+              <div class="db-bbar-top"><span style="color:#475569;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Spotify</span><span style="font-weight:700;color:#475569;">576 M · 48%</span></div>
+              <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:48%;background:#22c55e;"></div></div>
+            </div>
+            <div class="db-bbar-wrap">
+              <div class="db-bbar-top"><span style="color:#475569;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span>YouTube Music</span><span style="font-weight:700;color:#475569;">264 M · 22%</span></div>
+              <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:22%;background:#ef4444;"></div></div>
+            </div>
+            <div class="db-bbar-wrap">
+              <div class="db-bbar-top"><span style="color:#475569;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#ec4899;display:inline-block;"></span>Apple Music</span><span style="font-weight:700;color:#475569;">180 M · 15%</span></div>
+              <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:15%;background:#ec4899;"></div></div>
+            </div>
+            <div class="db-bbar-wrap">
+              <div class="db-bbar-top"><span style="color:#475569;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#f97316;display:inline-block;"></span>Deezer</span><span style="font-weight:700;color:#475569;">120 M · 10%</span></div>
+              <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:10%;background:#f97316;"></div></div>
+            </div>
+            <div class="db-bbar-wrap">
+              <div class="db-bbar-top"><span style="color:#475569;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;display:inline-block;"></span>Tidal</span><span style="font-weight:700;color:#475569;">60 M · 5%</span></div>
+              <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:5%;background:#06b6d4;"></div></div>
+            </div>
+            <div style="border-top:1px solid #f1f5f9;padding-top:8px;display:flex;justify-content:space-between;font-size:11px;color:#64748b;">
+              <span>Total streams</span>
+              <span style="font-weight:700;color:#1e293b;">1,2 Md</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1652,29 +1716,36 @@ tbody tr:hover .pn{color:#2563eb;}
       <div class="proj-kpi-strip">
         <div class="proj-kpi">
           <div class="proj-kpi-label">Revenus catalogue</div>
-          <div class="proj-kpi-val">3,2 M€</div>
-          <div class="proj-kpi-foot"><span>Moy. 550k€/mois</span><span class="proj-kpi-trend green">↗ +33,3%</span></div>
-          <div class="proj-kpi-accent" style="background:linear-gradient(90deg,#3b82f6,#6366f1);"></div>
+          <div class="proj-kpi-val em">3,2 M€</div>
+          <div class="proj-kpi-foot">Moy. 550k€/mois <span class="proj-kpi-trend up">↑ +33,3%</span></div>
         </div>
         <div class="proj-kpi">
           <div class="proj-kpi-label">Artistes actifs</div>
-          <div class="proj-kpi-val">14</div>
-          <div class="proj-kpi-foot"><span>4 nouveaux signés</span><span class="proj-kpi-trend green">↗ +40%</span></div>
-          <div class="proj-kpi-accent" style="background:linear-gradient(90deg,#10b981,#059669);"></div>
+          <div class="proj-kpi-val em">14</div>
+          <div class="proj-kpi-foot">4 nouveaux signés <span class="proj-kpi-trend up">↑ +40%</span></div>
+        </div>
+        <div class="proj-kpi">
+          <div class="proj-kpi-label">Projets actifs</div>
+          <div class="proj-kpi-val">13</div>
+          <div class="proj-kpi-foot">5 en production</div>
         </div>
         <div class="proj-kpi">
           <div class="proj-kpi-label">Investissements</div>
-          <div class="proj-kpi-val">850k€</div>
-          <div class="proj-kpi-foot"><span>Moy. 142k€/mois</span><span class="proj-kpi-trend blue">13 actifs</span></div>
-          <div class="proj-kpi-accent" style="background:linear-gradient(90deg,#f59e0b,#ef4444);"></div>
+          <div class="proj-kpi-val em">850 k€</div>
+          <div class="proj-kpi-foot">30% du budget <span class="proj-kpi-trend neutral">· Moy. 142k€/mois</span></div>
         </div>
         <div class="proj-kpi">
           <div class="proj-kpi-label">ROI catalogue</div>
-          <div class="proj-kpi-val">1.31x</div>
-          <div class="proj-kpi-foot"><span>Jan 2026 : 1.15x</span><span class="proj-kpi-trend purple">↗ +13,9%</span></div>
-          <div class="proj-kpi-accent" style="background:linear-gradient(90deg,#8b5cf6,#ec4899);"></div>
+          <div class="proj-kpi-val em">1.31x</div>
+          <div class="proj-kpi-foot">Jan 2026 : 1.15x <span class="proj-kpi-trend up">↑ +13,9%</span></div>
         </div>
       </div>
+      <div class="inv2-budget-labels">
+        <span><b>0 €</b></span>
+        <span>Investissements · <b>850 k€ sur 2,8 M€</b></span>
+        <span><b>2,8 M€</b></span>
+      </div>
+      <div class="inv2-budget-track"><div class="inv2-budget-fill" style="width:30%;"></div></div>
     </div>
 
     <div class="proj-body">
@@ -4482,6 +4553,37 @@ document.addEventListener('DOMContentLoaded', function() {
         responsive: true,
         maintainAspectRatio: false,
         layout: { padding: 0 },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1e293b', titleColor: '#94a3b8', bodyColor: '#f1f5f9',
+            borderColor: '#334155', borderWidth: 1, padding: 10,
+            callbacks: { label: function(c) { return '  ' + c.label + ' : ' + c.parsed + '%'; } }
+          }
+        }
+      }
+    });
+  }
+
+  // ── Donut chart: budget utilisé ──
+  var donutEl = document.getElementById('dbDonutChart');
+  if (donutEl && typeof Chart !== 'undefined') {
+    new Chart(donutEl, {
+      type: 'doughnut',
+      data: {
+        labels: ['Dépensé', 'Restant'],
+        datasets: [{
+          data: [50, 50],
+          backgroundColor: ['#3b82f6', '#e2e8f0'],
+          borderWidth: 0,
+          hoverOffset: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '72%',
+        layout: { padding: 4 },
         plugins: {
           legend: { display: false },
           tooltip: {
