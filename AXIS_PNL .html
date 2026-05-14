@@ -393,54 +393,63 @@ tbody tr:hover .pn{color:#2563eb;}
 
 /* ── PROJETS PAGE ── */
 .proj-page{flex:1;overflow-y:auto;background:#f1f5f9;display:flex;flex-direction:column;}
-.proj-header{background:#fff;border-bottom:1px solid #e2e8f0;padding:20px 28px 0;flex-shrink:0;}
-.proj-header-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px;}
-.proj-header-title{font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.5px;margin-bottom:3px;}
-.proj-header-sub{font-size:12px;color:#94a3b8;font-weight:500;}
+/* Dark gradient header */
+.proj-header{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:24px 28px 0;flex-shrink:0;}
+.proj-header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+.proj-header-title{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.4px;margin-bottom:3px;}
+.proj-header-sub{font-size:11.5px;color:rgba(255,255,255,.45);font-weight:500;}
 .proj-header-actions{display:flex;gap:8px;align-items:center;}
-.proj-btn{border:1.5px solid #e2e8f0;border-radius:9px;background:#fff;padding:7px 14px;font-size:12px;font-weight:600;color:#475569;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
-.proj-btn:hover{border-color:#2563eb;color:#2563eb;}
-.proj-btn.primary{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;border:none;box-shadow:0 4px 12px rgba(37,99,235,.25);}
+.proj-btn{border:1px solid rgba(255,255,255,.2);border-radius:9px;background:rgba(255,255,255,.1);padding:7px 14px;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;appearance:none;-webkit-appearance:none;}
+.proj-btn:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.18);color:#fff;}
+.proj-btn option{background:#1e3a5f;color:#fff;}
+.proj-btn.primary{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;border:1px solid transparent;box-shadow:0 4px 14px rgba(37,99,235,.4);}
 .proj-btn.primary:hover{opacity:.9;}
+/* Local search in header */
+.proj-search-wrap{position:relative;display:flex;align-items:center;}
+.proj-search-wrap svg{position:absolute;left:9px;pointer-events:none;}
+.proj-search{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:9px;padding:7px 12px 7px 32px;font-size:12px;font-weight:500;color:#fff;font-family:'Inter',sans-serif;outline:none;width:190px;transition:all .2s;}
+.proj-search::placeholder{color:rgba(255,255,255,.35);}
+.proj-search:focus{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4);width:220px;}
+/* KPI strip on dark bg */
 .proj-kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);}
-.proj-kpi{padding:14px 20px 16px;border-top:1px solid #f1f5f9;border-right:1px solid #f1f5f9;position:relative;}
+.proj-kpi{padding:16px 22px 18px;border-right:1px solid rgba(255,255,255,.1);position:relative;}
 .proj-kpi:last-child{border-right:none;}
-.proj-kpi-accent{position:absolute;bottom:0;left:20px;right:20px;height:2.5px;border-radius:2px;}
-.proj-kpi-label{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px;}
-.proj-kpi-val{font-size:26px;font-weight:800;color:#0f172a;letter-spacing:-.8px;line-height:1;margin-bottom:4px;}
-.proj-kpi-foot{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#94a3b8;}
-.proj-kpi-trend{font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;}
-.proj-kpi-trend.green{background:#f0fdf4;color:#16a34a;}
-.proj-kpi-trend.blue{background:#eff6ff;color:#2563eb;}
-.proj-kpi-trend.purple{background:#f5f3ff;color:#7c3aed;}
+.proj-kpi-accent{position:absolute;bottom:0;left:22px;right:22px;height:2.5px;border-radius:2px;}
+.proj-kpi-label{font-size:9px;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px;}
+.proj-kpi-val{font-size:26px;font-weight:800;color:#fff;letter-spacing:-.8px;line-height:1;margin-bottom:5px;}
+.proj-kpi-foot{display:flex;align-items:center;justify-content:space-between;font-size:10.5px;color:rgba(255,255,255,.4);}
+.proj-kpi-trend{font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px;}
+.proj-kpi-trend.green{background:rgba(22,163,74,.2);color:#4ade80;}
+.proj-kpi-trend.blue{background:rgba(37,99,235,.25);color:#93c5fd;}
+.proj-kpi-trend.purple{background:rgba(124,58,237,.25);color:#c4b5fd;}
 /* Body */
-.proj-body{padding:20px 28px;flex:1;display:flex;flex-direction:column;gap:16px;}
-.proj-row{display:grid;grid-template-columns:1fr;gap:16px;}
+.proj-body{padding:20px 28px;flex:1;display:flex;flex-direction:column;gap:18px;}
+.proj-row{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;}
 .proj-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;}
 .proj-card-title{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;}
 .proj-card-badge{font-size:10px;font-weight:600;color:#64748b;background:#f8fafc;border:1px solid #e2e8f0;padding:3px 10px;border-radius:20px;}
 /* Mini perf stats */
-.proj-perf-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
+.proj-perf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px;}
 .proj-perf-stat{background:#f8fafc;border:1px solid #f1f5f9;border-radius:10px;padding:10px 12px;}
 .proj-perf-stat-lbl{font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px;}
 .proj-perf-stat-val{font-size:17px;font-weight:800;line-height:1;margin-bottom:2px;}
 .proj-perf-stat-sub{font-size:10px;color:#94a3b8;}
 /* Category bars */
-.proj-cats-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;}
+.proj-cats-grid{display:flex;flex-direction:column;}
 .proj-cat-row{display:flex;align-items:center;padding:9px 0;border-bottom:1px solid #f8fafc;gap:10px;}
 .proj-cat-row:last-child{border-bottom:none;}
-.proj-cats-grid .proj-cat-row:nth-last-child(-n+2){border-bottom:none;}
 .proj-cat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .proj-cat-info{flex:1;min-width:0;}
 .proj-cat-name{font-size:12px;font-weight:700;color:#0f172a;}
 .proj-cat-sub{font-size:10px;color:#94a3b8;margin-top:1px;}
-.proj-cat-bar-bg{height:4px;background:#f1f5f9;border-radius:2px;margin-top:6px;overflow:hidden;}
+.proj-cat-bar-bg{height:4px;background:#f1f5f9;border-radius:2px;margin-top:5px;overflow:hidden;}
 .proj-cat-bar-fill{height:4px;border-radius:2px;}
 .proj-cat-nums{display:flex;gap:12px;flex-shrink:0;text-align:right;}
 .proj-cat-num{font-size:11px;font-weight:700;}
 .proj-cat-num-lbl{font-size:9px;color:#94a3b8;margin-bottom:1px;}
 /* Kanban */
 .proj-kanban{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+.proj-kanban-col{transition:opacity .15s;}
 .proj-col-hd{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:2px solid;}
 .proj-col-name{font-size:12px;font-weight:700;color:#0f172a;}
 .proj-col-count{font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:auto;}
@@ -461,6 +470,8 @@ tbody tr:hover .pn{color:#2563eb;}
 .proj-task-budget{font-size:12px;font-weight:800;color:#0f172a;}
 .proj-task-bar-bg{height:3px;background:#f1f5f9;border-radius:2px;margin-top:9px;overflow:hidden;}
 .proj-task-bar-fill{height:3px;border-radius:2px;}
+/* No-results empty state */
+.proj-empty{display:none;text-align:center;padding:28px 16px;color:#94a3b8;font-size:12px;font-style:italic;}
 
 /* ── Page Investissements v2 ── */
 .inv2-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:28px 32px 30px;flex-shrink:0;}
@@ -1642,7 +1653,11 @@ tbody tr:hover .pn{color:#2563eb;}
           <div class="proj-header-sub">13 projets actifs &middot; S1 2026 &middot; AXIS Conseil</div>
         </div>
         <div class="proj-header-actions">
-          <select class="proj-btn" style="cursor:pointer;outline:none;"><option>Tous les types</option><option>Album</option><option>Single</option><option>Tournée</option><option>Catalogue</option><option>Streaming</option></select>
+          <div class="proj-search-wrap">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="text" class="proj-search" id="projSearch" placeholder="Rechercher..." oninput="filterProjSearch(this.value)" autocomplete="off">
+          </div>
+          <select class="proj-btn" id="projTypeFilter" onchange="filterProjType(this.value)" style="cursor:pointer;outline:none;"><option>Tous les types</option><option>Album</option><option>Single</option><option>Tournée</option><option>Catalogue</option><option>Streaming</option></select>
           <button class="proj-btn primary" onclick="openNpDrawer()">+ Nouveau projet</button>
         </div>
       </div>
@@ -1766,7 +1781,7 @@ tbody tr:hover .pn{color:#2563eb;}
             <div class="proj-cat-info"><div class="proj-cat-name">Catalogue</div><div class="proj-cat-sub">2 projets · 1,9M€</div><div class="proj-cat-bar-bg"><div class="proj-cat-bar-fill" style="width:74%;background:#ec4899;"></div></div></div>
             <div class="proj-cat-nums"><div><div class="proj-cat-num-lbl">ROI</div><div class="proj-cat-num" style="color:#16a34a;">2.58x</div></div><div><div class="proj-cat-num-lbl">Avanc.</div><div class="proj-cat-num" style="color:#2563eb;">74%</div></div></div>
           </div>
-          <div class="proj-cat-row" style="grid-column:1/-1;">
+          <div class="proj-cat-row">
             <div class="proj-cat-dot" style="background:#10b981;"></div>
             <div class="proj-cat-info"><div class="proj-cat-name">Streaming</div><div class="proj-cat-sub">2 projets · 1,2M€</div><div class="proj-cat-bar-bg"><div class="proj-cat-bar-fill" style="width:36%;background:#10b981;"></div></div></div>
             <div class="proj-cat-nums"><div><div class="proj-cat-num-lbl">ROI</div><div class="proj-cat-num" style="color:#16a34a;">1.18x</div></div><div><div class="proj-cat-num-lbl">Avanc.</div><div class="proj-cat-num" style="color:#2563eb;">36%</div></div></div>
@@ -1779,7 +1794,7 @@ tbody tr:hover .pn{color:#2563eb;}
       <div class="proj-kanban">
 
         <!-- Album -->
-        <div>
+        <div class="proj-kanban-col" data-col-type="Album">
           <div class="proj-col-hd" style="border-color:#8b5cf6;">
             <div class="proj-cat-dot" style="background:#8b5cf6;"></div>
             <span class="proj-col-name">Album</span>
@@ -1808,7 +1823,7 @@ tbody tr:hover .pn{color:#2563eb;}
         </div>
 
         <!-- Single -->
-        <div>
+        <div class="proj-kanban-col" data-col-type="Single">
           <div class="proj-col-hd" style="border-color:#3b82f6;">
             <div class="proj-cat-dot" style="background:#3b82f6;"></div>
             <span class="proj-col-name">Single</span>
@@ -1847,7 +1862,7 @@ tbody tr:hover .pn{color:#2563eb;}
         </div>
 
         <!-- Tournée -->
-        <div>
+        <div class="proj-kanban-col" data-col-type="Tournée">
           <div class="proj-col-hd" style="border-color:#f59e0b;">
             <div class="proj-cat-dot" style="background:#f59e0b;"></div>
             <span class="proj-col-name">Tournée</span>
@@ -1886,7 +1901,7 @@ tbody tr:hover .pn{color:#2563eb;}
         </div>
 
         <!-- Catalogue -->
-        <div>
+        <div class="proj-kanban-col" data-col-type="Catalogue">
           <div class="proj-col-hd" style="border-color:#ec4899;">
             <div class="proj-cat-dot" style="background:#ec4899;"></div>
             <span class="proj-col-name">Catalogue</span>
@@ -1915,7 +1930,7 @@ tbody tr:hover .pn{color:#2563eb;}
         </div>
 
         <!-- Streaming -->
-        <div>
+        <div class="proj-kanban-col" data-col-type="Streaming">
           <div class="proj-col-hd" style="border-color:#10b981;">
             <div class="proj-cat-dot" style="background:#10b981;"></div>
             <span class="proj-col-name">Streaming</span>
@@ -4206,9 +4221,8 @@ function submitNpDrawer() {
       '<div class="proj-task-footer"><div class="proj-task-assignee"><div class="proj-task-av" style="background:' + col + ';">' + initials + '</div>' + artist + '</div><span class="proj-task-budget">' + budgetStr + '</span></div>' +
       '<div class="proj-task-bar-bg"><div class="proj-task-bar-fill" style="width:0%;background:' + col + ';"></div></div>';
     targetCol.appendChild(card);
-    // Update column count badge
-    var countBadge = targetCol.querySelector('.proj-col-count');
-    if (countBadge) countBadge.textContent = +countBadge.textContent + 1;
+    // Re-apply active filters so new card respects current search/type state
+    applyProjFilters();
   }
 
   // If new artist: add to select list for future use
@@ -4245,6 +4259,43 @@ function submitNpDrawer() {
     toast.classList.add('show');
     setTimeout(function() { toast.classList.remove('show'); }, 3000);
   }
+}
+
+// ── Projets : filtres search + type ──
+var _projTypeActive = 'Tous les types';
+
+function applyProjFilters() {
+  var type = _projTypeActive;
+  var q = ((document.getElementById('projSearch') || {}).value || '').toLowerCase().trim();
+  var cols = document.querySelectorAll('#pg-projets .proj-kanban-col');
+  var totalVisible = 0;
+  cols.forEach(function(col) {
+    var colType = col.getAttribute('data-col-type') || '';
+    var typeMatch = (type === 'Tous les types' || type === colType);
+    if (!typeMatch) { col.style.display = 'none'; return; }
+    col.style.display = '';
+    var cards = col.querySelectorAll('.proj-task');
+    var colVisible = 0;
+    cards.forEach(function(card) {
+      var name   = ((card.querySelector('.proj-task-name')   || {}).textContent || '').toLowerCase();
+      var artist = ((card.querySelector('.proj-task-artist') || {}).textContent || '').toLowerCase();
+      var show = !q || name.indexOf(q) !== -1 || artist.indexOf(q) !== -1;
+      card.style.display = show ? '' : 'none';
+      if (show) colVisible++;
+    });
+    totalVisible += colVisible;
+    var badge = col.querySelector('.proj-col-count');
+    if (badge) badge.textContent = colVisible;
+  });
+}
+
+function filterProjSearch(q) {
+  applyProjFilters();
+}
+
+function filterProjType(type) {
+  _projTypeActive = type;
+  applyProjFilters();
 }
 
 // ── SVG Chart Tooltip (Projets artistes) ──
