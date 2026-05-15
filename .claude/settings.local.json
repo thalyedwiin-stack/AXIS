@@ -5,7 +5,8 @@
       "Bash(Select-Object -ExpandProperty FullName)",
       "Bash(Get-ChildItem -Path \"d:\\\\AXIS_PNL\" -Filter \"*.html\")",
       "Bash(Select-Object FullName)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "PowerShell(\\(Get-Item \"d:\\\\AXIS_PNL\\\\AXIS_PNL.index.html\"\\).Length)"
     ]
   }
 }
