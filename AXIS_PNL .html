@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -859,10 +859,6 @@ tbody tr:hover .pn{color:#2563eb;}
 .act-feed-artist{font-size:11px;color:#2563eb;font-weight:600;margin-bottom:2px;}
 .act-feed-desc{font-size:11px;color:#64748b;line-height:1.5;}
 .act-feed-who{font-size:10px;color:#94a3b8;margin-top:3px;}
-/* Opp filter */
-.opp-filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
-.opp-filter-btn{font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;border:1px solid #e2e8f0;background:#fff;color:#64748b;cursor:pointer;font-family:'Inter',sans-serif;transition:all .12s;}
-.opp-filter-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;}
 /* New Contact Modal */
 .nc-modal-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:9999;align-items:center;justify-content:center;padding:20px;}
 .nc-modal-ov.open{display:flex;}
@@ -1157,7 +1153,7 @@ tbody tr:hover .pn{color:#2563eb;}
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <div class="nav-logo">
+  <div class="nav-logo" onclick="showPage('dashboard',document.querySelector('.sb-item'))" style="cursor:pointer;">
     <div class="nav-logo-icon">
       <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
         <path d="M28 72 L44 28 L50 38 L38 72 Z" fill="#1a3a6b"/>
@@ -3161,7 +3157,7 @@ function openPbiView() {
     + '<div class="pbi-pg-chart-name"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>&Eacute;volution des revenus 2026</div>'
     + '<span class="pbi-pg-chart-badge">&#8599; +22% cumul&eacute;</span>'
     + '</div>'
-    + '<div style="position:relative;height:220px;"><canvas id="pbiRevChart"></canvas></div>'
+    + '<div style="position:relative;height:220px;"><canvas id="pbiPgRevChart"></canvas></div>'
     + '<div class="pbi-pg-stats">'
     + '<div class="pbi-pg-stat"><div class="pbi-pg-stat-val" style="color:#60a5fa;">8,2 M&euro;</div><div class="pbi-pg-stat-lbl">Total Jan&ndash;Jun</div></div>'
     + '<div class="pbi-pg-stat"><div class="pbi-pg-stat-val" style="color:#34d399;">+22%</div><div class="pbi-pg-stat-lbl">Croissance</div></div>'
