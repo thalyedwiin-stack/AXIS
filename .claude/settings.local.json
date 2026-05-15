@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Recurse -Path \"d:\\\\AXIS_PNL\\\\src\" -Include \"*ProjetArtiste*\", \"*ArtistProject*\", \"*Investissement*\", \"*Investment*\" -ErrorAction SilentlyContinue)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Get-ChildItem -Path \"d:\\\\AXIS_PNL\" -Filter \"*.html\")",
+      "Bash(Select-Object FullName)"
+    ]
+  }
+}

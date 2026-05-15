@@ -189,25 +189,29 @@ tbody tr:hover .pn{color:#2563eb;}
 .crm-wrap{flex:1;display:grid;grid-template-columns:360px 1fr;overflow:hidden;height:calc(100vh - 56px);min-height:0;}
 /* Left roster panel */
 .crm-list{background:#fff;border-right:1px solid #e2e8f0;display:flex;flex-direction:column;overflow:hidden;}
-.crm-list-top{padding:16px 18px 14px;border-bottom:1px solid #f1f5f9;}
+.crm-list-top{padding:16px 18px 14px;border-bottom:1px solid #e8edf2;background:linear-gradient(180deg,#f0f5ff 0%,#fff 100%);}
 .crm-list-heading{font-size:17px;font-weight:800;color:#0f172a;margin-bottom:2px;letter-spacing:-.3px;}
 .crm-list-sub{font-size:11px;color:#94a3b8;margin-bottom:0;}
 /* Mini KPI strip */
-.crm-mini-kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #f1f5f9;flex-shrink:0;}
-.crm-mini-kpi{padding:10px 0;text-align:center;border-right:1px solid #f1f5f9;}
+.crm-mini-kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #e8edf2;flex-shrink:0;}
+.crm-mini-kpi{padding:12px 0 10px;text-align:center;border-right:1px solid #f1f5f9;border-top:2px solid transparent;}
 .crm-mini-kpi:last-child{border-right:none;}
-.crm-mini-val{font-size:14px;font-weight:800;letter-spacing:-.4px;line-height:1.2;}
+.crm-mini-kpi:nth-child(1){border-top-color:#2563eb;}
+.crm-mini-kpi:nth-child(2){border-top-color:#334155;}
+.crm-mini-kpi:nth-child(3){border-top-color:#16a34a;}
+.crm-mini-kpi:nth-child(4){border-top-color:#ef4444;}
+.crm-mini-val{font-size:16px;font-weight:800;letter-spacing:-.5px;line-height:1.2;}
 .crm-mini-val.blue{color:#2563eb;}.crm-mini-val.green{color:#16a34a;}.crm-mini-val.red{color:#ef4444;}.crm-mini-val.amber{color:#d97706;}
-.crm-mini-lbl{font-size:9px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;margin-top:2px;}
+.crm-mini-lbl{font-size:9px;font-weight:600;color:#94a3b8;text-transform:uppercase;letter-spacing:.4px;margin-top:3px;}
 /* Roster title */
 .crm-list-title{font-size:10px;font-weight:700;color:#94a3b8;padding:10px 18px 6px;text-transform:uppercase;letter-spacing:.7px;flex-shrink:0;}
-.crm-artist-items{flex:1;overflow-y:auto;}
+.crm-artist-items{flex:1;overflow-y:auto;display:flex;flex-direction:column;min-height:0;}
 /* Artist card */
-.crm-item{padding:11px 16px 10px;border-bottom:1px solid #f8fafc;cursor:pointer;transition:all .15s;border-left:3px solid transparent;display:flex;flex-direction:column;gap:7px;}
+.crm-item{flex:1;min-height:0;padding:0 16px;border-bottom:1px solid #f1f5f9;cursor:pointer;transition:all .15s;border-left:3px solid transparent;display:flex;flex-direction:column;justify-content:center;gap:7px;}
 .crm-item:hover{background:#f8fafc;border-left-color:#c7d2fe;}
 .crm-item.active{background:#eff6ff;border-left-color:#2563eb;}
 .crm-item-main{display:flex;align-items:center;gap:11px;}
-.crm-av{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:-.5px;}
+.crm-av{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;letter-spacing:-.5px;box-shadow:0 2px 8px rgba(0,0,0,.18);}
 .crm-item-info{flex:1;min-width:0;}
 .crm-item-name{font-size:13px;font-weight:700;color:#0f172a;}
 .crm-item-proj{font-size:11px;color:#94a3b8;margin-top:1px;}
@@ -219,8 +223,8 @@ tbody tr:hover .pn{color:#2563eb;}
 .crm-badge.warning{background:#fef3c7;color:#d97706;}
 .crm-badge.nouveau{background:#f0fdf4;color:#166534;}
 .crm-badge.inactif{background:#f1f5f9;color:#64748b;}
-.crm-item-bar{height:2px;border-radius:2px;background:#f1f5f9;overflow:hidden;}
-.crm-item-bar-fill{height:2px;border-radius:2px;background:linear-gradient(90deg,#3b82f6,#6366f1);transition:width .3s;}
+.crm-item-bar{height:3px;border-radius:3px;background:#f1f5f9;overflow:hidden;}
+.crm-item-bar-fill{height:3px;border-radius:3px;background:linear-gradient(90deg,#3b82f6,#6366f1);transition:width .3s;}
 /* Right detail panel */
 .crm-detail{overflow-y:auto;background:#f1f5f9;}
 /* Empty state */
@@ -302,42 +306,54 @@ tbody tr:hover .pn{color:#2563eb;}
 .crm-act-divider{height:1px;background:#f1f5f9;margin-bottom:4px;}
 
 /* OPP panel */
-.opp-wrap{display:none;flex:1;flex-direction:column;overflow-y:auto;padding:20px;background:#f8fafc;}
-.opp-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
-.opp-kpi{border-radius:11px;padding:16px 18px;border:1px solid;}
-.opp-kpi.amber{background:#fffbeb;border-color:#fde68a;}
-.opp-kpi.green{background:#f0fdf4;border-color:#bbf7d0;}
-.opp-kpi.blue{background:#eff6ff;border-color:#bfdbfe;}
-.opp-kpi.gray{background:#f8fafc;border-color:#e2e8f0;}
-.opp-kpi-label{font-size:11px;color:#475569;margin-bottom:7px;font-weight:500;}
-.opp-kpi-val{font-size:32px;font-weight:800;line-height:1;margin-bottom:5px;letter-spacing:-1px;}
-.opp-kpi-sub{font-size:12px;color:#64748b;font-weight:500;}
+.opp-wrap{display:none;flex:1;flex-direction:column;overflow-y:auto;padding:22px 24px;background:#f1f5f9;}
+.opp-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px;}
+.opp-kpi{border-radius:13px;padding:14px 18px;border:1px solid;background:#fff;}
+.opp-kpi.amber{border-color:#fde68a;border-top:3px solid #f59e0b;}
+.opp-kpi.green{border-color:#bbf7d0;border-top:3px solid #16a34a;}
+.opp-kpi.blue{border-color:#bfdbfe;border-top:3px solid #3b82f6;}
+.opp-kpi.gray{border-color:#e2e8f0;border-top:3px solid #94a3b8;}
+.opp-kpi-label{font-size:10px;color:#64748b;margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;}
+.opp-kpi-val{font-size:28px;font-weight:800;line-height:1;margin-bottom:4px;letter-spacing:-.8px;}
+.opp-kpi-sub{font-size:11px;color:#64748b;font-weight:500;}
 .opp-kpi.amber .opp-kpi-val{color:#d97706;}
 .opp-kpi.green .opp-kpi-val{color:#16a34a;}
 .opp-kpi.blue .opp-kpi-val{color:#2563eb;}
-.opp-kpi.gray .opp-kpi-val{color:#334155;}
-.pipeline-card{background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:18px 20px;}
-.pipeline-title{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:16px;}
-.opp-item{border:1px solid #e2e8f0;border-radius:11px;padding:16px 20px;margin-bottom:10px;background:#fff;cursor:pointer;transition:box-shadow .15s;}
-.opp-item:hover{box-shadow:0 4px 14px rgba(0,0,0,.07);}
-.opp-item-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;}
-.opp-item-left{display:flex;align-items:center;gap:10px;}
-.opp-item-name{font-size:14px;font-weight:700;color:#0f172a;}
-.opp-stage{font-size:10px;font-weight:600;padding:2px 9px;border-radius:20px;}
-.opp-stage.nego-finale{background:#dcfce7;color:#166534;}
+.opp-kpi.gray .opp-kpi-val{color:#475569;}
+/* Opp filter row */
+.opp-filter-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px;}
+.opp-filter-btn{font-size:11px;font-weight:600;padding:6px 14px;border-radius:20px;border:1px solid #e2e8f0;background:#fff;color:#64748b;cursor:pointer;font-family:'Inter',sans-serif;transition:all .12s;display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+.opp-filter-btn:hover:not(.active){background:#f8fafc;border-color:#cbd5e1;}
+.opp-filter-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,.3);}
+.opp-filter-count{font-size:10px;font-weight:700;background:rgba(0,0,0,.07);border-radius:20px;padding:1px 7px;line-height:1.4;}
+.opp-filter-btn.active .opp-filter-count{background:rgba(255,255,255,.25);}
+.opp-filter-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+/* Pipeline 2-column grid */
+.pipeline-card{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;}
+.opp-item{border:1px solid #e2e8f0;border-radius:13px;padding:16px 18px;margin-bottom:0;background:#fff;cursor:pointer;transition:all .15s;border-top:3px solid #e2e8f0;display:flex;flex-direction:column;gap:0;}
+.opp-item:hover{box-shadow:0 6px 20px rgba(0,0,0,.09);transform:translateY(-2px);}
+.opp-item.nego{border-top-color:#f59e0b;}
+.opp-item.prop{border-top-color:#3b82f6;}
+.opp-item.sign{border-top-color:#16a34a;}
+.opp-item.contact{border-top-color:#94a3b8;}
+.opp-item-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;}
+.opp-item-left{display:flex;flex-direction:column;gap:5px;flex:1;min-width:0;}
+.opp-item-name{font-size:13px;font-weight:700;color:#0f172a;line-height:1.3;}
+.opp-stage{font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;display:inline-flex;align-self:flex-start;text-transform:uppercase;letter-spacing:.3px;}
+.opp-stage.nego-finale{background:#fef3c7;color:#92400e;}
 .opp-stage.prop-envoyee{background:#eff6ff;color:#1d4ed8;}
-.opp-stage.premier-contact{background:#fef3c7;color:#92400e;}
-.opp-stage.contrat-rev{background:#f0fdf4;color:#166534;}
-.opp-stage.discussions{background:#fff7ed;color:#c2410c;}
-.opp-stage.sign-imminente{background:#f0fdf4;color:#166534;}
-.opp-item-right{text-align:right;}
-.opp-item-val{font-size:18px;font-weight:800;color:#2563eb;}
-.opp-item-val-label{font-size:10px;color:#94a3b8;margin-top:2px;}
-.opp-item-meta{display:flex;align-items:center;gap:14px;font-size:11px;color:#64748b;margin-bottom:10px;}
-.opp-prob-row{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#64748b;margin-bottom:5px;}
-.opp-prob-pct{font-weight:700;color:#1e293b;}
-.opp-bar-bg{height:6px;border-radius:3px;background:#f1f5f9;overflow:hidden;}
-.opp-bar-fill{height:6px;border-radius:3px;}
+.opp-stage.premier-contact{background:#f1f5f9;color:#64748b;}
+.opp-stage.contrat-rev{background:#f0fdf4;color:#15803d;}
+.opp-stage.discussions{background:#f1f5f9;color:#64748b;}
+.opp-stage.sign-imminente{background:#dcfce7;color:#166534;}
+.opp-item-right{text-align:right;flex-shrink:0;margin-left:12px;}
+.opp-item-val{font-size:17px;font-weight:800;color:#2563eb;letter-spacing:-.4px;}
+.opp-item-val-label{font-size:9px;color:#94a3b8;margin-top:1px;text-align:right;}
+.opp-item-meta{display:flex;align-items:center;gap:10px;font-size:10px;color:#64748b;margin-bottom:10px;padding-top:6px;border-top:1px solid #f8fafc;}
+.opp-prob-row{display:flex;align-items:center;justify-content:space-between;font-size:10px;color:#94a3b8;margin-bottom:5px;}
+.opp-prob-pct{font-weight:700;color:#334155;font-size:11px;}
+.opp-bar-bg{height:5px;border-radius:3px;background:#f1f5f9;overflow:hidden;}
+.opp-bar-fill{height:5px;border-radius:3px;}
 
 /* MODAL common */
 .modal-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:200;align-items:center;justify-content:center;padding:16px;}
@@ -389,13 +405,82 @@ tbody tr:hover .pn{color:#2563eb;}
 .opp-tl-date{font-size:10px;color:#94a3b8;margin-bottom:4px;}
 .opp-tl-desc{font-size:11px;color:#475569;line-height:1.55;background:#f8fafc;border:1px solid #f1f5f9;border-radius:7px;padding:8px 11px;}
 
+/* ── STREAMING PAGE ── */
+.stm-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:28px 32px 30px;flex-shrink:0;}
+.stm-hero-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:26px;}
+.stm-hero-title{font-size:21px;font-weight:800;color:#fff;letter-spacing:-.4px;margin-bottom:4px;}
+.stm-hero-sub{font-size:12px;color:rgba(255,255,255,.45);}
+.stm-hero-period{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;}
+.stm-kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:22px;}
+.stm-kpi{padding:0 24px;border-right:1px solid rgba(255,255,255,.1);}
+.stm-kpi:first-child{padding-left:0;}
+.stm-kpi:last-child{border-right:none;}
+.stm-kpi-lbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:rgba(255,255,255,.4);margin-bottom:8px;}
+.stm-kpi-val{font-size:28px;font-weight:800;color:#fff;letter-spacing:-.6px;line-height:1;margin-bottom:6px;}
+.stm-kpi-val.em{color:#34d399;}
+.stm-kpi-trend{font-size:11px;font-weight:500;color:rgba(255,255,255,.45);}
+.stm-kpi-trend.up{color:#34d399;}
+.stm-budget-labels{display:flex;justify-content:space-between;font-size:11px;color:rgba(255,255,255,.45);margin-bottom:7px;font-weight:500;}
+.stm-budget-labels b{color:rgba(255,255,255,.75);}
+.stm-budget-track{height:6px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;}
+.stm-budget-fill{height:6px;background:linear-gradient(90deg,#60a5fa,#34d399);border-radius:99px;}
+.stm-body{flex:1;overflow-y:auto;padding:22px 28px 32px;display:flex;flex-direction:column;gap:18px;background:#f1f5f9;}
+.stm-card{background:#fff;border-radius:16px;border:1px solid #e8edf2;box-shadow:0 1px 4px rgba(0,0,0,.05);overflow:hidden;}
+.stm-card-hd{padding:16px 22px;border-bottom:1px solid #f1f5f9;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+.stm-card-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:3px;}
+.stm-card-sub{font-size:11px;color:#94a3b8;}
+.stm-card-body{padding:18px 22px;}
+.stm-badge{display:inline-flex;align-items:center;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:600;background:#f1f5f9;color:#64748b;white-space:nowrap;flex-shrink:0;}
+.stm-badge.green{background:#f0fdf4;color:#15803d;}
+.stm-badge.blue{background:#eff6ff;color:#2563eb;}
+.stm-row2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.stm-platform{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.stm-platform:last-child{margin-bottom:0;}
+.stm-pl-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.stm-pl-info{flex:1;min-width:0;}
+.stm-pl-name{font-size:12px;font-weight:700;color:#0f172a;margin-bottom:5px;}
+.stm-pl-bar-bg{height:6px;background:#f1f5f9;border-radius:99px;overflow:hidden;}
+.stm-pl-bar-fill{height:6px;border-radius:99px;}
+.stm-pl-nums{text-align:right;min-width:68px;}
+.stm-pl-val{font-size:12px;font-weight:700;color:#0f172a;}
+.stm-pl-pct{font-size:10px;color:#94a3b8;}
+.stm-artist-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f8fafc;}
+.stm-artist-row:last-child{border-bottom:none;}
+.stm-artist-rank{font-size:11px;font-weight:700;color:#cbd5e1;width:20px;text-align:center;flex-shrink:0;}
+.stm-artist-av{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0;}
+.stm-artist-info{flex:1;min-width:0;}
+.stm-artist-name{font-size:13px;font-weight:700;color:#0f172a;}
+.stm-artist-streams{font-size:10px;color:#94a3b8;}
+.stm-artist-bar-bg{height:4px;background:#f1f5f9;border-radius:99px;overflow:hidden;margin-top:4px;}
+.stm-artist-bar-fill{height:4px;border-radius:99px;}
+.stm-artist-rev{text-align:right;min-width:68px;}
+.stm-artist-val{font-size:12px;font-weight:700;color:#0f172a;}
+.stm-artist-trend{font-size:10px;color:#16a34a;font-weight:600;}
+.stm-track-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #f8fafc;}
+.stm-track-row:last-child{border-bottom:none;}
+.stm-track-rank{font-size:11px;font-weight:700;color:#cbd5e1;width:20px;text-align:center;flex-shrink:0;}
+.stm-track-cover{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;}
+.stm-track-info{flex:1;min-width:0;}
+.stm-track-name{font-size:13px;font-weight:700;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.stm-track-artist{font-size:10px;color:#94a3b8;}
+.stm-track-nums{text-align:right;}
+.stm-track-val{font-size:12px;font-weight:700;color:#0f172a;}
+.stm-track-plat{font-size:9px;color:#64748b;margin-top:1px;}
+.stm-alert{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid #f8fafc;}
+.stm-alert:last-child{border-bottom:none;}
+.stm-alert-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.stm-alert-content{flex:1;}
+.stm-alert-title{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:3px;}
+.stm-alert-desc{font-size:11px;color:#64748b;line-height:1.55;}
+.stm-alert-time{font-size:10px;color:#94a3b8;white-space:nowrap;flex-shrink:0;}
+
 /* ── PROJETS PAGE ── */
 .proj-page{flex:1;overflow-y:auto;background:#f1f5f9;display:flex;flex-direction:column;}
 /* Dark gradient header */
-.proj-header{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);margin:0 28px;border-radius:16px 16px 0 0;padding:22px 24px 24px;flex-shrink:0;}
-.proj-header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px;}
-.proj-header-title{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.4px;margin-bottom:3px;}
-.proj-header-sub{font-size:11.5px;color:rgba(255,255,255,.45);font-weight:500;}
+.proj-header{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:28px 32px 30px;flex-shrink:0;}
+.proj-header-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:26px;}
+.proj-header-title{font-size:21px;font-weight:800;color:#fff;letter-spacing:-.4px;margin-bottom:4px;}
+.proj-header-sub{font-size:12px;color:rgba(255,255,255,.45);font-weight:500;}
 .proj-header-actions{display:flex;gap:8px;align-items:center;}
 .proj-btn{border:1px solid rgba(255,255,255,.2);border-radius:9px;background:rgba(255,255,255,.1);padding:7px 14px;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;appearance:none;-webkit-appearance:none;}
 .proj-btn:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.18);color:#fff;}
@@ -409,7 +494,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .proj-search::placeholder{color:rgba(255,255,255,.35);}
 .proj-search:focus{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.4);width:220px;}
 /* KPI strip on dark bg */
-.proj-kpi-strip{display:grid;grid-template-columns:repeat(5,1fr);margin-bottom:22px;}
+.proj-kpi-strip{display:grid;grid-template-columns:repeat(4,1fr);margin-bottom:22px;}
 .proj-kpi{padding:0 24px;border-right:1px solid rgba(255,255,255,.1);}
 .proj-kpi:first-child{padding-left:0;}
 .proj-kpi:last-child{border-right:none;}
@@ -753,13 +838,21 @@ tbody tr:hover .pn{color:#2563eb;}
 /* Activity Feed Panel */
 .act-panel{display:none;flex:1;flex-direction:column;overflow-y:auto;padding:20px;background:#f8fafc;}
 .act-filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
-.act-filter-btn{font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;border:1px solid #e2e8f0;background:#fff;color:#64748b;cursor:pointer;font-family:'Inter',sans-serif;transition:all .12s;}
-.act-filter-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;}
-.act-feed-card{background:#fff;border:1px solid #e2e8f0;border-radius:13px;overflow:hidden;}
-.act-feed-item{display:flex;gap:12px;padding:13px 16px;border-bottom:1px solid #f8fafc;align-items:flex-start;transition:background .1s;}
+.act-filter-btn{font-size:11px;font-weight:600;padding:5px 13px;border-radius:20px;border:1px solid #e2e8f0;background:#fff;color:#64748b;cursor:pointer;font-family:'Inter',sans-serif;transition:all .12s;display:inline-flex;align-items:center;gap:5px;}
+.act-filter-btn:hover:not(.active){background:#f8fafc;border-color:#cbd5e1;}
+.act-filter-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;box-shadow:0 2px 8px rgba(37,99,235,.3);}
+.act-feed-card{background:#fff;border:1px solid #e2e8f0;border-radius:13px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.05);}
+.act-feed-item{display:flex;gap:12px;padding:13px 16px;border-bottom:1px solid #f8fafc;align-items:flex-start;transition:background .1s;border-left:3px solid transparent;}
 .act-feed-item:last-child{border-bottom:none;}
 .act-feed-item:hover{background:#f8fafc;}
-.act-feed-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.act-feed-item.type-reunion{border-left-color:#3b82f6;}
+.act-feed-item.type-appel{border-left-color:#22c55e;}
+.act-feed-item.type-email{border-left-color:#f97316;}
+.act-feed-item.type-contrat{border-left-color:#8b5cf6;}
+.act-feed-item.type-studio{border-left-color:#ec4899;}
+.act-feed-item.type-rapport{border-left-color:#0891b2;}
+.act-date-sep{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.7px;padding:8px 16px 6px;background:#fafafa;border-bottom:1px solid #f1f5f9;position:sticky;top:0;z-index:1;}
+.act-feed-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
 .act-feed-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;}
 .act-feed-name{font-size:12px;font-weight:700;color:#0f172a;}
 .act-feed-time{font-size:10px;color:#94a3b8;white-space:nowrap;margin-left:8px;}
@@ -1429,7 +1522,7 @@ tbody tr:hover .pn{color:#2563eb;}
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
             <div>
               <div class="crm-list-heading">Relations Clients</div>
-              <div class="crm-list-sub">12 artistes · 8 opportunités actives</div>
+              <div class="crm-list-sub">6 artistes · 8 opportunités actives</div>
             </div>
             <button class="crm-add-btn" onclick="openNewContactModal()">+ Nouveau</button>
           </div>
@@ -1441,13 +1534,13 @@ tbody tr:hover .pn{color:#2563eb;}
 
         <!-- Mini KPI strip -->
         <div class="crm-mini-kpis">
-          <div class="crm-mini-kpi"><div class="crm-mini-val blue">8,2M€</div><div class="crm-mini-lbl">Revenus</div></div>
-          <div class="crm-mini-kpi"><div class="crm-mini-val">12</div><div class="crm-mini-lbl">Artistes</div></div>
-          <div class="crm-mini-kpi"><div class="crm-mini-val green">7</div><div class="crm-mini-lbl">Actifs</div></div>
+          <div class="crm-mini-kpi"><div class="crm-mini-val blue">8,4M€</div><div class="crm-mini-lbl">Revenus</div></div>
+          <div class="crm-mini-kpi"><div class="crm-mini-val">6</div><div class="crm-mini-lbl">Artistes</div></div>
+          <div class="crm-mini-kpi"><div class="crm-mini-val green">3</div><div class="crm-mini-lbl">Actifs</div></div>
           <div class="crm-mini-kpi"><div class="crm-mini-val red">3</div><div class="crm-mini-lbl">Expirés</div></div>
         </div>
 
-        <div class="crm-list-title" id="artistListTitle">Artistes — 12</div>
+        <div class="crm-list-title" id="artistListTitle">Artistes — 6</div>
         <div class="crm-artist-items" id="artistList">
 
           <div class="crm-item" data-name="PNL" onclick="selectArtist(this,'PNL')">
@@ -1540,97 +1633,8 @@ tbody tr:hover .pn{color:#2563eb;}
             <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:39%"></div></div>
           </div>
 
-          <div class="crm-item" data-name="Hamza" onclick="selectArtist(this,'Hamza')">
-            <div class="crm-item-main">
-              <div class="crm-av" style="background:linear-gradient(135deg,#4338ca,#6366f1)">Ha</div>
-              <div class="crm-item-info">
-                <div class="crm-item-name">Hamza</div>
-                <div class="crm-item-proj">R&B · 2 projets</div>
-              </div>
-              <div class="crm-item-right">
-                <div class="crm-item-rev">780k€</div>
-                <span class="crm-badge actif">● Actif</span>
-              </div>
-            </div>
-            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:37%"></div></div>
-          </div>
-
-          <div class="crm-item" data-name="Gazo" onclick="selectArtist(this,'Gazo')">
-            <div class="crm-item-main">
-              <div class="crm-av" style="background:linear-gradient(135deg,#be123c,#f43f5e)">Gz</div>
-              <div class="crm-item-info">
-                <div class="crm-item-name">Gazo</div>
-                <div class="crm-item-proj">Drill · 1 projet</div>
-              </div>
-              <div class="crm-item-right">
-                <div class="crm-item-rev">680k€</div>
-                <span class="crm-badge actif">● Actif</span>
-              </div>
-            </div>
-            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:32%"></div></div>
-          </div>
-
-          <div class="crm-item" data-name="Jul" onclick="selectArtist(this,'Jul')">
-            <div class="crm-item-main">
-              <div class="crm-av" style="background:linear-gradient(135deg,#0369a1,#0284c7)">Ju</div>
-              <div class="crm-item-info">
-                <div class="crm-item-name">Jul</div>
-                <div class="crm-item-proj">Rap · 1 projet</div>
-              </div>
-              <div class="crm-item-right">
-                <div class="crm-item-rev">620k€</div>
-                <span class="crm-badge actif">● Actif</span>
-              </div>
-            </div>
-            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:30%"></div></div>
-          </div>
-
-          <div class="crm-item" data-name="Tiakola" onclick="selectArtist(this,'Tiakola')">
-            <div class="crm-item-main">
-              <div class="crm-av" style="background:linear-gradient(135deg,#0f766e,#0d9488)">Tk</div>
-              <div class="crm-item-info">
-                <div class="crm-item-name">Tiakola</div>
-                <div class="crm-item-proj">Afro-Pop · 1 projet</div>
-              </div>
-              <div class="crm-item-right">
-                <div class="crm-item-rev">550k€</div>
-                <span class="crm-badge actif">● Actif</span>
-              </div>
-            </div>
-            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:26%"></div></div>
-          </div>
-
-          <div class="crm-item" data-name="Ninha" onclick="selectArtist(this,'Ninha')">
-            <div class="crm-item-main">
-              <div class="crm-av" style="background:linear-gradient(135deg,#a21caf,#db2777)">Nh</div>
-              <div class="crm-item-info">
-                <div class="crm-item-name">Ninha</div>
-                <div class="crm-item-proj">R&B · 1 projet</div>
-              </div>
-              <div class="crm-item-right">
-                <div class="crm-item-rev">420k€</div>
-                <span class="crm-badge actif">● Actif</span>
-              </div>
-            </div>
-            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:20%"></div></div>
-          </div>
-
-          <div class="crm-item" data-name="La Fouine" onclick="selectArtist(this,'La Fouine')">
-            <div class="crm-item-main">
-              <div class="crm-av" style="background:linear-gradient(135deg,#92400e,#b45309)">LF</div>
-              <div class="crm-item-info">
-                <div class="crm-item-name">La Fouine</div>
-                <div class="crm-item-proj">Rap · 1 projet</div>
-              </div>
-              <div class="crm-item-right">
-                <div class="crm-item-rev">380k€</div>
-                <span class="crm-badge actif">● Actif</span>
-              </div>
-            </div>
-            <div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:18%"></div></div>
-          </div>
-
         </div>
+
       </div>
 
       <!-- ── RIGHT DETAIL PANEL ── -->
@@ -1649,44 +1653,117 @@ tbody tr:hover .pn{color:#2563eb;}
       <div class="act-panel" id="actPanel">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
           <div style="font-size:16px;font-weight:700;color:#0f172a;">Toutes les activités</div>
-          <span style="font-size:12px;color:#64748b;background:#eff6ff;border:1px solid #bfdbfe;border-radius:20px;padding:3px 10px;font-weight:600;color:#2563eb;">18 interactions</span>
+          <span style="font-size:12px;color:#64748b;background:#eff6ff;border:1px solid #bfdbfe;border-radius:20px;padding:3px 10px;font-weight:600;color:#2563eb;">13 interactions</span>
         </div>
         <div class="act-filter-row">
-          <button class="act-filter-btn active" onclick="filterActFeed('tous',this)">Tous</button>
-          <button class="act-filter-btn" onclick="filterActFeed('appel',this)">📞 Appels</button>
-          <button class="act-filter-btn" onclick="filterActFeed('reunion',this)">👥 Réunions</button>
-          <button class="act-filter-btn" onclick="filterActFeed('email',this)">✉️ Emails</button>
-          <button class="act-filter-btn" onclick="filterActFeed('contrat',this)">📄 Contrats</button>
-          <button class="act-filter-btn" onclick="filterActFeed('studio',this)">🎵 Studio</button>
+          <button class="act-filter-btn active" onclick="filterActFeed('tous',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Tous</button>
+          <button class="act-filter-btn" onclick="filterActFeed('appel',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.48 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.46a16 16 0 0 0 5.63 5.63l1.82-1.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 14.92z"/></svg>Appels</button>
+          <button class="act-filter-btn" onclick="filterActFeed('reunion',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Réunions</button>
+          <button class="act-filter-btn" onclick="filterActFeed('email',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Emails</button>
+          <button class="act-filter-btn" onclick="filterActFeed('contrat',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Contrats</button>
+          <button class="act-filter-btn" onclick="filterActFeed('studio',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Studio</button>
         </div>
         <div class="act-feed-card" id="actFeedContainer"></div>
       </div>
 
       <div class="opp-wrap" id="oppPanel" style="display:none;">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-          <div style="font-size:16px;font-weight:700;color:#0f172a;">Pipeline des opportunités</div>
-          <span style="font-size:12px;font-weight:600;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:20px;padding:3px 10px;">4,6 M€ total</span>
+        <!-- Header -->
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;">
+          <div>
+            <div style="font-size:17px;font-weight:800;color:#0f172a;letter-spacing:-.3px;">Pipeline des opportunités</div>
+            <div style="font-size:11px;color:#94a3b8;margin-top:3px;">8 opportunités actives · S1 2026</div>
+          </div>
+          <span style="font-size:12px;font-weight:700;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:20px;padding:5px 14px;">2,1 M€ total</span>
         </div>
+        <!-- Filters -->
         <div class="opp-filter-row">
-          <button class="opp-filter-btn active" onclick="filterOpps('tous',this)">Tous (6)</button>
-          <button class="opp-filter-btn" onclick="filterOpps('nego',this)">Négociation</button>
-          <button class="opp-filter-btn" onclick="filterOpps('prop',this)">Proposition</button>
-          <button class="opp-filter-btn" onclick="filterOpps('sign',this)">Signature</button>
-          <button class="opp-filter-btn" onclick="filterOpps('contact',this)">Contact initial</button>
+          <button class="opp-filter-btn active" onclick="filterOpps('tous',this)">Tous<span class="opp-filter-count">8</span></button>
+          <button class="opp-filter-btn" onclick="filterOpps('nego',this)"><span class="opp-filter-dot" style="background:#f59e0b;"></span>Négociation<span class="opp-filter-count">1</span></button>
+          <button class="opp-filter-btn" onclick="filterOpps('prop',this)"><span class="opp-filter-dot" style="background:#3b82f6;"></span>Proposition<span class="opp-filter-count">2</span></button>
+          <button class="opp-filter-btn" onclick="filterOpps('sign',this)"><span class="opp-filter-dot" style="background:#16a34a;"></span>Signature<span class="opp-filter-count">2</span></button>
+          <button class="opp-filter-btn" onclick="filterOpps('contact',this)"><span class="opp-filter-dot" style="background:#94a3b8;"></span>Contact initial<span class="opp-filter-count">3</span></button>
         </div>
+        <!-- KPIs alignés sur les filtres -->
         <div class="opp-kpis">
-          <div class="opp-kpi amber"><div class="opp-kpi-label">En négociation</div><div class="opp-kpi-val">8</div><div class="opp-kpi-sub">1,2 M€</div></div>
-          <div class="opp-kpi green"><div class="opp-kpi-label">Signées</div><div class="opp-kpi-val">5</div><div class="opp-kpi-sub">890k€</div></div>
-          <div class="opp-kpi blue"><div class="opp-kpi-label">En attente</div><div class="opp-kpi-val">12</div><div class="opp-kpi-sub">2,5 M€</div></div>
-          <div class="opp-kpi gray"><div class="opp-kpi-label">Perdues</div><div class="opp-kpi-val">3</div><div class="opp-kpi-sub">450k€</div></div>
+          <div class="opp-kpi amber"><div class="opp-kpi-label">Négociation</div><div class="opp-kpi-val">1</div><div class="opp-kpi-sub">450k€ · 85% moy.</div></div>
+          <div class="opp-kpi blue"><div class="opp-kpi-label">Propositions</div><div class="opp-kpi-val">2</div><div class="opp-kpi-sub">660k€ · 71% moy.</div></div>
+          <div class="opp-kpi green"><div class="opp-kpi-label">Signature</div><div class="opp-kpi-val">2</div><div class="opp-kpi-sub">275k€ · 92% moy.</div></div>
+          <div class="opp-kpi gray"><div class="opp-kpi-label">Contact initial</div><div class="opp-kpi-val">3</div><div class="opp-kpi-sub">730k€ · 52% moy.</div></div>
         </div>
+        <!-- Grille 2 colonnes -->
         <div class="pipeline-card">
-          <div class="opp-item" onclick="openOppModal('Feat Drake x PNL')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Feat Drake x PNL</span><span class="opp-stage nego-finale">Négociation finale</span></div><div class="opp-item-right"><div class="opp-item-val">450k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 PNL</span><span>🏢 OVO Sound</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">85%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:85%;background:#16a34a;"></div></div></div>
-          <div class="opp-item" onclick="openOppModal('Tournée Asie 2027')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Tournée Asie 2027</span><span class="opp-stage prop-envoyee">Proposition envoyée</span></div><div class="opp-item-right"><div class="opp-item-val">380k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 Booba</span><span>🏢 Live Nation Asia</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">70%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:70%;background:#2563eb;"></div></div></div>
-          <div class="opp-item" onclick="openOppModal('Campagne pub Nike')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Campagne pub Nike</span><span class="opp-stage premier-contact">Premier contact</span></div><div class="opp-item-right"><div class="opp-item-val">250k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 Niska</span><span>🏢 Nike France</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">60%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:60%;background:#2563eb;"></div></div></div>
-          <div class="opp-item" onclick="openOppModal('Soundtrack Film')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Soundtrack Film</span><span class="opp-stage contrat-rev">Contrat en révision</span></div><div class="opp-item-right"><div class="opp-item-val">180k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 Damso</span><span>🏢 Warner Bros</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">90%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:90%;background:#16a34a;"></div></div></div>
-          <div class="opp-item" onclick="openOppModal('Festival Coachella')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Festival Coachella</span><span class="opp-stage discussions">Discussions initiales</span></div><div class="opp-item-right"><div class="opp-item-val">320k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 SCH</span><span>🏢 Goldenvoice</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">45%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:45%;background:#f59e0b;"></div></div></div>
-          <div class="opp-item" onclick="openOppModal('Licensing Spotify')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Licensing Spotify</span><span class="opp-stage sign-imminente">Signature imminente</span></div><div class="opp-item-right"><div class="opp-item-val">95k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 Jul</span><span>🏢 Spotify France</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">95%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:95%;background:#16a34a;"></div></div></div>
+          <div class="opp-item nego" onclick="openOppModal('Feat Drake x PNL')">
+            <div class="opp-item-head">
+              <div class="opp-item-left"><div class="opp-item-name">Feat Drake × PNL</div><span class="opp-stage nego-finale">Négociation finale</span></div>
+              <div class="opp-item-right"><div class="opp-item-val">450k€</div><div class="opp-item-val-label">Valeur estimée</div></div>
+            </div>
+            <div class="opp-item-meta"><span>👤 PNL</span><span>🏢 OVO Sound</span></div>
+            <div class="opp-prob-row"><span>Probabilité</span><span class="opp-prob-pct">85%</span></div>
+            <div class="opp-bar-bg"><div class="opp-bar-fill" style="width:85%;background:#16a34a;"></div></div>
+          </div>
+          <div class="opp-item prop" onclick="openOppModal('Tournée Asie 2027')">
+            <div class="opp-item-head">
+              <div class="opp-item-left"><div class="opp-item-name">Tournée Asie 2027</div><span class="opp-stage prop-envoyee">Proposition envoyée</span></div>
+              <div class="opp-item-right"><div class="opp-item-val">380k€</div><div class="opp-item-val-label">Valeur estimée</div></div>
+            </div>
+            <div class="opp-item-meta"><span>👤 Booba</span><span>🏢 Live Nation Asia</span></div>
+            <div class="opp-prob-row"><span>Probabilité</span><span class="opp-prob-pct">70%</span></div>
+            <div class="opp-bar-bg"><div class="opp-bar-fill" style="width:70%;background:#3b82f6;"></div></div>
+          </div>
+          <div class="opp-item sign" onclick="openOppModal('Soundtrack Film')">
+            <div class="opp-item-head">
+              <div class="opp-item-left"><div class="opp-item-name">Soundtrack Film Warner</div><span class="opp-stage contrat-rev">Contrat en révision</span></div>
+              <div class="opp-item-right"><div class="opp-item-val">180k€</div><div class="opp-item-val-label">Valeur estimée</div></div>
+            </div>
+            <div class="opp-item-meta"><span>👤 Damso</span><span>🏢 Warner Bros</span></div>
+            <div class="opp-prob-row"><span>Probabilité</span><span class="opp-prob-pct">90%</span></div>
+            <div class="opp-bar-bg"><div class="opp-bar-fill" style="width:90%;background:#16a34a;"></div></div>
+          </div>
+          <div class="opp-item sign" onclick="openOppModal('Licensing Spotify')">
+            <div class="opp-item-head">
+              <div class="opp-item-left"><div class="opp-item-name">Licensing Spotify France</div><span class="opp-stage sign-imminente">Signature imminente</span></div>
+              <div class="opp-item-right"><div class="opp-item-val">95k€</div><div class="opp-item-val-label">Valeur estimée</div></div>
+            </div>
+            <div class="opp-item-meta"><span>👤 Nekfeu</span><span>🏢 Spotify France</span></div>
+            <div class="opp-prob-row"><span>Probabilité</span><span class="opp-prob-pct">95%</span></div>
+            <div class="opp-bar-bg"><div class="opp-bar-fill" style="width:95%;background:#16a34a;"></div></div>
+          </div>
+          <div class="opp-item prop" onclick="openOppModal('Compilation PNL Damso')">
+            <div class="opp-item-head">
+              <div class="opp-item-left"><div class="opp-item-name">Compilation PNL × Damso</div><span class="opp-stage prop-envoyee">Proposition envoyée</span></div>
+              <div class="opp-item-right"><div class="opp-item-val">280k€</div><div class="opp-item-val-label">Valeur estimée</div></div>
+            </div>
+            <div class="opp-item-meta"><span>👤 PNL · Damso</span><span>🏢 Universal Music</span></div>
+            <div class="opp-prob-row"><span>Probabilité</span><span class="opp-prob-pct">72%</span></div>
+            <div class="opp-bar-bg"><div class="opp-bar-fill" style="width:72%;background:#3b82f6;"></div></div>
+          </div>
+          <div class="opp-item contact" onclick="openOppModal('Campagne pub Nike')">
+            <div class="opp-item-head">
+              <div class="opp-item-left"><div class="opp-item-name">Campagne pub Nike</div><span class="opp-stage premier-contact">Premier contact</span></div>
+              <div class="opp-item-right"><div class="opp-item-val">250k€</div><div class="opp-item-val-label">Valeur estimée</div></div>
+            </div>
+            <div class="opp-item-meta"><span>👤 Niska</span><span>🏢 Nike France</span></div>
+            <div class="opp-prob-row"><span>Probabilité</span><span class="opp-prob-pct">60%</span></div>
+            <div class="opp-bar-bg"><div class="opp-bar-fill" style="width:60%;background:#94a3b8;"></div></div>
+          </div>
+          <div class="opp-item contact" onclick="openOppModal('Festival Coachella')">
+            <div class="opp-item-head">
+              <div class="opp-item-left"><div class="opp-item-name">Festival Coachella 2027</div><span class="opp-stage discussions">Discussions initiales</span></div>
+              <div class="opp-item-right"><div class="opp-item-val">320k€</div><div class="opp-item-val-label">Valeur estimée</div></div>
+            </div>
+            <div class="opp-item-meta"><span>👤 SCH</span><span>🏢 Goldenvoice</span></div>
+            <div class="opp-prob-row"><span>Probabilité</span><span class="opp-prob-pct">45%</span></div>
+            <div class="opp-bar-bg"><div class="opp-bar-fill" style="width:45%;background:#f59e0b;"></div></div>
+          </div>
+          <div class="opp-item contact" onclick="openOppModal('Brand Deal Puma')">
+            <div class="opp-item-head">
+              <div class="opp-item-left"><div class="opp-item-name">Brand Deal Puma</div><span class="opp-stage premier-contact">Premier contact</span></div>
+              <div class="opp-item-right"><div class="opp-item-val">160k€</div><div class="opp-item-val-label">Valeur estimée</div></div>
+            </div>
+            <div class="opp-item-meta"><span>👤 Nekfeu</span><span>🏢 Puma France</span></div>
+            <div class="opp-prob-row"><span>Probabilité</span><span class="opp-prob-pct">48%</span></div>
+            <div class="opp-bar-bg"><div class="opp-bar-fill" style="width:48%;background:#94a3b8;"></div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1701,7 +1778,7 @@ tbody tr:hover .pn{color:#2563eb;}
       <div class="proj-header-top">
         <div>
           <div class="proj-header-title">Projets artistes</div>
-          <div class="proj-header-sub">13 projets actifs &middot; S1 2026 &middot; AXIS Conseil</div>
+          <div class="proj-header-sub">AXIS Conseil &middot; Suivi des projets en cours · S1 2026</div>
         </div>
         <div class="proj-header-actions">
           <div class="proj-search-wrap">
@@ -1723,11 +1800,6 @@ tbody tr:hover .pn{color:#2563eb;}
           <div class="proj-kpi-label">Artistes actifs</div>
           <div class="proj-kpi-val em">14</div>
           <div class="proj-kpi-foot">4 nouveaux signés <span class="proj-kpi-trend up">↑ +40%</span></div>
-        </div>
-        <div class="proj-kpi">
-          <div class="proj-kpi-label">Projets actifs</div>
-          <div class="proj-kpi-val">13</div>
-          <div class="proj-kpi-foot">5 en production</div>
         </div>
         <div class="proj-kpi">
           <div class="proj-kpi-label">Investissements</div>
@@ -2449,10 +2521,170 @@ tbody tr:hover .pn{color:#2563eb;}
     </div>
   </div>
 
-  <!-- OTHER PAGE -->
-  <div id="pg-other" class="page" style="display:none;">
-    <div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 56px);">
-      <div style="text-align:center;color:#94a3b8;"><div style="font-size:44px;margin-bottom:14px;">🚧</div><div style="font-size:17px;font-weight:600;color:#334155;margin-bottom:5px;">En cours de développement</div><div style="font-size:12px;">Cette section sera disponible prochainement</div></div>
+  <!-- STREAMING PAGE -->
+  <div id="pg-other" class="page" style="display:none;flex-direction:column;flex:1;min-height:0;">
+
+    <!-- Hero banner -->
+    <div class="stm-hero">
+      <div class="stm-hero-top">
+        <div>
+          <div class="stm-hero-title">Performance Streaming</div>
+          <div class="stm-hero-sub">AXIS Conseil · Rapport consolidé Janvier — Juin 2026</div>
+        </div>
+        <div class="stm-hero-period">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Semestre 1 — 2026
+        </div>
+      </div>
+      <div class="stm-kpis">
+        <div class="stm-kpi">
+          <div class="stm-kpi-lbl">Streams Totaux</div>
+          <div class="stm-kpi-val">856M</div>
+          <div class="stm-kpi-trend up">&#8679; +18% vs S1 2025</div>
+        </div>
+        <div class="stm-kpi">
+          <div class="stm-kpi-lbl">Revenus Streaming</div>
+          <div class="stm-kpi-val em">4,8 M€</div>
+          <div class="stm-kpi-trend up">&#8679; +22% vs S1 2025</div>
+        </div>
+        <div class="stm-kpi">
+          <div class="stm-kpi-lbl">Croissance</div>
+          <div class="stm-kpi-val">+18%</div>
+          <div class="stm-kpi-trend">vs même période</div>
+        </div>
+        <div class="stm-kpi">
+          <div class="stm-kpi-lbl">Artistes Actifs</div>
+          <div class="stm-kpi-val">6</div>
+          <div class="stm-kpi-trend">Catalogue PNL Industrie</div>
+        </div>
+        <div class="stm-kpi">
+          <div class="stm-kpi-lbl">Top Chart Spotify</div>
+          <div class="stm-kpi-val em">#1</div>
+          <div class="stm-kpi-trend">Au DD — PNL</div>
+        </div>
+      </div>
+      <div class="stm-budget-labels">
+        <span>Objectif annuel : <b>1,2 Md de streams</b></span>
+        <span><b>856M</b> atteints — <b>71%</b></span>
+      </div>
+      <div class="stm-budget-track">
+        <div class="stm-budget-fill" style="width:71%"></div>
+      </div>
+    </div>
+
+    <!-- Body — même padding que Dashboard -->
+    <div class="db-body">
+
+      <!-- Ligne 1 : grand chart + panel artistes (pro-main-grid) -->
+      <div class="pro-main-grid" style="margin-bottom:14px;">
+
+        <!-- Chart principal -->
+        <div class="pro-chart-card">
+          <div class="pro-chart-hd">
+            <div>
+              <div class="pro-chart-ttl">Évolution des Streams &amp; Revenus</div>
+              <div class="pro-chart-sub">Streams réels vs objectif mensuel &mdash; Janvier à Juin 2026</div>
+            </div>
+            <div class="pro-legend">
+              <div class="pro-legend-item"><div class="pro-legend-bar" style="background:rgba(14,165,233,.7);"></div>Streams réels</div>
+              <div class="pro-legend-item"><div class="pro-legend-line" style="background:#34d399;"></div>Objectif</div>
+            </div>
+          </div>
+          <div class="pro-chart-canvas-wrap"><canvas id="stmLineChart"></canvas></div>
+          <div class="pro-chart-stats">
+            <div class="pro-chart-stat"><div class="pro-chart-stat-val" style="color:#0ea5e9;">856M</div><div class="pro-chart-stat-lbl">Streams totaux</div></div>
+            <div class="pro-chart-stat"><div class="pro-chart-stat-val" style="color:#34d399;">4,8 M€</div><div class="pro-chart-stat-lbl">Revenus</div></div>
+            <div class="pro-chart-stat"><div class="pro-chart-stat-val" style="color:#10b981;">+18%</div><div class="pro-chart-stat-lbl">Croissance</div></div>
+            <div class="pro-chart-stat"><div class="pro-chart-stat-val" style="color:#8b5cf6;">71%</div><div class="pro-chart-stat-lbl">Objectif atteint</div></div>
+          </div>
+        </div>
+
+        <!-- Panel droit : Top Artistes -->
+        <div class="pro-right-panel" style="display:flex;flex-direction:column;gap:12px;">
+          <div class="pro-side-card" style="flex:1;">
+            <div class="pro-side-hd">
+              <div class="pro-side-ttl">&#127942; Top Artistes</div>
+              <span style="font-size:10px;color:#94a3b8;">S1 2026</span>
+            </div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#0ea5e9;">PNL</div><div class="pro-art-info"><div class="pro-art-name">PNL</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="100" style="width:0;background:linear-gradient(90deg,#0ea5e9,#7dd3fc);"></div></div></div><div class="pro-art-rev">1,58 M€</div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#f97316;">BO</div><div class="pro-art-info"><div class="pro-art-name">Booba</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="62" style="width:0;background:linear-gradient(90deg,#f97316,#fdba74);"></div></div></div><div class="pro-art-rev">0,98 M€</div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#8b5cf6;">DA</div><div class="pro-art-info"><div class="pro-art-name">Damso</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="50" style="width:0;background:linear-gradient(90deg,#8b5cf6,#c4b5fd);"></div></div></div><div class="pro-art-rev">0,79 M€</div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#ef4444;">NI</div><div class="pro-art-info"><div class="pro-art-name">Niska</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="34" style="width:0;background:linear-gradient(90deg,#ef4444,#fca5a5);"></div></div></div><div class="pro-art-rev">0,55 M€</div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#06b6d4;">SC</div><div class="pro-art-info"><div class="pro-art-name">SCH</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="31" style="width:0;background:linear-gradient(90deg,#06b6d4,#67e8f9);"></div></div></div><div class="pro-art-rev">0,49 M€</div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#22c55e;">NE</div><div class="pro-art-info"><div class="pro-art-name">Nekfeu</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="24" style="width:0;background:linear-gradient(90deg,#22c55e,#86efac);"></div></div></div><div class="pro-art-rev">0,38 M€</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ligne 2 : 3 colonnes (donut + plateformes + top titres) -->
+      <div class="db-three">
+
+        <!-- Donut : Objectif Streams -->
+        <div class="db-card">
+          <div class="db-card-hd">
+            <div class="db-card-title">&#127919; Objectif Streams 2026</div>
+            <span style="font-size:11px;color:#64748b;">Jan&ndash;Jun 2026</span>
+          </div>
+          <div class="db-card-body" style="justify-content:space-between;gap:0;">
+            <div style="position:relative;height:180px;">
+              <canvas id="stmDonutChart"></canvas>
+              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;">
+                <div style="font-size:22px;font-weight:800;color:#1e293b;line-height:1;">71%</div>
+                <div style="font-size:10px;color:#64748b;margin-top:2px;">atteint</div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:space-around;background:#f8fafc;border-radius:8px;padding:8px 4px;margin-bottom:8px;">
+              <div style="text-align:center;"><div style="font-size:10px;color:#64748b;">Objectif</div><div style="font-size:13px;font-weight:700;color:#1e293b;">1,2 Md</div></div>
+              <div style="width:1px;background:#e2e8f0;align-self:stretch;"></div>
+              <div style="text-align:center;"><div style="font-size:10px;color:#64748b;">Atteints</div><div style="font-size:13px;font-weight:700;color:#0ea5e9;">856M</div></div>
+              <div style="width:1px;background:#e2e8f0;align-self:stretch;"></div>
+              <div style="text-align:center;"><div style="font-size:10px;color:#64748b;">Restant</div><div style="font-size:13px;font-weight:700;color:#22c55e;">344M</div></div>
+            </div>
+            <div style="font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;padding-top:4px;border-top:1px solid #f1f5f9;margin-bottom:4px;">Répartition artistes</div>
+            <div class="db-bbar-wrap"><div class="db-bbar-top"><span style="color:#475569;">PNL</span><span style="font-weight:700;color:#475569;">284M</span></div><div class="db-bbar-bg"><div class="db-bbar-fill stm-bar" data-w="100" style="width:0;background:#0ea5e9;"></div></div></div>
+            <div class="db-bbar-wrap"><div class="db-bbar-top"><span style="color:#475569;">Booba</span><span style="font-weight:700;color:#475569;">176M</span></div><div class="db-bbar-bg"><div class="db-bbar-fill stm-bar" data-w="62" style="width:0;background:#f97316;"></div></div></div>
+            <div class="db-bbar-wrap"><div class="db-bbar-top"><span style="color:#475569;">Damso</span><span style="font-weight:700;color:#475569;">142M</span></div><div class="db-bbar-bg"><div class="db-bbar-fill stm-bar" data-w="50" style="width:0;background:#8b5cf6;"></div></div></div>
+            <div class="db-bbar-wrap"><div class="db-bbar-top"><span style="color:#475569;">Niska + SCH + Nekfeu</span><span style="font-weight:700;color:#475569;">254M</span></div><div class="db-bbar-bg"><div class="db-bbar-fill stm-bar" data-w="89" style="width:0;background:#22c55e;"></div></div></div>
+          </div>
+        </div>
+
+        <!-- Performance par plateforme (style identique Dashboard) -->
+        <div class="db-card">
+          <div class="db-card-hd">
+            <div class="db-card-title">&#127925; Performance par Plateforme</div>
+            <span style="font-size:11px;color:#64748b;">856M streams &middot; S1 2026</span>
+          </div>
+          <div class="db-card-body" style="justify-content:space-between;">
+            <div class="db-bbar-wrap"><div class="db-bbar-top"><span style="color:#475569;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;"></span>Spotify</span><span style="font-weight:700;color:#475569;">576 M &middot; 48%</span></div><div class="db-bbar-bg"><div class="db-bbar-fill stm-bar" data-w="48" style="width:0;background:#22c55e;"></div></div></div>
+            <div class="db-bbar-wrap"><div class="db-bbar-top"><span style="color:#475569;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#ef4444;display:inline-block;"></span>YouTube Music</span><span style="font-weight:700;color:#475569;">264 M &middot; 22%</span></div><div class="db-bbar-bg"><div class="db-bbar-fill stm-bar" data-w="22" style="width:0;background:#ef4444;"></div></div></div>
+            <div class="db-bbar-wrap"><div class="db-bbar-top"><span style="color:#475569;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#ec4899;display:inline-block;"></span>Apple Music</span><span style="font-weight:700;color:#475569;">180 M &middot; 15%</span></div><div class="db-bbar-bg"><div class="db-bbar-fill stm-bar" data-w="15" style="width:0;background:#ec4899;"></div></div></div>
+            <div class="db-bbar-wrap"><div class="db-bbar-top"><span style="color:#475569;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#f97316;display:inline-block;"></span>Deezer</span><span style="font-weight:700;color:#475569;">120 M &middot; 10%</span></div><div class="db-bbar-bg"><div class="db-bbar-fill stm-bar" data-w="10" style="width:0;background:#f97316;"></div></div></div>
+            <div class="db-bbar-wrap"><div class="db-bbar-top"><span style="color:#475569;display:flex;align-items:center;gap:5px;"><span style="width:8px;height:8px;border-radius:50%;background:#06b6d4;display:inline-block;"></span>Tidal</span><span style="font-weight:700;color:#475569;">60 M &middot; 5%</span></div><div class="db-bbar-bg"><div class="db-bbar-fill stm-bar" data-w="5" style="width:0;background:#06b6d4;"></div></div></div>
+            <div style="border-top:1px solid #f1f5f9;padding-top:8px;display:flex;justify-content:space-between;font-size:11px;color:#64748b;">
+              <span>Total streams</span><span style="font-weight:700;color:#1e293b;">856M</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Titres -->
+        <div class="db-card">
+          <div class="db-card-hd">
+            <div class="db-card-title">&#127925; Top Titres</div>
+            <span style="font-size:10px;color:#64748b;">S1 2026</span>
+          </div>
+          <div class="db-card-body" style="gap:0;">
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#0ea5e9;font-size:7.5px;">AU</div><div class="pro-art-info"><div class="pro-art-name">Au DD &mdash; PNL</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="100" style="width:0;background:linear-gradient(90deg,#0ea5e9,#7dd3fc);"></div></div></div><div class="pro-art-rev" style="font-size:10px;">52M<br><span style="color:#94a3b8;font-weight:500;">Spotify #1</span></div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#0ea5e9;font-size:7.5px;">ON</div><div class="pro-art-info"><div class="pro-art-name">Onizuka &mdash; PNL</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="92" style="width:0;background:linear-gradient(90deg,#0ea5e9,#7dd3fc);"></div></div></div><div class="pro-art-rev" style="font-size:10px;">48M<br><span style="color:#94a3b8;font-weight:500;">YouTube</span></div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#8b5cf6;font-size:7.5px;">ML</div><div class="pro-art-info"><div class="pro-art-name">Mona Lisa &mdash; Damso</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="81" style="width:0;background:linear-gradient(90deg,#8b5cf6,#c4b5fd);"></div></div></div><div class="pro-art-rev" style="font-size:10px;">42M<br><span style="color:#94a3b8;font-weight:500;">Spotify</span></div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#f97316;font-size:7.5px;">92</div><div class="pro-art-info"><div class="pro-art-name">92i Veyron &mdash; Booba</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="73" style="width:0;background:linear-gradient(90deg,#f97316,#fdba74);"></div></div></div><div class="pro-art-rev" style="font-size:10px;">38M<br><span style="color:#94a3b8;font-weight:500;">Deezer</span></div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#ef4444;font-size:7.5px;">RE</div><div class="pro-art-info"><div class="pro-art-name">Réseaux &mdash; Niska</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="67" style="width:0;background:linear-gradient(90deg,#ef4444,#fca5a5);"></div></div></div><div class="pro-art-rev" style="font-size:10px;">35M<br><span style="color:#94a3b8;font-weight:500;">Spotify</span></div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#06b6d4;font-size:7.5px;">BL</div><div class="pro-art-info"><div class="pro-art-name">Blanka &mdash; SCH</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="60" style="width:0;background:linear-gradient(90deg,#06b6d4,#67e8f9);"></div></div></div><div class="pro-art-rev" style="font-size:10px;">31M<br><span style="color:#94a3b8;font-weight:500;">Apple Music</span></div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#22c55e;font-size:7.5px;">MW</div><div class="pro-art-info"><div class="pro-art-name">Mowgli &mdash; Nekfeu</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="54" style="width:0;background:linear-gradient(90deg,#22c55e,#86efac);"></div></div></div><div class="pro-art-rev" style="font-size:10px;">28M<br><span style="color:#94a3b8;font-weight:500;">Spotify</span></div></div>
+            <div class="pro-art-row"><div class="pro-art-av" style="background:#0ea5e9;font-size:7.5px;">DF</div><div class="pro-art-info"><div class="pro-art-name">Deux Frères &mdash; PNL</div><div class="pro-art-bar-bg"><div class="pro-art-bar-fill stm-bar" data-w="50" style="width:0;background:linear-gradient(90deg,#0ea5e9,#7dd3fc);"></div></div></div><div class="pro-art-rev" style="font-size:10px;">26M<br><span style="color:#94a3b8;font-weight:500;">Tidal</span></div></div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
@@ -3159,7 +3391,6 @@ const globalActivities = [
   {icon:'👥',bg:'#3b82f6',type:'reunion',title:'Réunion créative',artist:'PNL',desc:'Discussion stratégie album — mixage en cours',time:"Aujourd'hui, 14:30",who:'Lyza Aider'},
   {icon:'📞',bg:'#22c55e',type:'appel',title:'Appel téléphonique',artist:'Booba',desc:'Point avancement droits catalogue — signature proche',time:"Aujourd'hui, 11:00",who:'Edwin Thaly'},
   {icon:'✉️',bg:'#f97316',type:'email',title:'Email envoyé',artist:'Niska',desc:'Proposition dates tournée été — réponse attendue sous 48h',time:"Aujourd'hui, 09:15",who:'Kenza Matmar'},
-  {icon:'📄',bg:'#8b5cf6',type:'contrat',title:'Contrat signé',artist:'Hamza',desc:'Feat International — accord juridique validé par les deux parties',time:'Hier, 16:30',who:'Kenza Matmar'},
   {icon:'🎵',bg:'#ec4899',type:'studio',title:'Session studio',artist:'PNL',desc:'3 titres enregistrés — production finalisée',time:'Hier, 14:00',who:'Lyza Aider'},
   {icon:'👥',bg:'#3b82f6',type:'reunion',title:'Réunion stratégique',artist:'Damso',desc:'Planning festival été 2026 — 12 dates confirmées',time:'Hier, 10:00',who:'Wiylan Bellache'},
   {icon:'📞',bg:'#22c55e',type:'appel',title:'Appel label',artist:'Niska',desc:'Validation plan promo single — feu vert obtenu',time:'10 Avr, 11:00',who:'Edwin Thaly'},
@@ -3168,11 +3399,7 @@ const globalActivities = [
   {icon:'🎵',bg:'#ec4899',type:'studio',title:'Session studio',artist:'Niska',desc:'Enregistrement feat avec Gazo — chimie parfaite',time:'08 Avr, 18:00',who:'Kenza Matmar'},
   {icon:'👥',bg:'#3b82f6',type:'reunion',title:'Réunion logistique',artist:'Nekfeu',desc:'Coordination dates européennes — 8 villes confirmées',time:'08 Avr, 15:00',who:'Lyza Aider'},
   {icon:'✉️',bg:'#f97316',type:'email',title:'Email envoyé',artist:'PNL',desc:'Confirmation feat international — retour très positif',time:'07 Avr, 10:00',who:'Wiylan Bellache'},
-  {icon:'📞',bg:'#22c55e',type:'appel',title:'Appel téléphonique',artist:'Jul',desc:'Discussion licensing Spotify — accord de principe obtenu',time:'06 Avr, 14:00',who:'Edwin Thaly'},
-  {icon:'🎵',bg:'#ec4899',type:'studio',title:'Session studio',artist:'Gazo',desc:'Album deluxe — 2 bonus tracks finalisés',time:'05 Avr, 13:00',who:'Wiylan Bellache'},
   {icon:'📄',bg:'#8b5cf6',type:'contrat',title:'Contrat en révision',artist:'Damso',desc:'Soundtrack film Warner — derniers ajustements juridiques',time:'04 Avr, 11:00',who:'Kenza Matmar'},
-  {icon:'👥',bg:'#3b82f6',type:'reunion',title:'Réunion planning',artist:'Tiakola',desc:'Concerts Zénith — production scénique validée',time:'03 Avr, 10:00',who:'Wiylan Bellache'},
-  {icon:'📞',bg:'#22c55e',type:'appel',title:'Appel manager',artist:'La Fouine',desc:'Validation réédition catalogue — timeline confirmée',time:'02 Avr, 16:00',who:'Kenza Matmar'},
   {icon:'✉️',bg:'#f97316',type:'email',title:'Dossier transmis',artist:'SCH',desc:'Dossier artistique Coachella 2027 transmis à Goldenvoice',time:'01 Avr, 09:00',who:'Lyza Aider'},
 ];
 let _actFilter = 'tous';
@@ -3186,19 +3413,32 @@ function renderActFeed(filter) {
     container.innerHTML = '<div style="padding:24px;text-align:center;color:#94a3b8;font-size:13px;">Aucune activité dans cette catégorie</div>';
     return;
   }
-  container.innerHTML = filtered.map(a => `
-    <div class="act-feed-item">
-      <div class="act-feed-icon" style="background:${a.bg}20;">${a.icon}</div>
-      <div style="flex:1;min-width:0;">
-        <div class="act-feed-top">
-          <span class="act-feed-name">${a.title}</span>
-          <span class="act-feed-time">${a.time}</span>
+  const dayKey = t => t.startsWith("Aujourd") ? "Aujourd'hui" : t.startsWith("Hier") ? "Hier" : t.split(', ')[0];
+  const timeOnly = t => t.includes(', ') ? t.split(', ')[1] : t;
+  const groups = {}, order = [];
+  filtered.forEach(a => {
+    const k = dayKey(a.time);
+    if (!groups[k]) { groups[k] = []; order.push(k); }
+    groups[k].push(a);
+  });
+  let html = '';
+  order.forEach(day => {
+    html += `<div class="act-date-sep">${day}</div>`;
+    html += groups[day].map(a => `
+      <div class="act-feed-item type-${a.type}">
+        <div class="act-feed-icon" style="background:${a.bg}1a;">${a.icon}</div>
+        <div style="flex:1;min-width:0;">
+          <div class="act-feed-top">
+            <span class="act-feed-name">${a.title}</span>
+            <span class="act-feed-time">${timeOnly(a.time)}</span>
+          </div>
+          <div class="act-feed-artist">↳ ${a.artist}</div>
+          <div class="act-feed-desc">${a.desc}</div>
+          <div class="act-feed-who">Par ${a.who}</div>
         </div>
-        <div class="act-feed-artist">↳ ${a.artist}</div>
-        <div class="act-feed-desc">${a.desc}</div>
-        <div class="act-feed-who">Par ${a.who}</div>
-      </div>
-    </div>`).join('');
+      </div>`).join('');
+  });
+  container.innerHTML = html;
 }
 
 function filterActFeed(filter, btn) {
@@ -3219,7 +3459,7 @@ function filterArtists(query) {
     if (show) visible++;
   });
   const title = document.getElementById('artistListTitle');
-  if (title) title.textContent = q ? `Artistes — ${visible} résultat${visible>1?'s':''}` : 'Artistes — 12';
+  if (title) title.textContent = q ? `Artistes — ${visible} résultat${visible>1?'s':''}` : 'Artistes — 6';
 }
 
 // ── Opportunity filter ──
@@ -3229,13 +3469,7 @@ function filterOpps(filter, btn) {
   const items = document.querySelectorAll('.opp-item');
   items.forEach(item => {
     if (filter === 'tous') { item.style.display = ''; return; }
-    const stage = item.querySelector('.opp-stage');
-    if (!stage) { item.style.display = 'none'; return; }
-    const cls = stage.className;
-    const show = (filter === 'nego' && (cls.includes('nego') || cls.includes('discussions'))) ||
-                 (filter === 'prop' && cls.includes('prop')) ||
-                 (filter === 'sign' && (cls.includes('sign') || cls.includes('contrat'))) ||
-                 (filter === 'contact' && cls.includes('premier'));
+    const show = item.classList.contains(filter);
     item.style.display = show ? '' : 'none';
   });
 }
@@ -3795,13 +4029,13 @@ document.addEventListener('click', function(e) {
   if (wrap && !wrap.contains(e.target)) wrap.classList.remove('open');
 });
 
-var _pageTitles = { dashboard:'Dashboard', crm:'CRM', projets:'Projets artistes', invest:'Investissements', other:'En développement' };
+var _pageTitles = { dashboard:'Dashboard', crm:'CRM', projets:'Projets artistes', invest:'Investissements', other:'Streaming' };
 var _pageSubs = {
   dashboard:'Gestion et analyse des investissements musicaux',
   crm:'Portefeuille artistes · Contrats & opportunités',
   projets:'Suivi des projets en cours · AXIS Conseil',
   invest:'Pilotage des investissements · S1 2026 · AXIS Conseil',
-  other:'Module en cours de développement'
+  other:'Performance streaming · S1 2026 · AXIS Conseil'
 };
 
 function _hideAllPages() {
@@ -3845,6 +4079,110 @@ function _setTopbarPage(id) {
 }
 
 var _investChartInited = false;
+var _stmChartInited = false;
+function _initStreamingChart() {
+  if (_stmChartInited) return;
+  _stmChartInited = true;
+
+  // Animate bars
+  setTimeout(function() {
+    document.querySelectorAll('#pg-other .stm-bar').forEach(function(bar) {
+      bar.style.transition = 'width 0.9s cubic-bezier(0.4,0,0.2,1)';
+      bar.style.width = (bar.getAttribute('data-w') || '0') + '%';
+    });
+  }, 80);
+
+  // Donut: objectif streams 71%
+  var donutEl = document.getElementById('stmDonutChart');
+  if (donutEl && typeof Chart !== 'undefined') {
+    new Chart(donutEl, {
+      type: 'doughnut',
+      data: {
+        labels: ['Atteints', 'Restant'],
+        datasets: [{ data: [71, 29], backgroundColor: ['#0ea5e9', '#e2e8f0'], borderWidth: 0, hoverOffset: 4 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false, cutout: '72%',
+        layout: { padding: 4 },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1e293b', titleColor: '#94a3b8', bodyColor: '#f1f5f9',
+            borderColor: '#334155', borderWidth: 1, padding: 10,
+            callbacks: { label: function(c) { return '  ' + c.label + ' : ' + c.parsed + '%'; } }
+          }
+        }
+      }
+    });
+  }
+
+  var el = document.getElementById('stmLineChart');
+  if (!el || typeof Chart === 'undefined') return;
+  new Chart(el, {
+    data: {
+      labels: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Jun'],
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Streams réels',
+          data: [98, 118, 132, 148, 162, 198],
+          backgroundColor: 'rgba(14,165,233,0.55)',
+          borderColor: 'rgba(14,165,233,0.2)',
+          borderWidth: 1,
+          borderRadius: 5,
+          borderSkipped: 'bottom',
+          order: 2
+        },
+        {
+          type: 'line',
+          label: 'Objectif mensuel',
+          data: [100, 116, 133, 150, 167, 200],
+          borderColor: '#34d399',
+          backgroundColor: 'transparent',
+          borderWidth: 2,
+          borderDash: [4, 3],
+          pointBackgroundColor: '#34d399',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          tension: 0.4,
+          order: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1e293b',
+          titleColor: '#94a3b8',
+          bodyColor: '#f1f5f9',
+          borderColor: '#334155',
+          borderWidth: 1,
+          padding: { top: 10, bottom: 10, left: 14, right: 14 },
+          cornerRadius: 10,
+          boxPadding: 5,
+          callbacks: {
+            title: function(items) { return items[0].label + ' 2026'; },
+            label: function(c) {
+              if (c.dataset.type === 'bar') return '  Streams réels  :  ' + c.parsed.y + 'M';
+              return '  Objectif        :  ' + c.parsed.y + 'M';
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: '#f8fafc', drawBorder: false }, ticks: { color: '#94a3b8', font: { family: 'Inter,sans-serif', size: 11 } } },
+        y: { min: 0, grid: { color: '#f8fafc', drawBorder: false }, ticks: { color: '#94a3b8', font: { family: 'Inter,sans-serif', size: 11 }, callback: function(v) { return v + 'M'; } } }
+      }
+    }
+  });
+}
+
 function _initInvestChart() {
   if (_investChartInited) return;
   _investChartInited = true;
@@ -3910,6 +4248,7 @@ function showPage(id, btn) {
   _setTopbarPage(id);
   if (id !== 'crm') _setHash('/' + id);
   if (id === 'invest') _initInvestChart();
+  if (id === 'other') _initStreamingChart();
 }
 
 
@@ -4431,6 +4770,7 @@ function restoreFromHash() {
     if (pg) { pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1'; pg.style.minHeight='0'; }
     _setTopbarPage(section);
     if (section === 'invest') _initInvestChart();
+    if (section === 'other') _initStreamingChart();
     if (section === 'crm' && parts[1]) {
       var tab = parts[1];
       var crmTabs = document.querySelectorAll('.crm-view-tab');
