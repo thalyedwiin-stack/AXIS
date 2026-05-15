@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AXIS Conseil — PNL Industrie Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<<<<<<< HEAD
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -46,11 +51,34 @@ body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#d8e6f5 0%
 .nav-dd-item.danger{color:#f87171;}
 .nav-dd-item.danger svg{color:#f87171;}
 .nav-dd-item.danger:hover{background:rgba(239,68,68,.12);color:#fca5a5;}
+=======
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:#f4f6fa;color:#0f172a;min-height:100vh;font-size:14px;}
+.layout{display:flex;min-height:100vh;}
+
+/* SIDEBAR */
+.sidebar{width:220px;flex-shrink:0;background:#151c2c;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;}
+.sb-logo{padding:18px 16px 14px;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:10px;}
+.sb-logo-icon{width:36px;height:36px;background:#fff;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.sb-logo-name{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;}
+.sb-logo-sub{font-size:10px;color:#64748b;margin-top:1px;}
+.sb-nav{padding:10px 8px;flex:1;}
+.sb-item{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:8px;font-size:13px;font-weight:500;color:#94a3b8;cursor:pointer;transition:all .15s;margin-bottom:2px;border:none;background:none;width:100%;text-align:left;font-family:'Inter',sans-serif;}
+.sb-item:hover{background:rgba(255,255,255,0.05);color:#fff;}
+.sb-item.active{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;font-weight:600;box-shadow:0 4px 12px rgba(59,130,246,0.3);}
+.sb-item svg{width:15px;height:15px;flex-shrink:0;}
+.sb-footer{padding:12px 14px;border-top:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;gap:10px;}
+.sb-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;}
+.sb-uname{font-size:13px;font-weight:600;color:#fff;}
+.sb-urole{font-size:10px;color:#64748b;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 
 /* MAIN */
 .main{flex:1;display:flex;flex-direction:column;min-width:0;overflow:hidden;}
 
 /* TOPBAR */
+<<<<<<< HEAD
 .topbar{background:#fff;border-bottom:1px solid #e2e8f0;padding:0 16px;height:44px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:relative;z-index:10;}
 .tb-bc-back{display:inline-flex;align-items:center;gap:6px;background:#f0f0ff;border:1px solid #c7d2fe;border-radius:8px;padding:6px 13px;font-size:12.5px;font-weight:600;color:#4f46e5;cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s;}
 .tb-bc-back:hover{background:#e0e7ff;border-color:#a5b4fc;color:#3730a3;}
@@ -112,11 +140,38 @@ body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#d8e6f5 0%
 .notif-mark-all{font-size:11px;color:#94a3b8;cursor:pointer;font-weight:500;white-space:nowrap;}
 .notif-mark-all:hover{color:#2563eb;}
 .notif-msg strong{color:#fff;}
+=======
+.topbar{background:#fff;border-bottom:1px solid #e2e8f0;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;flex-shrink:0;}
+.tb-left h1{font-size:18px;font-weight:700;color:#0f172a;}
+.tb-left p{font-size:11px;color:#64748b;margin-top:1px;}
+.tb-right{display:flex;align-items:center;gap:8px;}
+.tb-search{position:relative;}
+.tb-search input{width:200px;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;padding:7px 12px 7px 32px;font-size:12px;color:#0f172a;outline:none;font-family:'Inter',sans-serif;}
+.tb-search input::placeholder{color:#94a3b8;}
+.tb-search svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;width:12px;height:12px;}
+.tb-btn{display:flex;align-items:center;gap:5px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;padding:6px 12px;font-size:12px;font-weight:500;color:#475569;cursor:pointer;font-family:'Inter',sans-serif;}
+.bell-wrap{position:relative;}
+.bell-btn{width:32px;height:32px;border-radius:50%;background:#f8fafc;border:1px solid #e2e8f0;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#475569;outline:none;}
+.bell-btn:hover{background:#eff6ff;color:#2563eb;}
+.bell-badge{position:absolute;top:-3px;right:-3px;width:15px;height:15px;border-radius:50%;background:#ef4444;color:#fff;font-size:8px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #fff;}
+.notif-panel{display:none;position:absolute;top:calc(100%+8px);right:0;width:320px;background:#1e293b;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,.4);z-index:200;overflow:hidden;}
+.notif-panel.open{display:block;}
+.notif-hd{display:flex;align-items:center;gap:8px;padding:12px 16px 8px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.notif-title{font-size:11px;font-weight:700;color:#f1f5f9;letter-spacing:.5px;}
+.notif-item{display:flex;align-items:flex-start;gap:10px;padding:10px 16px;}
+.notif-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:3px;}
+.notif-dot.r{background:#ef4444;}.notif-dot.o{background:#f59e0b;}.notif-dot.b{background:#3b82f6;}
+.notif-msg{font-size:12px;color:#e2e8f0;line-height:1.5;}
+.notif-msg strong{color:#fff;}
+.notif-footer-ok{padding:10px 16px 12px;display:flex;justify-content:flex-end;}
+.notif-ok{background:#2563eb;color:#fff;border:none;border-radius:7px;padding:6px 22px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 
 /* PAGES */
 
 
 /* ── DASHBOARD ── */
+<<<<<<< HEAD
 .dash{padding:10px 14px;}
 .period-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
 .period-title{font-size:20px;color:#64748b;font-weight:400;}
@@ -133,6 +188,24 @@ body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#d8e6f5 0%
 .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px;}
 .dcard{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:10px;}
 .dcard-title{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:6px;}
+=======
+.dash{padding:24px 28px;}
+.period-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.period-title{font-size:20px;color:#64748b;font-weight:400;}
+.period-sel{border:1px solid #e2e8f0;border-radius:8px;background:#fff;padding:7px 12px;font-size:12px;color:#1e293b;outline:none;cursor:pointer;font-family:'Inter',sans-serif;}
+.kpi-wrap{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:18px 20px;margin-bottom:20px;}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.kpi-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;cursor:pointer;transition:box-shadow .15s;}
+.kpi-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.07);}
+.kpi-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.kpi-lbl{font-size:12px;color:#64748b;}
+.kpi-arr{color:#16a34a;font-size:12px;}
+.kpi-val{font-size:36px;font-weight:600;color:#0f172a;letter-spacing:-1px;line-height:1.1;margin-bottom:6px;}
+.kpi-sub{font-size:12px;color:#16a34a;font-weight:500;}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.dcard{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;}
+.dcard-title{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:12px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .alert-it{padding:10px 12px;border-radius:8px;margin-bottom:8px;display:flex;align-items:flex-start;gap:8px;}
 .alert-it.g{background:#f0fdf4;border:1px solid #bbf7d0;border-left:3px solid #16a34a;}
 .alert-it.a{background:#fffbeb;border:1px solid #fde68a;border-left:3px solid #d97706;}
@@ -157,16 +230,27 @@ body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#d8e6f5 0%
 .tb{flex:2;background:#e2e8f0;border-radius:3px;height:4px;}
 .tf{height:4px;border-radius:3px;}
 .tv{font-weight:600;color:#1e293b;width:36px;text-align:right;}
+<<<<<<< HEAD
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
 .chart-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:10px 14px;}
 .chart-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:8px;}
+=======
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+.chart-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 20px;}
+.chart-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:14px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .chart-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;text-align:center;}
 .cs-v{font-size:16px;font-weight:800;}.cs-l{font-size:10px;color:#64748b;margin-top:2px;}
 .chart-leg{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:10px;}
 .leg{display:flex;align-items:center;gap:4px;font-size:11px;color:#64748b;}
 .ldot{width:7px;height:7px;border-radius:50%;}
+<<<<<<< HEAD
 .table-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:10px 14px;margin-bottom:10px;}
 .table-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:8px;}
+=======
+.table-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px 20px;margin-bottom:20px;}
+.table-title{font-size:14px;font-weight:700;color:#0f172a;margin-bottom:14px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 table{width:100%;border-collapse:collapse;}
 thead tr{border-bottom:2px solid #e2e8f0;}
 th{text-align:left;padding:9px 10px;font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.06em;}
@@ -186,6 +270,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .roi-v{font-weight:700;color:#16a34a;}
 
 /* ── CRM ── */
+<<<<<<< HEAD
 .crm-wrap{flex:1;display:grid;grid-template-columns:360px 1fr;overflow:hidden;height:calc(100vh - 44px);min-height:0;}
 /* Left roster panel */
 .crm-list{background:#fff;border-right:1px solid #e2e8f0;display:flex;flex-direction:column;overflow:hidden;}
@@ -354,17 +439,131 @@ tbody tr:hover .pn{color:#2563eb;}
 .opp-prob-pct{font-weight:700;color:#334155;font-size:11px;}
 .opp-bar-bg{height:5px;border-radius:3px;background:#f1f5f9;overflow:hidden;}
 .opp-bar-fill{height:5px;border-radius:3px;}
+=======
+.crm-wrap{flex:1;display:grid;grid-template-columns:340px 1fr;overflow:hidden;height:calc(100vh - 56px);min-height:0;}
+.crm-list{background:#fff;border-right:1px solid #e2e8f0;display:flex;flex-direction:column;overflow:hidden;}
+.crm-list-top{padding:20px 20px 14px;border-bottom:1px solid #f1f5f9;}
+.crm-list-heading{font-size:20px;font-weight:700;color:#0f172a;margin-bottom:3px;}
+.crm-list-sub{font-size:11px;color:#64748b;margin-bottom:14px;}
+.crm-view-tabs{display:flex;gap:0;background:#f1f5f9;border-radius:9px;padding:3px;}
+.crm-view-tab{font-size:12px;font-weight:500;padding:6px 14px;border-radius:7px;cursor:pointer;border:none;background:transparent;color:#64748b;font-family:'Inter',sans-serif;transition:all .12s;flex:1;text-align:center;}
+.crm-view-tab.active{background:#fff;color:#0f172a;font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.08);}
+.crm-list-title{font-size:12px;font-weight:600;color:#64748b;padding:12px 20px 8px;}
+.crm-artist-items{flex:1;overflow-y:auto;}
+.crm-item{padding:13px 20px;border-bottom:1px solid #f1f5f9;cursor:pointer;transition:background .1s;border-left:3px solid transparent;}
+.crm-item:hover{background:#f8fafc;}
+.crm-item.active{background:#eff6ff;border-left-color:#2563eb;}
+.crm-item-row{display:flex;align-items:center;gap:10px;margin-bottom:5px;}
+.crm-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex-shrink:0;}
+.crm-item-info{flex:1;min-width:0;}
+.crm-item-name{font-size:13px;font-weight:700;color:#0f172a;}
+.crm-item-proj{font-size:11px;color:#64748b;margin-top:1px;}
+.crm-badge{font-size:9px;font-weight:700;padding:2px 8px;border-radius:20px;}
+.crm-badge.actif{background:#dcfce7;color:#166534;}
+.crm-item-rev{font-size:13px;font-weight:700;color:#2563eb;margin-left:50px;}
+.crm-item-phone{font-size:10px;color:#94a3b8;margin-top:2px;margin-left:50px;}
+.crm-detail{overflow-y:auto;background:#f8fafc;}
+.crm-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:#fff;}
+.crm-empty-icon{width:72px;height:72px;border-radius:50%;background:#eff6ff;display:flex;align-items:center;justify-content:center;}
+.crm-empty-title{font-size:18px;font-weight:600;color:#475569;}
+.crm-empty-sub{font-size:12px;color:#94a3b8;text-align:center;max-width:260px;line-height:1.6;}
+.crm-hero{background:linear-gradient(135deg,#2563eb,#4f46e5);padding:24px 28px;display:flex;align-items:center;gap:16px;}
+.crm-hero-av{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;flex-shrink:0;}
+.crm-hero-name{font-size:26px;font-weight:800;color:#fff;}
+.crm-hero-sub{font-size:12px;color:rgba(255,255,255,.75);margin-top:4px;display:flex;align-items:center;gap:6px;}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;}
+.crm-hero-btn{margin-left:auto;background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.35);border-radius:9px;padding:8px 20px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;}
+.crm-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:16px 20px;background:#fff;border-bottom:1px solid #e2e8f0;}
+.crm-kpi{background:#f8fafc;border:1px solid #e2e8f0;border-radius:11px;padding:14px 16px;transition:box-shadow .15s;}
+.crm-kpi:hover{box-shadow:0 4px 12px rgba(0,0,0,.06);}
+.crm-kpi-icon{font-size:20px;margin-bottom:8px;}
+.crm-kpi-val{font-size:20px;font-weight:800;line-height:1;letter-spacing:-.3px;margin-bottom:3px;}
+.crm-kpi-label{font-size:10px;color:#64748b;font-weight:500;text-transform:uppercase;letter-spacing:.4px;}
+.crm-section{background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:18px 20px;margin:14px 16px;}
+.crm-section-title{font-size:12px;font-weight:700;color:#0f172a;margin-bottom:14px;display:flex;align-items:center;gap:7px;text-transform:uppercase;letter-spacing:.4px;}
+.crm-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;}
+.crm-contact-lbl{font-size:10px;color:#94a3b8;margin-bottom:4px;font-weight:500;}
+.crm-contact-val{font-size:13px;font-weight:600;color:#0f172a;}
+.crm-proj-item{border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;margin-bottom:10px;background:#fff;}
+.crm-proj-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+.crm-proj-name{font-size:13px;font-weight:700;color:#0f172a;}
+.crm-proj-budget{font-size:14px;font-weight:800;color:#2563eb;}
+.crm-proj-meta{display:flex;align-items:center;gap:7px;font-size:11px;color:#64748b;margin-bottom:10px;}
+.crm-proj-status{font-size:10px;font-weight:600;background:#eff6ff;color:#2563eb;padding:2px 8px;border-radius:20px;}
+.crm-prog-lbl{display:flex;justify-content:space-between;font-size:11px;color:#64748b;margin-bottom:5px;}
+.crm-prog-lbl span:last-child{font-weight:700;color:#0f172a;}
+.crm-prog-bg{height:5px;border-radius:3px;background:#e2e8f0;overflow:hidden;}
+.crm-prog-fill{height:5px;border-radius:3px;background:linear-gradient(90deg,#2563eb,#4f46e5);}
+.crm-act-list{display:flex;flex-direction:column;position:relative;}
+.crm-act-list::before{content:'';position:absolute;left:20px;top:40px;bottom:12px;width:2px;background:#e2e8f0;}
+.crm-act-item{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #f1f5f9;}
+.crm-act-item:last-child{border-bottom:none;}
+.crm-act-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;position:relative;z-index:1;}
+.crm-act-body{flex:1;}
+.crm-act-title{font-size:12px;font-weight:700;color:#0f172a;margin-bottom:3px;}
+.crm-act-desc{font-size:11px;color:#475569;margin-bottom:5px;line-height:1.5;}
+.crm-act-divider{height:1px;background:#f1f5f9;margin-bottom:5px;}
+.crm-act-meta{font-size:10px;color:#94a3b8;display:flex;align-items:center;gap:5px;}
+.crm-act-meta strong{color:#475569;font-weight:600;}
+.crm-act-sep{width:3px;height:3px;border-radius:50%;background:#cbd5e1;}
+
+/* OPP panel */
+.opp-wrap{display:none;flex:1;flex-direction:column;overflow-y:auto;padding:20px;background:#f8fafc;}
+.opp-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;}
+.opp-kpi{border-radius:11px;padding:16px 18px;border:1px solid;}
+.opp-kpi.amber{background:#fffbeb;border-color:#fde68a;}
+.opp-kpi.green{background:#f0fdf4;border-color:#bbf7d0;}
+.opp-kpi.blue{background:#eff6ff;border-color:#bfdbfe;}
+.opp-kpi.gray{background:#f8fafc;border-color:#e2e8f0;}
+.opp-kpi-label{font-size:11px;color:#475569;margin-bottom:7px;font-weight:500;}
+.opp-kpi-val{font-size:32px;font-weight:800;line-height:1;margin-bottom:5px;letter-spacing:-1px;}
+.opp-kpi-sub{font-size:12px;color:#64748b;font-weight:500;}
+.opp-kpi.amber .opp-kpi-val{color:#d97706;}
+.opp-kpi.green .opp-kpi-val{color:#16a34a;}
+.opp-kpi.blue .opp-kpi-val{color:#2563eb;}
+.opp-kpi.gray .opp-kpi-val{color:#334155;}
+.pipeline-card{background:#fff;border:1px solid #e2e8f0;border-radius:13px;padding:18px 20px;}
+.pipeline-title{font-size:15px;font-weight:700;color:#0f172a;margin-bottom:16px;}
+.opp-item{border:1px solid #e2e8f0;border-radius:11px;padding:16px 20px;margin-bottom:10px;background:#fff;cursor:pointer;transition:box-shadow .15s;}
+.opp-item:hover{box-shadow:0 4px 14px rgba(0,0,0,.07);}
+.opp-item-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px;}
+.opp-item-left{display:flex;align-items:center;gap:10px;}
+.opp-item-name{font-size:14px;font-weight:700;color:#0f172a;}
+.opp-stage{font-size:10px;font-weight:600;padding:2px 9px;border-radius:20px;}
+.opp-stage.nego-finale{background:#dcfce7;color:#166534;}
+.opp-stage.prop-envoyee{background:#eff6ff;color:#1d4ed8;}
+.opp-stage.premier-contact{background:#fef3c7;color:#92400e;}
+.opp-stage.contrat-rev{background:#f0fdf4;color:#166534;}
+.opp-stage.discussions{background:#fff7ed;color:#c2410c;}
+.opp-stage.sign-imminente{background:#f0fdf4;color:#166534;}
+.opp-item-right{text-align:right;}
+.opp-item-val{font-size:18px;font-weight:800;color:#2563eb;}
+.opp-item-val-label{font-size:10px;color:#94a3b8;margin-top:2px;}
+.opp-item-meta{display:flex;align-items:center;gap:14px;font-size:11px;color:#64748b;margin-bottom:10px;}
+.opp-prob-row{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#64748b;margin-bottom:5px;}
+.opp-prob-pct{font-weight:700;color:#1e293b;}
+.opp-bar-bg{height:6px;border-radius:3px;background:#f1f5f9;overflow:hidden;}
+.opp-bar-fill{height:6px;border-radius:3px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 
 /* MODAL common */
 .modal-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:200;align-items:center;justify-content:center;padding:16px;}
 .modal-ov.open{display:flex;}
 .modal{background:#fff;border-radius:14px;max-width:720px;width:100%;max-height:88vh;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.2);}
+<<<<<<< HEAD
 .mhead{background:linear-gradient(135deg,#1e293b,#334155);padding:14px 18px;position:relative;}
+=======
+.mhead{background:linear-gradient(135deg,#1e293b,#334155);padding:20px 24px;position:relative;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .mclose{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:7px;background:rgba(255,255,255,.1);border:none;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;}
 .mclose:hover{background:rgba(255,255,255,.2);}
 .mht{font-size:16px;font-weight:700;color:#fff;margin-bottom:2px;}
 .mhn{font-size:12px;color:#94a3b8;}
+<<<<<<< HEAD
 .mbody{padding:16px 18px;overflow-y:auto;max-height:calc(88vh - 100px);background:#f8fafc;}
+=======
+.mbody{padding:20px 24px;overflow-y:auto;max-height:calc(88vh - 100px);background:#f8fafc;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .tl-items{position:relative;display:flex;flex-direction:column;gap:12px;}
 .tl-line{position:absolute;left:16px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#2563eb,#4f46e5);border-radius:1px;}
 .tl-item{position:relative;padding-left:46px;}
@@ -378,6 +577,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .opp-modal-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:9999;align-items:center;justify-content:center;padding:20px;}
 .opp-modal-ov.open{display:flex;}
 .opp-modal{background:#fff;border-radius:16px;max-width:660px;width:100%;max-height:88vh;overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.22);display:flex;flex-direction:column;}
+<<<<<<< HEAD
 .opp-modal-head{padding:14px 18px;border-bottom:1px solid #f1f5f9;display:flex;align-items:flex-start;justify-content:space-between;}
 .opp-modal-title{font-size:18px;font-weight:800;color:#0f172a;margin-bottom:5px;}
 .opp-modal-meta{display:flex;align-items:center;gap:8px;font-size:12px;color:#64748b;}
@@ -388,6 +588,18 @@ tbody tr:hover .pn{color:#2563eb;}
 .opp-sum-label{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
 .opp-sum-val{font-size:16px;font-weight:800;color:#0f172a;}
 .opp-modal-prob{margin-bottom:12px;}
+=======
+.opp-modal-head{padding:20px 24px;border-bottom:1px solid #f1f5f9;display:flex;align-items:flex-start;justify-content:space-between;}
+.opp-modal-title{font-size:18px;font-weight:800;color:#0f172a;margin-bottom:5px;}
+.opp-modal-meta{display:flex;align-items:center;gap:8px;font-size:12px;color:#64748b;}
+.opp-modal-close{width:30px;height:30px;border-radius:7px;background:#f1f5f9;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#475569;flex-shrink:0;}
+.opp-modal-body{overflow-y:auto;flex:1;padding:20px 24px;}
+.opp-modal-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
+.opp-sum-item{background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:12px 14px;}
+.opp-sum-label{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px;}
+.opp-sum-val{font-size:16px;font-weight:800;color:#0f172a;}
+.opp-modal-prob{margin-bottom:20px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .opp-modal-prob-label{display:flex;justify-content:space-between;font-size:12px;color:#475569;margin-bottom:7px;font-weight:500;}
 .opp-modal-prob-val{font-weight:800;color:#0f172a;font-size:14px;}
 .opp-modal-bar-bg{height:9px;border-radius:5px;background:#f1f5f9;overflow:hidden;}
@@ -405,6 +617,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .opp-tl-date{font-size:10px;color:#94a3b8;margin-bottom:4px;}
 .opp-tl-desc{font-size:11px;color:#475569;line-height:1.55;background:#f8fafc;border:1px solid #f1f5f9;border-radius:7px;padding:8px 11px;}
 
+<<<<<<< HEAD
 /* ── STREAMING PAGE ── */
 .stm-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#1d4ed8 100%);padding:14px 20px 16px;flex-shrink:0;}
 .stm-hero-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;}
@@ -771,13 +984,36 @@ tbody tr:hover .pn{color:#2563eb;}
 .pd-body{padding:10px 16px;background:#f1f5f9;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:10px;}
 .pd-prog-wrap{background:#fff;border-radius:13px;padding:10px 14px;}
 .pd-prog-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+=======
+/* PROJ DETAIL PAGE */
+.pd-hero{background:linear-gradient(135deg,#87ceeb 0%,#b0e0f0 60%,#c8eaf5 100%);padding:26px 32px;position:relative;flex-shrink:0;}
+.pd-back{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.35);border:none;border-radius:8px;padding:7px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:#0f172a;}
+.pd-back:hover{background:rgba(255,255,255,.55);}
+.pd-type-badge{font-size:10px;font-weight:700;background:rgba(255,255,255,.5);color:#1d4ed8;padding:3px 11px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase;display:inline-block;margin-right:7px;}
+.pd-prio-badge{font-size:10px;font-weight:700;background:#ef4444;color:#fff;padding:3px 11px;border-radius:20px;display:inline-block;}
+.pd-prio-badge.moy{background:#f59e0b;}
+.pd-title{font-size:30px;font-weight:800;color:#0f172a;margin:10px 0 4px;letter-spacing:-.5px;}
+.pd-artist{font-size:14px;color:#334155;margin-bottom:18px;}
+.pd-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.pd-stat{background:rgba(255,255,255,.35);border-radius:10px;padding:12px 14px;}
+.pd-stat-label{font-size:10px;color:#334155;font-weight:600;margin-bottom:4px;}
+.pd-stat-val{font-size:20px;font-weight:800;color:#0f172a;}
+.pd-body{padding:20px 28px;background:#f0f6ff;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:14px;}
+.pd-prog-wrap{background:#fff;border-radius:13px;padding:18px 20px;}
+.pd-prog-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .pd-prog-title{font-size:14px;font-weight:700;color:#0f172a;}
 .pd-prog-pct{font-size:22px;font-weight:800;color:#38bdf8;}
 .pd-prog-bg{height:14px;border-radius:20px;background:#e2e8f0;overflow:hidden;margin-bottom:7px;}
 .pd-prog-fill{height:14px;border-radius:20px;background:linear-gradient(90deg,#38bdf8,#0ea5e9);}
 .pd-prog-labels{display:flex;justify-content:space-between;font-size:10px;color:#94a3b8;}
+<<<<<<< HEAD
 .pd-two-col{display:grid;grid-template-columns:1fr 280px;gap:10px;}
 .pd-section{background:#fff;border-radius:13px;padding:10px 14px;}
+=======
+.pd-two-col{display:grid;grid-template-columns:1fr 280px;gap:14px;}
+.pd-section{background:#fff;border-radius:13px;padding:16px 18px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .pd-section-title{font-size:12px;font-weight:700;color:#0f172a;border-left:3px solid #38bdf8;padding-left:9px;margin-bottom:12px;}
 .pd-section-title.green{border-left-color:#10b981;}
 .pd-section-title.purple{border-left-color:#8b5cf6;}
@@ -827,15 +1063,22 @@ tbody tr:hover .pn{color:#2563eb;}
 /* ── CRM Enhanced ── */
 .crm-add-btn{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;border:none;border-radius:9px;padding:8px 16px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;transition:opacity .15s;flex-shrink:0;}
 .crm-add-btn:hover{opacity:.88;}
+<<<<<<< HEAD
 .crm-search-wrap{position:relative;flex:1;}
 .crm-search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;width:13px;height:13px;pointer-events:none;}
 .crm-search-input{width:100%;border:1px solid #e2e8f0;border-radius:9px;background:#f8fafc;padding:7px 12px 7px 32px;font-size:12px;color:#0f172a;outline:none;font-family:'Inter',sans-serif;transition:border-color .15s;}
+=======
+.crm-search-wrap{position:relative;margin-bottom:2px;}
+.crm-search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:#94a3b8;width:13px;height:13px;pointer-events:none;}
+.crm-search-input{width:100%;border:1px solid #e2e8f0;border-radius:9px;background:#f8fafc;padding:8px 12px 8px 32px;font-size:12px;color:#0f172a;outline:none;font-family:'Inter',sans-serif;transition:border-color .15s;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .crm-search-input:focus{border-color:#2563eb;background:#fff;}
 .crm-badge.expire{background:#fee2e2;color:#991b1b;}
 .crm-badge.warning{background:#fef3c7;color:#92400e;}
 .crm-badge.nouveau{background:#f0fdf4;color:#166534;}
 .crm-badge.inactif{background:#f1f5f9;color:#64748b;}
 /* Activity Feed Panel */
+<<<<<<< HEAD
 .act-panel{display:none;flex:1;flex-direction:column;overflow-y:auto;padding:10px 14px;background:#f8fafc;}
 .act-filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
 .act-filter-btn{font-size:11px;font-weight:600;padding:5px 13px;border-radius:20px;border:1px solid #e2e8f0;background:#fff;color:#64748b;cursor:pointer;font-family:'Inter',sans-serif;transition:all .12s;display:inline-flex;align-items:center;gap:5px;}
@@ -853,21 +1096,47 @@ tbody tr:hover .pn{color:#2563eb;}
 .act-feed-item.type-rapport{border-left-color:#0891b2;}
 .act-date-sep{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.7px;padding:8px 16px 6px;background:#fafafa;border-bottom:1px solid #f1f5f9;position:sticky;top:0;z-index:1;}
 .act-feed-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+=======
+.act-panel{display:none;flex:1;flex-direction:column;overflow-y:auto;padding:20px;background:#f8fafc;}
+.act-filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;}
+.act-filter-btn{font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;border:1px solid #e2e8f0;background:#fff;color:#64748b;cursor:pointer;font-family:'Inter',sans-serif;transition:all .12s;}
+.act-filter-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;}
+.act-feed-card{background:#fff;border:1px solid #e2e8f0;border-radius:13px;overflow:hidden;}
+.act-feed-item{display:flex;gap:12px;padding:13px 16px;border-bottom:1px solid #f8fafc;align-items:flex-start;transition:background .1s;}
+.act-feed-item:last-child{border-bottom:none;}
+.act-feed-item:hover{background:#f8fafc;}
+.act-feed-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .act-feed-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px;}
 .act-feed-name{font-size:12px;font-weight:700;color:#0f172a;}
 .act-feed-time{font-size:10px;color:#94a3b8;white-space:nowrap;margin-left:8px;}
 .act-feed-artist{font-size:11px;color:#2563eb;font-weight:600;margin-bottom:2px;}
 .act-feed-desc{font-size:11px;color:#64748b;line-height:1.5;}
 .act-feed-who{font-size:10px;color:#94a3b8;margin-top:3px;}
+<<<<<<< HEAD
+=======
+/* Opp filter */
+.opp-filter-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
+.opp-filter-btn{font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;border:1px solid #e2e8f0;background:#fff;color:#64748b;cursor:pointer;font-family:'Inter',sans-serif;transition:all .12s;}
+.opp-filter-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 /* New Contact Modal */
 .nc-modal-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:9999;align-items:center;justify-content:center;padding:20px;}
 .nc-modal-ov.open{display:flex;}
 .nc-modal{background:#fff;border-radius:16px;max-width:480px;width:100%;overflow:hidden;box-shadow:0 28px 70px rgba(0,0,0,.22);display:flex;flex-direction:column;}
+<<<<<<< HEAD
 .nc-modal-head{background:linear-gradient(135deg,#1e293b,#334155);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;}
 .nc-modal-title{font-size:15px;font-weight:700;color:#fff;}
 .nc-modal-sub{font-size:11px;color:#94a3b8;margin-top:2px;}
 .nc-modal-close{width:28px;height:28px;border-radius:7px;background:rgba(255,255,255,.12);border:none;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .nc-modal-body{padding:16px;max-height:65vh;overflow-y:auto;background:#f8fafc;}
+=======
+.nc-modal-head{background:linear-gradient(135deg,#1e293b,#334155);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;}
+.nc-modal-title{font-size:15px;font-weight:700;color:#fff;}
+.nc-modal-sub{font-size:11px;color:#94a3b8;margin-top:2px;}
+.nc-modal-close{width:28px;height:28px;border-radius:7px;background:rgba(255,255,255,.12);border:none;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nc-modal-body{padding:24px;max-height:65vh;overflow-y:auto;background:#f8fafc;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .nc-field{margin-bottom:14px;}
 .nc-label{font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;}
 .nc-input,.nc-select{width:100%;border:1px solid #e2e8f0;border-radius:9px;background:#fff;padding:9px 12px;font-size:13px;color:#0f172a;outline:none;font-family:'Inter',sans-serif;transition:border-color .15s;}
@@ -894,10 +1163,17 @@ tbody tr:hover .pn{color:#2563eb;}
 .pbi-win-sub{color:rgba(255,255,255,.6);font-size:11px;margin-top:2px;}
 .pbi-win-close{background:rgba(255,255,255,.15);border:none;border-radius:8px;color:#fff;cursor:pointer;padding:7px 14px;font-size:12px;font-weight:700;font-family:'Inter',sans-serif;transition:background .15s;}
 .pbi-win-close:hover{background:rgba(255,255,255,.25);}
+<<<<<<< HEAD
 .pbi-win-body{padding:14px;}
 .pbi-section-lbl{font-size:10px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px;}
 .pbi-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
 .pbi-kpi{background:#1e293b;border:1px solid #1e3a5f;border-radius:12px;padding:12px 14px;position:relative;overflow:hidden;}
+=======
+.pbi-win-body{padding:24px;}
+.pbi-section-lbl{font-size:10px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:.7px;margin-bottom:12px;}
+.pbi-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
+.pbi-kpi{background:#1e293b;border:1px solid #1e3a5f;border-radius:12px;padding:18px 20px;position:relative;overflow:hidden;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .pbi-kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
 .pbi-kpi.g::before{background:linear-gradient(90deg,#10b981,#34d399);}
 .pbi-kpi.b::before{background:linear-gradient(90deg,#3b82f6,#60a5fa);}
@@ -910,8 +1186,13 @@ tbody tr:hover .pn{color:#2563eb;}
 .pbi-kpi-trend{font-size:12px;font-weight:600;}
 .pbi-kpi-trend.up{color:#34d399;}
 .pbi-kpi-trend.neu{color:#475569;}
+<<<<<<< HEAD
 .pbi-row2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
 .pbi-sub-card{background:#1e293b;border:1px solid #1e3a5f;border-radius:12px;padding:12px 14px;}
+=======
+.pbi-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.pbi-sub-card{background:#1e293b;border:1px solid #1e3a5f;border-radius:12px;padding:18px 20px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .pbi-sub-title{font-size:12px;font-weight:700;color:#94a3b8;margin-bottom:14px;display:flex;align-items:center;gap:6px;}
 .pbi-art-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid #1e293b;}
 .pbi-art-row:last-child{border-bottom:none;}
@@ -924,16 +1205,26 @@ tbody tr:hover .pn{color:#2563eb;}
 .pbi-bar-bg{height:7px;background:#0f172a;border-radius:99px;overflow:hidden;}
 .pbi-bar-fill{height:100%;border-radius:99px;}
 /* ── Power BI Page ── */
+<<<<<<< HEAD
 .pbi-pg-hd{background:linear-gradient(135deg,#003a70 0%,#0078d4 100%);padding:0 16px;display:flex;align-items:center;gap:14px;height:46px;flex-shrink:0;}
+=======
+.pbi-pg-hd{background:linear-gradient(135deg,#003a70 0%,#0078d4 100%);padding:0 28px;display:flex;align-items:center;gap:16px;height:56px;flex-shrink:0;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .pbi-pg-back{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:12px;font-weight:700;padding:6px 14px;border-radius:7px;cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:5px;transition:background .15s;}
 .pbi-pg-back:hover{background:rgba(255,255,255,.25);}
 .pbi-pg-logo{display:flex;align-items:center;gap:8px;margin-left:6px;}
 .pbi-pg-logo-txt{font-size:14px;font-weight:800;color:#fff;letter-spacing:-.2px;}
 .pbi-pg-logo-sub{font-size:10px;color:rgba(255,255,255,.55);font-weight:500;}
 .pbi-pg-sep{width:1px;height:24px;background:rgba(255,255,255,.2);margin:0 4px;}
+<<<<<<< HEAD
 .pbi-pg-body{flex:1;overflow-y:auto;padding:10px 16px;display:flex;flex-direction:column;gap:10px;}
 .pbi-pg-section-lbl{font-size:10px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;}
 .pbi-pg-chart-card{background:#1e293b;border:1px solid #1e3a5f;border-radius:14px;padding:14px 16px;}
+=======
+.pbi-pg-body{flex:1;overflow-y:auto;padding:24px 28px;display:flex;flex-direction:column;gap:16px;}
+.pbi-pg-section-lbl{font-size:10px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;}
+.pbi-pg-chart-card{background:#1e293b;border:1px solid #1e3a5f;border-radius:14px;padding:22px 24px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .pbi-pg-chart-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
 .pbi-pg-chart-name{font-size:13px;font-weight:700;color:#94a3b8;display:flex;align-items:center;gap:7px;}
 .pbi-pg-chart-badge{font-size:11px;font-weight:700;color:#34d399;background:rgba(52,211,153,.12);border-radius:20px;padding:3px 10px;}
@@ -941,6 +1232,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .pbi-pg-stat{background:#0f172a;border-radius:10px;padding:10px 14px;text-align:center;}
 .pbi-pg-stat-val{font-size:16px;font-weight:800;margin-bottom:2px;}
 .pbi-pg-stat-lbl{font-size:9px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:.5px;}
+<<<<<<< HEAD
 /* ── Pro Dashboard Components ── */
 .pro-sec-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:7px;}
 .pro-sec-title{font-size:13px;font-weight:700;color:#0f172a;}
@@ -997,14 +1289,24 @@ tbody tr:hover .pn{color:#2563eb;}
 .pro-ct-badge.warn{background:#fef3c7;color:#92400e;}
 /* ── Dashboard Redesign ── */
 .db-header{background:#fff;border-bottom:1px solid #e2e8f0;padding:5px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;gap:12px;}
+=======
+/* ── Dashboard Redesign ── */
+.db-header{background:#fff;border-bottom:1px solid #e2e8f0;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;gap:12px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .db-header-title{font-size:17px;font-weight:800;color:#0f172a;letter-spacing:-.3px;}
 .db-header-sub{font-size:11px;color:#64748b;margin-top:2px;}
 .db-period{border:1px solid #e2e8f0;border-radius:9px;background:#f8fafc;padding:7px 12px;font-size:12px;color:#1e293b;outline:none;cursor:pointer;font-family:'Inter',sans-serif;}
 .db-pbi-btn{display:inline-flex;align-items:center;gap:7px;background:#0078d4;color:#fff;border:none;border-radius:9px;padding:9px 16px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif;text-decoration:none;white-space:nowrap;transition:background .15s;}
 .db-pbi-btn:hover{background:#006cbf;}
+<<<<<<< HEAD
 .db-body{padding:6px 14px 8px;overflow-y:auto;flex:1;}
 .db-kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:10px;}
 .db-kpi{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:10px 12px;position:relative;overflow:hidden;}
+=======
+.db-body{padding:20px 28px 36px;overflow-y:auto;flex:1;}
+.db-kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:11px;margin-bottom:18px;}
+.db-kpi{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:15px 16px;position:relative;overflow:hidden;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .db-kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
 .db-kpi.kc-green::before{background:linear-gradient(90deg,#10b981,#34d399);}
 .db-kpi.kc-blue::before{background:linear-gradient(90deg,#3b82f6,#60a5fa);}
@@ -1012,6 +1314,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-kpi.kc-teal::before{background:linear-gradient(90deg,#0891b2,#22d3ee);}
 .db-kpi.kc-orange::before{background:linear-gradient(90deg,#f59e0b,#fbbf24);}
 .db-kpi.kc-rose::before{background:linear-gradient(90deg,#f43f5e,#fb7185);}
+<<<<<<< HEAD
 .db-kpi-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
 .db-kpi-lbl{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;}
 .db-kpi-icon{width:27px;height:27px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;}
@@ -1024,11 +1327,29 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-card-hd{padding:8px 14px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;}
 .db-card-title{font-size:13px;font-weight:700;color:#0f172a;display:flex;align-items:center;gap:7px;}
 .db-card-body{padding:8px 12px 10px;flex:1;display:flex;flex-direction:column;justify-content:flex-start;gap:4px;}
+=======
+.db-kpi-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px;}
+.db-kpi-lbl{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;}
+.db-kpi-icon{width:27px;height:27px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.db-kpi-val{font-size:22px;font-weight:800;color:#0f172a;letter-spacing:-.5px;margin-bottom:3px;}
+.db-kpi-trend{font-size:11px;font-weight:600;}
+.db-kpi-trend.up{color:#16a34a;}
+.db-kpi-trend.neu{color:#64748b;}
+.db-grid2{display:grid;grid-template-columns:1fr 340px;gap:14px;margin-bottom:14px;}
+.db-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;}
+.db-card-hd{padding:13px 18px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;}
+.db-card-title{font-size:13px;font-weight:700;color:#0f172a;display:flex;align-items:center;gap:7px;}
+.db-card-body{padding:14px 18px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .db-rev-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;}
 .db-rev-stat{text-align:center;padding:8px;background:#f8fafc;border-radius:9px;}
 .db-rev-stat-val{font-size:14px;font-weight:800;margin-bottom:1px;}
 .db-rev-stat-lbl{font-size:9px;color:#94a3b8;font-weight:700;text-transform:uppercase;letter-spacing:.4px;}
+<<<<<<< HEAD
 .db-pbi-card{background:linear-gradient(135deg,#0050a0 0%,#0078d4 60%,#005a9e 100%);border-radius:14px;padding:14px;color:#fff;position:relative;overflow:hidden;}
+=======
+.db-pbi-card{background:linear-gradient(135deg,#0050a0 0%,#0078d4 60%,#005a9e 100%);border-radius:14px;padding:20px;color:#fff;position:relative;overflow:hidden;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .db-pbi-card::after{content:'';position:absolute;bottom:-24px;right:-24px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.07);}
 .db-pbi-card::before{content:'';position:absolute;top:-20px;right:60px;width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,.05);}
 .db-pbi-card-title{font-size:14px;font-weight:800;margin-bottom:5px;position:relative;z-index:1;}
@@ -1042,6 +1363,7 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-expiry-badge{padding:3px 9px;border-radius:10px;font-size:10px;font-weight:700;}
 .db-expiry-badge.red{background:#fee2e2;color:#991b1b;}
 .db-expiry-badge.orange{background:#fef3c7;color:#92400e;}
+<<<<<<< HEAD
 .db-three{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:0;align-items:stretch;}
 .db-two{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:10px;}
 .db-agenda-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #f1f5f9;}
@@ -1056,25 +1378,43 @@ tbody tr:hover .pn{color:#2563eb;}
 .pie-leg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
 .pie-leg-pct{font-weight:700;color:#0f172a;}
 .db-artist-row{display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid #f8fafc;}
+=======
+.db-three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;}
+.db-artist-row{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid #f8fafc;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .db-artist-row:last-child{border-bottom:none;padding-bottom:0;}
 .db-artist-rank{width:18px;font-size:11px;font-weight:700;color:#cbd5e1;text-align:center;flex-shrink:0;}
 .db-artist-av{width:28px;height:28px;border-radius:8px;font-size:10px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .db-artist-name{flex:1;font-size:12px;font-weight:600;color:#0f172a;}
 .db-artist-rev{font-size:12px;font-weight:700;color:#2563eb;margin-right:4px;}
 .db-artist-grow{font-size:10px;font-weight:700;color:#16a34a;background:#f0fdf4;border-radius:6px;padding:2px 6px;}
+<<<<<<< HEAD
 .db-bbar-wrap{margin-bottom:0;}
 .db-bbar-top{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;}
 .db-bbar-bg{height:6px;background:#f1f5f9;border-radius:99px;overflow:hidden;}
 .db-bbar-fill{height:100%;border-radius:99px;}
 .db-alert-item{display:flex;align-items:flex-start;gap:10px;padding:5px 0;border-bottom:1px solid #f1f5f9;}
+=======
+.db-bbar-wrap{margin-bottom:10px;}
+.db-bbar-top{display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;}
+.db-bbar-bg{height:6px;background:#f1f5f9;border-radius:99px;overflow:hidden;}
+.db-bbar-fill{height:100%;border-radius:99px;}
+.db-alert-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #f8fafc;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .db-alert-item:last-child{border-bottom:none;padding-bottom:0;}
 .db-alert-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:3px;}
 .db-alert-msg{font-size:12px;color:#0f172a;font-weight:500;margin-bottom:1px;}
 .db-alert-time{font-size:10px;color:#94a3b8;}
 .db-table{width:100%;border-collapse:collapse;}
+<<<<<<< HEAD
 .db-table th{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;padding:0 10px 7px;text-align:left;}
 .db-table th.r{text-align:right;}
 .db-table td{padding:7px 10px;font-size:12px;border-top:1px solid #f8fafc;}
+=======
+.db-table th{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;padding:0 14px 10px;text-align:left;}
+.db-table th.r{text-align:right;}
+.db-table td{padding:10px 14px;font-size:12px;border-top:1px solid #f8fafc;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .db-table tr:hover td{background:#f8fafc;}
 .db-table tr{cursor:pointer;}
 .db-pn{font-weight:700;color:#2563eb;font-size:13px;}
@@ -1090,11 +1430,20 @@ tbody tr:hover .pn{color:#2563eb;}
 .db-pgpct{font-size:11px;font-weight:700;color:#475569;min-width:28px;text-align:right;}
 /* ── Artist Detail Page ── */
 #pg-artist-detail{display:none;flex-direction:column;flex:1;overflow-y:auto;background:#f1f5f9;}
+<<<<<<< HEAD
 .ad-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 60%,#2d1b5a 100%);padding:14px 22px 18px;position:relative;color:#fff;}
 .ad-back-btn{display:none;}
 .ad-hero-inner{display:flex;align-items:center;gap:18px;}
 .ad-av-lg{width:68px;height:68px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;flex-shrink:0;border:3px solid rgba(255,255,255,.25);}
 .ad-hero-name{font-size:22px;font-weight:800;letter-spacing:-.5px;margin-bottom:2px;}
+=======
+.ad-hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 60%,#2d1b5a 100%);padding:26px 36px 34px;position:relative;color:#fff;}
+.ad-back-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:none;border-radius:8px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;color:#fff;margin-bottom:18px;transition:background .15s;}
+.ad-back-btn:hover{background:rgba(255,255,255,.28);}
+.ad-hero-inner{display:flex;align-items:center;gap:18px;}
+.ad-av-lg{width:68px;height:68px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;flex-shrink:0;border:3px solid rgba(255,255,255,.25);}
+.ad-hero-name{font-size:26px;font-weight:800;letter-spacing:-.5px;margin-bottom:3px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .ad-hero-sub{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:10px;}
 .ad-hero-badges{display:flex;gap:8px;flex-wrap:wrap;}
 .ad-hbadge{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.3px;}
@@ -1102,19 +1451,33 @@ tbody tr:hover .pn{color:#2563eb;}
 .ad-hbadge.expire{background:rgba(239,68,68,.25);color:#fca5a5;border:1px solid rgba(239,68,68,.35);}
 .ad-hbadge.warning{background:rgba(245,158,11,.25);color:#fcd34d;border:1px solid rgba(245,158,11,.35);}
 .ad-hbadge.neutral{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.2);}
+<<<<<<< HEAD
 .ad-body{padding:12px 18px 18px;display:grid;grid-template-columns:1fr 340px;gap:14px;align-items:start;}
 .ad-left{display:flex;flex-direction:column;gap:10px;}
 .ad-right{display:flex;flex-direction:column;gap:10px;}
 .ad-kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .ad-kpi{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:10px 14px;}
+=======
+.ad-body{padding:24px 32px 40px;display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:start;}
+.ad-left{display:flex;flex-direction:column;gap:16px;}
+.ad-right{display:flex;flex-direction:column;gap:16px;}
+.ad-kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.ad-kpi{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px 18px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .ad-kpi-lbl{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between;}
 .ad-kpi-icon{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;}
 .ad-kpi-val{font-size:24px;font-weight:800;letter-spacing:-.5px;margin-bottom:2px;}
 .ad-kpi-sub{font-size:11px;font-weight:500;}
 .ad-card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;}
+<<<<<<< HEAD
 .ad-card-hd{padding:8px 14px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;}
 .ad-card-hd-title{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#0f172a;}
 .ad-card-body{padding:10px 14px;}
+=======
+.ad-card-hd{padding:13px 18px;border-bottom:1px solid #f1f5f9;display:flex;align-items:center;justify-content:space-between;}
+.ad-card-hd-title{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:#0f172a;}
+.ad-card-body{padding:14px 18px;}
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 .ad-action-item{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid #f8fafc;}
 .ad-action-item:last-child{border-bottom:none;padding-bottom:0;}
 .ad-action-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:4px;}
@@ -1151,11 +1514,19 @@ tbody tr:hover .pn{color:#2563eb;}
 <body>
 <div class="layout">
 
+<<<<<<< HEAD
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="nav-logo" onclick="showPage('dashboard',document.querySelector('.sb-item'))" style="cursor:pointer;">
     <div class="nav-logo-icon">
       <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+=======
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sb-logo">
+    <div class="sb-logo-icon">
+      <svg width="24" height="24" viewBox="0 0 100 100" fill="none">
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
         <path d="M28 72 L44 28 L50 38 L38 72 Z" fill="#1a3a6b"/>
         <path d="M33 55 L47 55 L45 62 L31 62 Z" fill="#1a3a6b"/>
         <path d="M44 28 L56 28 L68 72 L58 72 Z" fill="#1a3a6b"/>
@@ -1168,12 +1539,20 @@ tbody tr:hover .pn{color:#2563eb;}
       </svg>
     </div>
     <div>
+<<<<<<< HEAD
       <div class="nav-logo-name">AXIS Conseil</div>
       <div class="nav-logo-sub">PNL Industrie</div>
     </div>
   </div>
 
   <div class="nav-items">
+=======
+      <div class="sb-logo-name">AXIS Conseil</div>
+      <div class="sb-logo-sub">PNL Industrie</div>
+    </div>
+  </div>
+  <nav class="sb-nav">
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
     <button class="sb-item active" onclick="showPage('dashboard',this)">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
       Dashboard
@@ -1186,7 +1565,11 @@ tbody tr:hover .pn{color:#2563eb;}
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
       Projets artistes
     </button>
+<<<<<<< HEAD
     <button class="sb-item" onclick="showPage('invest',this)">
+=======
+    <button class="sb-item" onclick="showPage('other',this)">
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
       Investissements
     </button>
@@ -1194,6 +1577,7 @@ tbody tr:hover .pn{color:#2563eb;}
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
       Streaming
     </button>
+<<<<<<< HEAD
   </div>
 
   <div class="nav-user" id="navUserWrap">
@@ -1230,11 +1614,31 @@ tbody tr:hover .pn{color:#2563eb;}
     </div>
   </div>
 </nav>
+=======
+    <button class="sb-item" onclick="showPage('other',this)">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      Reporting
+    </button>
+    <button class="sb-item" onclick="showPage('other',this)">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+      Roadmap
+    </button>
+  </nav>
+  <div class="sb-footer">
+    <div class="sb-av">RW</div>
+    <div>
+      <div class="sb-uname">Rayan Wehbi</div>
+      <div class="sb-urole">Directeur Général</div>
+    </div>
+  </div>
+</aside>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 
 <!-- MAIN -->
 <div class="main">
   <!-- TOPBAR -->
   <header class="topbar">
+<<<<<<< HEAD
     <div class="tb-left" id="tbLeft">
       <h1 id="pageTitle">Dashboard</h1>
       <p id="pageSub">Gestion et analyse des investissements musicaux</p>
@@ -1306,6 +1710,32 @@ tbody tr:hover .pn{color:#2563eb;}
             <span class="notif-mark-all">Tout marquer comme lu</span>
             <button class="notif-ok" onclick="toggleNotif()">Fermer</button>
           </div>
+=======
+    <div class="tb-left">
+      <h1 id="pageTitle">Dashboard</h1>
+      <p>Gestion et analyse des investissements musicaux</p>
+    </div>
+    <div class="tb-right">
+      <div class="tb-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Rechercher...">
+      </div>
+      <button class="tb-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        Filtrer
+      </button>
+      <div class="bell-wrap">
+        <button class="bell-btn" onclick="toggleNotif()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <div class="bell-badge">3</div>
+        </button>
+        <div class="notif-panel" id="notifPanel">
+          <div class="notif-hd"><span>🔔</span><div class="notif-title">ALERTES AXIS</div></div>
+          <div class="notif-item"><div class="notif-dot r"></div><div class="notif-msg"><strong>URGENT :</strong> Niska — Contrat expirant dans 77 jours.</div></div>
+          <div class="notif-item"><div class="notif-dot o"></div><div class="notif-msg"><strong>WARNING :</strong> Budget Q2 à 65% — Ajustement recommandé.</div></div>
+          <div class="notif-item"><div class="notif-dot b"></div><div class="notif-msg"><strong>INFO :</strong> Nouveau contrat Hamza validé.</div></div>
+          <div class="notif-footer-ok"><button class="notif-ok" onclick="toggleNotif()">OK</button></div>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
         </div>
       </div>
     </div>
@@ -1313,6 +1743,7 @@ tbody tr:hover .pn{color:#2563eb;}
 
   <!-- DASHBOARD PAGE -->
   <div id="pg-dashboard" class="page" style="display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;background:#f1f5f9;">
+<<<<<<< HEAD
     <div class="db-body">
       <!-- KPI section header -->
       <div class="pro-sec-hd">
@@ -1456,6 +1887,121 @@ tbody tr:hover .pn{color:#2563eb;}
               </div>
             </div>
             <div style="font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.6px;padding-top:4px;border-top:1px solid #f1f5f9;">Répartition</div>
+=======
+    <!-- Header -->
+    <div class="db-header">
+      <div>
+        <div class="db-header-title">Dashboard AXIS Conseil</div>
+        <div class="db-header-sub">Vue d'ensemble &mdash; Janvier à Juin 2026 &middot; PNL Industrie</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <select class="db-period"><option>Tous les artistes</option><option>PNL</option><option>Booba</option><option>Damso</option><option>Niska</option></select>
+        <button onclick="openPbiView()" class="db-pbi-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2.5" fill="rgba(255,255,255,.25)"/><rect x="6" y="11" width="3" height="8" rx="1" fill="#fff"/><rect x="10.5" y="7" width="3" height="12" rx="1" fill="#fff"/><rect x="15" y="4" width="3" height="15" rx="1" fill="rgba(255,255,255,.75)"/></svg>
+          Voir les KPIs — Power BI
+        </button>
+      </div>
+    </div>
+
+    <div class="db-body">
+      <!-- KPI section header -->
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#0f172a;">Indicateurs clés &mdash; Jan-Jun 2026</div>
+          <div style="font-size:11px;color:#94a3b8;margin-top:2px;">Mis à jour aujourd'hui · PNL Industrie</div>
+        </div>
+        <button onclick="openPbiView()" style="display:inline-flex;align-items:center;gap:8px;background:#0078d4;border:none;border-radius:9px;padding:8px 16px;font-size:12px;font-weight:700;color:#fff;cursor:pointer;font-family:'Inter',sans-serif;transition:background .15s;" onmouseover="this.style.background='#0050a0'" onmouseout="this.style.background='#0078d4'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2.5" fill="rgba(255,255,255,.2)"/><rect x="6" y="11" width="3" height="8" rx="1" fill="#fff"/><rect x="10.5" y="7" width="3" height="12" rx="1" fill="#fff"/><rect x="15" y="4" width="3" height="15" rx="1" fill="rgba(255,255,255,.7)"/></svg>
+          Voir les KPIs dans Power BI
+        </button>
+      </div>
+      <!-- 6 KPIs -->
+      <div class="db-kpis">
+        <div class="db-kpi kc-green"><div class="db-kpi-top"><div class="db-kpi-lbl">Revenus totaux</div><div class="db-kpi-icon" style="background:#f0fdf4">💰</div></div><div class="db-kpi-val">8,2 M€</div><div class="db-kpi-trend up">&#8599; +18% vs 2025</div></div>
+        <div class="db-kpi kc-blue"><div class="db-kpi-top"><div class="db-kpi-lbl">ROI moyen</div><div class="db-kpi-icon" style="background:#eff6ff">📈</div></div><div class="db-kpi-val">1.85x</div><div class="db-kpi-trend up">&#8599; +15% vs 2025</div></div>
+        <div class="db-kpi kc-purple"><div class="db-kpi-top"><div class="db-kpi-lbl">Projets actifs</div><div class="db-kpi-icon" style="background:#f5f3ff">🎯</div></div><div class="db-kpi-val">13</div><div class="db-kpi-trend neu">5 en production</div></div>
+        <div class="db-kpi kc-teal"><div class="db-kpi-top"><div class="db-kpi-lbl">Streams totaux</div><div class="db-kpi-icon" style="background:#ecfeff">📊</div></div><div class="db-kpi-val">1,2 Md</div><div class="db-kpi-trend up">&#8599; +28% Jan-Jun</div></div>
+        <div class="db-kpi kc-orange"><div class="db-kpi-top"><div class="db-kpi-lbl">Contrats actifs</div><div class="db-kpi-icon" style="background:#fff7ed">📋</div></div><div class="db-kpi-val">9/12</div><div class="db-kpi-trend neu">3 à renouveler</div></div>
+        <div class="db-kpi kc-rose"><div class="db-kpi-top"><div class="db-kpi-lbl">Pipeline CRM</div><div class="db-kpi-icon" style="background:#fff1f2">💼</div></div><div class="db-kpi-val">4,6 M€</div><div class="db-kpi-trend up">&#8599; 6 opportunités</div></div>
+      </div>
+
+      <!-- Main 2-col: chart left, PBI+contrats right -->
+      <div class="db-grid2">
+        <div class="db-card">
+          <div class="db-card-hd">
+            <div class="db-card-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Évolution des revenus 2026</div>
+            <span style="font-size:11px;font-weight:700;color:#16a34a;background:#f0fdf4;border-radius:20px;padding:3px 10px;">&#8599; +22% cumulé</span>
+          </div>
+          <div class="db-card-body">
+            <svg viewBox="0 0 520 155" style="width:100%;height:155px;">
+              <defs><linearGradient id="dbBlueGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.01"/></linearGradient></defs>
+              <line x1="30" y1="125" x2="510" y2="125" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="30" y1="88" x2="510" y2="88" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+              <line x1="30" y1="50" x2="510" y2="50" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+              <text x="4" y="129" font-size="8" fill="#cbd5e1" font-family="Inter,sans-serif">1,0M</text>
+              <text x="4" y="92" font-size="8" fill="#cbd5e1" font-family="Inter,sans-serif">1,4M</text>
+              <text x="4" y="54" font-size="8" fill="#cbd5e1" font-family="Inter,sans-serif">1,8M</text>
+              <text x="46" y="145" font-size="9" fill="#94a3b8" font-family="Inter,sans-serif">Jan</text>
+              <text x="140" y="145" font-size="9" fill="#94a3b8" font-family="Inter,sans-serif">Fév</text>
+              <text x="230" y="145" font-size="9" fill="#94a3b8" font-family="Inter,sans-serif">Mar</text>
+              <text x="322" y="145" font-size="9" fill="#94a3b8" font-family="Inter,sans-serif">Avr</text>
+              <text x="410" y="145" font-size="9" fill="#94a3b8" font-family="Inter,sans-serif">Mai</text>
+              <text x="490" y="145" font-size="9" fill="#94a3b8" font-family="Inter,sans-serif">Jun</text>
+              <path d="M50,113 C130,105 200,92 280,78 C355,64 425,48 500,30 L500,123 L50,123 Z" fill="url(#dbBlueGrad)"/>
+              <path d="M50,113 C130,105 200,92 280,78 C355,64 425,48 500,30" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="50" cy="113" r="3.5" fill="#3b82f6"/>
+              <circle cx="146" cy="103" r="3.5" fill="#3b82f6"/>
+              <circle cx="242" cy="90" r="3.5" fill="#3b82f6"/>
+              <circle cx="338" cy="76" r="3.5" fill="#3b82f6"/>
+              <circle cx="422" cy="59" r="3.5" fill="#3b82f6"/>
+              <circle cx="500" cy="30" r="5" fill="#fff" stroke="#3b82f6" stroke-width="2.5"/>
+            </svg>
+            <div class="db-rev-stats">
+              <div class="db-rev-stat"><div class="db-rev-stat-val" style="color:#2563eb">8,2 M€</div><div class="db-rev-stat-lbl">Total Jan-Jun</div></div>
+              <div class="db-rev-stat"><div class="db-rev-stat-val" style="color:#059669">+22%</div><div class="db-rev-stat-lbl">Croissance</div></div>
+              <div class="db-rev-stat"><div class="db-rev-stat-val" style="color:#7c3aed">1,37 M€</div><div class="db-rev-stat-lbl">Moy / mois</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <!-- Contrats à surveiller -->
+          <div class="db-card" style="flex:1;">
+            <div class="db-card-hd"><div class="db-card-title">⚠️ Contrats à surveiller</div><span style="font-size:10px;background:#fee2e2;color:#991b1b;font-weight:700;border-radius:20px;padding:2px 8px;">4 alertes</span></div>
+            <div class="db-card-body">
+              <div class="db-expiry-row"><div class="db-expiry-av" style="background:#be185d">Ne</div><div class="db-expiry-name">Nekfeu</div><div class="db-expiry-badge red">Expiré</div></div>
+              <div class="db-expiry-row"><div class="db-expiry-av" style="background:#0891b2">Bo</div><div class="db-expiry-name">Booba</div><div class="db-expiry-badge red">Expiré</div></div>
+              <div class="db-expiry-row"><div class="db-expiry-av" style="background:#d97706">Ni</div><div class="db-expiry-name">Niska</div><div class="db-expiry-badge red">Expiré</div></div>
+              <div class="db-expiry-row"><div class="db-expiry-av" style="background:#7c3aed">Da</div><div class="db-expiry-name">Damso</div><div class="db-expiry-badge orange">Juin 2026</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3-col: top artists | budget | alertes -->
+      <div class="db-three">
+        <div class="db-card">
+          <div class="db-card-hd"><div class="db-card-title">🏆 Top Artistes Jan-Jun</div></div>
+          <div class="db-card-body">
+            <div class="db-artist-row"><div class="db-artist-rank">1</div><div class="db-artist-av" style="background:#2563eb">PN</div><div class="db-artist-name">PNL</div><div class="db-artist-rev">2,1 M€</div><div class="db-artist-grow">+22%</div></div>
+            <div class="db-artist-row"><div class="db-artist-rank">2</div><div class="db-artist-av" style="background:#0891b2">Bo</div><div class="db-artist-name">Booba</div><div class="db-artist-rev">1,8 M€</div><div class="db-artist-grow">+18%</div></div>
+            <div class="db-artist-row"><div class="db-artist-rank">3</div><div class="db-artist-av" style="background:#7c3aed">Da</div><div class="db-artist-name">Damso</div><div class="db-artist-rev">1,5 M€</div><div class="db-artist-grow">+35%</div></div>
+            <div class="db-artist-row"><div class="db-artist-rank">4</div><div class="db-artist-av" style="background:#d97706">Ni</div><div class="db-artist-name">Niska</div><div class="db-artist-rev">1,2 M€</div><div class="db-artist-grow">+28%</div></div>
+            <div class="db-artist-row"><div class="db-artist-rank">5</div><div class="db-artist-av" style="background:#059669">SC</div><div class="db-artist-name">SCH</div><div class="db-artist-rev">950k€</div><div class="db-artist-grow">+15%</div></div>
+          </div>
+        </div>
+
+        <div class="db-card">
+          <div class="db-card-hd"><div class="db-card-title">💳 Budget vs Dépenses</div><span style="font-size:11px;color:#64748b;">Jan-Jun 2026</span></div>
+          <div class="db-card-body">
+            <div style="display:flex;justify-content:space-between;margin-bottom:4px;font-size:12px;"><span style="color:#64748b;">Budget 2026</span><span style="font-weight:700;">2,8 M€</span></div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:10px;font-size:12px;"><span style="color:#64748b;">Dépensé</span><span style="font-weight:700;color:#2563eb;">1,4 M€</span></div>
+            <div class="db-bbar-wrap">
+              <div class="db-bbar-top"><span style="color:#475569;font-weight:600;">50% utilisé</span><span style="color:#64748b;">Reste: 1,4 M€</span></div>
+              <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:50%;background:linear-gradient(90deg,#3b82f6,#6366f1);"></div></div>
+            </div>
+            <div style="font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px;margin:10px 0 8px;">Répartition</div>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
             <div class="db-bbar-wrap">
               <div class="db-bbar-top"><span style="color:#475569;">Production</span><span style="font-weight:700;color:#475569;">750k€</span></div>
               <div class="db-bbar-bg"><div class="db-bbar-fill" style="width:80%;background:#1d4ed8;"></div></div>
@@ -1472,6 +2018,7 @@ tbody tr:hover .pn{color:#2563eb;}
         </div>
 
         <div class="db-card">
+<<<<<<< HEAD
           <div class="db-card-hd">
             <div class="db-card-title">🎵 Performance par plateforme</div>
             <span style="font-size:11px;color:#64748b;">1,2 Md streams · Jan-Jun 2026</span>
@@ -1501,16 +2048,48 @@ tbody tr:hover .pn{color:#2563eb;}
               <span>Total streams</span>
               <span style="font-weight:700;color:#1e293b;">1,2 Md</span>
             </div>
+=======
+          <div class="db-card-hd"><div class="db-card-title">🔔 Alertes &amp; Notifications</div><span style="font-size:10px;font-weight:700;color:#fff;background:#ef4444;border-radius:20px;padding:2px 8px;">4</span></div>
+          <div class="db-card-body">
+            <div class="db-alert-item"><div class="db-alert-dot" style="background:#ef4444"></div><div><div class="db-alert-msg">Contrats Booba, Niska, Nekfeu expirés</div><div class="db-alert-time">Urgent &middot; Action immédiate requise</div></div></div>
+            <div class="db-alert-item"><div class="db-alert-dot" style="background:#f59e0b"></div><div><div class="db-alert-msg">Damso — Contrat expire juin 2026</div><div class="db-alert-time">Attention &middot; Renouveler avant juin</div></div></div>
+            <div class="db-alert-item"><div class="db-alert-dot" style="background:#f59e0b"></div><div><div class="db-alert-msg">Budget Q2 à 65% — Ajustement recommandé</div><div class="db-alert-time">Il y a 2h &middot; Attention requise</div></div></div>
+            <div class="db-alert-item"><div class="db-alert-dot" style="background:#3b82f6"></div><div><div class="db-alert-msg">Nouveau contrat Hamza validé</div><div class="db-alert-time">Hier &middot; Information</div></div></div>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
           </div>
         </div>
       </div>
 
+<<<<<<< HEAD
+=======
+      <!-- Projects table -->
+      <div class="db-card">
+        <div class="db-card-hd">
+          <div class="db-card-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>Projets en cours &mdash; Janvier à Juin 2026</div>
+          <span style="font-size:11px;font-weight:600;color:#64748b;">Cliquez sur un projet pour le détail complet</span>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="db-table">
+            <thead><tr><th>Projet</th><th>Artiste</th><th>Type</th><th>Statut</th><th class="r">Budget</th><th class="r">ROI estimé</th><th class="r">Progression</th></tr></thead>
+            <tbody>
+              <tr onclick="openProjDetail('Nouveau Album','dashboard')"><td><div class="db-pn">Nouveau Album ›</div></td><td style="color:#64748b;font-weight:600;">PNL</td><td><span class="db-tbadge pu">Album</span></td><td><span class="db-tbadge bl">Production</span></td><td style="text-align:right;font-weight:700;">235k€</td><td style="text-align:right;font-weight:700;color:#16a34a;">2.12x</td><td style="text-align:right;"><div class="db-pgrow"><div class="db-pgbg"><div class="db-pgfill" style="width:28%"></div></div><span class="db-pgpct">28%</span></div></td></tr>
+              <tr onclick="openProjDetail('Tournée Européenne','dashboard')"><td><div class="db-pn">Tournée Européenne ›</div></td><td style="color:#64748b;font-weight:600;">Nekfeu</td><td><span class="db-tbadge or">Tournée</span></td><td><span class="db-tbadge gy">Logistique</span></td><td style="text-align:right;font-weight:700;">460k€</td><td style="text-align:right;font-weight:700;color:#16a34a;">2.05x</td><td style="text-align:right;"><div class="db-pgrow"><div class="db-pgbg"><div class="db-pgfill" style="width:62%"></div></div><span class="db-pgpct">62%</span></div></td></tr>
+              <tr onclick="openProjDetail('Festival Été','dashboard')"><td><div class="db-pn">Festival Été ›</div></td><td style="color:#64748b;font-weight:600;">Damso</td><td><span class="db-tbadge or">Tournée</span></td><td><span class="db-tbadge bl">Partenariats</span></td><td style="text-align:right;font-weight:700;">780k€</td><td style="text-align:right;font-weight:700;color:#16a34a;">2.24x</td><td style="text-align:right;"><div class="db-pgrow"><div class="db-pgbg"><div class="db-pgfill" style="width:62%"></div></div><span class="db-pgpct">62%</span></div></td></tr>
+              <tr onclick="openProjDetail('Droits Catalogue','dashboard')"><td><div class="db-pn">Droits Catalogue ›</div></td><td style="color:#64748b;font-weight:600;">Booba</td><td><span class="db-tbadge gr">Catalogue</span></td><td><span class="db-tbadge or">Négociation</span></td><td style="text-align:right;font-weight:700;">1,6 M€</td><td style="text-align:right;font-weight:700;color:#16a34a;">2.58x</td><td style="text-align:right;"><div class="db-pgrow"><div class="db-pgbg"><div class="db-pgfill" style="width:74%"></div></div><span class="db-pgpct">74%</span></div></td></tr>
+              <tr onclick="openProjDetail('Royalties Q1','dashboard')"><td><div class="db-pn">Royalties Q1 ›</div></td><td style="color:#64748b;font-weight:600;">SCH</td><td><span class="db-tbadge bl">Streaming</span></td><td><span class="db-tbadge gy">Contrôle</span></td><td style="text-align:right;font-weight:700;">670k€</td><td style="text-align:right;font-weight:700;color:#64748b;">1.18x</td><td style="text-align:right;"><div class="db-pgrow"><div class="db-pgbg"><div class="db-pgfill" style="width:36%"></div></div><span class="db-pgpct">36%</span></div></td></tr>
+              <tr onclick="openProjDetail('Single Promo','dashboard')"><td><div class="db-pn">Single Promo ›</div></td><td style="color:#64748b;font-weight:600;">Niska</td><td><span class="db-tbadge pu">Single</span></td><td><span class="db-tbadge bl">Clip</span></td><td style="text-align:right;font-weight:700;">87k€</td><td style="text-align:right;font-weight:700;color:#64748b;">1.65x</td><td style="text-align:right;"><div class="db-pgrow"><div class="db-pgbg"><div class="db-pgfill" style="width:44%"></div></div><span class="db-pgpct">44%</span></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
     </div>
   </div>
 
   <!-- CRM PAGE -->
   <div id="pg-crm" class="page" style="display:none;">
     <div class="crm-wrap">
+<<<<<<< HEAD
 
       <!-- ── LEFT ROSTER PANEL ── -->
       <div class="crm-list">
@@ -1519,11 +2098,20 @@ tbody tr:hover .pn{color:#2563eb;}
             <div>
               <div class="crm-list-heading">Relations Clients</div>
               <div class="crm-list-sub">6 artistes · 8 opportunités actives</div>
+=======
+      <div class="crm-list">
+        <div class="crm-list-top">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+            <div>
+              <div class="crm-list-heading">Relations Clients</div>
+              <div class="crm-list-sub">12 artistes · 8 opportunités actives</div>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
             </div>
             <button class="crm-add-btn" onclick="openNewContactModal()">+ Nouveau</button>
           </div>
           <div class="crm-search-wrap">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+<<<<<<< HEAD
             <input type="text" class="crm-search-input" id="crmSearch" placeholder="Rechercher un artiste ou un contrat..." oninput="filterArtists(this.value)">
           </div>
         </div>
@@ -1643,12 +2231,44 @@ tbody tr:hover .pn{color:#2563eb;}
             <div class="crm-empty-title">Sélectionnez un artiste</div>
             <div class="crm-empty-sub">Cliquez sur un artiste dans le roster pour accéder à son profil complet, ses projets et son historique d'activités.</div>
           </div>
+=======
+            <input type="text" class="crm-search-input" id="crmSearch" placeholder="Rechercher un artiste..." oninput="filterArtists(this.value)">
+          </div>
+          <div class="crm-view-tabs" style="margin-top:10px;">
+            <button class="crm-view-tab active" onclick="switchCrmTab('artistes',this)">Artistes</button>
+            <button class="crm-view-tab" onclick="switchCrmTab('activites',this)">Activités</button>
+            <button class="crm-view-tab" onclick="switchCrmTab('opportunites',this)">Opportunités</button>
+          </div>
+        </div>
+        <div class="crm-list-title" id="artistListTitle">Artistes (12)</div>
+        <div class="crm-artist-items" id="artistList">
+          <div class="crm-item" data-name="PNL" onclick="selectArtist(this,'PNL')"><div class="crm-item-row"><div class="crm-av" style="background:#2563eb">PN</div><div class="crm-item-info"><div class="crm-item-name">PNL</div><div class="crm-item-proj">3 projets · 2,1 M€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">2.1 M€</div><div class="crm-item-phone">📞 +33 6 12 34 56 78</div></div>
+          <div class="crm-item" data-name="Booba" onclick="selectArtist(this,'Booba')"><div class="crm-item-row"><div class="crm-av" style="background:#0891b2">Bo</div><div class="crm-item-info"><div class="crm-item-name">Booba</div><div class="crm-item-proj">2 projets · 1,8 M€</div></div><span class="crm-badge expire">Contrat expiré</span></div><div class="crm-item-rev">1.8 M€</div><div class="crm-item-phone">📞 +33 6 23 45 67 89</div></div>
+          <div class="crm-item" data-name="Damso" onclick="selectArtist(this,'Damso')"><div class="crm-item-row"><div class="crm-av" style="background:#7c3aed">Da</div><div class="crm-item-info"><div class="crm-item-name">Damso</div><div class="crm-item-proj">2 projets · 1,5 M€</div></div><span class="crm-badge warning">Expire juin 26</span></div><div class="crm-item-rev">1.5 M€</div><div class="crm-item-phone">📞 +33 6 34 56 78 90</div></div>
+          <div class="crm-item" data-name="Niska" onclick="selectArtist(this,'Niska')"><div class="crm-item-row"><div class="crm-av" style="background:#d97706">Ni</div><div class="crm-item-info"><div class="crm-item-name">Niska</div><div class="crm-item-proj">3 projets · 1,2 M€</div></div><span class="crm-badge expire">Contrat expiré</span></div><div class="crm-item-rev">1.2 M€</div><div class="crm-item-phone">📞 +33 6 45 67 89 01</div></div>
+          <div class="crm-item" data-name="SCH" onclick="selectArtist(this,'SCH')"><div class="crm-item-row"><div class="crm-av" style="background:#059669">SC</div><div class="crm-item-info"><div class="crm-item-name">SCH</div><div class="crm-item-proj">2 projets · 950k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">950k€</div><div class="crm-item-phone">📞 +33 6 56 78 90 12</div></div>
+          <div class="crm-item" data-name="Nekfeu" onclick="selectArtist(this,'Nekfeu')"><div class="crm-item-row"><div class="crm-av" style="background:#be185d">Ne</div><div class="crm-item-info"><div class="crm-item-name">Nekfeu</div><div class="crm-item-proj">1 projet · 820k€</div></div><span class="crm-badge expire">Contrat expiré</span></div><div class="crm-item-rev">820k€</div><div class="crm-item-phone">📞 +33 6 78 90 12 34</div></div>
+          <div class="crm-item" data-name="Hamza" onclick="selectArtist(this,'Hamza')"><div class="crm-item-row"><div class="crm-av" style="background:#6366f1">Ha</div><div class="crm-item-info"><div class="crm-item-name">Hamza</div><div class="crm-item-proj">2 projets · 780k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">780k€</div><div class="crm-item-phone">📞 +32 478 12 34 56</div></div>
+          <div class="crm-item" data-name="Gazo" onclick="selectArtist(this,'Gazo')"><div class="crm-item-row"><div class="crm-av" style="background:#f43f5e">Gz</div><div class="crm-item-info"><div class="crm-item-name">Gazo</div><div class="crm-item-proj">1 projet · 680k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">680k€</div><div class="crm-item-phone">📞 +33 6 67 89 01 23</div></div>
+          <div class="crm-item" data-name="Jul" onclick="selectArtist(this,'Jul')"><div class="crm-item-row"><div class="crm-av" style="background:#0284c7">Ju</div><div class="crm-item-info"><div class="crm-item-name">Jul</div><div class="crm-item-proj">1 projet · 620k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">620k€</div><div class="crm-item-phone">📞 +33 6 89 01 23 45</div></div>
+          <div class="crm-item" data-name="Tiakola" onclick="selectArtist(this,'Tiakola')"><div class="crm-item-row"><div class="crm-av" style="background:#0d9488">Tk</div><div class="crm-item-info"><div class="crm-item-name">Tiakola</div><div class="crm-item-proj">1 projet · 550k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">550k€</div><div class="crm-item-phone">📞 +33 6 90 12 34 56</div></div>
+          <div class="crm-item" data-name="Ninha" onclick="selectArtist(this,'Ninha')"><div class="crm-item-row"><div class="crm-av" style="background:#db2777">Nh</div><div class="crm-item-info"><div class="crm-item-name">Ninha</div><div class="crm-item-proj">1 projet · 420k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">420k€</div><div class="crm-item-phone">📞 +33 6 01 23 45 67</div></div>
+          <div class="crm-item" data-name="La Fouine" onclick="selectArtist(this,'La Fouine')"><div class="crm-item-row"><div class="crm-av" style="background:#b45309">LF</div><div class="crm-item-info"><div class="crm-item-name">La Fouine</div><div class="crm-item-proj">1 projet · 380k€</div></div><span class="crm-badge actif">Actif</span></div><div class="crm-item-rev">380k€</div><div class="crm-item-phone">📞 +33 6 12 34 56 80</div></div>
+        </div>
+      </div>
+      <div id="crmDetail" class="crm-detail">
+        <div class="crm-empty">
+          <div class="crm-empty-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div class="crm-empty-title">Sélectionnez un artiste</div>
+          <div class="crm-empty-sub">Cliquez sur un artiste dans la liste pour voir ses détails, projets et historique</div>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
         </div>
       </div>
       <!-- ACTIVITIES PANEL -->
       <div class="act-panel" id="actPanel">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
           <div style="font-size:16px;font-weight:700;color:#0f172a;">Toutes les activités</div>
+<<<<<<< HEAD
           <span style="font-size:12px;color:#64748b;background:#eff6ff;border:1px solid #bfdbfe;border-radius:20px;padding:3px 10px;font-weight:600;color:#2563eb;">13 interactions</span>
         </div>
         <div class="act-filter-row">
@@ -1658,11 +2278,23 @@ tbody tr:hover .pn{color:#2563eb;}
           <button class="act-filter-btn" onclick="filterActFeed('email',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Emails</button>
           <button class="act-filter-btn" onclick="filterActFeed('contrat',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Contrats</button>
           <button class="act-filter-btn" onclick="filterActFeed('studio',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Studio</button>
+=======
+          <span style="font-size:12px;color:#64748b;background:#eff6ff;border:1px solid #bfdbfe;border-radius:20px;padding:3px 10px;font-weight:600;color:#2563eb;">18 interactions</span>
+        </div>
+        <div class="act-filter-row">
+          <button class="act-filter-btn active" onclick="filterActFeed('tous',this)">Tous</button>
+          <button class="act-filter-btn" onclick="filterActFeed('appel',this)">📞 Appels</button>
+          <button class="act-filter-btn" onclick="filterActFeed('reunion',this)">👥 Réunions</button>
+          <button class="act-filter-btn" onclick="filterActFeed('email',this)">✉️ Emails</button>
+          <button class="act-filter-btn" onclick="filterActFeed('contrat',this)">📄 Contrats</button>
+          <button class="act-filter-btn" onclick="filterActFeed('studio',this)">🎵 Studio</button>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
         </div>
         <div class="act-feed-card" id="actFeedContainer"></div>
       </div>
 
       <div class="opp-wrap" id="oppPanel" style="display:none;">
+<<<<<<< HEAD
         <!-- Header -->
         <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;">
           <div>
@@ -1760,6 +2392,32 @@ tbody tr:hover .pn{color:#2563eb;}
             <div class="opp-prob-row"><span>Probabilité</span><span class="opp-prob-pct">48%</span></div>
             <div class="opp-bar-bg"><div class="opp-bar-fill" style="width:48%;background:#94a3b8;"></div></div>
           </div>
+=======
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+          <div style="font-size:16px;font-weight:700;color:#0f172a;">Pipeline des opportunités</div>
+          <span style="font-size:12px;font-weight:600;background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:20px;padding:3px 10px;">4,6 M€ total</span>
+        </div>
+        <div class="opp-filter-row">
+          <button class="opp-filter-btn active" onclick="filterOpps('tous',this)">Tous (6)</button>
+          <button class="opp-filter-btn" onclick="filterOpps('nego',this)">Négociation</button>
+          <button class="opp-filter-btn" onclick="filterOpps('prop',this)">Proposition</button>
+          <button class="opp-filter-btn" onclick="filterOpps('sign',this)">Signature</button>
+          <button class="opp-filter-btn" onclick="filterOpps('contact',this)">Contact initial</button>
+        </div>
+        <div class="opp-kpis">
+          <div class="opp-kpi amber"><div class="opp-kpi-label">En négociation</div><div class="opp-kpi-val">8</div><div class="opp-kpi-sub">1,2 M€</div></div>
+          <div class="opp-kpi green"><div class="opp-kpi-label">Signées</div><div class="opp-kpi-val">5</div><div class="opp-kpi-sub">890k€</div></div>
+          <div class="opp-kpi blue"><div class="opp-kpi-label">En attente</div><div class="opp-kpi-val">12</div><div class="opp-kpi-sub">2,5 M€</div></div>
+          <div class="opp-kpi gray"><div class="opp-kpi-label">Perdues</div><div class="opp-kpi-val">3</div><div class="opp-kpi-sub">450k€</div></div>
+        </div>
+        <div class="pipeline-card">
+          <div class="opp-item" onclick="openOppModal('Feat Drake x PNL')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Feat Drake x PNL</span><span class="opp-stage nego-finale">Négociation finale</span></div><div class="opp-item-right"><div class="opp-item-val">450k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 PNL</span><span>🏢 OVO Sound</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">85%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:85%;background:#16a34a;"></div></div></div>
+          <div class="opp-item" onclick="openOppModal('Tournée Asie 2027')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Tournée Asie 2027</span><span class="opp-stage prop-envoyee">Proposition envoyée</span></div><div class="opp-item-right"><div class="opp-item-val">380k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 Booba</span><span>🏢 Live Nation Asia</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">70%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:70%;background:#2563eb;"></div></div></div>
+          <div class="opp-item" onclick="openOppModal('Campagne pub Nike')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Campagne pub Nike</span><span class="opp-stage premier-contact">Premier contact</span></div><div class="opp-item-right"><div class="opp-item-val">250k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 Niska</span><span>🏢 Nike France</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">60%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:60%;background:#2563eb;"></div></div></div>
+          <div class="opp-item" onclick="openOppModal('Soundtrack Film')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Soundtrack Film</span><span class="opp-stage contrat-rev">Contrat en révision</span></div><div class="opp-item-right"><div class="opp-item-val">180k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 Damso</span><span>🏢 Warner Bros</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">90%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:90%;background:#16a34a;"></div></div></div>
+          <div class="opp-item" onclick="openOppModal('Festival Coachella')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Festival Coachella</span><span class="opp-stage discussions">Discussions initiales</span></div><div class="opp-item-right"><div class="opp-item-val">320k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 SCH</span><span>🏢 Goldenvoice</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">45%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:45%;background:#f59e0b;"></div></div></div>
+          <div class="opp-item" onclick="openOppModal('Licensing Spotify')"><div class="opp-item-head"><div class="opp-item-left"><span class="opp-item-name">Licensing Spotify</span><span class="opp-stage sign-imminente">Signature imminente</span></div><div class="opp-item-right"><div class="opp-item-val">95k€</div><div class="opp-item-val-label">Valeur estimée</div></div></div><div class="opp-item-meta"><span>👤 Jul</span><span>🏢 Spotify France</span></div><div class="opp-prob-row"><span>Probabilité de succès</span><span class="opp-prob-pct">95%</span></div><div class="opp-bar-bg"><div class="opp-bar-fill" style="width:95%;background:#16a34a;"></div></div></div>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
         </div>
       </div>
     </div>
@@ -1767,6 +2425,7 @@ tbody tr:hover .pn{color:#2563eb;}
 
   <!-- PROJETS PAGE -->
   <div id="pg-projets" class="page" style="display:none;">
+<<<<<<< HEAD
    <div class="proj-page">
 
     <!-- Header -->
@@ -1869,10 +2528,133 @@ tbody tr:hover .pn{color:#2563eb;}
             <div class="proj-cat-nums"><div><div class="proj-cat-num-lbl">ROI</div><div class="proj-cat-num" style="color:#16a34a;">1.18x</div></div><div><div class="proj-cat-num-lbl">Avanc.</div><div class="proj-cat-num" style="color:#2563eb;">36%</div></div></div>
           </div>
           </div>
+=======
+    <div style="padding:24px 28px;flex:1;overflow-y:auto;background:#f8fafc;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
+        <div style="font-size:20px;color:#64748b;font-weight:400;">Tous les projets artistes en cours</div>
+        <select style="border:1px solid #e2e8f0;border-radius:8px;background:#fff;padding:6px 12px;font-size:12px;color:#1e293b;outline:none;font-family:'Inter',sans-serif;"><option>Tous les stages</option></select>
+      </div>
+
+      <!-- 4 KPI Cards with SVG sparklines -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;">
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.6px;">Revenus Catalogue</span>
+            <span style="background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;">↗ +33.3%</span>
+          </div>
+          <div style="font-size:42px;font-weight:700;color:#0f172a;letter-spacing:-1.5px;line-height:1;">3,2 M€</div>
+          <svg viewBox="0 0 300 65" preserveAspectRatio="none" style="width:100%;height:65px;display:block;margin:4px 0;">
+            <defs><linearGradient id="sg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.25"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/></linearGradient></defs>
+            <path d="M0,55 C50,48 100,40 150,32 C200,24 250,14 300,6 L300,65 L0,65 Z" fill="url(#sg1)"/>
+            <path d="M0,55 C50,48 100,40 150,32 C200,24 250,14 300,6" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;padding-top:7px;border-top:1px solid #f1f5f9;">
+            <span>Moyenne mensuelle: <strong>550k€</strong></span><span style="color:#16a34a;font-weight:600;">+160k€ vs Jan</span>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.6px;">Artistes Actifs</span>
+            <span style="background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;">↗ +40%</span>
+          </div>
+          <div style="font-size:42px;font-weight:700;color:#0f172a;letter-spacing:-1.5px;line-height:1;">14</div>
+          <svg viewBox="0 0 300 65" preserveAspectRatio="none" style="width:100%;height:65px;display:block;margin:4px 0;">
+            <defs><linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/><stop offset="100%" stop-color="#10b981" stop-opacity="0.02"/></linearGradient></defs>
+            <path d="M0,58 C60,54 110,48 160,40 C210,32 255,20 300,8 L300,65 L0,65 Z" fill="url(#sg2)"/>
+            <path d="M0,58 C60,54 110,48 160,40 C210,32 255,20 300,8" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;padding-top:7px;border-top:1px solid #f1f5f9;">
+            <span>Nouveaux signés: <strong>4 artistes</strong></span><span style="color:#16a34a;font-weight:600;">+4 depuis Jan</span>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.6px;">Investissements Projets</span>
+            <span style="background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;">S1 2026</span>
+          </div>
+          <div style="font-size:42px;font-weight:700;color:#0f172a;letter-spacing:-1.5px;line-height:1;">850k €</div>
+          <svg viewBox="0 0 300 65" preserveAspectRatio="none" style="width:100%;height:65px;display:block;margin:4px 0;">
+            <defs><linearGradient id="sg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.18"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/></linearGradient></defs>
+            <path d="M0,40 C50,32 90,18 130,20 C165,22 185,36 210,38 C240,40 270,35 300,33 L300,65 L0,65 Z" fill="url(#sg3)"/>
+            <path d="M0,40 C50,32 90,18 130,20 C165,22 185,36 210,38 C240,40 270,35 300,33" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;padding-top:7px;border-top:1px solid #f1f5f9;">
+            <span>Moyenne mensuelle: <strong>142k€</strong></span><span style="color:#2563eb;font-weight:600;">13 projets actifs</span>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.6px;">ROI Catalogue</span>
+            <span style="background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe;border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;">↗ +13.9%</span>
+          </div>
+          <div style="font-size:42px;font-weight:700;color:#0f172a;letter-spacing:-1.5px;line-height:1;">1.31x</div>
+          <svg viewBox="0 0 300 65" preserveAspectRatio="none" style="width:100%;height:65px;display:block;margin:4px 0;">
+            <defs><linearGradient id="sg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.22"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.02"/></linearGradient></defs>
+            <path d="M0,60 C60,55 110,48 160,40 C210,32 260,20 300,10 L300,65 L0,65 Z" fill="url(#sg4)"/>
+            <path d="M0,60 C60,55 110,48 160,40 C210,32 260,20 300,10" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:#64748b;padding-top:7px;border-top:1px solid #f1f5f9;">
+            <span>Jan 2026: <strong>1.15x</strong></span><span style="color:#7c3aed;font-weight:600;">+16 pts en 6 mois</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts row -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;">
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 20px;">
+          <div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:14px;">Évolution des revenus catalogue</div>
+          <svg viewBox="0 0 480 210" style="width:100%;height:210px;">
+            <defs><linearGradient id="catGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.22"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0.02"/></linearGradient></defs>
+            <line x1="42" y1="10" x2="42" y2="175" stroke="#e2e8f0" stroke-width="1"/>
+            <line x1="42" y1="175" x2="470" y2="175" stroke="#e2e8f0" stroke-width="1"/>
+            <line x1="42" y1="140" x2="470" y2="140" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="42" y1="105" x2="470" y2="105" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="42" y1="70" x2="470" y2="70" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <line x1="42" y1="35" x2="470" y2="35" stroke="#f1f5f9" stroke-width="1" stroke-dasharray="4,3"/>
+            <text x="36" y="178" font-size="9" fill="#94a3b8" text-anchor="end">0k€</text>
+            <text x="36" y="143" font-size="9" fill="#94a3b8" text-anchor="end">200k€</text>
+            <text x="36" y="108" font-size="9" fill="#94a3b8" text-anchor="end">400k€</text>
+            <text x="36" y="73" font-size="9" fill="#94a3b8" text-anchor="end">600k€</text>
+            <text x="36" y="38" font-size="9" fill="#94a3b8" text-anchor="end">800k€</text>
+            <text x="85" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Jan</text>
+            <text x="163" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Fév</text>
+            <text x="241" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Mar</text>
+            <text x="319" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Avr</text>
+            <text x="385" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Mai</text>
+            <text x="455" y="190" font-size="9" fill="#94a3b8" text-anchor="middle">Jun</text>
+            <path d="M85,96 C118,88 148,82 178,74 C208,66 234,58 262,50 C290,42 318,36 346,30 C374,24 416,18 455,14 L455,175 L85,175 Z" fill="url(#catGrad)"/>
+            <path d="M85,96 C118,88 148,82 178,74 C208,66 234,58 262,50 C290,42 318,36 346,30 C374,24 416,18 455,14" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="85" cy="96" r="3.5" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="178" cy="74" r="3.5" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="262" cy="50" r="3.5" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="346" cy="30" r="3.5" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <circle cx="455" cy="14" r="3.5" fill="#fff" stroke="#3b82f6" stroke-width="2"/>
+            <path d="M85,106 C120,98 150,90 185,82 C215,75 245,65 278,57 C308,50 360,40 455,30" fill="none" stroke="#10b981" stroke-width="1.8" stroke-dasharray="6,4" stroke-linecap="round"/>
+          </svg>
+          <div style="display:flex;gap:16px;justify-content:center;margin-top:10px;">
+            <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#64748b;"><div style="width:18px;height:2px;background:#3b82f6;"></div>Revenus réels</div>
+            <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#64748b;"><div style="width:18px;height:2px;background:#10b981;border-top:2px dashed #10b981;"></div>Budget prévu</div>
+          </div>
+        </div>
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px 20px;">
+          <div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:14px;">Performance des projets artistes</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px;">
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:9px 11px;"><div style="font-size:10px;color:#64748b;margin-bottom:3px;">ROI Moyen</div><div style="font-size:18px;font-weight:800;color:#16a34a;">1.85x</div><div style="font-size:10px;color:#64748b;">+15%</div></div>
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:9px 11px;"><div style="font-size:10px;color:#64748b;margin-bottom:3px;">Taux réussite</div><div style="font-size:18px;font-weight:800;color:#2563eb;">92%</div><div style="font-size:10px;color:#64748b;">+8%</div></div>
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:9px 11px;"><div style="font-size:10px;color:#64748b;margin-bottom:3px;">Budget utilisé</div><div style="font-size:18px;font-weight:800;color:#f59e0b;">68%</div><div style="font-size:10px;color:#64748b;">1,4M€</div></div>
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:9px 11px;"><div style="font-size:10px;color:#64748b;margin-bottom:3px;">Projets actifs</div><div style="font-size:18px;font-weight:800;color:#7c3aed;">13</div><div style="font-size:10px;color:#64748b;">5 en prod</div></div>
+          </div>
+          <div style="padding:8px 0;border-bottom:1px solid #f1f5f9;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;"></div><div><div style="font-size:12px;font-weight:600;color:#0f172a;">Album</div><div style="font-size:10px;color:#64748b;">2 projets • 424k€</div></div></div><div style="display:flex;gap:14px;"><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">ROI</div><div style="font-size:12px;font-weight:700;color:#16a34a;">2.12x</div></div><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">Avanc.</div><div style="font-size:12px;font-weight:700;color:#2563eb;">28%</div></div></div></div><div style="height:4px;background:#f1f5f9;border-radius:2px;"><div style="width:28%;height:4px;background:#8b5cf6;border-radius:2px;"></div></div></div>
+          <div style="padding:8px 0;border-bottom:1px solid #f1f5f9;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#3b82f6;"></div><div><div style="font-size:12px;font-weight:600;color:#0f172a;">Single</div><div style="font-size:10px;color:#64748b;">3 projets • 468k€</div></div></div><div style="display:flex;gap:14px;"><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">ROI</div><div style="font-size:12px;font-weight:700;color:#16a34a;">1.65x</div></div><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">Avanc.</div><div style="font-size:12px;font-weight:700;color:#2563eb;">44%</div></div></div></div><div style="height:4px;background:#f1f5f9;border-radius:2px;"><div style="width:44%;height:4px;background:#3b82f6;border-radius:2px;"></div></div></div>
+          <div style="padding:8px 0;border-bottom:1px solid #f1f5f9;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;"></div><div><div style="font-size:12px;font-weight:600;color:#0f172a;">Tournée</div><div style="font-size:10px;color:#64748b;">3 projets • 1,7M€</div></div></div><div style="display:flex;gap:14px;"><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">ROI</div><div style="font-size:12px;font-weight:700;color:#16a34a;">2.05x</div></div><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">Avanc.</div><div style="font-size:12px;font-weight:700;color:#2563eb;">62%</div></div></div></div><div style="height:4px;background:#f1f5f9;border-radius:2px;"><div style="width:62%;height:4px;background:#f59e0b;border-radius:2px;"></div></div></div>
+          <div style="padding:8px 0;border-bottom:1px solid #f1f5f9;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#ec4899;"></div><div><div style="font-size:12px;font-weight:600;color:#0f172a;">Catalogue</div><div style="font-size:10px;color:#64748b;">2 projets • 1,9M€</div></div></div><div style="display:flex;gap:14px;"><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">ROI</div><div style="font-size:12px;font-weight:700;color:#16a34a;">2.58x</div></div><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">Avanc.</div><div style="font-size:12px;font-weight:700;color:#2563eb;">74%</div></div></div></div><div style="height:4px;background:#f1f5f9;border-radius:2px;"><div style="width:74%;height:4px;background:#ec4899;border-radius:2px;"></div></div></div>
+          <div style="padding:8px 0;"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:8px;height:8px;border-radius:50%;background:#10b981;"></div><div><div style="font-size:12px;font-weight:600;color:#0f172a;">Streaming</div><div style="font-size:10px;color:#64748b;">2 projets • 1,2M€</div></div></div><div style="display:flex;gap:14px;"><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">ROI</div><div style="font-size:12px;font-weight:700;color:#16a34a;">1.18x</div></div><div style="text-align:right;"><div style="font-size:9px;color:#94a3b8;">Avanc.</div><div style="font-size:12px;font-weight:700;color:#2563eb;">36%</div></div></div></div><div style="height:4px;background:#f1f5f9;border-radius:2px;"><div style="width:36%;height:4px;background:#10b981;border-radius:2px;"></div></div></div>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
         </div>
       </div>
 
       <!-- Kanban -->
+<<<<<<< HEAD
       <div class="proj-kanban">
 
         <!-- Album -->
@@ -2071,6 +2853,44 @@ tbody tr:hover .pn{color:#2563eb;}
         </button>
         <button class="pd-back" onclick="closeProjDetail()">← Projets</button>
       </div>
+=======
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;">
+        <div>
+          <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0;"><div style="width:8px;height:8px;border-radius:50%;background:#8b5cf6;"></div><span style="font-size:12px;font-weight:700;color:#334155;">Album</span><span style="font-size:11px;color:#94a3b8;">(2)</span></div>
+          <div onclick="openProjDetail('Nouveau Album','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;transition:box-shadow .15s;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Nouveau Album</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">PNL</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Production</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Studio</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">LA</div>Lyza Aider</div><span style="font-size:12px;font-weight:700;color:#1e293b;">235k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:28%;height:3px;background:#8b5cf6;border-radius:2px;"></div></div></div>
+          <div onclick="openProjDetail('Album Deluxe','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Album Deluxe</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Gazo</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Production</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fef3c7;color:#92400e;">Moyenne</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">WB</div>Wiylan Bellache</div><span style="font-size:12px;font-weight:700;color:#1e293b;">189k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:15%;height:3px;background:#8b5cf6;border-radius:2px;"></div></div></div>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0;"><div style="width:8px;height:8px;border-radius:50%;background:#3b82f6;"></div><span style="font-size:12px;font-weight:700;color:#334155;">Single</span><span style="font-size:11px;color:#94a3b8;">(3)</span></div>
+          <div onclick="openProjDetail('Single Promo','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Single Promo</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Niska</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Marketing</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Clip</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">ET</div>Edwin Thaly</div><span style="font-size:12px;font-weight:700;color:#1e293b;">87k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:44%;height:3px;background:#3b82f6;border-radius:2px;"></div></div></div>
+          <div onclick="openProjDetail('Feat International','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Feat International</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Hamza</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Collab</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">KM</div>Kenza Matmar</div><span style="font-size:12px;font-weight:700;color:#1e293b;">186k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:55%;height:3px;background:#3b82f6;border-radius:2px;"></div></div></div>
+          <div onclick="openProjDetail('Clip Premium','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Clip Premium</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Ninha</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Clip</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fef3c7;color:#92400e;">Moyenne</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">LA</div>Lyza Aider</div><span style="font-size:12px;font-weight:700;color:#1e293b;">195k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:30%;height:3px;background:#3b82f6;border-radius:2px;"></div></div></div>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0;"><div style="width:8px;height:8px;border-radius:50%;background:#f59e0b;"></div><span style="font-size:12px;font-weight:700;color:#334155;">Tournée</span><span style="font-size:11px;color:#94a3b8;">(3)</span></div>
+          <div onclick="openProjDetail('Tournée Européenne','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Tournée Européenne</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Nekfeu</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Live</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Tour</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">WB</div>Wiylan Bellache</div><span style="font-size:12px;font-weight:700;color:#1e293b;">460k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:62%;height:3px;background:#f59e0b;border-radius:2px;"></div></div></div>
+          <div onclick="openProjDetail('Concerts Zénith','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Concerts Zénith</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Tiakola</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Live</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">WB</div>Wiylan Bellache</div><span style="font-size:12px;font-weight:700;color:#1e293b;">420k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:48%;height:3px;background:#f59e0b;border-radius:2px;"></div></div></div>
+          <div onclick="openProjDetail('Festival Été','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Festival Été</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Damso</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Festival</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">KM</div>Kenza Matmar</div><span style="font-size:12px;font-weight:700;color:#1e293b;">780k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:62%;height:3px;background:#f59e0b;border-radius:2px;"></div></div></div>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0;"><div style="width:8px;height:8px;border-radius:50%;background:#ec4899;"></div><span style="font-size:12px;font-weight:700;color:#334155;">Catalogue</span><span style="font-size:11px;color:#94a3b8;">(2)</span></div>
+          <div onclick="openProjDetail('Droits Catalogue','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Droits Catalogue</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Booba</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Droits</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">ET</div>Edwin Thaly</div><span style="font-size:12px;font-weight:700;color:#1e293b;">1.6M€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:74%;height:3px;background:#ec4899;border-radius:2px;"></div></div></div>
+          <div onclick="openProjDetail('Réédition Catalogue','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Réédition Catalogue</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">La Fouine</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fef3c7;color:#92400e;">Moyenne</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">KM</div>Kenza Matmar</div><span style="font-size:12px;font-weight:700;color:#1e293b;">340k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:50%;height:3px;background:#ec4899;border-radius:2px;"></div></div></div>
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;margin-bottom:9px;border-bottom:1px solid #e2e8f0;"><div style="width:8px;height:8px;border-radius:50%;background:#10b981;"></div><span style="font-size:12px;font-weight:700;color:#334155;">Streaming</span><span style="font-size:11px;color:#94a3b8;">(2)</span></div>
+          <div onclick="openProjDetail('Royalties Q1','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;margin-bottom:10px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Royalties Q1</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">SCH</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">Streaming</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#ec4899;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">KM</div>Kenza Matmar</div><span style="font-size:12px;font-weight:700;color:#1e293b;">670k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:36%;height:3px;background:#10b981;border-radius:2px;"></div></div></div>
+          <div onclick="openProjDetail('Royalties YouTube','projets')" style="background:#fff;border:1px solid #e2e8f0;border-radius:11px;padding:13px 14px;cursor:pointer;" onmouseover="this.style.boxShadow='0 4px 14px rgba(0,0,0,0.08)'" onmouseout="this.style.boxShadow='none'"><div style="font-size:13px;font-weight:700;color:#0f172a;margin-bottom:2px;">Royalties YouTube</div><div style="font-size:11px;color:#64748b;margin-bottom:8px;">Jul</div><div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:9px;"><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#f1f5f9;color:#475569;">YouTube</span><span style="font-size:9px;padding:2px 7px;border-radius:20px;background:#fee2e2;color:#991b1b;">Haute</span></div><div style="display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#475569;"><div style="width:20px;height:20px;border-radius:50%;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;color:#fff;">ET</div>Edwin Thaly</div><span style="font-size:12px;font-weight:700;color:#1e293b;">520k€</span></div><div style="height:3px;background:#f1f5f9;border-radius:2px;margin-top:8px;"><div style="width:42%;height:3px;background:#10b981;border-radius:2px;"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJET DETAIL PAGE -->
+  <div id="pg-projet-detail" style="display:none;flex-direction:column;flex:1;overflow-y:auto;">
+    <div class="pd-hero">
+      <button class="pd-back" onclick="closeProjDetail()">← Retour</button>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
       <div id="pdBadges"></div>
       <div class="pd-title" id="pdTitle"></div>
       <div class="pd-artist" id="pdArtist"></div>
@@ -2085,6 +2905,7 @@ tbody tr:hover .pn{color:#2563eb;}
   <!-- POWER BI PAGE -->
   <div id="pg-powerbi" style="display:none;"></div>
 
+<<<<<<< HEAD
   <!-- INVESTISSEMENTS PAGE -->
   <div id="pg-invest" class="page" style="display:none;flex-direction:column;flex:1;min-height:0;">
 
@@ -2688,6 +3509,12 @@ tbody tr:hover .pn{color:#2563eb;}
         </div>
 
       </div>
+=======
+  <!-- OTHER PAGE -->
+  <div id="pg-other" class="page" style="display:none;">
+    <div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 56px);">
+      <div style="text-align:center;color:#94a3b8;"><div style="font-size:44px;margin-bottom:14px;">🚧</div><div style="font-size:17px;font-weight:600;color:#334155;margin-bottom:5px;">En cours de développement</div><div style="font-size:12px;">Cette section sera disponible prochainement</div></div>
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
     </div>
   </div>
 </div>
@@ -2826,6 +3653,7 @@ tbody tr:hover .pn{color:#2563eb;}
 <!-- Toast -->
 <div class="crm-toast" id="crmToast">✅ Artiste ajouté au portefeuille AXIS</div>
 
+<<<<<<< HEAD
 <!-- NOUVEAU PROJET DRAWER -->
 <div class="np-ov" id="npOv" onclick="if(event.target===this)closeNpDrawer()">
   <div class="np-drawer">
@@ -2958,6 +3786,8 @@ tbody tr:hover .pn{color:#2563eb;}
   </div>
 </div>
 
+=======
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 <!-- MODAL DASHBOARD -->
 <div class="modal-ov" id="modalOv" onclick="if(event.target===this)closeModal()">
   <div class="modal">
@@ -3075,7 +3905,10 @@ function openArtistDetail(name) {
 
   // Build and inject full page
   var pg = document.getElementById('pg-artist-detail');
+<<<<<<< HEAD
   showTopbarBreadcrumb('crm', 'CRM', name, closeArtistDetail);
+=======
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
   pg.innerHTML =
     '<div class="ad-hero">' +
       '<button class="ad-back-btn" onclick="closeArtistDetail()">&#8592; CRM</button>' +
@@ -3111,6 +3944,7 @@ function openArtistDetail(name) {
     '</div>';
 
   // Show page
+<<<<<<< HEAD
   _hideAllPages();
   pg.style.cssText = 'display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;background:#f1f5f9;';
   _setHash('/artist/' + encodeURIComponent(name));
@@ -3124,6 +3958,26 @@ function closeArtistDetail() {
   var navItems = document.querySelectorAll('.sb-item');
   if (navItems[1]) navItems[1].classList.add('active');
   _setTopbarPage('crm');
+=======
+  ['pg-dashboard','pg-crm','pg-projets','pg-other','pg-projet-detail'].forEach(function(pid){
+    var el = document.getElementById(pid); if (el) el.style.display = 'none';
+  });
+  pg.style.cssText = 'display:flex;flex-direction:column;flex:1;min-height:0;overflow-y:auto;background:#f1f5f9;';
+  var t = document.getElementById('pageTitle');
+  if (t) t.textContent = name;
+}
+
+function closeArtistDetail() {
+  var pg = document.getElementById('pg-artist-detail');
+  if (pg) pg.style.cssText = 'display:none;';
+  var crm = document.getElementById('pg-crm');
+  if (crm) crm.style.cssText = 'display:flex;flex-direction:column;flex:1;min-height:0;';
+  document.querySelectorAll('.sb-item').forEach(function(b){ b.classList.remove('active'); });
+  var navItems = document.querySelectorAll('.sb-item');
+  if (navItems[1]) navItems[1].classList.add('active');
+  var t = document.getElementById('pageTitle');
+  if (t) t.textContent = 'CRM';
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 }
 
 // ── Power BI Page ──
@@ -3157,7 +4011,11 @@ function openPbiView() {
     + '<div class="pbi-pg-chart-name"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>&Eacute;volution des revenus 2026</div>'
     + '<span class="pbi-pg-chart-badge">&#8599; +22% cumul&eacute;</span>'
     + '</div>'
+<<<<<<< HEAD
     + '<div style="position:relative;height:220px;"><canvas id="pbiPgRevChart"></canvas></div>'
+=======
+    + '<div style="position:relative;height:220px;"><canvas id="pbiRevChart"></canvas></div>'
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
     + '<div class="pbi-pg-stats">'
     + '<div class="pbi-pg-stat"><div class="pbi-pg-stat-val" style="color:#60a5fa;">8,2 M&euro;</div><div class="pbi-pg-stat-lbl">Total Jan&ndash;Jun</div></div>'
     + '<div class="pbi-pg-stat"><div class="pbi-pg-stat-val" style="color:#34d399;">+22%</div><div class="pbi-pg-stat-lbl">Croissance</div></div>'
@@ -3260,6 +4118,7 @@ function closePbiView() {
   if (navItems[0]) navItems[0].classList.add('active');
   var t = document.getElementById('pageTitle');
   if (t) t.textContent = 'Dashboard';
+<<<<<<< HEAD
   var tbCrmTabs = document.getElementById('tbCrmTabs');
   if (tbCrmTabs) tbCrmTabs.style.display = 'none';
 }
@@ -3343,6 +4202,10 @@ document.addEventListener('click', function(e) {
   }
 });
 
+=======
+}
+
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 // ── Navigation ──
 // showPage defined below
 
@@ -3386,7 +4249,10 @@ function switchCrmTab(tab, btn) {
   } else {
     if (detail) detail.style.display = '';
   }
+<<<<<<< HEAD
   _setHash('/crm/' + tab);
+=======
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 }
 
 // ── Global Activities Data ──
@@ -3394,6 +4260,10 @@ const globalActivities = [
   {icon:'👥',bg:'#3b82f6',type:'reunion',title:'Réunion créative',artist:'PNL',desc:'Discussion stratégie album — mixage en cours',time:"Aujourd'hui, 14:30",who:'Lyza Aider'},
   {icon:'📞',bg:'#22c55e',type:'appel',title:'Appel téléphonique',artist:'Booba',desc:'Point avancement droits catalogue — signature proche',time:"Aujourd'hui, 11:00",who:'Edwin Thaly'},
   {icon:'✉️',bg:'#f97316',type:'email',title:'Email envoyé',artist:'Niska',desc:'Proposition dates tournée été — réponse attendue sous 48h',time:"Aujourd'hui, 09:15",who:'Kenza Matmar'},
+<<<<<<< HEAD
+=======
+  {icon:'📄',bg:'#8b5cf6',type:'contrat',title:'Contrat signé',artist:'Hamza',desc:'Feat International — accord juridique validé par les deux parties',time:'Hier, 16:30',who:'Kenza Matmar'},
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
   {icon:'🎵',bg:'#ec4899',type:'studio',title:'Session studio',artist:'PNL',desc:'3 titres enregistrés — production finalisée',time:'Hier, 14:00',who:'Lyza Aider'},
   {icon:'👥',bg:'#3b82f6',type:'reunion',title:'Réunion stratégique',artist:'Damso',desc:'Planning festival été 2026 — 12 dates confirmées',time:'Hier, 10:00',who:'Wiylan Bellache'},
   {icon:'📞',bg:'#22c55e',type:'appel',title:'Appel label',artist:'Niska',desc:'Validation plan promo single — feu vert obtenu',time:'10 Avr, 11:00',who:'Edwin Thaly'},
@@ -3402,7 +4272,15 @@ const globalActivities = [
   {icon:'🎵',bg:'#ec4899',type:'studio',title:'Session studio',artist:'Niska',desc:'Enregistrement feat avec Gazo — chimie parfaite',time:'08 Avr, 18:00',who:'Kenza Matmar'},
   {icon:'👥',bg:'#3b82f6',type:'reunion',title:'Réunion logistique',artist:'Nekfeu',desc:'Coordination dates européennes — 8 villes confirmées',time:'08 Avr, 15:00',who:'Lyza Aider'},
   {icon:'✉️',bg:'#f97316',type:'email',title:'Email envoyé',artist:'PNL',desc:'Confirmation feat international — retour très positif',time:'07 Avr, 10:00',who:'Wiylan Bellache'},
+<<<<<<< HEAD
   {icon:'📄',bg:'#8b5cf6',type:'contrat',title:'Contrat en révision',artist:'Damso',desc:'Soundtrack film Warner — derniers ajustements juridiques',time:'04 Avr, 11:00',who:'Kenza Matmar'},
+=======
+  {icon:'📞',bg:'#22c55e',type:'appel',title:'Appel téléphonique',artist:'Jul',desc:'Discussion licensing Spotify — accord de principe obtenu',time:'06 Avr, 14:00',who:'Edwin Thaly'},
+  {icon:'🎵',bg:'#ec4899',type:'studio',title:'Session studio',artist:'Gazo',desc:'Album deluxe — 2 bonus tracks finalisés',time:'05 Avr, 13:00',who:'Wiylan Bellache'},
+  {icon:'📄',bg:'#8b5cf6',type:'contrat',title:'Contrat en révision',artist:'Damso',desc:'Soundtrack film Warner — derniers ajustements juridiques',time:'04 Avr, 11:00',who:'Kenza Matmar'},
+  {icon:'👥',bg:'#3b82f6',type:'reunion',title:'Réunion planning',artist:'Tiakola',desc:'Concerts Zénith — production scénique validée',time:'03 Avr, 10:00',who:'Wiylan Bellache'},
+  {icon:'📞',bg:'#22c55e',type:'appel',title:'Appel manager',artist:'La Fouine',desc:'Validation réédition catalogue — timeline confirmée',time:'02 Avr, 16:00',who:'Kenza Matmar'},
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
   {icon:'✉️',bg:'#f97316',type:'email',title:'Dossier transmis',artist:'SCH',desc:'Dossier artistique Coachella 2027 transmis à Goldenvoice',time:'01 Avr, 09:00',who:'Lyza Aider'},
 ];
 let _actFilter = 'tous';
@@ -3416,6 +4294,7 @@ function renderActFeed(filter) {
     container.innerHTML = '<div style="padding:24px;text-align:center;color:#94a3b8;font-size:13px;">Aucune activité dans cette catégorie</div>';
     return;
   }
+<<<<<<< HEAD
   const dayKey = t => t.startsWith("Aujourd") ? "Aujourd'hui" : t.startsWith("Hier") ? "Hier" : t.split(', ')[0];
   const timeOnly = t => t.includes(', ') ? t.split(', ')[1] : t;
   const groups = {}, order = [];
@@ -3442,6 +4321,21 @@ function renderActFeed(filter) {
       </div>`).join('');
   });
   container.innerHTML = html;
+=======
+  container.innerHTML = filtered.map(a => `
+    <div class="act-feed-item">
+      <div class="act-feed-icon" style="background:${a.bg}20;">${a.icon}</div>
+      <div style="flex:1;min-width:0;">
+        <div class="act-feed-top">
+          <span class="act-feed-name">${a.title}</span>
+          <span class="act-feed-time">${a.time}</span>
+        </div>
+        <div class="act-feed-artist">↳ ${a.artist}</div>
+        <div class="act-feed-desc">${a.desc}</div>
+        <div class="act-feed-who">Par ${a.who}</div>
+      </div>
+    </div>`).join('');
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 }
 
 function filterActFeed(filter, btn) {
@@ -3462,7 +4356,11 @@ function filterArtists(query) {
     if (show) visible++;
   });
   const title = document.getElementById('artistListTitle');
+<<<<<<< HEAD
   if (title) title.textContent = q ? `Artistes — ${visible} résultat${visible>1?'s':''}` : 'Artistes — 6';
+=======
+  if (title) title.textContent = q ? `Artistes (${visible} résultat${visible>1?'s':''})` : 'Artistes (12)';
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 }
 
 // ── Opportunity filter ──
@@ -3472,7 +4370,17 @@ function filterOpps(filter, btn) {
   const items = document.querySelectorAll('.opp-item');
   items.forEach(item => {
     if (filter === 'tous') { item.style.display = ''; return; }
+<<<<<<< HEAD
     const show = item.classList.contains(filter);
+=======
+    const stage = item.querySelector('.opp-stage');
+    if (!stage) { item.style.display = 'none'; return; }
+    const cls = stage.className;
+    const show = (filter === 'nego' && (cls.includes('nego') || cls.includes('discussions'))) ||
+                 (filter === 'prop' && cls.includes('prop')) ||
+                 (filter === 'sign' && (cls.includes('sign') || cls.includes('contrat'))) ||
+                 (filter === 'contact' && cls.includes('premier'));
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
     item.style.display = show ? '' : 'none';
   });
 }
@@ -4002,6 +4910,7 @@ var _prevBtn = null;
 
 
 // ── Navigation ──
+<<<<<<< HEAD
 function showTopbarBreadcrumb(section, sectionLabel, currentLabel, backFn) {
   document.getElementById('tbLeft').style.display = 'none';
   var tabs = document.getElementById('tbCrmTabs');
@@ -4252,6 +5161,38 @@ function showPage(id, btn) {
   if (id !== 'crm') _setHash('/' + id);
   if (id === 'invest') _initInvestChart();
   if (id === 'other') _initStreamingChart();
+=======
+function showPage(id, btn) {
+  // Update active nav button
+  document.querySelectorAll('.sb-item').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  
+  // Hide all pages by removing inline style and adding hidden class
+  var pages = document.querySelectorAll('.page');
+  pages.forEach(function(p) { p.style.display = 'none'; });
+  
+  // Show the selected page
+  var pg = document.getElementById('pg-' + id);
+  if (pg) {
+    pg.style.display = 'flex';
+    pg.style.flexDirection = 'column';
+    pg.style.flex = '1';
+    pg.style.minHeight = '0';
+  }
+  
+  // Update topbar title
+  var titles = { dashboard: 'Dashboard', crm: 'CRM', projets: 'Projets artistes', other: 'En développement' };
+  var t = document.getElementById('pageTitle');
+  if (t) t.textContent = titles[id] || id;
+  
+  // CRM: reset panels
+  if (id === 'crm') {
+    var d = document.getElementById('crmDetail');
+    if (d) d.style.display = '';
+    var o = document.getElementById('oppPanel');
+    if (o) o.style.display = 'none';
+  }
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 }
 
 
@@ -4272,14 +5213,23 @@ function openProjDetail(name, from) {
   var d=projModalData[name];
   if(!d)return;
   _fromPage = from || 'projets';
+<<<<<<< HEAD
   _setHash('/projet/' + encodeURIComponent(name) + '/' + _fromPage);
+=======
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
   var doneCount=d.jalons.filter(function(j){return j.status==='done';}).length;
   var pct=Math.round((doneCount/d.jalons.length)*100);
   var prioBg=d.prio==='Haute'?'#ef4444':'#f59e0b';
 
+<<<<<<< HEAD
   // Breadcrumb in topbar
   var sectionLabel = _fromPage === 'dashboard' ? 'Dashboard' : 'Projets artistes';
   showTopbarBreadcrumb(_fromPage, sectionLabel, name, closeProjDetail);
+=======
+  // Back button label
+  var backLabel = _fromPage === 'dashboard' ? '← Dashboard' : '← Projets';
+  document.querySelector('.pd-back').textContent = backLabel;
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 
   document.getElementById('pdBadges').innerHTML='<span class="pd-type-badge">'+d.type+'</span><span class="pd-prio-badge '+(d.prio==='Haute'?'':'moy')+'">Priorité '+d.prio+'</span>';
   document.getElementById('pdTitle').textContent=name;
@@ -4315,6 +5265,7 @@ function openProjDetail(name, from) {
       '</div>'+
     '</div>';
 
+<<<<<<< HEAD
   _hideAllPages();
   var pg=document.getElementById('pg-projet-detail');
   if(pg){ pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1'; pg.style.minHeight='0'; }
@@ -4373,15 +5324,38 @@ function confirmDeleteProj() {
 function closeProjDetail() {
   _hideAllPages();
   var navMap = {dashboard:0, crm:1, projets:2, invest:3, other:4};
+=======
+  ['pg-dashboard','pg-crm','pg-projets','pg-other','pg-artist-detail'].forEach(function(pid){
+    var el=document.getElementById(pid); if(el) el.style.display='none';
+  });
+  var pg=document.getElementById('pg-projet-detail');
+  pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1';
+  var t=document.getElementById('pageTitle');
+  if(t) t.textContent=name;
+}
+
+function closeProjDetail() {
+  document.getElementById('pg-projet-detail').style.display='none';
+  var titles = {dashboard:'Dashboard', projets:'Projets artistes'};
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
   var pageId = 'pg-' + _fromPage;
   var pg = document.getElementById(pageId);
   if (pg) { pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1'; pg.style.minHeight='0'; }
   document.querySelectorAll('.sb-item').forEach(function(b) { b.classList.remove('active'); });
+<<<<<<< HEAD
   var navItems = document.querySelectorAll('.sb-item');
   var idx = navMap[_fromPage];
   if (idx !== undefined && navItems[idx]) navItems[idx].classList.add('active');
   _setTopbarPage(_fromPage);
   if (_fromPage !== 'crm') _setHash('/' + _fromPage);
+=======
+  var navMap = {dashboard:0, projets:2};
+  var navItems = document.querySelectorAll('.sb-item');
+  var idx = navMap[_fromPage];
+  if (idx !== undefined && navItems[idx]) navItems[idx].classList.add('active');
+  var t = document.getElementById('pageTitle');
+  if (t) t.textContent = titles[_fromPage] || 'Projets artistes';
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 }
 
 // ── CRM Delete artist ──
@@ -4446,6 +5420,7 @@ function addDeleteButtons() {
   });
 }
 
+<<<<<<< HEAD
 // ── Nouveau Projet Drawer ──
 function openNpDrawer() {
   var ov = document.getElementById('npOv');
@@ -4939,6 +5914,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+=======
+document.addEventListener('DOMContentLoaded', addDeleteButtons);
+>>>>>>> fdc8c66ecfb546595a983c00c65255acbad8eb61
 </script>
 </body>
 </html>
