@@ -859,6 +859,31 @@ tbody tr:hover .pn{color:#2563eb;}
 .act-feed-artist{font-size:11px;color:#2563eb;font-weight:600;margin-bottom:2px;}
 .act-feed-desc{font-size:11px;color:#64748b;line-height:1.5;}
 .act-feed-who{font-size:10px;color:#94a3b8;margin-top:3px;}
+/* ── Activity Card Grid (redesign) ── */
+.act-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px;}
+.act-section-hd{grid-column:1/-1;font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.7px;padding:6px 0 4px;border-bottom:1px solid #c8ddf5;margin-bottom:2px;}
+.act-card{background:#fff;border:1px solid #d6e4f7;border-radius:13px;padding:12px 14px;border-top:3px solid #e2e8f0;display:flex;flex-direction:column;gap:0;box-shadow:0 2px 8px rgba(15,40,80,.08);cursor:pointer;transition:all .15s;}
+.act-card:hover{box-shadow:0 6px 20px rgba(15,40,80,.12);transform:translateY(-2px);}
+.act-card.type-reunion{border-top-color:#3b82f6;}
+.act-card.type-appel{border-top-color:#22c55e;}
+.act-card.type-email{border-top-color:#f97316;}
+.act-card.type-contrat{border-top-color:#8b5cf6;}
+.act-card.type-studio{border-top-color:#ec4899;}
+.act-card.type-rapport{border-top-color:#0891b2;}
+.act-card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px;}
+.act-card-left{display:flex;flex-direction:column;gap:5px;flex:1;min-width:0;}
+.act-card-title{font-size:13px;font-weight:700;color:#0f172a;line-height:1.3;}
+.act-card-badge{font-size:9px;font-weight:700;padding:2px 9px;border-radius:20px;display:inline-flex;align-self:flex-start;text-transform:uppercase;letter-spacing:.4px;}
+.act-card-right{text-align:right;flex-shrink:0;margin-left:12px;}
+.act-card-time{font-size:14px;font-weight:800;color:#2563eb;letter-spacing:-.3px;}
+.act-card-time-lbl{font-size:9px;color:#94a3b8;margin-top:1px;text-align:right;}
+.act-card-meta{display:flex;align-items:center;gap:10px;font-size:11px;color:#64748b;margin-bottom:7px;padding-top:7px;border-top:1px solid #f0f5ff;}
+.act-card-desc{font-size:11px;color:#475569;line-height:1.55;}
+.act-card-who{font-size:10px;color:#94a3b8;margin-top:5px;font-style:italic;}
+.act-card-wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:0;padding:14px 18px;}
+.act-card-wide-left{flex:0 0 230px;padding-right:18px;border-right:1px solid #e4eef9;margin-right:18px;display:flex;flex-direction:column;gap:7px;}
+.act-card-wide-mid{flex:1;display:flex;flex-direction:column;gap:5px;}
+.act-card-wide-right{flex:0 0 auto;text-align:right;padding-left:18px;border-left:1px solid #e4eef9;margin-left:18px;}
 /* New Contact Modal */
 .nc-modal-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:9999;align-items:center;justify-content:center;padding:20px;}
 .nc-modal-ov.open{display:flex;}
@@ -1647,19 +1672,28 @@ tbody tr:hover .pn{color:#2563eb;}
       </div>
       <!-- ACTIVITIES PANEL -->
       <div class="act-panel" id="actPanel">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-          <div style="font-size:16px;font-weight:700;color:#0f172a;">Toutes les activités</div>
-          <span style="font-size:12px;color:#64748b;background:#eff6ff;border:1px solid #bfdbfe;border-radius:20px;padding:3px 10px;font-weight:600;color:#2563eb;">13 interactions</span>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;">
+          <div>
+            <div style="font-size:17px;font-weight:800;color:#0f172a;letter-spacing:-.3px;">Toutes les activités</div>
+            <div style="font-size:11px;color:#94a3b8;margin-top:3px;">13 interactions · Avril 2026</div>
+          </div>
+          <span style="font-size:12px;font-weight:700;background:#eff6ff;color:#2563eb;border:1px solid #bfdbfe;border-radius:20px;padding:5px 14px;">13 interactions</span>
         </div>
-        <div class="act-filter-row">
-          <button class="act-filter-btn active" onclick="filterActFeed('tous',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Tous</button>
-          <button class="act-filter-btn" onclick="filterActFeed('appel',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.49 12a19.79 19.79 0 0 1-3-8.63A2 2 0 0 1 3.48 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.46a16 16 0 0 0 5.63 5.63l1.82-1.82a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 14.92z"/></svg>Appels</button>
-          <button class="act-filter-btn" onclick="filterActFeed('reunion',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Réunions</button>
-          <button class="act-filter-btn" onclick="filterActFeed('email',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Emails</button>
-          <button class="act-filter-btn" onclick="filterActFeed('contrat',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Contrats</button>
-          <button class="act-filter-btn" onclick="filterActFeed('studio',this)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Studio</button>
+        <div class="opp-filter-row">
+          <button class="opp-filter-btn active" onclick="filterActFeed('tous',this)">Tous<span class="opp-filter-count">13</span></button>
+          <button class="opp-filter-btn" onclick="filterActFeed('reunion',this)"><span class="opp-filter-dot" style="background:#3b82f6;"></span>Réunions<span class="opp-filter-count">3</span></button>
+          <button class="opp-filter-btn" onclick="filterActFeed('appel',this)"><span class="opp-filter-dot" style="background:#22c55e;"></span>Appels<span class="opp-filter-count">2</span></button>
+          <button class="opp-filter-btn" onclick="filterActFeed('email',this)"><span class="opp-filter-dot" style="background:#f97316;"></span>Emails<span class="opp-filter-count">3</span></button>
+          <button class="opp-filter-btn" onclick="filterActFeed('contrat',this)"><span class="opp-filter-dot" style="background:#8b5cf6;"></span>Contrats<span class="opp-filter-count">2</span></button>
+          <button class="opp-filter-btn" onclick="filterActFeed('studio',this)"><span class="opp-filter-dot" style="background:#ec4899;"></span>Studio<span class="opp-filter-count">2</span></button>
         </div>
-        <div class="act-feed-card" id="actFeedContainer"></div>
+        <div class="opp-kpis">
+          <div class="opp-kpi blue"><div class="opp-kpi-label">Aujourd'hui</div><div class="opp-kpi-val">3</div><div class="opp-kpi-sub">Activités récentes</div></div>
+          <div class="opp-kpi green"><div class="opp-kpi-label">Réunions</div><div class="opp-kpi-val">3</div><div class="opp-kpi-sub">Ce mois-ci</div></div>
+          <div class="opp-kpi amber"><div class="opp-kpi-label">Contrats</div><div class="opp-kpi-val">2</div><div class="opp-kpi-sub">En cours</div></div>
+          <div class="opp-kpi gray"><div class="opp-kpi-label">Studio</div><div class="opp-kpi-val">2</div><div class="opp-kpi-sub">Sessions</div></div>
+        </div>
+        <div id="actFeedContainer"></div>
       </div>
 
       <div class="opp-wrap" id="oppPanel" style="display:none;">
@@ -3413,11 +3447,14 @@ function renderActFeed(filter) {
   if (!container) return;
   const filtered = _actFilter === 'tous' ? globalActivities : globalActivities.filter(a => a.type === _actFilter);
   if (!filtered.length) {
-    container.innerHTML = '<div style="padding:24px;text-align:center;color:#94a3b8;font-size:13px;">Aucune activité dans cette catégorie</div>';
+    container.innerHTML = '<div style="padding:32px;text-align:center;color:#94a3b8;font-size:13px;">Aucune activité dans cette catégorie</div>';
     return;
   }
-  const dayKey = t => t.startsWith("Aujourd") ? "Aujourd'hui" : t.startsWith("Hier") ? "Hier" : t.split(', ')[0];
+  const dayKey = t => t.startsWith("Aujourd") ? "Aujourd’hui" : t.startsWith("Hier") ? "Hier" : t.split(', ')[0];
   const timeOnly = t => t.includes(', ') ? t.split(', ')[1] : t;
+  const typeLabels = {reunion:'Réunion',appel:'Appel',email:'Email',contrat:'Contrat',studio:'Studio',rapport:'Rapport'};
+  const typeBg = {reunion:'#eff6ff',appel:'#f0fdf4',email:'#fff7ed',contrat:'#f5f3ff',studio:'#fdf2f8',rapport:'#ecfeff'};
+  const typeClr = {reunion:'#1d4ed8',appel:'#15803d',email:'#c2410c',contrat:'#7c3aed',studio:'#be185d',rapport:'#0e7490'};
   const groups = {}, order = [];
   filtered.forEach(a => {
     const k = dayKey(a.time);
@@ -3426,26 +3463,48 @@ function renderActFeed(filter) {
   });
   let html = '';
   order.forEach(day => {
-    html += `<div class="act-date-sep">${day}</div>`;
-    html += groups[day].map(a => `
-      <div class="act-feed-item type-${a.type}">
-        <div class="act-feed-icon" style="background:${a.bg}1a;">${a.icon}</div>
-        <div style="flex:1;min-width:0;">
-          <div class="act-feed-top">
-            <span class="act-feed-name">${a.title}</span>
-            <span class="act-feed-time">${timeOnly(a.time)}</span>
+    html += `<div class="act-grid"><div class="act-section-hd">${day}</div>`;
+    html += groups[day].map((a, idx, arr) => {
+      const isWide = arr.length === 1 || (arr.length % 2 !== 0 && idx === arr.length - 1);
+      const badge = `<span class="act-card-badge" style="background:${typeBg[a.type]||'#f1f5f9'};color:${typeClr[a.type]||'#64748b'};">${typeLabels[a.type]||a.type}</span>`;
+      if (isWide) return `
+        <div class="act-card act-card-wide type-${a.type}">
+          <div class="act-card-wide-left">
+            <div class="act-card-title">${a.title}</div>
+            ${badge}
           </div>
-          <div class="act-feed-artist">↳ ${a.artist}</div>
-          <div class="act-feed-desc">${a.desc}</div>
-          <div class="act-feed-who">Par ${a.who}</div>
-        </div>
-      </div>`).join('');
+          <div class="act-card-wide-mid">
+            <div style="display:flex;gap:12px;font-size:11px;color:#64748b;margin-bottom:5px;"><span>👤 ${a.artist}</span><span>🎯 ${a.who}</span></div>
+            <div class="act-card-desc">${a.desc}</div>
+          </div>
+          <div class="act-card-wide-right">
+            <div class="act-card-time">${timeOnly(a.time)}</div>
+            <div class="act-card-time-lbl">Heure</div>
+          </div>
+        </div>`;
+      return `
+        <div class="act-card type-${a.type}">
+          <div class="act-card-head">
+            <div class="act-card-left">
+              <div class="act-card-title">${a.title}</div>
+              ${badge}
+            </div>
+            <div class="act-card-right">
+              <div class="act-card-time">${timeOnly(a.time)}</div>
+              <div class="act-card-time-lbl">Heure</div>
+            </div>
+          </div>
+          <div class="act-card-meta"><span>👤 ${a.artist}</span><span>🎯 ${a.who}</span></div>
+          <div class="act-card-desc">${a.desc}</div>
+        </div>`;
+    }).join('');
+    html += `</div>`;
   });
   container.innerHTML = html;
 }
 
 function filterActFeed(filter, btn) {
-  document.querySelectorAll('.act-filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#actPanel .opp-filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   renderActFeed(filter);
 }
