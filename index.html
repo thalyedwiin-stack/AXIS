@@ -1171,6 +1171,228 @@ tbody tr:hover .pn{color:#2563eb;}
 .ad-alert{padding:11px 14px;border-radius:10px;border:1px solid;display:flex;align-items:flex-start;gap:10px;font-size:12px;line-height:1.5;}
 .ad-alert.warning{background:#fefce8;border-color:#fde68a;color:#92400e;}
 .ad-alert.danger{background:#fef2f2;border-color:#fecaca;color:#991b1b;}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Mobile & Tablet
+   Desktop (>1024px) : no change
+   Tablet (≤1024px)  : reduce columns, narrow panels
+   Mobile (≤768px)   : single column, burger menu
+   Small (≤480px)    : extra compact KPI grids
+═══════════════════════════════════════════════════════ */
+
+/* Prevent all horizontal scroll */
+html,body{max-width:100%;overflow-x:hidden;}
+.layout,.main{overflow-x:hidden;}
+
+/* ── Burger button (hidden desktop) ── */
+.nav-burger{display:none;flex-shrink:0;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;padding:6px 8px;background:none;border:none;color:#fff;margin-left:auto;}
+.nav-burger span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .2s,opacity .2s;}
+.nav-burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ── Mobile Nav Overlay ── */
+.mobile-nav-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9800;backdrop-filter:blur(3px);}
+.mobile-nav-ov.open{display:block;}
+.mobile-nav{position:fixed;top:0;right:0;width:270px;height:100%;background:#151c2c;z-index:9900;transform:translateX(100%);transition:transform .25s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;}
+.mobile-nav-ov.open .mobile-nav{transform:translateX(0);}
+.mobile-nav-hd{padding:14px 14px 12px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.mobile-nav-logo{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.2px;}
+.mobile-nav-close{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#fff;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;flex-shrink:0;}
+.mobile-nav-items{padding:8px 8px;display:flex;flex-direction:column;gap:2px;flex:1;}
+.mobile-nav-item{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:9px;font-size:13px;font-weight:500;color:#94a3b8;cursor:pointer;transition:all .15s;border:none;background:none;width:100%;font-family:'Inter',sans-serif;text-align:left;}
+.mobile-nav-item:hover,.mobile-nav-item:active{background:rgba(255,255,255,.07);color:#fff;}
+.mobile-nav-item.active{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;font-weight:600;}
+.mobile-nav-item svg{width:16px;height:16px;flex-shrink:0;}
+.mobile-nav-user{padding:12px 14px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.mobile-nav-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;}
+.mobile-nav-uname{font-size:12px;font-weight:700;color:#fff;}
+.mobile-nav-urole{font-size:10px;color:#64748b;margin-top:1px;}
+
+/* ── CRM mobile back button ── */
+.crm-mobile-back{display:none;align-items:center;gap:7px;padding:8px 12px 6px;font-size:12px;font-weight:700;color:#2563eb;background:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;flex-shrink:0;}
+.crm-mobile-back svg{width:14px;height:14px;}
+
+/* ═══════ TABLET (≤ 1024px) ═══════ */
+@media (max-width:1024px){
+  .pro-kpi-grid{grid-template-columns:repeat(3,1fr);}
+  .db-kpis{grid-template-columns:repeat(3,1fr);}
+  .stm-kpis{grid-template-columns:repeat(3,1fr);}
+  .inv2-kpis{grid-template-columns:repeat(3,1fr);}
+  .proj-kanban{grid-template-columns:repeat(3,1fr);}
+  .crm-wrap{grid-template-columns:270px 1fr;}
+  .db-grid2{grid-template-columns:1fr 260px;}
+  .pro-main-grid{grid-template-columns:1fr 220px;}
+  .ad-body{grid-template-columns:1fr 280px;}
+  .pd-two-col{grid-template-columns:1fr 220px;}
+  .inv2-bottom3{grid-template-columns:1fr 1fr;}
+  .pbi-kpis{grid-template-columns:repeat(3,1fr);}
+}
+
+/* ═══════ MOBILE (≤ 768px) ═══════ */
+@media (max-width:768px){
+
+  /* ── Navbar ── */
+  .navbar{padding:0 12px;height:50px;}
+  .nav-logo-sub{display:none;}
+  .nav-items{display:none;}
+  .nav-user{display:none;}
+  .nav-burger{display:flex;}
+
+  /* ── Topbar ── */
+  .topbar{height:auto;min-height:40px;padding:7px 12px;flex-wrap:wrap;gap:6px;align-items:center;}
+  .tb-left h1{font-size:14px;}
+  .tb-left p{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px;}
+  .tb-center{position:static;transform:none;order:3;width:100%;justify-content:stretch;}
+  .tb-center .crm-view-tabs{width:100%;}
+  .tb-center .crm-view-tab{flex:1;text-align:center;padding:7px 8px;}
+  .tb-right{gap:5px;}
+  .tb-search input{width:110px;}
+  .tb-search input:focus{width:140px;}
+
+  /* ── Dashboard ── */
+  .db-header{flex-wrap:wrap;gap:6px;padding:6px 10px;}
+  .db-header-title{font-size:14px;}
+  .db-body{padding:6px 8px 10px;}
+  .pro-kpi-grid{grid-template-columns:repeat(2,1fr);gap:6px;}
+  .db-kpis{grid-template-columns:repeat(2,1fr);gap:6px;}
+  .pro-kpi-val{font-size:19px;}
+  .db-kpi-val{font-size:17px;}
+  .pro-main-grid{grid-template-columns:1fr;}
+  .pro-right-panel{flex-direction:row;flex-wrap:wrap;}
+  .pro-side-card{flex:1;min-width:240px;}
+  .db-grid2{grid-template-columns:1fr;}
+  .db-three{grid-template-columns:1fr;}
+  .db-two{grid-template-columns:1fr;}
+  .three-col{grid-template-columns:1fr;}
+  .two-col{grid-template-columns:1fr;}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .kpi-val{font-size:22px;}
+  .chart-stats{grid-template-columns:repeat(3,1fr);}
+  .pbi-kpis{grid-template-columns:repeat(2,1fr);}
+  .pbi-row2{grid-template-columns:1fr;}
+
+  /* ── CRM ── */
+  .crm-wrap{display:flex;flex-direction:column;height:auto;min-height:0;flex:1;overflow:hidden;}
+  .crm-list{height:280px;min-height:220px;max-height:280px;flex-shrink:0;border-right:none;border-bottom:1px solid #c8ddf5;}
+  .crm-detail{flex:1;min-height:0;}
+  .crm-wrap.has-detail .crm-list{display:none;}
+  .crm-wrap.has-detail .crm-mobile-back{display:flex;}
+  .crm-mini-kpis{grid-template-columns:repeat(4,1fr);}
+  .crm-kpis{grid-template-columns:repeat(2,1fr);}
+  .crm-contact-grid{grid-template-columns:1fr;}
+  .crm-hero-actions{display:none;}
+  .crm-section{margin:4px 6px 0;padding:8px 10px;}
+  .opp-kpis{grid-template-columns:repeat(2,1fr);}
+  .pipeline-card{grid-template-columns:1fr;}
+  .act-grid{grid-template-columns:1fr;}
+  .act-card-wide{flex-direction:column;}
+  .act-card-wide-left{flex:none;width:100%;padding-right:0;border-right:none;margin-right:0;padding-bottom:10px;border-bottom:1px solid #e4eef9;margin-bottom:10px;}
+  .act-card-wide-right{padding-left:0;border-left:none;margin-left:0;text-align:left;}
+
+  /* ── Projects ── */
+  .proj-header{padding:10px 12px;}
+  .proj-header-top{flex-wrap:wrap;gap:8px;}
+  .proj-header-actions{flex-wrap:wrap;gap:6px;width:100%;}
+  .proj-search-wrap{width:100%;}
+  .proj-search{width:100%!important;}
+  .proj-kpi-strip{grid-template-columns:repeat(2,1fr);gap:0;}
+  .proj-kpi{padding:8px 10px;border-right:none;}
+  .proj-kpi:nth-child(1),.proj-kpi:nth-child(3){border-right:1px solid rgba(255,255,255,.1);}
+  .proj-body{padding:6px 8px 10px;}
+  .proj-row{grid-template-columns:1fr;}
+  .proj-perf-grid{grid-template-columns:1fr 1fr;}
+  .proj-kanban{display:flex;overflow-x:auto;gap:8px;padding-bottom:10px;-webkit-overflow-scrolling:touch;}
+  .proj-kanban-col{flex:0 0 210px;}
+  .np-row2{grid-template-columns:1fr;}
+  .np-drawer{width:100%;max-width:100%;}
+
+  /* ── Investments ── */
+  .inv2-hero{padding:10px 12px;}
+  .inv2-hero-top{flex-wrap:wrap;gap:8px;}
+  .inv2-kpis{grid-template-columns:repeat(3,1fr);}
+  .inv2-kpi{padding:0 8px;}
+  .inv2-kpi:first-child{padding-left:0;}
+  .inv2-body{padding:6px 8px 10px;}
+  .inv2-row2{grid-template-columns:1fr;}
+  .inv2-summary{grid-template-columns:repeat(2,1fr);}
+  .inv2-bottom3{grid-template-columns:1fr;}
+  .inv2-card-body{overflow-x:auto;}
+  .inv2-table{min-width:520px;}
+
+  /* ── Streaming ── */
+  .stm-hero{padding:10px 12px;}
+  .stm-hero-top{flex-wrap:wrap;gap:8px;}
+  .stm-kpis{grid-template-columns:repeat(3,1fr);}
+  .stm-kpi{padding:0 8px;}
+  .stm-kpi:first-child{padding-left:0;}
+  .stm-body{padding:6px 8px 10px;}
+  .stm-row2{grid-template-columns:1fr;}
+
+  /* ── Artist Detail Page ── */
+  .ad-hero{padding:10px 12px 14px;}
+  .ad-back-btn{display:flex;align-items:center;gap:5px;margin-bottom:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;color:#fff;cursor:pointer;font-family:'Inter',sans-serif;}
+  .ad-hero-inner{flex-wrap:wrap;gap:10px;}
+  .ad-av-lg{width:54px;height:54px;font-size:18px;}
+  .ad-hero-name{font-size:18px;}
+  .ad-body{grid-template-columns:1fr;padding:8px 10px 14px;}
+  .ad-kpis{grid-template-columns:repeat(2,1fr);}
+  .ad-contract-grid{grid-template-columns:1fr 1fr;}
+
+  /* ── Project Detail ── */
+  .pd-hero{padding:10px 12px;}
+  .pd-stats{grid-template-columns:repeat(2,1fr);}
+  .pd-body{padding:8px 10px;}
+  .pd-two-col{grid-template-columns:1fr;}
+  .pd-fin-grid{grid-template-columns:1fr 1fr;}
+  .pd-back{display:flex;}
+  .pd-title{font-size:19px;}
+
+  /* ── Modals ── */
+  .modal-ov{padding:0;align-items:flex-end;}
+  .modal{border-radius:16px 16px 0 0;max-height:93vh;}
+  .opp-modal-ov{padding:0;align-items:flex-end;}
+  .opp-modal{border-radius:16px 16px 0 0;max-height:93vh;}
+  .opp-modal-summary{grid-template-columns:repeat(3,1fr);}
+  .nc-modal-ov{padding:0;align-items:flex-end;}
+  .nc-modal{border-radius:16px 16px 0 0;}
+  .nc-row{grid-template-columns:1fr;}
+
+  /* ── Tables ── */
+  .table-card{overflow-x:auto;}
+  table{min-width:480px;}
+
+  /* ── Hero section titles ── */
+  .stm-hero-title,.inv2-hero-title,.proj-header-title{font-size:17px;}
+  .stm-kpi-val,.inv2-kpi-val{font-size:18px;}
+  .proj-kpi-val{font-size:18px;}
+
+  /* ── Padding reductions ── */
+  .stm-card-hd,.inv2-card-hd,.db-card-hd,.ad-card-hd{padding:7px 12px;}
+  .dash{padding:6px 8px;}
+}
+
+/* ═══════ SMALL PHONES (≤ 480px) ═══════ */
+@media (max-width:480px){
+  .pro-kpi-grid{grid-template-columns:1fr 1fr;}
+  .db-kpis{grid-template-columns:1fr 1fr;}
+  .inv2-kpis{grid-template-columns:repeat(2,1fr);}
+  .stm-kpis{grid-template-columns:repeat(2,1fr);}
+  .proj-kpi-strip{grid-template-columns:repeat(2,1fr);}
+  .crm-mini-kpis{grid-template-columns:repeat(2,1fr);}
+  .crm-mini-kpi:nth-child(2){border-right:none;}
+  .opp-kpis{grid-template-columns:repeat(2,1fr);}
+  .tb-search{display:none;}
+  .crm-hero-av{width:50px;height:50px;font-size:16px;}
+  .inv2-kpi-val,.stm-kpi-val,.proj-kpi-val{font-size:16px;}
+  .pro-kpi-val,.db-kpi-val{font-size:16px;}
+  .pbi-kpis{grid-template-columns:1fr 1fr;}
+  .ad-contract-grid{grid-template-columns:1fr;}
+  .pd-stats{grid-template-columns:repeat(2,1fr);}
+  .db-rev-stats{grid-template-columns:1fr 1fr;}
+  .pro-chart-stats{grid-template-columns:repeat(2,1fr);}
+  .pro-chart-stat:nth-child(2){border-right:none;}
+}
 </style>
 </head>
 <body>
@@ -1254,7 +1476,51 @@ tbody tr:hover .pn{color:#2563eb;}
       </div>
     </div>
   </div>
+
+  <!-- Burger button (mobile only) -->
+  <button class="nav-burger" id="navBurger" onclick="toggleMobileNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav-ov" id="mobileNavOv" onclick="if(event.target===this)toggleMobileNav()">
+  <div class="mobile-nav">
+    <div class="mobile-nav-hd">
+      <span class="mobile-nav-logo">AXIS Conseil</span>
+      <button class="mobile-nav-close" onclick="toggleMobileNav()">&#10005;</button>
+    </div>
+    <div class="mobile-nav-items">
+      <button class="mobile-nav-item active" id="mnav-dashboard" onclick="showPage('dashboard',document.querySelector('.sb-item'));toggleMobileNav()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        Dashboard
+      </button>
+      <button class="mobile-nav-item" id="mnav-crm" onclick="showPage('crm',document.querySelectorAll('.sb-item')[1]);toggleMobileNav()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        CRM
+      </button>
+      <button class="mobile-nav-item" id="mnav-projets" onclick="showPage('projets',document.querySelectorAll('.sb-item')[2]);toggleMobileNav()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Projets artistes
+      </button>
+      <button class="mobile-nav-item" id="mnav-invest" onclick="showPage('invest',document.querySelectorAll('.sb-item')[3]);toggleMobileNav()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Investissements
+      </button>
+      <button class="mobile-nav-item" id="mnav-other" onclick="showPage('other',document.querySelectorAll('.sb-item')[4]);toggleMobileNav()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+        Streaming
+      </button>
+    </div>
+    <div class="mobile-nav-user">
+      <div class="mobile-nav-av">RW</div>
+      <div>
+        <div class="mobile-nav-uname">Rayan Wehbi</div>
+        <div class="mobile-nav-urole">Directeur Général</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- MAIN -->
 <div class="main">
@@ -1657,6 +1923,12 @@ tbody tr:hover .pn{color:#2563eb;}
         </div>
 
       </div>
+
+      <!-- ── Mobile back button (hidden on desktop via CSS) ── -->
+      <button class="crm-mobile-back" id="crmMobileBack" onclick="closeCrmMobile()">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+        Retour au roster
+      </button>
 
       <!-- ── RIGHT DETAIL PANEL ── -->
       <div id="crmDetail" class="crm-detail">
@@ -3053,6 +3325,11 @@ const artists = {
 function selectArtist(el, name) {
   document.querySelectorAll('.crm-item').forEach(function(i){ i.classList.remove('active'); });
   el.classList.add('active');
+  // On mobile: show detail panel, hide roster
+  if (window.innerWidth <= 768) {
+    var wrap = document.querySelector('.crm-wrap');
+    if (wrap) wrap.classList.add('has-detail');
+  }
   openArtistDetail(name);
 }
 
@@ -3157,6 +3434,9 @@ function closeArtistDetail() {
   document.querySelectorAll('.sb-item').forEach(function(b){ b.classList.remove('active'); });
   var navItems = document.querySelectorAll('.sb-item');
   if (navItems[1]) navItems[1].classList.add('active');
+  // On mobile: restore roster when returning from artist detail
+  var wrap = document.querySelector('.crm-wrap');
+  if (wrap) wrap.classList.remove('has-detail');
   _setTopbarPage('crm');
 }
 
@@ -3406,6 +3686,9 @@ function switchGouvTab(tab, btn) {
 function switchCrmTab(tab, btn) {
   document.querySelectorAll('.crm-view-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  // On mobile: switching tabs resets the roster visibility
+  const wrap = document.querySelector('.crm-wrap');
+  if (wrap) wrap.classList.remove('has-detail');
   const detail = document.getElementById('crmDetail');
   const opp = document.getElementById('oppPanel');
   const act = document.getElementById('actPanel');
@@ -4303,7 +4586,7 @@ function _initInvestChart() {
 
 function showPage(id, btn) {
   document.querySelectorAll('.sb-item').forEach(function(b) { b.classList.remove('active'); });
-  btn.classList.add('active');
+  if (btn) btn.classList.add('active');
   _hideAllPages();
   var pg = document.getElementById('pg-' + id);
   if (pg) { pg.style.display='flex'; pg.style.flexDirection='column'; pg.style.flex='1'; pg.style.minHeight='0'; }
@@ -4311,6 +4594,11 @@ function showPage(id, btn) {
   if (id !== 'crm') _setHash('/' + id);
   if (id === 'invest') _initInvestChart();
   if (id === 'other') _initStreamingChart();
+  // Sync mobile nav active state
+  document.querySelectorAll('.mobile-nav-item').forEach(function(b) { b.classList.remove('active'); });
+  var mnavId = id === 'other' ? 'mnav-other' : 'mnav-' + id;
+  var mbtn = document.getElementById(mnavId);
+  if (mbtn) mbtn.classList.add('active');
 }
 
 
@@ -4998,6 +5286,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// ── Mobile Navigation ──
+function toggleMobileNav() {
+  var ov = document.getElementById('mobileNavOv');
+  var burger = document.getElementById('navBurger');
+  if (!ov) return;
+  var isOpen = ov.classList.toggle('open');
+  if (burger) burger.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+// ── CRM Mobile: show/hide roster panel ──
+function closeCrmMobile() {
+  var wrap = document.querySelector('.crm-wrap');
+  if (wrap) wrap.classList.remove('has-detail');
+}
 </script>
 </body>
 </html>
