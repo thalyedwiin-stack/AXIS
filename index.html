@@ -1273,9 +1273,15 @@ html,body{max-width:100%;overflow-x:hidden;}
   .pbi-row2{grid-template-columns:1fr;}
 
   /* ── CRM ── */
-  .crm-wrap{display:flex;flex-direction:column;height:auto;min-height:0;flex:1;overflow:hidden;}
-  .crm-list{height:280px;min-height:220px;max-height:280px;flex-shrink:0;border-right:none;border-bottom:1px solid #c8ddf5;}
+  .crm-wrap{display:flex;flex-direction:column;height:auto;min-height:0;flex:1;overflow:visible;}
+  .crm-list{height:auto;max-height:320px;min-height:0;flex-shrink:0;border-right:none;border-bottom:1px solid #c8ddf5;overflow:hidden;display:flex;flex-direction:column;}
+  .crm-artist-items{overflow-y:auto;flex:1;}
+  .crm-item{flex:0 0 auto;min-height:52px;}
   .crm-detail{flex:1;min-height:0;}
+  /* Hide roster when on Activités or Opportunités tabs on mobile */
+  .crm-wrap.tab-nolist .crm-list{display:none;}
+  .crm-wrap.tab-nolist .crm-mobile-back{display:none!important;}
+  .act-panel,.opp-wrap{overflow-y:visible;max-height:none;}
   .crm-wrap.has-detail .crm-list{display:none;}
   .crm-wrap.has-detail .crm-mobile-back{display:flex;}
   .crm-mini-kpis{grid-template-columns:repeat(4,1fr);}
@@ -3686,7 +3692,6 @@ function switchGouvTab(tab, btn) {
 function switchCrmTab(tab, btn) {
   document.querySelectorAll('.crm-view-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  // On mobile: switching tabs resets the roster visibility
   const wrap = document.querySelector('.crm-wrap');
   if (wrap) wrap.classList.remove('has-detail');
   const detail = document.getElementById('crmDetail');
@@ -3702,6 +3707,14 @@ function switchCrmTab(tab, btn) {
     renderActFeed(_actFilter);
   } else {
     if (detail) detail.style.display = '';
+  }
+  // On mobile: hide roster panel for non-Artistes tabs
+  if (wrap) {
+    if (window.innerWidth <= 768 && tab !== 'artistes') {
+      wrap.classList.add('tab-nolist');
+    } else {
+      wrap.classList.remove('tab-nolist');
+    }
   }
   _setHash('/crm/' + tab);
 }
