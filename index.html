@@ -2117,41 +2117,6 @@ html,body{max-width:100%;overflow-x:hidden;}
       </div>
     </div>
 
-    <!-- ── ASSISTANT WIDGET ── -->
-    <button class="crm-assist-btn" id="crmAssistBtn" onclick="toggleCrmAssist()" aria-label="Assistant AXIS">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      <span class="crm-assist-badge">1</span>
-    </button>
-
-    <div class="crm-assist-panel" id="crmAssistPanel">
-      <div class="crm-assist-hd">
-        <div class="crm-assist-av">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><circle cx="18" cy="7" r="2" fill="#fff" stroke="none"/><circle cx="6" cy="7" r="2" fill="#fff" stroke="none"/></svg>
-        </div>
-        <div class="crm-assist-hd-info">
-          <div class="crm-assist-hd-name">Assistant AXIS</div>
-          <div class="crm-assist-hd-sub">Gestion artistes &amp; CRM</div>
-        </div>
-        <button class="crm-assist-close" onclick="toggleCrmAssist()">&#10005;</button>
-      </div>
-      <div class="crm-assist-body" id="crmAssistBody">
-        <div class="crm-assist-msg">
-          Bonjour <strong>Rayan Wehbi</strong> 👋<br>
-          Je suis votre assistant AXIS. Comment puis-je vous aider dans votre gestion d'artistes aujourd'hui ?
-        </div>
-        <div class="crm-assist-actions" id="crmAssistActions">
-          <button class="crm-assist-action" onclick="crmAssistQuick('artiste')"><span class="crm-assist-action-icon">🎵</span>Ajouter un artiste</button>
-          <button class="crm-assist-action" onclick="crmAssistQuick('opportunite')"><span class="crm-assist-action-icon">💼</span>Créer une opportunité</button>
-          <button class="crm-assist-action" onclick="crmAssistQuick('activites')"><span class="crm-assist-action-icon">📋</span>Voir les activités récentes</button>
-        </div>
-      </div>
-      <div class="crm-assist-foot">
-        <input class="crm-assist-input" id="crmAssistInput" type="text" placeholder="Posez votre question..." onkeydown="if(event.key==='Enter')crmAssistSend()">
-        <button class="crm-assist-send" onclick="crmAssistSend()">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        </button>
-      </div>
-    </div>
   </div>
 
   <!-- PROJETS PAGE -->
@@ -3360,6 +3325,42 @@ html,body{max-width:100%;overflow-x:hidden;}
   <div class="opp-modal">
     <div class="opp-modal-head"><div><div class="opp-modal-title" id="oppModalTitle"></div><div class="opp-modal-meta" id="oppModalMeta"></div></div><button class="opp-modal-close" onclick="closeOppModal()"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
     <div class="opp-modal-body" id="oppModalBody"></div>
+  </div>
+</div>
+
+<!-- ── ASSISTANT WIDGET (global) ── -->
+<button class="crm-assist-btn" id="crmAssistBtn" onclick="toggleCrmAssist()" aria-label="Assistant AXIS">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <span class="crm-assist-badge">1</span>
+</button>
+
+<div class="crm-assist-panel" id="crmAssistPanel">
+  <div class="crm-assist-hd">
+    <div class="crm-assist-av">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    </div>
+    <div class="crm-assist-hd-info">
+      <div class="crm-assist-hd-name">Assistant AXIS</div>
+      <div class="crm-assist-hd-sub">Dashboard &amp; Gestion artistes</div>
+    </div>
+    <button class="crm-assist-close" onclick="toggleCrmAssist()">&#10005;</button>
+  </div>
+  <div class="crm-assist-body" id="crmAssistBody">
+    <div class="crm-assist-msg">
+      Bonjour <strong>Rayan Wehbi</strong> 👋<br>
+      Je suis votre assistant AXIS. Comment puis-je vous aider aujourd'hui ?
+    </div>
+    <div class="crm-assist-actions" id="crmAssistActions">
+      <button class="crm-assist-action" onclick="crmAssistQuick('artiste')"><span class="crm-assist-action-icon">🎵</span>Ajouter un artiste</button>
+      <button class="crm-assist-action" onclick="crmAssistQuick('opportunite')"><span class="crm-assist-action-icon">💼</span>Créer une opportunité</button>
+      <button class="crm-assist-action" onclick="crmAssistQuick('activites')"><span class="crm-assist-action-icon">📋</span>Voir les activités récentes</button>
+    </div>
+  </div>
+  <div class="crm-assist-foot">
+    <input class="crm-assist-input" id="crmAssistInput" type="text" placeholder="Posez votre question..." onkeydown="if(event.key==='Enter')crmAssistSend()">
+    <button class="crm-assist-send" onclick="crmAssistSend()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
   </div>
 </div>
 
