@@ -1399,6 +1399,47 @@ html,body{max-width:100%;overflow-x:hidden;}
   .pro-chart-stats{grid-template-columns:repeat(2,1fr);}
   .pro-chart-stat:nth-child(2){border-right:none;}
 }
+
+/* ── CRM ASSISTANT WIDGET ── */
+.crm-assist-btn{position:fixed;bottom:22px;right:20px;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1d4ed8,#4f46e5);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,99,235,.45);z-index:8000;transition:transform .2s,box-shadow .2s;}
+.crm-assist-btn:hover{transform:translateY(-2px) scale(1.06);box-shadow:0 10px 30px rgba(37,99,235,.55);}
+.crm-assist-btn svg{width:24px;height:24px;color:#fff;}
+.crm-assist-badge{position:absolute;top:-3px;right:-3px;width:17px;height:17px;border-radius:50%;background:#ef4444;color:#fff;font-size:9px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid #fff;animation:badge-pulse 2.5s infinite;}
+.crm-assist-panel{position:fixed;bottom:84px;right:20px;width:320px;max-height:520px;background:#fff;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.18);z-index:8100;display:none;flex-direction:column;overflow:hidden;border:1px solid #e2e8f0;}
+.crm-assist-panel.open{display:flex;}
+.crm-assist-hd{background:linear-gradient(135deg,#1e2a3a,#243555);padding:14px 16px;display:flex;align-items:center;gap:11px;flex-shrink:0;}
+.crm-assist-av{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#2563eb,#6366f1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.crm-assist-hd-info{flex:1;}
+.crm-assist-hd-name{font-size:13px;font-weight:700;color:#fff;letter-spacing:-.1px;}
+.crm-assist-hd-sub{font-size:10px;color:#94a3b8;margin-top:1px;}
+.crm-assist-close{width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,.1);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;transition:background .15s;}
+.crm-assist-close:hover{background:rgba(255,255,255,.2);}
+.crm-assist-body{flex:1;overflow-y:auto;padding:14px 14px 8px;}
+.crm-assist-msg{background:#f1f5f9;border-radius:12px;border-top-left-radius:4px;padding:11px 13px;font-size:12.5px;color:#1e293b;line-height:1.55;margin-bottom:10px;}
+.crm-assist-msg strong{color:#0f172a;}
+.crm-assist-actions{display:flex;flex-direction:column;gap:6px;margin-bottom:10px;}
+.crm-assist-action{display:flex;align-items:center;gap:10px;padding:9px 13px;border-radius:10px;border:1.5px solid #e2e8f0;background:#fff;font-size:12px;font-weight:600;color:#1e293b;cursor:pointer;text-align:left;font-family:'Inter',sans-serif;transition:all .15s;width:100%;}
+.crm-assist-action:hover{background:#f8fafc;border-color:#c7d2fe;color:#2563eb;}
+.crm-assist-action-icon{font-size:16px;flex-shrink:0;}
+.crm-assist-bubble{display:flex;align-items:flex-end;gap:7px;margin-bottom:8px;}
+.crm-assist-bubble-av{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#2563eb,#6366f1);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;}
+.crm-assist-bubble-text{background:#f1f5f9;border-radius:12px;border-bottom-left-radius:4px;padding:9px 12px;font-size:12px;color:#334155;line-height:1.5;flex:1;}
+.crm-assist-user-bubble{background:#eff6ff;border-radius:12px;border-bottom-right-radius:4px;padding:9px 12px;font-size:12px;color:#1e40af;line-height:1.5;margin-left:auto;max-width:80%;margin-bottom:8px;}
+.crm-assist-foot{border-top:1px solid #f1f5f9;padding:10px 12px;display:flex;gap:8px;align-items:center;flex-shrink:0;background:#fafbff;}
+.crm-assist-input{flex:1;border:1.5px solid #e2e8f0;border-radius:10px;padding:8px 12px;font-size:12px;color:#0f172a;font-family:'Inter',sans-serif;background:#fff;outline:none;transition:border-color .2s;}
+.crm-assist-input:focus{border-color:#6366f1;}
+.crm-assist-input::placeholder{color:#94a3b8;}
+.crm-assist-send{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#2563eb,#4f46e5);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .15s,box-shadow .15s;}
+.crm-assist-send:hover{transform:scale(1.08);box-shadow:0 4px 12px rgba(37,99,235,.4);}
+.crm-assist-typing{display:flex;align-items:center;gap:4px;padding:8px 12px;background:#f1f5f9;border-radius:10px;width:fit-content;margin-bottom:8px;}
+.crm-assist-typing span{width:6px;height:6px;border-radius:50%;background:#94a3b8;animation:typing-dot .9s infinite;}
+.crm-assist-typing span:nth-child(2){animation-delay:.15s;}
+.crm-assist-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes typing-dot{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-4px);}}
+@media(max-width:768px){
+  .crm-assist-panel{width:calc(100vw - 24px);right:12px;bottom:76px;}
+  .crm-assist-btn{bottom:16px;right:14px;}
+}
 </style>
 </head>
 <body>
@@ -2073,6 +2114,42 @@ html,body{max-width:100%;overflow-x:hidden;}
             <div class="opp-bar-bg"><div class="opp-bar-fill" style="width:48%;background:#94a3b8;"></div></div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- ── ASSISTANT WIDGET ── -->
+    <button class="crm-assist-btn" id="crmAssistBtn" onclick="toggleCrmAssist()" aria-label="Assistant AXIS">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <span class="crm-assist-badge">1</span>
+    </button>
+
+    <div class="crm-assist-panel" id="crmAssistPanel">
+      <div class="crm-assist-hd">
+        <div class="crm-assist-av">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><circle cx="18" cy="7" r="2" fill="#fff" stroke="none"/><circle cx="6" cy="7" r="2" fill="#fff" stroke="none"/></svg>
+        </div>
+        <div class="crm-assist-hd-info">
+          <div class="crm-assist-hd-name">Assistant AXIS</div>
+          <div class="crm-assist-hd-sub">Gestion artistes &amp; CRM</div>
+        </div>
+        <button class="crm-assist-close" onclick="toggleCrmAssist()">&#10005;</button>
+      </div>
+      <div class="crm-assist-body" id="crmAssistBody">
+        <div class="crm-assist-msg">
+          Bonjour <strong>Rayan Wehbi</strong> 👋<br>
+          Je suis votre assistant AXIS. Comment puis-je vous aider dans votre gestion d'artistes aujourd'hui ?
+        </div>
+        <div class="crm-assist-actions" id="crmAssistActions">
+          <button class="crm-assist-action" onclick="crmAssistQuick('artiste')"><span class="crm-assist-action-icon">🎵</span>Ajouter un artiste</button>
+          <button class="crm-assist-action" onclick="crmAssistQuick('opportunite')"><span class="crm-assist-action-icon">💼</span>Créer une opportunité</button>
+          <button class="crm-assist-action" onclick="crmAssistQuick('activites')"><span class="crm-assist-action-icon">📋</span>Voir les activités récentes</button>
+        </div>
+      </div>
+      <div class="crm-assist-foot">
+        <input class="crm-assist-input" id="crmAssistInput" type="text" placeholder="Posez votre question..." onkeydown="if(event.key==='Enter')crmAssistSend()">
+        <button class="crm-assist-send" onclick="crmAssistSend()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -5314,6 +5391,91 @@ function toggleMobileNav() {
 function closeCrmMobile() {
   var wrap = document.querySelector('.crm-wrap');
   if (wrap) wrap.classList.remove('has-detail');
+}
+
+// ── CRM Assistant Widget ──
+function toggleCrmAssist() {
+  var panel = document.getElementById('crmAssistPanel');
+  var btn = document.getElementById('crmAssistBtn');
+  if (!panel) return;
+  var isOpen = panel.classList.toggle('open');
+  // Hide badge when opened
+  var badge = btn ? btn.querySelector('.crm-assist-badge') : null;
+  if (badge && isOpen) badge.style.display = 'none';
+}
+
+var _assistReplies = {
+  artiste: {
+    user: 'Ajouter un artiste',
+    bot: "Pour ajouter un artiste, cliquez sur le bouton <strong>+ Nouveau</strong> en haut du roster. Vous pourrez renseigner son nom, genre, manager et informations contractuelles. Souhaitez-vous que je vous guide ?"
+  },
+  opportunite: {
+    user: 'Créer une opportunité',
+    bot: "Pour créer une opportunité, allez dans l'onglet <strong>Opportunités</strong> puis utilisez le bouton <strong>+ Opportunité</strong>. Vous pourrez définir le montant, l'artiste concerné et le stade de la négociation."
+  },
+  activites: {
+    user: 'Voir les activités récentes',
+    bot: "Voici un résumé : <strong>3 activités aujourd'hui</strong> — 1 réunion créative PNL, 1 appel Booba, 1 email Niska. Passez sur l'onglet <strong>Activités</strong> pour la liste complète."
+  }
+};
+
+var _assistDefaults = [
+  "Je peux vous aider à naviguer dans le CRM, créer des contacts, ou analyser vos opportunités. Que souhaitez-vous faire ?",
+  "Bonne question ! Pour l'instant je peux vous guider sur la gestion des artistes, contrats et opportunités. Essayez l'un des raccourcis ci-dessus.",
+  "Je n'ai pas encore la réponse précise à cela, mais vous pouvez retrouver l'information dans l'onglet <strong>Activités</strong> ou <strong>Opportunités</strong>."
+];
+var _assistIdx = 0;
+
+function crmAssistQuick(type) {
+  var reply = _assistReplies[type];
+  if (!reply) return;
+  // Hide action buttons
+  var actions = document.getElementById('crmAssistActions');
+  if (actions) actions.style.display = 'none';
+  _crmAssistAppendUser(reply.user);
+  _crmAssistTypingThenReply(reply.bot);
+}
+
+function crmAssistSend() {
+  var input = document.getElementById('crmAssistInput');
+  if (!input || !input.value.trim()) return;
+  var text = input.value.trim();
+  input.value = '';
+  var actions = document.getElementById('crmAssistActions');
+  if (actions) actions.style.display = 'none';
+  _crmAssistAppendUser(text);
+  var reply = _assistDefaults[_assistIdx % _assistDefaults.length];
+  _assistIdx++;
+  _crmAssistTypingThenReply(reply);
+}
+
+function _crmAssistAppendUser(text) {
+  var body = document.getElementById('crmAssistBody');
+  if (!body) return;
+  var el = document.createElement('div');
+  el.className = 'crm-assist-user-bubble';
+  el.textContent = text;
+  body.appendChild(el);
+  body.scrollTop = body.scrollHeight;
+}
+
+function _crmAssistTypingThenReply(html) {
+  var body = document.getElementById('crmAssistBody');
+  if (!body) return;
+  // Show typing indicator
+  var typing = document.createElement('div');
+  typing.className = 'crm-assist-bubble';
+  typing.innerHTML = '<div class="crm-assist-bubble-av"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><div class="crm-assist-typing"><span></span><span></span><span></span></div>';
+  body.appendChild(typing);
+  body.scrollTop = body.scrollHeight;
+  setTimeout(function() {
+    body.removeChild(typing);
+    var bubble = document.createElement('div');
+    bubble.className = 'crm-assist-bubble';
+    bubble.innerHTML = '<div class="crm-assist-bubble-av"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><div class="crm-assist-bubble-text">' + html + '</div>';
+    body.appendChild(bubble);
+    body.scrollTop = body.scrollHeight;
+  }, 1000);
 }
 </script>
 </body>
