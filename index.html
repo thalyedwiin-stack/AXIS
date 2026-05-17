@@ -3932,7 +3932,8 @@ function saveNewContact() {
   item.className = 'crm-item';
   item.setAttribute('data-name', name);
   item.onclick = function() { selectArtist(this, name); };
-  item.innerHTML = `<div class="crm-item-row"><div class="crm-av" style="background:${color}">${initials}</div><div class="crm-item-info"><div class="crm-item-name">${name}</div><div class="crm-item-proj">Nouveau contact</div></div><span class="crm-badge nouveau">Nouveau</span></div><div class="crm-item-rev">${rev}</div><div class="crm-item-phone">📞 ${phone}</div>`;
+  const genre = document.getElementById('nc-genre') ? document.getElementById('nc-genre').value : 'Nouveau contact';
+  item.innerHTML = `<div class="crm-item-main"><div class="crm-av" style="background:${color}">${initials}</div><div class="crm-item-info"><div class="crm-item-name">${name}</div><div class="crm-item-proj">${genre} · 0 projet</div></div><div class="crm-item-right"><div class="crm-item-rev">${rev !== '—' ? rev : '—'}</div><span class="crm-badge nouveau">● Nouveau</span></div></div><div class="crm-item-bar"><div class="crm-item-bar-fill" style="width:0%"></div></div>`;
   document.getElementById('artistList').appendChild(item);
   addDeleteButtons();
   artists[name] = {
