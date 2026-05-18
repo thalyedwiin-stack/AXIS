@@ -1438,6 +1438,16 @@ html,body{max-width:100%;overflow-x:hidden;}
   .nc-rdv-clear{flex:0 0 100%;}
 }
 
+/* ── NAV TAB HIGHLIGHT (assistant navigation) ── */
+@keyframes nav-flash{0%{box-shadow:0 0 0 0 rgba(250,204,21,.8),0 0 0 0 rgba(250,204,21,.4);}50%{box-shadow:0 0 0 5px rgba(250,204,21,.3),0 0 0 10px rgba(250,204,21,.1);}100%{box-shadow:0 0 0 0 rgba(250,204,21,0),0 0 0 0 rgba(250,204,21,0);}}
+.sb-item.nav-highlight{background:rgba(250,204,21,.22)!important;border:1.5px solid rgba(250,204,21,.85)!important;color:#fef9c3!important;animation:nav-flash .55s ease-in-out 3!important;}
+.mobile-nav-item.nav-highlight{background:rgba(250,204,21,.18)!important;border:1.5px solid rgba(250,204,21,.7)!important;color:#fef9c3!important;animation:nav-flash .55s ease-in-out 3!important;}
+
+/* ── ASSISTANT NAV BUTTONS ── */
+.assist-nav-btn{display:inline-flex;align-items:center;gap:6px;margin-top:8px;margin-right:5px;padding:7px 14px;border-radius:9px;background:linear-gradient(135deg,#1d4ed8,#4f46e5);color:#fff;font-size:11.5px;font-weight:700;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:transform .12s,box-shadow .12s;letter-spacing:.1px;}
+.assist-nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(37,99,235,.45);}
+.assist-nav-btn svg{width:12px;height:12px;}
+
 /* ── CRM ASSISTANT WIDGET ── */
 .crm-assist-btn{position:fixed;bottom:22px;right:20px;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#1d4ed8,#4f46e5);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,99,235,.45);z-index:8000;transition:transform .2s,box-shadow .2s;}
 .crm-assist-btn:hover{transform:translateY(-2px) scale(1.06);box-shadow:0 10px 30px rgba(37,99,235,.55);}
@@ -4047,7 +4057,7 @@ function saveNewContact() {
     else if (diff === 1) timeStr = 'Demain, ' + rdvTime;
     else if (diff === -1) timeStr = 'Hier, ' + rdvTime;
     else timeStr = _ncRdvDate.getDate() + ' ' + _ncMonthShort[_ncRdvDate.getMonth()] + ', ' + rdvTime;
-    globalActivities.unshift({
+    var newAct = {
       icon: _iconMap[_typeKey] || '📅',
       bg:   _bgMap[_typeKey] || '#3b82f6',
       type: _typeKey,
@@ -4056,6 +4066,13 @@ function saveNewContact() {
       desc: 'Rendez-vous planifié lors de l\'ajout au portefeuille AXIS',
       time: timeStr,
       who: manager
+    };
+    globalActivities.unshift(newAct);
+    // Aussi dans la fiche individuelle de l'artiste
+    if (artists[name]) artists[name].activities.unshift({
+      icon: newAct.icon, bg: newAct.bg,
+      title: newAct.title, desc: newAct.desc,
+      time: newAct.time, who: newAct.who
     });
     _updateActFilterCounts();
     if (typeof _actFilter !== 'undefined') renderActFeed(_actFilter);
@@ -5618,41 +5635,92 @@ function toggleCrmAssist() {
   var btn = document.getElementById('crmAssistBtn');
   if (!panel) return;
   var isOpen = panel.classList.toggle('open');
-  // Hide badge when opened
   var badge = btn ? btn.querySelector('.crm-assist-badge') : null;
   if (badge && isOpen) badge.style.display = 'none';
 }
 
+// ── Navigation avec surbrillance ──
+function crmAssistNavigate(pageId, crmTab) {
+  // Fermer le panel
+  var panel = document.getElementById('crmAssistPanel');
+  if (panel) panel.classList.remove('open');
+
+  // Mapping page → index dans .sb-item
+  var pageIdx = {dashboard:0, crm:1, projets:2, invest:3, other:4};
+  var idx = pageIdx[pageId];
+  var sbItems = document.querySelectorAll('.sb-item');
+  var targetBtn = (idx !== undefined) ? sbItems[idx] : null;
+
+  // Surbrillance
+  if (targetBtn) {
+    targetBtn.classList.add('nav-highlight');
+    setTimeout(function(){ targetBtn.classList.remove('nav-highlight'); }, 1800);
+  }
+  // Navigation après délai (user voit la surbrillance)
+  setTimeout(function() {
+    showPage(pageId, targetBtn);
+    if (pageId === 'crm' && crmTab) {
+      var tabs = document.querySelectorAll('.crm-view-tab');
+      var tMap = {artistes:0, activites:1, opportunites:2};
+      var ti = tMap[crmTab];
+      if (tabs[ti]) switchCrmTab(crmTab, tabs[ti]);
+    }
+  }, 600);
+}
+
+// ── Bouton nav HTML ──
+function _navBtn(label, page, tab) {
+  var t = tab ? ",'"+tab+"'" : ',null';
+  return '<button class="assist-nav-btn" onclick="crmAssistNavigate(\''+page+'\''+t+')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'+label+'</button>';
+}
+
+// ── Détection d'intention de navigation ──
+function _assistDetectNav(text) {
+  var l = text.toLowerCase();
+  if (/projet|kanban|album|singl|tournée|track/.test(l))
+    return {reply:"Vos projets artistes (suivi kanban, budgets, avancement) sont dans l'onglet <strong>Projets artistes</strong>.", btns:[_navBtn('Projets artistes','projets',null)]};
+  if (/invest|portefeuille|fond|financ|bilan/.test(l))
+    return {reply:"Votre portefeuille d'investissements et les analyses financières sont dans <strong>Investissements</strong>.", btns:[_navBtn('Investissements','invest',null)]};
+  if (/stream|spotify|apple|deezer|écoute|plateforme/.test(l))
+    return {reply:"Les statistiques de streaming (Spotify, Apple, Deezer…) sont dans <strong>Streaming</strong>.", btns:[_navBtn('Streaming','other',null)]};
+  if (/activit|réunion|appel|studio|interaction/.test(l))
+    return {reply:"L'historique de toutes vos interactions (réunions, appels, studio…) est dans l'onglet <strong>Activités</strong> du CRM.", btns:[_navBtn('Activités CRM','crm','activites')]};
+  if (/opportunit|deal|négociation|pipeline|prospect/.test(l))
+    return {reply:"Votre pipeline d'opportunités commerciales est dans l'onglet <strong>Opportunités</strong> du CRM.", btns:[_navBtn('Opportunités','crm','opportunites')]};
+  if (/crm|artiste|contrat|relation|roster|contact/.test(l))
+    return {reply:"La gestion de vos artistes, contrats et relations clients est dans le <strong>CRM</strong>.", btns:[_navBtn('CRM — Artistes','crm','artistes')]};
+  if (/dashboard|accueil|tableau|kpi|chiffre|revenu|aperçu/.test(l))
+    return {reply:"Le tableau de bord avec tous les KPI clés est sur le <strong>Dashboard</strong>.", btns:[_navBtn('Dashboard','dashboard',null)]};
+  return null;
+}
+
+// ── Quick actions ──
 var _assistReplies = {
   artiste: {
     user: 'Ajouter un artiste',
-    bot: "Pour ajouter un artiste, cliquez sur le bouton <strong>+ Nouveau</strong> en haut du roster. Vous pourrez renseigner son nom, genre, manager et informations contractuelles. Souhaitez-vous que je vous guide ?"
+    bot: "Pour ajouter un artiste, cliquez sur <strong>+ Nouveau</strong> dans le CRM — renseignez le profil, planifiez un RDV et le contact est ajouté au portefeuille.",
+    page: 'crm', tab: null
   },
   opportunite: {
     user: 'Créer une opportunité',
-    bot: "Pour créer une opportunité, allez dans l'onglet <strong>Opportunités</strong> puis utilisez le bouton <strong>+ Opportunité</strong>. Vous pourrez définir le montant, l'artiste concerné et le stade de la négociation."
+    bot: "Les opportunités se créent et se suivent dans l'onglet <strong>Opportunités</strong> du CRM.",
+    page: 'crm', tab: 'opportunites'
   },
   activites: {
     user: 'Voir les activités récentes',
-    bot: "Voici un résumé : <strong>3 activités aujourd'hui</strong> — 1 réunion créative PNL, 1 appel Booba, 1 email Niska. Passez sur l'onglet <strong>Activités</strong> pour la liste complète."
+    bot: "L'onglet <strong>Activités</strong> liste toutes vos interactions récentes classées par date — réunions, appels, studio, contrats.",
+    page: 'crm', tab: 'activites'
   }
 };
-
-var _assistDefaults = [
-  "Je peux vous aider à naviguer dans le CRM, créer des contacts, ou analyser vos opportunités. Que souhaitez-vous faire ?",
-  "Bonne question ! Pour l'instant je peux vous guider sur la gestion des artistes, contrats et opportunités. Essayez l'un des raccourcis ci-dessus.",
-  "Je n'ai pas encore la réponse précise à cela, mais vous pouvez retrouver l'information dans l'onglet <strong>Activités</strong> ou <strong>Opportunités</strong>."
-];
-var _assistIdx = 0;
 
 function crmAssistQuick(type) {
   var reply = _assistReplies[type];
   if (!reply) return;
-  // Hide action buttons
   var actions = document.getElementById('crmAssistActions');
   if (actions) actions.style.display = 'none';
   _crmAssistAppendUser(reply.user);
-  _crmAssistTypingThenReply(reply.bot);
+  var html = reply.bot + '<div style="margin-top:6px;">' + _navBtn('→ Y aller', reply.page, reply.tab) + '</div>';
+  _crmAssistTypingThenReply(html);
 }
 
 function crmAssistSend() {
@@ -5663,9 +5731,17 @@ function crmAssistSend() {
   var actions = document.getElementById('crmAssistActions');
   if (actions) actions.style.display = 'none';
   _crmAssistAppendUser(text);
-  var reply = _assistDefaults[_assistIdx % _assistDefaults.length];
-  _assistIdx++;
-  _crmAssistTypingThenReply(reply);
+  // Détection navigation
+  var nav = _assistDetectNav(text);
+  if (nav) {
+    var html = nav.reply + '<div style="margin-top:6px;">' + nav.btns.join('') + '</div>';
+    _crmAssistTypingThenReply(html);
+  } else {
+    _crmAssistTypingThenReply("Je n'ai pas trouvé de correspondance précise. Voulez-vous accéder à une section spécifique ?<div style='margin-top:6px;'>" +
+      _navBtn('Dashboard','dashboard',null) +
+      _navBtn('CRM','crm',null) +
+      _navBtn('Projets','projets',null) + '</div>');
+  }
 }
 
 function _crmAssistAppendUser(text) {
